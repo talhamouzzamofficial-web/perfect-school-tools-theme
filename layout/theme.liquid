@@ -7,6 +7,15 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
+    {% comment %}theme-check-disable RemoteAsset{% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;1,400&family=Outfit:wght@700;800&display=swap"
+      rel="stylesheet"
+    >
+    {% comment %}theme-check-enable RemoteAsset{% endcomment %}
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -54,6 +63,7 @@
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
+      {% assign scheme_classes = '' %}
       {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
         {% if forloop.index == 1 -%}
@@ -220,6 +230,43 @@
         --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
         --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
+
+        --pst-color-primary-dark-navy: #0a2540;
+        --pst-color-navy: #0f4872;
+        --pst-color-navy-light: #1a6ba0;
+        --pst-color-magenta: #e91e8c;
+        --pst-color-gold: #f5b731;
+        --pst-color-warm-white: #fdf8f0;
+        --pst-color-slate: #334155;
+      }
+
+      :root {
+        --font-body-family: 'Nunito Sans', {{ settings.type_body_font.fallback_families }};
+        --font-body-style: normal;
+        --font-body-weight: 400;
+        --font-heading-family: 'Outfit', {{ settings.type_header_font.fallback_families }};
+        --font-heading-style: normal;
+        --font-heading-weight: 700;
+      }
+
+      h1,
+      h2,
+      h3,
+      .h0,
+      .h1,
+      .h2,
+      .h3 {
+        font-family: var(--font-heading-family);
+        font-weight: 800;
+      }
+
+      h4,
+      h5,
+      h6,
+      .h4,
+      .h5 {
+        font-family: var(--font-heading-family);
+        font-weight: 700;
       }
 
       *,
@@ -306,6 +353,8 @@
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
+
+    {% section 'announcement-bar' %}
 
     {% sections 'header-group' %}
 

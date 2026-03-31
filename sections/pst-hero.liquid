@@ -1,0 +1,263 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .pst-hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(135deg, #0A2540 0%, #0F4872 50%, #1A6BA0 100%);
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__inner {
+    position: relative;
+    width: 100%;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 4rem 2rem 3.5rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__badge {
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding: 0.65rem 1.5rem;
+    font-family: var(--font-body-family);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--pst-color-primary-dark-navy, #0a2540);
+    background-color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    border-radius: 999px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__heading {
+    margin: 0 0 1.6rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(3.6rem, 6.5vw, 5.6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__text {
+    max-width: 72rem;
+    margin: 0 auto 2.8rem;
+    font-family: var(--font-body-family);
+    font-size: 1.75rem;
+    line-height: 1.55;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-hero__text {
+      font-size: 1.9rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem 1.6rem;
+    margin-bottom: 3rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5rem;
+    padding: 0 2.4rem;
+    font-family: var(--font-body-family);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: filter 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    border: 2px solid transparent;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__btn--primary {
+    background-color: var(--pst-color-magenta, #e91e8c);
+    color: #fff;
+    border: 2px solid var(--pst-color-magenta, #e91e8c);
+    box-shadow: 0 4px 14px rgba(233, 30, 140, 0.35);
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__btn--primary:hover,
+  #shopify-section-{{ section.id }} .pst-hero__btn--primary:focus {
+    filter: brightness(1.06);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__btn--outline {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__btn--outline:hover,
+  #shopify-section-{{ section.id }} .pst-hero__btn--outline:focus {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__footnote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-body-family);
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-hero__footnote {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.2rem 2rem;
+    }
+
+    #shopify-section-{{ section.id }} .pst-hero__footnote-sep {
+      display: block;
+      width: 1px;
+      height: 1.4rem;
+      background: rgba(255, 255, 255, 0.35);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .pst-hero__footnote-sep {
+      display: none;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__phone {
+    color: var(--pst-color-gold, #f5b731);
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__phone:hover,
+  #shopify-section-{{ section.id }} .pst-hero__phone:focus {
+    text-decoration: underline;
+  }
+{%- endstyle -%}
+
+<section class="pst-hero">
+  <div class="pst-hero__inner page-width">
+    {%- if section.settings.badge_text != blank -%}
+      <p class="pst-hero__badge">{{ section.settings.badge_text | escape }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h1 class="pst-hero__heading">{{ section.settings.heading | escape }}</h1>
+    {%- endif -%}
+
+    {%- if section.settings.subtext != blank -%}
+      <p class="pst-hero__text">{{ section.settings.subtext | escape }}</p>
+    {%- endif -%}
+
+    <div class="pst-hero__actions">
+      {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
+        <a class="pst-hero__btn pst-hero__btn--primary" href="{{ section.settings.quote_link }}">
+          {{- section.settings.quote_label | escape -}}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.products_label != blank and section.settings.products_link != blank -%}
+        <a class="pst-hero__btn pst-hero__btn--outline" href="{{ section.settings.products_link }}">
+          {{- section.settings.products_label | escape -}}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="pst-hero__footnote">
+      {%- if section.settings.phone != blank -%}
+        <a
+          class="pst-hero__phone"
+          href="tel:{{ section.settings.phone | replace: ' ', '' | replace: '(', '' | replace: ')', '' | replace: '-', '' }}"
+        >
+          {{- section.settings.phone | escape -}}
+        </a>
+      {%- endif -%}
+      <span class="pst-hero__footnote-sep" aria-hidden="true"></span>
+      {%- if section.settings.shipping_note != blank -%}
+        <span>{{ section.settings.shipping_note | escape }}</span>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PST Hero",
+  "tag": "section",
+  "class": "pst-hero-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "We Accept School Purchase Orders"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Poster Makers & Visual Supplies for Schools"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Paragraph",
+      "default": "Empower your school with professional poster printing, awards systems, and visual learning tools. Trusted by over 5,000 schools and 1,500 districts nationwide."
+    },
+    {
+      "type": "text",
+      "id": "quote_label",
+      "label": "Primary button label",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "quote_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "products_label",
+      "label": "Secondary button label",
+      "default": "View Products"
+    },
+    {
+      "type": "url",
+      "id": "products_link",
+      "label": "Secondary button link"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone",
+      "default": "(888) 535-4431"
+    },
+    {
+      "type": "text",
+      "id": "shipping_note",
+      "label": "Footer line",
+      "default": "Free Shipping Available"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PST Hero"
+    }
+  ]
+}
+{% endschema %}

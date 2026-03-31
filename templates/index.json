@@ -1,42 +1,181 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "pst_hero": {
+      "type": "pst-hero",
+      "settings": {
+        "badge_text": "We Accept School Purchase Orders",
+        "heading": "Poster Makers & Visual Supplies for Schools",
+        "subtext": "Empower your school with professional poster printing, awards systems, and visual learning tools. Trusted by over 5,000 schools and 1,500 districts nationwide.",
+        "quote_label": "Request a Quote",
+        "quote_link": "shopify://pages/contact",
+        "products_label": "View Products",
+        "products_link": "shopify://collections/all",
+        "phone": "(888) 535-4431",
+        "shipping_note": "Free Shipping Available"
+      }
+    },
+    "pst_stats_bar": {
+      "type": "pst-stats-bar",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "stat_1": {
+          "type": "stat",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "value": "30+",
+            "label": "Years Serving Schools"
           }
         },
-        "button": {
-          "type": "buttons",
+        "stat_2": {
+          "type": "stat",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "value": "5,000+",
+            "label": "Schools Nationwide"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "value": "1,500+",
+            "label": "Districts Served"
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "value": "100%",
+            "label": "Satisfaction Guarantee"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "pst_features": {
+      "type": "pst-features",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "✓",
+            "title": "Purchase Orders Welcome",
+            "text": "We gladly accept school purchase orders. Simply email your PO and we'll process your order immediately."
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "🏫",
+            "title": "District-Wide Pricing",
+            "text": "Special pricing for district-level purchases. Contact us for volume discounts."
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "📞",
+            "title": "Unlimited Support",
+            "text": "Every system includes unlimited phone and web support."
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "icon": "🎨",
+            "title": "Free Digital Resources",
+            "text": "Access thousands of ready-to-print educational poster templates."
+          }
+        },
+        "feature_5": {
+          "type": "feature",
+          "settings": {
+            "icon": "🚚",
+            "title": "Fast, Free Shipping",
+            "text": "Free shipping on qualifying orders. Most systems ship within 2-3 business days."
+          }
+        },
+        "feature_6": {
+          "type": "feature",
+          "settings": {
+            "icon": "🛡",
+            "title": "Warranty & Protection",
+            "text": "Every system comes with a warranty and our satisfaction guarantee."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5",
+        "feature_6"
+      ],
+      "settings": {
+        "heading": "Built for the Way Schools Buy",
+        "subtitle": "We understand the unique purchasing process of schools and districts.",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "pst_products_showcase": {
+      "type": "pst-products-showcase",
+      "settings": {
+        "heading": "Professional Visual Tools for Every School",
+        "quote_label": "Request a Quote",
+        "quote_link": "shopify://pages/contact",
+        "learn_label": "Learn More",
+        "learn_link": "shopify://collections/all",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "pst_testimonials": {
+      "type": "pst-testimonials",
+      "blocks": {
+        "quote_1": {
+          "type": "quote",
+          "settings": {
+            "quote": "The Perfect Poster Maker has transformed how we communicate...",
+            "name": "Laura M.",
+            "role": "Media Specialist",
+            "region": "North Carolina"
+          }
+        },
+        "quote_2": {
+          "type": "quote",
+          "settings": {
+            "quote": "As a principal, I needed a solution that was easy for staff...",
+            "name": "William T.",
+            "role": "Principal",
+            "region": "Florida"
+          }
+        },
+        "quote_3": {
+          "type": "quote",
+          "settings": {
+            "quote": "The purchase order process was seamless...",
+            "name": "Christine F.",
+            "role": "Bookkeeper",
+            "region": "South Carolina"
+          }
+        }
+      },
+      "block_order": [
+        "quote_1",
+        "quote_2",
+        "quote_3"
+      ],
+      "settings": {
+        "heading": "What Schools Are Saying",
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
     "featured_collection": {
@@ -66,10 +205,27 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "pst_cta_banner": {
+      "type": "pst-cta-banner",
+      "settings": {
+        "heading": "Ready to Transform Your School's Visual Communication?",
+        "subtext": "Get a personalized quote for your school or district. We accept purchase orders.",
+        "button_label": "Request a Quote",
+        "button_link": "shopify://pages/contact",
+        "phone": "(888) 535-4431",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "pst_hero",
+    "pst_stats_bar",
+    "pst_features",
+    "pst_products_showcase",
+    "pst_testimonials",
+    "featured_collection",
+    "pst_cta_banner"
   ]
 }
