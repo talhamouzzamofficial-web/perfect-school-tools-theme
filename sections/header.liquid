@@ -7,18 +7,113 @@
   onload="this.media='all'"
 >
 
+{%- liquid
+  assign pst_style_logo_w = section.settings.logo_width | default: settings.logo_width | default: 150
+  assign pst_style_logo_h = 48
+  if settings.logo != blank
+    assign pst_style_logo_h = pst_style_logo_w | times: 1.0 | divided_by: settings.logo.aspect_ratio | round
+  endif
+-%}
 <style>
   #shopify-section-{{ section.id }} .pst-header-wrapper {
     --pst-header-bg: {{ section.settings.header_background }};
     --pst-header-nav: {{ section.settings.nav_text_color }};
+    --pst-header-nav-hover: {{ section.settings.nav_hover_color }};
     --pst-header-cta-bg: {{ section.settings.cta_button_color }};
     --pst-header-cta-fg: {{ section.settings.cta_text_color }};
+    --pst-header-hamburger: {{ section.settings.hamburger_color }};
     background: var(--pst-header-bg);
-    border-bottom: 1px solid rgba(10, 37, 64, 0.12);
+    {%- if section.settings.header_border -%}
+      border-bottom: 1px solid {{ section.settings.header_border_color }};
+    {%- else -%}
+      border-bottom: none;
+    {%- endif -%}
   }
 
   #shopify-section-{{ section.id }} .pst-header-wrapper.color-{{ section.settings.color_scheme }}.gradient {
     background: var(--pst-header-bg);
+  }
+
+  #shopify-section-{{ section.id }} header.pst-header--sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  #shopify-section-{{ section.id }} .pst-header .header__icon--menu {
+    color: var(--pst-header-hamburger, #0a2540);
+  }
+
+  #shopify-section-{{ section.id }} .pst-header .header__icon--menu svg path {
+    fill: currentColor;
+  }
+
+  @media screen and (min-width: 990px) {
+    .pst-header--nav-left .pst-header__nav {
+      justify-content: flex-start;
+    }
+
+    .pst-header--nav-left .pst-header__nav-list {
+      justify-content: flex-start;
+    }
+
+    .pst-header--nav-right .pst-header__nav {
+      justify-content: flex-end;
+    }
+
+    .pst-header--nav-right .pst-header__nav-list {
+      justify-content: flex-end;
+    }
+
+    .pst-header--nav-center .pst-header__nav {
+      justify-content: center;
+    }
+
+    .pst-header--nav-center .pst-header__nav-list {
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .pst-header--hamburger-right .pst-header__grid {
+      grid-template-areas: 'logo actions drawer';
+      grid-template-columns: minmax(0, 1fr) auto auto;
+    }
+
+    .pst-header--hamburger-right .pst-header__drawer {
+      grid-area: drawer;
+      justify-self: end;
+      margin-left: 0;
+      margin-right: -1rem;
+    }
+
+    .pst-header--hamburger-right .pst-header__logo {
+      grid-area: logo;
+      justify-self: start;
+      text-align: left;
+    }
+
+    .pst-header--hamburger-right .pst-header__actions {
+      grid-area: actions;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-header__cta.pst-cta--small {
+    padding: 6px 14px;
+    font-size: 13px;
+    min-height: auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-header__cta.pst-cta--medium {
+    padding: 10px 20px;
+    font-size: 14px;
+    min-height: auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-header__cta.pst-cta--large {
+    padding: 14px 28px;
+    font-size: 16px;
+    min-height: auto;
   }
 
   .pst-header {
@@ -79,6 +174,28 @@
     .pst-header__logo {
       justify-self: start;
       text-align: left;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} header.pst-header--logo-center .pst-header__logo {
+      justify-self: center;
+      position: relative;
+      text-align: center;
+      min-height: {{ pst_style_logo_h }}px;
+    }
+
+    #shopify-section-{{ section.id }} header.pst-header--logo-center .pst-header__logo .header__heading {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    #shopify-section-{{ section.id }} header.pst-header--logo-center .pst-header__logo .header__heading-link {
+      align-items: center;
     }
   }
 
@@ -214,12 +331,12 @@
 
   .pst-header__nav-summary:hover,
   .pst-header__nav-summary:focus {
-    color: var(--pst-color-navy-light, #1a6ba0);
+    color: var(--pst-header-nav-hover, var(--pst-color-navy-light, #1a6ba0));
     outline: none;
   }
 
   .pst-header__nav-details[open] .pst-header__nav-summary {
-    color: var(--pst-color-navy-light, #1a6ba0);
+    color: var(--pst-header-nav-hover, var(--pst-color-navy-light, #1a6ba0));
   }
 
   .pst-header__dropdown {
@@ -251,7 +368,7 @@
 
   .pst-header__dropdown-link:hover,
   .pst-header__dropdown-link:focus {
-    color: var(--pst-color-navy-light, #1a6ba0);
+    color: var(--pst-header-nav-hover, var(--pst-color-navy-light, #1a6ba0));
     background: rgba(15, 72, 114, 0.06);
   }
 
@@ -267,7 +384,7 @@
 
   .pst-header__nav-link:hover,
   .pst-header__nav-link:focus {
-    color: var(--pst-color-navy-light, #1a6ba0);
+    color: var(--pst-header-nav-hover, var(--pst-color-navy-light, #1a6ba0));
   }
 
   .pst-header__actions {
@@ -285,7 +402,7 @@
     gap: 0.5rem;
     padding: 0.85rem 1.4rem;
     background-color: var(--pst-header-cta-bg, var(--pst-color-magenta, #e91e8c));
-    color: var(--pst-header-cta-fg, #fff) !important;
+    color: var(--pst-header-cta-fg, #fff);
     font-family: var(--font-body-family);
     font-size: 1.25rem;
     font-weight: 600;
@@ -308,7 +425,7 @@
 
   .pst-header__phone:hover,
   .pst-header__phone:focus {
-    color: var(--pst-color-navy-light, #1a6ba0);
+    color: var(--pst-header-nav-hover, var(--pst-color-navy-light, #1a6ba0));
     text-decoration: underline;
   }
 
@@ -328,7 +445,7 @@
   }
 
   @media screen and (max-width: 768px) {
-    .pst-header__quote {
+    .pst-header__quote.pst-header__cta {
       padding: 0.75rem;
       min-width: 4.4rem;
       min-height: 4.4rem;
@@ -367,17 +484,9 @@
     }
   }
 
-  @media screen and (min-width: 990px) {
-    .pst-header__quote {
-      padding: 1rem 2rem;
-      font-size: 1.4rem;
-    }
-  }
-
-  .pst-header__quote:hover,
-  .pst-header__quote:focus {
+  .pst-header__quote.pst-header__cta:hover,
+  .pst-header__quote.pst-header__cta:focus {
     filter: brightness(1.05);
-    color: #fff !important;
   }
 
   .pst-header__icons {
@@ -396,17 +505,31 @@
 </style>
 
 {%- style -%}
-  .section-header {
-    position: sticky;
-    margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
-    z-index: 4;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-header {
-      margin-bottom: {{ section.settings.margin_bottom }}px;
+  {%- if section.settings.header_sticky -%}
+    #shopify-section-{{ section.id }}.section-header {
+      position: sticky;
+      margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+      z-index: 4;
     }
-  }
+
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }}.section-header {
+        margin-bottom: {{ section.settings.margin_bottom }}px;
+      }
+    }
+  {%- else -%}
+    #shopify-section-{{ section.id }}.section-header {
+      position: relative;
+      margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+      z-index: auto;
+    }
+
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }}.section-header {
+        margin-bottom: {{ section.settings.margin_bottom }}px;
+      }
+    }
+  {%- endif -%}
 
   .pst-header {
     padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
@@ -434,9 +557,11 @@
 {% liquid
   assign header_tag = 'div'
 
-  if section.settings.sticky_header_type != 'none'
+  if section.settings.header_sticky and section.settings.sticky_header_type != 'none'
     assign header_tag = 'sticky-header'
   endif
+
+  assign pst_logo_width = section.settings.logo_width | default: settings.logo_width | default: 150
 %}
 
 <{{ header_tag }}
@@ -446,10 +571,11 @@
   class="header-wrapper pst-header-wrapper color-{{ section.settings.color_scheme }} gradient"
 >
   <header
-    class="pst-header{% if shop.customer_accounts_enabled %} pst-header--has-account{% endif %}{% if has_app_block %} pst-header--has-app{% endif %}"
+    class="pst-header{% if shop.customer_accounts_enabled %} pst-header--has-account{% endif %}{% if has_app_block %} pst-header--has-app{% endif %}{% if section.settings.logo_position == 'center' %} pst-header--logo-center{% endif %}{% if section.settings.nav_position == 'left' %} pst-header--nav-left{% elsif section.settings.nav_position == 'right' %} pst-header--nav-right{% else %} pst-header--nav-center{% endif %}{% if section.settings.header_sticky %} pst-header--sticky{% endif %}"
     role="banner"
+    style="color: {{ section.settings.nav_text_color }};"
   >
-    <div class="pst-header__grid">
+    <div class="pst-header__grid{% if section.settings.hamburger_position == 'right' %} pst-header--hamburger-right{% endif %}">
       <div class="pst-header__drawer">
         {% render 'pst-header-drawer' %}
       </div>
@@ -460,11 +586,11 @@
         {%- endif -%}
         <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
           {%- if settings.logo != blank -%}
-            <div class="header__heading-logo-wrapper">
+            <div class="header__heading-logo-wrapper" style="max-width: {{ pst_logo_width }}px;">
               {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-              {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-              {% capture sizes %}(min-width: 990px) {{ settings.logo_width }}px, 45vw{% endcapture %}
-              {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+              {%- assign logo_height = pst_logo_width | times: 1.0 | divided_by: settings.logo.aspect_ratio | round -%}
+              {% capture sizes %}(min-width: 990px) {{ pst_logo_width }}px, 45vw{% endcapture %}
+              {% capture widths %}{{ pst_logo_width }}, {{ pst_logo_width | times: 1.5 | round }}, {{ pst_logo_width | times: 2 }}{% endcapture %}
               {{
                 settings.logo
                 | image_url: width: 600
@@ -472,7 +598,7 @@
                   class: 'header__heading-logo motion-reduce',
                   widths: widths,
                   height: logo_height,
-                  width: settings.logo_width,
+                  width: pst_logo_width,
                   alt: logo_alt,
                   sizes: sizes,
                   preload: true
@@ -487,7 +613,11 @@
         {%- endif -%}
       </div>
 
-      <nav class="pst-header__nav" aria-label="{{ 'sections.header.menu' | t }}">
+      <nav
+        class="pst-header__nav"
+        aria-label="{{ 'sections.header.menu' | t }}"
+        style="--pst-header-nav: {{ section.settings.nav_text_color }}; --pst-header-nav-hover: {{ section.settings.nav_hover_color }};"
+      >
         <ul class="pst-header__nav-list" role="list">
           <li class="pst-header__nav-item">
             <a href="https://perfectposter.com/pages/postermaker" class="pst-header__nav-link">Poster Makers</a>
@@ -553,8 +683,12 @@
             {{- section.settings.header_phone | escape -}}
           </a>
         {%- endif -%}
-        {%- if pst_cta_url != blank and section.settings.cta_button_text != blank -%}
-          <a class="pst-header__quote" href="{{ pst_cta_url }}">
+        {%- if section.settings.show_cta_button and pst_cta_url != blank and section.settings.cta_button_text != blank -%}
+          <a
+            class="pst-header__cta pst-header__quote pst-cta--{{ section.settings.cta_button_size }}"
+            href="{{ pst_cta_url }}"
+            style="background-color: {{ section.settings.cta_button_color }}; color: {{ section.settings.cta_text_color }};"
+          >
             <span class="pst-header__quote-icon" aria-hidden="true">
               <span class="svg-wrapper">{{ 'icon-clipboard.svg' | inline_asset_content }}</span>
             </span>
@@ -811,7 +945,68 @@
   "settings": [
     {
       "type": "paragraph",
-      "content": "Main navigation is hardcoded (Perfect Poster / Gary’s links). Edit sections/header.liquid to change URLs."
+      "content": "Main navigation is hardcoded (Perfect Poster links). Edit sections/header.liquid to change URLs."
+    },
+    {
+      "type": "paragraph",
+      "content": "Logo"
+    },
+    {
+      "type": "select",
+      "id": "logo_position",
+      "label": "Logo Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "Logo Width (px)",
+      "min": 80,
+      "max": 300,
+      "step": 10,
+      "default": 150,
+      "unit": "px"
+    },
+    {
+      "type": "paragraph",
+      "content": "Navigation"
+    },
+    {
+      "type": "select",
+      "id": "nav_position",
+      "label": "Navigation Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "nav_text_color",
+      "label": "Nav Link Color",
+      "default": "#0A2540"
+    },
+    {
+      "type": "color",
+      "id": "nav_hover_color",
+      "label": "Nav Hover Color",
+      "default": "#E91E8C"
+    },
+    {
+      "type": "paragraph",
+      "content": "Request a Quote button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta_button",
+      "label": "Show Request a Quote Button",
+      "default": true
     },
     {
       "type": "text",
@@ -827,26 +1022,73 @@
     {
       "type": "color",
       "id": "cta_button_color",
-      "label": "CTA Button Color",
+      "label": "CTA Button Background",
       "default": "#E91E8C"
     },
     {
       "type": "color",
       "id": "cta_text_color",
       "label": "CTA Button Text Color",
-      "default": "#FFFFFF"
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "cta_button_size",
+      "label": "CTA Button Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile menu"
+    },
+    {
+      "type": "select",
+      "id": "hamburger_position",
+      "label": "Mobile Menu Icon Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "color",
+      "id": "hamburger_color",
+      "label": "Hamburger Icon Color",
+      "default": "#0A2540"
+    },
+    {
+      "type": "paragraph",
+      "content": "Header appearance"
     },
     {
       "type": "color",
       "id": "header_background",
-      "label": "Header Background",
-      "default": "#FFFFFF"
+      "label": "Header Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_sticky",
+      "label": "Sticky Header on Scroll",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "header_border",
+      "label": "Show Bottom Border",
+      "default": true
     },
     {
       "type": "color",
-      "id": "nav_text_color",
-      "label": "Navigation Text Color",
-      "default": "#0A2540"
+      "id": "header_border_color",
+      "label": "Border Color",
+      "default": "#e8e8e8"
     },
     {
       "type": "checkbox",
@@ -887,7 +1129,8 @@
         }
       ],
       "default": "always",
-      "label": "t:sections.header.settings.sticky_header_type.label"
+      "label": "t:sections.header.settings.sticky_header_type.label",
+      "info": "Used when “Sticky Header on Scroll” is enabled. Set to None to disable hide-on-scroll behavior."
     },
     {
       "type": "checkbox",
