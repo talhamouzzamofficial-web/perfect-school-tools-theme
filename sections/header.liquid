@@ -8,13 +8,17 @@
 >
 
 <style>
-  .pst-header-wrapper {
-    background: #fff;
+  #shopify-section-{{ section.id }} .pst-header-wrapper {
+    --pst-header-bg: {{ section.settings.header_background }};
+    --pst-header-nav: {{ section.settings.nav_text_color }};
+    --pst-header-cta-bg: {{ section.settings.cta_button_color }};
+    --pst-header-cta-fg: {{ section.settings.cta_text_color }};
+    background: var(--pst-header-bg);
     border-bottom: 1px solid rgba(10, 37, 64, 0.12);
   }
 
-  .pst-header-wrapper.color-{{ section.settings.color_scheme }}.gradient {
-    background: #fff;
+  #shopify-section-{{ section.id }} .pst-header-wrapper.color-{{ section.settings.color_scheme }}.gradient {
+    background: var(--pst-header-bg);
   }
 
   .pst-header {
@@ -100,7 +104,8 @@
     max-width: 18rem;
   }
 
-  .pst-header__brand-text {
+  /* Text shop name only when no logo image */
+  .pst-header__logo .header__heading-link .pst-header__brand-text--text-only.h2 {
     font-family: var(--font-heading-family);
     font-weight: 700;
     color: var(--pst-color-primary-dark-navy, #0a2540);
@@ -109,37 +114,48 @@
   }
 
   @media screen and (max-width: 768px) {
-    .pst-header__brand-text {
-      display: block;
-      font-size: 16px;
-      margin-top: 0.2rem;
-      max-width: 11rem;
+    .pst-header__logo .header__heading-link {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pst-header__logo .header__heading-logo-wrapper {
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: center;
+      max-width: 100%;
+    }
+
+    .pst-header__logo .header__heading-logo {
+      max-height: 60px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
     }
 
     .pst-header__brand-text--text-only {
-      margin-top: 0;
+      display: block;
+      font-size: 16px;
       max-width: 14rem;
     }
 
-    .pst-header__logo .header__heading-link .h2 {
+    .pst-header__logo .header__heading-link .pst-header__brand-text--text-only.h2 {
       font-size: 16px;
       line-height: 1.2;
     }
   }
 
   @media screen and (min-width: 769px) and (max-width: 989px) {
-    .pst-header__brand-text {
+    .pst-header__logo .header__heading-link .pst-header__brand-text--text-only.h2 {
       font-size: 1.5rem;
     }
   }
 
   @media screen and (min-width: 990px) {
-    .pst-header__brand-text--below-logo {
-      display: none;
-    }
-
-    .pst-header__logo .header__heading-link .h2 {
+    .pst-header__logo .header__heading-link .pst-header__brand-text--text-only.h2 {
       font-size: inherit;
+      text-align: left;
     }
   }
 
@@ -187,7 +203,7 @@
     font-family: var(--font-body-family);
     font-size: 1.4rem;
     font-weight: 600;
-    color: var(--pst-color-slate, #334155);
+    color: var(--pst-header-nav, var(--pst-color-slate, #334155));
     padding: 0.4rem 0;
     white-space: nowrap;
   }
@@ -228,7 +244,7 @@
     font-family: var(--font-body-family);
     font-size: 1.35rem;
     font-weight: 500;
-    color: var(--pst-color-slate, #334155);
+    color: var(--pst-header-nav, var(--pst-color-slate, #334155));
     text-decoration: none;
     white-space: nowrap;
   }
@@ -243,7 +259,7 @@
     font-family: var(--font-body-family);
     font-size: 1.4rem;
     font-weight: 600;
-    color: var(--pst-color-slate, #334155);
+    color: var(--pst-header-nav, var(--pst-color-slate, #334155));
     text-decoration: none;
     padding: 0.4rem 0;
     white-space: nowrap;
@@ -268,8 +284,8 @@
     justify-content: center;
     gap: 0.5rem;
     padding: 0.85rem 1.4rem;
-    background-color: var(--pst-color-magenta, #e91e8c);
-    color: #fff !important;
+    background-color: var(--pst-header-cta-bg, var(--pst-color-magenta, #e91e8c));
+    color: var(--pst-header-cta-fg, #fff) !important;
     font-family: var(--font-body-family);
     font-size: 1.25rem;
     font-weight: 600;
@@ -277,8 +293,23 @@
     border-radius: 0.4rem;
     border: none;
     cursor: pointer;
-    transition: filter 0.2s ease, transform 0.15s ease;
+    transition: filter 0.2s ease, transform 0.15s ease, background-color 0.2s ease;
     white-space: nowrap;
+  }
+
+  .pst-header__phone {
+    font-family: var(--font-body-family);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--pst-header-nav, var(--pst-color-slate, #334155));
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .pst-header__phone:hover,
+  .pst-header__phone:focus {
+    color: var(--pst-color-navy-light, #1a6ba0);
+    text-decoration: underline;
   }
 
   .pst-header__quote-icon {
@@ -356,7 +387,7 @@
   }
 
   .pst-header__icons .header__icon {
-    color: var(--pst-color-slate, #334155);
+    color: var(--pst-header-nav, var(--pst-color-slate, #334155));
   }
 
   header-drawer {
@@ -447,7 +478,6 @@
                   preload: true
               }}
             </div>
-            <span class="pst-header__brand-text pst-header__brand-text--below-logo">{{ shop.name }}</span>
           {%- else -%}
             <span class="h2 pst-header__brand-text pst-header__brand-text--text-only" style="color: var(--pst-color-primary-dark-navy);">{{ shop.name }}</span>
           {%- endif -%}
@@ -509,12 +539,26 @@
       </nav>
 
       <div class="pst-header__actions header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
-        {%- if section.settings.quote_url != blank -%}
-          <a class="pst-header__quote" href="{{ section.settings.quote_url }}">
+        {%- liquid
+          assign pst_cta_url = section.settings.cta_button_link
+          if pst_cta_url == blank
+            assign pst_cta_url = section.settings.quote_url
+          endif
+        -%}
+        {%- if section.settings.show_phone_header and section.settings.header_phone != blank -%}
+          <a
+            class="pst-header__phone"
+            href="tel:{{ section.settings.header_phone | replace: ' ', '' | replace: '(', '' | replace: ')', '' | replace: '-', '' }}"
+          >
+            {{- section.settings.header_phone | escape -}}
+          </a>
+        {%- endif -%}
+        {%- if pst_cta_url != blank and section.settings.cta_button_text != blank -%}
+          <a class="pst-header__quote" href="{{ pst_cta_url }}">
             <span class="pst-header__quote-icon" aria-hidden="true">
               <span class="svg-wrapper">{{ 'icon-clipboard.svg' | inline_asset_content }}</span>
             </span>
-            <span class="pst-header__quote-label">Request a Quote</span>
+            <span class="pst-header__quote-label">{{ section.settings.cta_button_text | escape }}</span>
           </a>
         {%- endif -%}
 
@@ -770,9 +814,56 @@
       "content": "Main navigation is hardcoded (Perfect Poster / Gary’s links). Edit sections/header.liquid to change URLs."
     },
     {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA Button Text",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_link",
+      "label": "CTA Button Link"
+    },
+    {
+      "type": "color",
+      "id": "cta_button_color",
+      "label": "CTA Button Color",
+      "default": "#E91E8C"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "CTA Button Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "header_background",
+      "label": "Header Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "nav_text_color",
+      "label": "Navigation Text Color",
+      "default": "#0A2540"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_phone_header",
+      "label": "Show Phone in Header",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "header_phone",
+      "label": "Header Phone Number",
+      "default": "(888) 535-4431"
+    },
+    {
       "type": "url",
       "id": "quote_url",
-      "label": "Request a Quote link"
+      "label": "Request a Quote link (fallback if CTA Button Link is empty)"
     },
     {
       "type": "select",

@@ -1,7 +1,7 @@
 {%- style -%}
   #shopify-section-{{ section.id }} .pst-announcement-bar {
-    background-color: var(--pst-color-primary-dark-navy, #0a2540);
-    color: rgba(255, 255, 255, 0.95);
+    background-color: {{ section.settings.bar_background }};
+    color: {{ section.settings.text_color }};
     font-family: var(--font-body-family);
     font-size: 1.3rem;
     line-height: 1.4;
@@ -20,46 +20,11 @@
     text-align: center;
   }
 
-  @media screen and (max-width: 768px) {
-    #shopify-section-{{ section.id }} .pst-announcement-bar {
-      font-size: 12px;
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__inner {
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 0.65rem 1rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__text {
-      display: none;
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__badge {
-      font-size: 12px;
-      padding: 0.3rem 0.65rem;
-      white-space: normal;
-      text-align: center;
-      max-width: 100%;
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__left {
-      width: 100%;
-      justify-content: center;
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__right {
-      width: 100%;
-      justify-content: center;
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__email {
-      display: none !important;
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__right a[href^='tel'] {
-      font-size: 12px;
-    }
+  #shopify-section-{{ section.id }} .pst-announcement-bar__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
   }
 
   @media screen and (min-width: 769px) {
@@ -69,16 +34,7 @@
       text-align: left;
       gap: 1.5rem;
     }
-  }
 
-  #shopify-section-{{ section.id }} .pst-announcement-bar__left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  @media screen and (min-width: 769px) {
     #shopify-section-{{ section.id }} .pst-announcement-bar__left {
       flex-direction: row;
       align-items: center;
@@ -89,7 +45,7 @@
   #shopify-section-{{ section.id }} .pst-announcement-bar__badge {
     display: inline-flex;
     align-items: center;
-    background-color: var(--pst-color-magenta, #e91e8c);
+    background-color: {{ section.settings.badge_color }};
     color: #fff;
     font-weight: 600;
     font-size: 1.2rem;
@@ -98,9 +54,10 @@
     white-space: nowrap;
   }
 
-  #shopify-section-{{ section.id }} .pst-announcement-bar__text {
-    color: rgba(253, 248, 240, 0.95);
+  #shopify-section-{{ section.id }} .pst-announcement-bar__tagline {
+    color: {{ section.settings.text_color }};
     font-weight: 400;
+    opacity: 0.95;
   }
 
   #shopify-section-{{ section.id }} .pst-announcement-bar__right {
@@ -118,36 +75,106 @@
     }
   }
 
-  #shopify-section-{{ section.id }} .pst-announcement-bar__right a {
+  #shopify-section-{{ section.id }} .pst-announcement-bar__link-accent {
     color: var(--pst-color-gold, #f5b731);
     text-decoration: none;
     font-weight: 600;
   }
 
-  #shopify-section-{{ section.id }} .pst-announcement-bar__right a:hover,
-  #shopify-section-{{ section.id }} .pst-announcement-bar__right a:focus {
+  #shopify-section-{{ section.id }} .pst-announcement-bar__link-accent:hover,
+  #shopify-section-{{ section.id }} .pst-announcement-bar__link-accent:focus {
     text-decoration: underline;
   }
+
+  #shopify-section-{{ section.id }} .pst-announcement-bar__mobile {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .pst-announcement-bar {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 6px 16px;
+      font-size: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__inner {
+      padding: 0.5rem 0;
+      width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__desktop {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__mobile {
+      display: flex;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__mobile-line1 {
+      font-weight: 600;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__mobile-line2 {
+      font-weight: 600;
+    }
+  }
+
 {%- endstyle -%}
 
 <div class="pst-announcement-bar">
   <div class="pst-announcement-bar__inner page-width">
-    <div class="pst-announcement-bar__left">
+    <div class="pst-announcement-bar__desktop pst-announcement-bar__left">
       {%- if section.settings.badge_text != blank -%}
         <span class="pst-announcement-bar__badge">{{ section.settings.badge_text | escape }}</span>
       {%- endif -%}
-      {%- if section.settings.serving_text != blank -%}
-        <span class="pst-announcement-bar__text">{{ section.settings.serving_text | escape }}</span>
+      {%- if section.settings.tagline_text != blank -%}
+        <span class="pst-announcement-bar__tagline">{{ section.settings.tagline_text | escape }}</span>
       {%- endif -%}
     </div>
-    <div class="pst-announcement-bar__right">
-      {%- if section.settings.phone != blank -%}
-        <a href="tel:{{ section.settings.phone | replace: ' ', '' | replace: '(', '' | replace: ')', '' | replace: '-', '' }}">
-          {{- section.settings.phone | escape -}}
+    <div class="pst-announcement-bar__desktop pst-announcement-bar__right">
+      {%- if section.settings.phone_number != blank -%}
+        <a
+          class="pst-announcement-bar__link-accent"
+          href="{{- section.settings.phone_link | default: 'tel:8885354431' | escape -}}"
+        >
+          {{- section.settings.phone_number | escape -}}
         </a>
       {%- endif -%}
-      {%- if section.settings.email != blank -%}
-        <a class="pst-announcement-bar__email" href="mailto:{{ section.settings.email | escape }}">{{ section.settings.email | escape }}</a>
+      {%- if section.settings.email_address != blank -%}
+        <a
+          class="pst-announcement-bar__email pst-email pst-announcement-bar__link-accent"
+          href="mailto:{{ section.settings.email_address | escape }}"
+        >
+          {{- section.settings.email_address | escape -}}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="pst-announcement-bar__mobile">
+      {%- if section.settings.mobile_line1 != blank -%}
+        <div class="pst-announcement-bar__mobile-line1">{{ section.settings.mobile_line1 | escape }}</div>
+      {%- endif -%}
+      {%- if section.settings.mobile_line2 != blank -%}
+        <a
+          class="pst-announcement-bar__mobile-line2 pst-announcement-bar__link-accent"
+          href="{{- section.settings.phone_link | default: 'tel:8885354431' | escape -}}"
+        >
+          {{- section.settings.mobile_line2 | escape -}}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.show_email_mobile and section.settings.email_address != blank -%}
+        <a
+          class="pst-email pst-announcement-bar__link-accent"
+          href="mailto:{{ section.settings.email_address | escape }}"
+        >
+          {{- section.settings.email_address | escape -}}
+        </a>
       {%- endif -%}
     </div>
   </div>
@@ -162,26 +189,68 @@
     {
       "type": "text",
       "id": "badge_text",
-      "label": "Badge text",
+      "label": "Badge Text",
       "default": "✓ Purchase Orders Accepted"
     },
     {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Badge Color",
+      "default": "#E91E8C"
+    },
+    {
       "type": "text",
-      "id": "serving_text",
-      "label": "Serving line",
+      "id": "tagline_text",
+      "label": "Tagline Text",
       "default": "Serving schools & districts for 30+ years"
     },
     {
       "type": "text",
-      "id": "phone",
-      "label": "Phone",
+      "id": "phone_number",
+      "label": "Phone Number",
       "default": "(888) 535-4431"
     },
     {
       "type": "text",
-      "id": "email",
-      "label": "Email",
+      "id": "phone_link",
+      "label": "Phone Link",
+      "default": "tel:8885354431"
+    },
+    {
+      "type": "text",
+      "id": "email_address",
+      "label": "Email Address",
       "default": "orders@perfectposter.com"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_email_mobile",
+      "label": "Show Email on Mobile",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "bar_background",
+      "label": "Bar Background Color",
+      "default": "#0A2540"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FDF8F0"
+    },
+    {
+      "type": "text",
+      "id": "mobile_line1",
+      "label": "Mobile Line 1 Text",
+      "default": "✓ Purchase Orders Accepted"
+    },
+    {
+      "type": "text",
+      "id": "mobile_line2",
+      "label": "Mobile Line 2 Text",
+      "default": "(888) 535-4431"
     }
   ]
 }

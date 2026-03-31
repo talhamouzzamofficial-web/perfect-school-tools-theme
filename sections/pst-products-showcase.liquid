@@ -1,285 +1,464 @@
 {%- style -%}
-  #shopify-section-{{ section.id }} .pst-products {
-    background-color: #fff;
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
+  #shopify-section-{{ section.id }} {
+    --pst-ps-navy: #0a2540;
+    --pst-ps-navy-mid: #0f4872;
+    --pst-ps-blue: #1a6ba0;
+    --pst-ps-magenta: #e91e8c;
+    --pst-ps-magenta-deep: #c2185b;
+    --pst-ps-gold: #f5b731;
+    --pst-ps-orange: #e65100;
+    --pst-ps-slate: #334155;
+    --pst-ps-white: #ffffff;
+    --pst-ps-shadow: rgba(10, 37, 64, 0.14);
+    --pst-ps-shadow-deep: rgba(10, 37, 64, 0.22);
+    --pst-ps-radius: 1.2rem;
+    --pst-ps-radius-sm: 999px;
   }
 
-  #shopify-section-{{ section.id }} .pst-products__inner {
+  @keyframes pst-ps-fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pst-ps-badge-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    }
+    50% {
+      transform: scale(1.04);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #shopify-section-{{ section.id }} .pst-showcase__card,
+    #shopify-section-{{ section.id }} .pst-showcase__badge {
+      animation: none !important;
+    }
+
+    #shopify-section-{{ section.id }} .pst-showcase__card {
+      opacity: 1;
+      transform: none;
+    }
+
+    #shopify-section-{{ section.id }} .pst-showcase__card:hover {
+      transform: none;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase {
+    background-color: var(--pst-ps-white);
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    font-family: var(--font-body-family);
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__inner {
     max-width: var(--page-width);
     margin: 0 auto;
     padding: 0 2rem;
   }
 
-  #shopify-section-{{ section.id }} .pst-products__title {
-    margin: 0 0 3.5rem;
-    font-family: var(--font-heading-family);
-    font-size: clamp(2.8rem, 4vw, 3.8rem);
-    font-weight: 800;
-    line-height: 1.15;
-    text-align: center;
-    color: var(--pst-color-navy, #0f4872);
+  @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .pst-showcase__inner {
+      padding: 0 1rem;
+    }
   }
 
-  #shopify-section-{{ section.id }} .pst-products__grid {
+  #shopify-section-{{ section.id }} .pst-showcase__header {
+    text-align: center;
+    max-width: 52rem;
+    margin: 0 auto 3.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__title {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 1rem;
+    padding-bottom: 0.85rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--pst-ps-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: min(12rem, 50%);
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--pst-ps-gold), #ffd666);
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__subtitle {
+    margin: 0;
+    font-size: clamp(1.45rem, 2.2vw, 1.75rem);
+    line-height: 1.55;
+    font-weight: 500;
+    color: var(--pst-ps-navy-mid);
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  @media screen and (max-width: 768px) {
-    #shopify-section-{{ section.id }} .pst-products__inner {
-      padding: 0 1rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-products__grid {
-      grid-template-columns: 1fr;
-    }
-
-    #shopify-section-{{ section.id }} .pst-products__card {
-      width: 100%;
-      max-width: none;
-    }
-  }
-
   @media screen and (min-width: 769px) and (max-width: 1023px) {
-    #shopify-section-{{ section.id }} .pst-products__grid {
+    #shopify-section-{{ section.id }} .pst-showcase__grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media screen and (min-width: 1024px) {
-    #shopify-section-{{ section.id }} .pst-products__grid {
+    #shopify-section-{{ section.id }} .pst-showcase__grid {
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.8rem;
+      gap: 1.75rem;
+      align-items: stretch;
     }
   }
 
-  #shopify-section-{{ section.id }} .pst-products__card {
+  #shopify-section-{{ section.id }} .pst-showcase__card {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 2rem 1.8rem 2.2rem;
-    background: #fff;
-    border: 1px solid rgba(15, 72, 114, 0.1);
-    border-radius: 0.6rem;
-    box-shadow: 0 2px 10px rgba(10, 37, 64, 0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: var(--pst-ps-white);
+    border-radius: var(--pst-ps-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 32px var(--pst-ps-shadow);
+    transition: transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1), box-shadow 0.35s ease;
+    opacity: 0;
+    animation: pst-ps-fade-in-up 0.65s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
   }
 
-  #shopify-section-{{ section.id }} .pst-products__card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(10, 37, 64, 0.12);
+  #shopify-section-{{ section.id }} .pst-showcase__grid .pst-showcase__card:nth-child(1) {
+    animation-delay: 0.1s;
   }
 
-  #shopify-section-{{ section.id }} .pst-products__badge {
-    display: inline-block;
-    align-self: flex-start;
-    margin-bottom: 1rem;
-    padding: 0.35rem 0.85rem;
-    font-family: var(--font-body-family);
+  #shopify-section-{{ section.id }} .pst-showcase__grid .pst-showcase__card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__grid .pst-showcase__card:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__grid .pst-showcase__card:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 48px var(--pst-ps-shadow-deep);
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__card-hero {
+    position: relative;
+    flex-shrink: 0;
+    min-height: 16rem;
+    padding: 2.5rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__card--1 .pst-showcase__card-hero {
+    background: linear-gradient(135deg, var(--pst-ps-navy) 0%, var(--pst-ps-blue) 100%);
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__card--2 .pst-showcase__card-hero {
+    background: linear-gradient(135deg, var(--pst-ps-magenta) 0%, var(--pst-ps-magenta-deep) 100%);
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__card--3 .pst-showcase__card-hero {
+    background: linear-gradient(135deg, var(--pst-ps-gold) 0%, var(--pst-ps-orange) 100%);
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__card--4 .pst-showcase__card-hero {
+    background: linear-gradient(135deg, var(--pst-ps-blue) 0%, var(--pst-ps-navy) 100%);
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+    padding: 0.4rem 1rem;
     font-size: 1.15rem;
     font-weight: 700;
-    border-radius: 0.35rem;
+    letter-spacing: 0.02em;
+    border-radius: var(--pst-ps-radius-sm);
     line-height: 1.3;
+    animation: pst-ps-badge-pulse 2.8s ease-in-out infinite;
   }
 
-  #shopify-section-{{ section.id }} .pst-products__badge--popular {
-    background-color: var(--pst-color-magenta, #e91e8c);
-    color: #fff;
+  #shopify-section-{{ section.id }} .pst-showcase__badge--magenta {
+    background: var(--pst-ps-magenta);
+    color: var(--pst-ps-white);
+    box-shadow: 0 4px 14px rgba(233, 30, 140, 0.45);
   }
 
-  #shopify-section-{{ section.id }} .pst-products__badge--gold {
-    background-color: #f5b731;
-    color: var(--pst-color-primary-dark-navy, #0a2540);
+  #shopify-section-{{ section.id }} .pst-showcase__badge--gold {
+    background: var(--pst-ps-gold);
+    color: var(--pst-ps-navy);
+    box-shadow: 0 4px 14px rgba(245, 183, 49, 0.45);
   }
 
-  #shopify-section-{{ section.id }} .pst-products__badge-spacer {
-    min-height: 2.8rem;
-    margin-bottom: 1rem;
+  #shopify-section-{{ section.id }} .pst-showcase__icon {
+    font-size: 80px;
+    line-height: 1;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
   }
 
-  #shopify-section-{{ section.id }} .pst-products__card-title {
-    margin: 0 0 0.75rem;
+  #shopify-section-{{ section.id }} .pst-showcase__hero-title {
+    margin: 0;
+    max-width: 20ch;
     font-family: var(--font-heading-family);
-    font-size: 1.65rem;
-    font-weight: 700;
-    line-height: 1.25;
-    color: var(--pst-color-primary-dark-navy, #0a2540);
+    font-size: 1.55rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--pst-ps-white);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
   }
 
-  #shopify-section-{{ section.id }} .pst-products__price {
-    margin: 0 0 1.2rem;
+  #shopify-section-{{ section.id }} .pst-showcase__card--3 .pst-showcase__hero-title {
+    color: var(--pst-ps-navy);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
   }
 
-  #shopify-section-{{ section.id }} .pst-price {
+  #shopify-section-{{ section.id }} .pst-showcase__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem 1.5rem 2rem;
+    background: var(--pst-ps-white);
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__price {
+    margin: 0 0 1.25rem;
     font-family: var(--font-heading-family);
     font-size: 2rem;
     font-weight: 800;
-    color: var(--pst-color-navy, #0f4872);
+    color: var(--pst-ps-navy);
+    line-height: 1.2;
   }
 
-  #shopify-section-{{ section.id }} .pst-products__list {
-    margin: 0 0 1.8rem;
-    padding-left: 1.2rem;
-    font-family: var(--font-body-family);
-    font-size: 1.4rem;
-    line-height: 1.45;
-    color: var(--pst-color-slate, #334155);
+  #shopify-section-{{ section.id }} .pst-showcase__list {
+    margin: 0 0 1.75rem;
+    padding: 0;
+    list-style: none;
     flex-grow: 1;
   }
 
-  #shopify-section-{{ section.id }} .pst-products__list li {
-    margin-bottom: 0.45rem;
+  #shopify-section-{{ section.id }} .pst-showcase__list li {
+    position: relative;
+    padding-left: 1.65rem;
+    margin-bottom: 0.55rem;
+    font-size: 1.38rem;
+    line-height: 1.45;
+    color: var(--pst-ps-slate);
   }
 
-  #shopify-section-{{ section.id }} .pst-products__actions {
+  #shopify-section-{{ section.id }} .pst-showcase__list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0.05em;
+    color: var(--pst-ps-gold);
+    font-weight: 800;
+    font-size: 1.15em;
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__actions {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.75rem;
     margin-top: auto;
   }
 
-  #shopify-section-{{ section.id }} .pst-products__btn {
+  #shopify-section-{{ section.id }} .pst-showcase__btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 4.6rem;
-    padding: 0 1.4rem;
-    font-family: var(--font-body-family);
-    font-size: 1.4rem;
-    font-weight: 600;
+    min-height: 4.75rem;
+    padding: 0 1.35rem;
+    font-size: 1.38rem;
+    font-weight: 700;
     text-decoration: none;
-    border-radius: 0.45rem;
     text-align: center;
-    transition: filter 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    border-radius: 0.55rem;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
   }
 
-  #shopify-section-{{ section.id }} .pst-products__btn--quote {
-    background-color: var(--pst-color-magenta, #e91e8c);
-    color: #fff;
-    border: 2px solid var(--pst-color-magenta, #e91e8c);
+  #shopify-section-{{ section.id }} .pst-showcase__btn--quote {
+    background-color: var(--pst-ps-magenta);
+    color: var(--pst-ps-white);
+    border-color: var(--pst-ps-magenta);
   }
 
-  #shopify-section-{{ section.id }} .pst-products__btn--quote:hover,
-  #shopify-section-{{ section.id }} .pst-products__btn--quote:focus {
-    filter: brightness(1.06);
-    color: #fff;
+  #shopify-section-{{ section.id }} .pst-showcase__btn--quote:hover,
+  #shopify-section-{{ section.id }} .pst-showcase__btn--quote:focus {
+    background-color: var(--pst-ps-magenta-deep);
+    border-color: var(--pst-ps-magenta-deep);
+    color: var(--pst-ps-white);
   }
 
-  #shopify-section-{{ section.id }} .pst-products__btn--learn {
+  #shopify-section-{{ section.id }} .pst-showcase__btn--learn {
     background-color: transparent;
-    color: var(--pst-color-navy, #0f4872);
-    border: 2px solid var(--pst-color-navy, #0f4872);
+    color: var(--pst-ps-navy);
+    border-color: var(--pst-ps-navy);
   }
 
-  #shopify-section-{{ section.id }} .pst-products__btn--learn:hover,
-  #shopify-section-{{ section.id }} .pst-products__btn--learn:focus {
-    background-color: rgba(15, 72, 114, 0.06);
-    color: var(--pst-color-navy, #0f4872);
+  #shopify-section-{{ section.id }} .pst-showcase__btn--learn:hover,
+  #shopify-section-{{ section.id }} .pst-showcase__btn--learn:focus {
+    background-color: var(--pst-ps-navy);
+    color: var(--pst-ps-white);
+    border-color: var(--pst-ps-navy);
   }
 {%- endstyle -%}
 
-<section class="pst-products">
-  <div class="pst-products__inner">
-    {%- if section.settings.heading != blank -%}
-      <h2 class="pst-products__title">{{ section.settings.heading | escape }}</h2>
-    {%- endif -%}
+<section class="pst-showcase">
+  <div class="pst-showcase__inner">
+    <header class="pst-showcase__header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="pst-showcase__title">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p class="pst-showcase__subtitle">{{ section.settings.subtitle | escape }}</p>
+      {%- endif -%}
+    </header>
 
-    <div class="pst-products__grid">
-      <article class="pst-products__card">
-        <span class="pst-products__badge pst-products__badge--popular">Most Popular</span>
-        <h3 class="pst-products__card-title">Perfect Poster Maker System</h3>
-        <p class="pst-products__price"><span class="pst-price">$3,795</span></p>
-        <ul class="pst-products__list">
-          <li>24&quot; Full Color Printer</li>
-          <li>Full Set of Ink (225-275 posters)</li>
-          <li>Premium Paper Roll</li>
-          <li>Free Digital Content Access</li>
-        </ul>
-        <div class="pst-products__actions">
-          {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
-            <a class="pst-products__btn pst-products__btn--quote" href="{{ section.settings.quote_link }}">
-              {{- section.settings.quote_label | escape -}}
-            </a>
-          {%- endif -%}
-          {%- if section.settings.learn_label != blank and section.settings.learn_link != blank -%}
-            <a class="pst-products__btn pst-products__btn--learn" href="{{ section.settings.learn_link }}">
-              {{- section.settings.learn_label | escape -}}
-            </a>
-          {%- endif -%}
+    <div class="pst-showcase__grid">
+      <article class="pst-showcase__card pst-showcase__card--1">
+        <div class="pst-showcase__card-hero">
+          <span class="pst-showcase__badge pst-showcase__badge--magenta">{{ 'Most Popular' | escape }}</span>
+          <span class="pst-showcase__icon" aria-hidden="true">🖨️</span>
+          <h3 class="pst-showcase__hero-title">{{ 'Perfect Poster Maker System' | escape }}</h3>
+        </div>
+        <div class="pst-showcase__body">
+          <p class="pst-showcase__price">{{ '$3,795' | escape }}</p>
+          <ul class="pst-showcase__list">
+            <li>24&quot; Full Color Printer</li>
+            <li>Full Set of Ink (225-275 posters)</li>
+            <li>Premium Paper Roll</li>
+            <li>Free Digital Content Access</li>
+          </ul>
+          <div class="pst-showcase__actions">
+            {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
+                {{- section.settings.quote_label | escape -}}
+              </a>
+            {%- endif -%}
+            {%- if section.settings.learn_label != blank and section.settings.learn_link != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ section.settings.learn_link }}">
+                {{- section.settings.learn_label | escape -}}
+              </a>
+            {%- endif -%}
+          </div>
         </div>
       </article>
 
-      <article class="pst-products__card">
-        <span class="pst-products__badge pst-products__badge--gold">Best Value</span>
-        <h3 class="pst-products__card-title">Perfect Awards &amp; Cut System</h3>
-        <p class="pst-products__price"><span class="pst-price">$3,995</span></p>
-        <ul class="pst-products__list">
-          <li>Awards Printer</li>
-          <li>Cutting System</li>
-          <li>Award Templates</li>
-          <li>Certificate Paper</li>
-        </ul>
-        <div class="pst-products__actions">
-          {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
-            <a class="pst-products__btn pst-products__btn--quote" href="{{ section.settings.quote_link }}">
-              {{- section.settings.quote_label | escape -}}
-            </a>
-          {%- endif -%}
-          {%- if section.settings.learn_label != blank and section.settings.learn_link != blank -%}
-            <a class="pst-products__btn pst-products__btn--learn" href="{{ section.settings.learn_link }}">
-              {{- section.settings.learn_label | escape -}}
-            </a>
-          {%- endif -%}
+      <article class="pst-showcase__card pst-showcase__card--2">
+        <div class="pst-showcase__card-hero">
+          <span class="pst-showcase__badge pst-showcase__badge--gold">{{ 'Best Value' | escape }}</span>
+          <span class="pst-showcase__icon" aria-hidden="true">🏆</span>
+          <h3 class="pst-showcase__hero-title">
+            {{ 'Perfect Awards & Cut System' | escape }}
+          </h3>
+        </div>
+        <div class="pst-showcase__body">
+          <p class="pst-showcase__price">{{ '$3,995' | escape }}</p>
+          <ul class="pst-showcase__list">
+            <li>Awards Printer</li>
+            <li>Cutting System</li>
+            <li>Award Templates</li>
+            <li>Certificate Paper</li>
+          </ul>
+          <div class="pst-showcase__actions">
+            {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
+                {{- section.settings.quote_label | escape -}}
+              </a>
+            {%- endif -%}
+            {%- if section.settings.learn_label != blank and section.settings.learn_link != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ section.settings.learn_link }}">
+                {{- section.settings.learn_label | escape -}}
+              </a>
+            {%- endif -%}
+          </div>
         </div>
       </article>
 
-      <article class="pst-products__card">
-        <div class="pst-products__badge-spacer" aria-hidden="true"></div>
-        <h3 class="pst-products__card-title">Perfect Awards Maker</h3>
-        <p class="pst-products__price"><span class="pst-price">$2,995</span></p>
-        <ul class="pst-products__list">
-          <li>Awards Printer</li>
-          <li>Template Library</li>
-          <li>Plaque Supplies</li>
-          <li>Full Ink Set</li>
-        </ul>
-        <div class="pst-products__actions">
-          {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
-            <a class="pst-products__btn pst-products__btn--quote" href="{{ section.settings.quote_link }}">
-              {{- section.settings.quote_label | escape -}}
-            </a>
-          {%- endif -%}
-          {%- if section.settings.learn_label != blank and section.settings.learn_link != blank -%}
-            <a class="pst-products__btn pst-products__btn--learn" href="{{ section.settings.learn_link }}">
-              {{- section.settings.learn_label | escape -}}
-            </a>
-          {%- endif -%}
+      <article class="pst-showcase__card pst-showcase__card--3">
+        <div class="pst-showcase__card-hero">
+          <span class="pst-showcase__icon" aria-hidden="true">🎖️</span>
+          <h3 class="pst-showcase__hero-title">{{ 'Perfect Awards Maker' | escape }}</h3>
+        </div>
+        <div class="pst-showcase__body">
+          <p class="pst-showcase__price">{{ '$2,995' | escape }}</p>
+          <ul class="pst-showcase__list">
+            <li>Awards Printer</li>
+            <li>Template Library</li>
+            <li>Plaque Supplies</li>
+            <li>Full Ink Set</li>
+          </ul>
+          <div class="pst-showcase__actions">
+            {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
+                {{- section.settings.quote_label | escape -}}
+              </a>
+            {%- endif -%}
+            {%- if section.settings.learn_label != blank and section.settings.learn_link != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ section.settings.learn_link }}">
+                {{- section.settings.learn_label | escape -}}
+              </a>
+            {%- endif -%}
+          </div>
         </div>
       </article>
 
-      <article class="pst-products__card">
-        <div class="pst-products__badge-spacer" aria-hidden="true"></div>
-        <h3 class="pst-products__card-title">Cold Laminator System</h3>
-        <p class="pst-products__price"><span class="pst-price">From $99</span></p>
-        <ul class="pst-products__list">
-          <li>No Heat Required</li>
-          <li>Safe for Schools</li>
-          <li>Multiple Sizes</li>
-          <li>Peel &amp; Stick Options</li>
-        </ul>
-        <div class="pst-products__actions">
-          {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
-            <a class="pst-products__btn pst-products__btn--quote" href="{{ section.settings.quote_link }}">
-              {{- section.settings.quote_label | escape -}}
-            </a>
-          {%- endif -%}
-          {%- if section.settings.learn_label != blank and section.settings.learn_link != blank -%}
-            <a class="pst-products__btn pst-products__btn--learn" href="{{ section.settings.learn_link }}">
-              {{- section.settings.learn_label | escape -}}
-            </a>
-          {%- endif -%}
+      <article class="pst-showcase__card pst-showcase__card--4">
+        <div class="pst-showcase__card-hero">
+          <span class="pst-showcase__icon" aria-hidden="true">🗂️</span>
+          <h3 class="pst-showcase__hero-title">{{ 'Cold Laminator System' | escape }}</h3>
+        </div>
+        <div class="pst-showcase__body">
+          <p class="pst-showcase__price">{{ 'From $99' | escape }}</p>
+          <ul class="pst-showcase__list">
+            <li>No Heat Required</li>
+            <li>Safe for Schools</li>
+            <li>Multiple Sizes</li>
+            <li>Peel &amp; Stick Options</li>
+          </ul>
+          <div class="pst-showcase__actions">
+            {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
+                {{- section.settings.quote_label | escape -}}
+              </a>
+            {%- endif -%}
+            {%- if section.settings.learn_label != blank and section.settings.learn_link != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ section.settings.learn_link }}">
+                {{- section.settings.learn_label | escape -}}
+              </a>
+            {%- endif -%}
+          </div>
         </div>
       </article>
     </div>
@@ -299,8 +478,14 @@
       "default": "Professional Visual Tools for Every School"
     },
     {
-      "type": "header",
-      "content": "Buttons"
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Poster makers, awards systems, and laminators built for classrooms and districts."
+    },
+    {
+      "type": "paragraph",
+      "content": "Quote and Learn More buttons use the links below for all four cards."
     },
     {
       "type": "text",
@@ -325,8 +510,8 @@
       "label": "Learn more link"
     },
     {
-      "type": "header",
-      "content": "Spacing"
+      "type": "paragraph",
+      "content": "Section spacing"
     },
     {
       "type": "range",
@@ -351,7 +536,8 @@
   ],
   "presets": [
     {
-      "name": "PST Products showcase"
+      "name": "PST Products showcase",
+      "settings": {}
     }
   ]
 }

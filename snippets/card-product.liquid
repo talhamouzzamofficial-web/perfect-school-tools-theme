@@ -1,5 +1,8 @@
 {% comment %}
-  Renders a product card
+  Renders a product card (Dawn).
+
+  PST brand presentation (radius, shadow, gradient media band, badges, buttons, typography)
+  is styled in assets/pst-card-product.css (loaded from layout/theme.liquid).
 
   Accepts:
   - card_product: {Object} Product Liquid object (optional)
@@ -128,16 +131,16 @@
             {%- if card_product.available == false -%}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
+                class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }} pst-product-card__badge pst-product-card__badge--sold-out"
               >
-                {{- 'products.product.sold_out' | t -}}
+                SOLD OUT
               </span>
             {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }} pst-product-card__badge pst-product-card__badge--sale"
               >
-                {{- 'products.product.on_sale' | t -}}
+                SALE
               </span>
             {%- endif -%}
           </div>
@@ -552,16 +555,16 @@
           {%- if card_product.available == false -%}
             <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
-              class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
+              class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }} pst-product-card__badge pst-product-card__badge--sold-out"
             >
-              {{- 'products.product.sold_out' | t -}}
+              SOLD OUT
             </span>
           {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
             <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
-              class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+              class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }} pst-product-card__badge pst-product-card__badge--sale"
             >
-              {{- 'products.product.on_sale' | t -}}
+              SALE
             </span>
           {%- endif -%}
         </div>
