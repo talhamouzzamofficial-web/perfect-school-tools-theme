@@ -27,16 +27,28 @@
     grid-template-areas: 'drawer logo actions';
     grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
-    gap: 0.8rem 1.2rem;
+    gap: 0.8rem 0.6rem;
     min-height: 6.8rem;
     max-width: var(--page-width);
     margin: 0 auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    .pst-header {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .pst-header__grid {
+      gap: 0.5rem 0.4rem;
+    }
   }
 
   @media screen and (min-width: 990px) {
     .pst-header__grid {
       grid-template-areas: 'logo nav actions';
       grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 0.8rem 1.2rem;
     }
   }
 
@@ -56,6 +68,7 @@
     grid-area: logo;
     justify-self: center;
     text-align: center;
+    min-width: 0;
   }
 
   @media screen and (min-width: 990px) {
@@ -65,12 +78,69 @@
     }
   }
 
+  .pst-header__logo .header__heading {
+    line-height: 1.15;
+  }
+
   .pst-header__logo .header__heading-link {
     text-decoration: none;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: 990px) {
+    .pst-header__logo .header__heading-link {
+      align-items: flex-start;
+    }
   }
 
   .pst-header__logo .header__heading-logo-wrapper {
     max-width: 18rem;
+  }
+
+  .pst-header__brand-text {
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    color: var(--pst-color-primary-dark-navy, #0a2540);
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .pst-header__brand-text {
+      display: block;
+      font-size: 16px;
+      margin-top: 0.2rem;
+      max-width: 11rem;
+    }
+
+    .pst-header__brand-text--text-only {
+      margin-top: 0;
+      max-width: 14rem;
+    }
+
+    .pst-header__logo .header__heading-link .h2 {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 989px) {
+    .pst-header__brand-text {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .pst-header__brand-text--below-logo {
+      display: none;
+    }
+
+    .pst-header__logo .header__heading-link .h2 {
+      font-size: inherit;
+    }
   }
 
   .pst-header__nav {
@@ -196,6 +266,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
     padding: 0.85rem 1.4rem;
     background-color: var(--pst-color-magenta, #e91e8c);
     color: #fff !important;
@@ -208,6 +279,61 @@
     cursor: pointer;
     transition: filter 0.2s ease, transform 0.15s ease;
     white-space: nowrap;
+  }
+
+  .pst-header__quote-icon {
+    display: none;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pst-header__quote-icon svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: currentColor;
+  }
+
+  @media screen and (max-width: 768px) {
+    .pst-header__quote {
+      padding: 0.75rem;
+      min-width: 4.4rem;
+      min-height: 4.4rem;
+    }
+
+    .pst-header__quote-icon {
+      display: flex;
+    }
+
+    .pst-header__quote-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .pst-header__quote-icon {
+      display: none;
+    }
+
+    .pst-header__quote-label {
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: nowrap;
+    }
   }
 
   @media screen and (min-width: 990px) {
@@ -321,8 +447,9 @@
                   preload: true
               }}
             </div>
+            <span class="pst-header__brand-text pst-header__brand-text--below-logo">{{ shop.name }}</span>
           {%- else -%}
-            <span class="h2" style="color: var(--pst-color-primary-dark-navy);">{{ shop.name }}</span>
+            <span class="h2 pst-header__brand-text pst-header__brand-text--text-only" style="color: var(--pst-color-primary-dark-navy);">{{ shop.name }}</span>
           {%- endif -%}
         </a>
         {%- if request.page_type == 'index' -%}
@@ -383,7 +510,12 @@
 
       <div class="pst-header__actions header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
         {%- if section.settings.quote_url != blank -%}
-          <a class="pst-header__quote" href="{{ section.settings.quote_url }}">Request a Quote</a>
+          <a class="pst-header__quote" href="{{ section.settings.quote_url }}">
+            <span class="pst-header__quote-icon" aria-hidden="true">
+              <span class="svg-wrapper">{{ 'icon-clipboard.svg' | inline_asset_content }}</span>
+            </span>
+            <span class="pst-header__quote-label">Request a Quote</span>
+          </a>
         {%- endif -%}
 
         <div class="desktop-localization-wrapper pst-header__localization small-hide medium-hide">

@@ -20,7 +20,49 @@
     text-align: center;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .pst-announcement-bar {
+      font-size: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__inner {
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.65rem 1rem;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__text {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__badge {
+      font-size: 12px;
+      padding: 0.3rem 0.65rem;
+      white-space: normal;
+      text-align: center;
+      max-width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__left {
+      width: 100%;
+      justify-content: center;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__right {
+      width: 100%;
+      justify-content: center;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__email {
+      display: none !important;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__right a[href^='tel'] {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
     #shopify-section-{{ section.id }} .pst-announcement-bar__inner {
       flex-direction: row;
       justify-content: space-between;
@@ -36,7 +78,7 @@
     gap: 0.6rem;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 769px) {
     #shopify-section-{{ section.id }} .pst-announcement-bar__left {
       flex-direction: row;
       align-items: center;
@@ -68,7 +110,7 @@
     gap: 0.4rem;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 769px) {
     #shopify-section-{{ section.id }} .pst-announcement-bar__right {
       flex-direction: row;
       align-items: center;
@@ -105,7 +147,7 @@
         </a>
       {%- endif -%}
       {%- if section.settings.email != blank -%}
-        <a href="mailto:{{ section.settings.email | escape }}">{{ section.settings.email | escape }}</a>
+        <a class="pst-announcement-bar__email" href="mailto:{{ section.settings.email | escape }}">{{ section.settings.email | escape }}</a>
       {%- endif -%}
     </div>
   </div>

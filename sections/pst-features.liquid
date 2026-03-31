@@ -41,13 +41,24 @@
     gap: 2rem;
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .pst-features__inner {
+      padding: 0 1rem;
+    }
+
+    #shopify-section-{{ section.id }} .pst-features__card {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     #shopify-section-{{ section.id }} .pst-features__grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media screen and (min-width: 990px) {
+  @media screen and (min-width: 1024px) {
     #shopify-section-{{ section.id }} .pst-features__grid {
       grid-template-columns: repeat(3, 1fr);
       gap: 2.4rem 2rem;
