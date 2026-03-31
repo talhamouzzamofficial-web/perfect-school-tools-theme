@@ -15,7 +15,7 @@
       "type": "header",
       "settings": {
         "quote_url": "/pages/contact",
-        "sticky_header_type": "always",
+        "sticky_header_type": "none",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
