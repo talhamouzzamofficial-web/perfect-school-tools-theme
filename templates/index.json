@@ -7,9 +7,9 @@
         "heading": "Poster Makers & Visual Supplies for Schools",
         "subtext": "Empower your school with professional poster printing, awards systems, and visual learning tools. Trusted by over 5,000 schools and 1,500 districts nationwide.",
         "quote_label": "Request a Quote",
-        "quote_link": "shopify://pages/contact",
+        "quote_link": "/pages/contact",
         "products_label": "View Products",
-        "products_link": "shopify://collections/all",
+        "products_link": "https://perfectposter.com/pages/postermaker",
         "phone": "(888) 535-4431",
         "shipping_note": "Free Shipping Available"
       }
@@ -129,9 +129,9 @@
       "settings": {
         "heading": "Professional Visual Tools for Every School",
         "quote_label": "Request a Quote",
-        "quote_link": "shopify://pages/contact",
+        "quote_link": "/pages/contact",
         "learn_label": "Learn More",
-        "learn_link": "shopify://collections/all",
+        "learn_link": "https://perfectposter.com/collections/all",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -212,7 +212,7 @@
         "heading": "Ready to Transform Your School's Visual Communication?",
         "subtext": "Get a personalized quote for your school or district. We accept purchase orders.",
         "button_label": "Request a Quote",
-        "button_link": "shopify://pages/contact",
+        "button_link": "/pages/contact",
         "phone": "(888) 535-4431",
         "padding_top": 64,
         "padding_bottom": 64

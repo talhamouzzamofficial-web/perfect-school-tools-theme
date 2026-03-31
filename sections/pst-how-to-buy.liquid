@@ -1,0 +1,683 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --pst-navy: #0a2540;
+    --pst-magenta: #e91e8c;
+    --pst-gold: #f5b731;
+    --pst-warm: #fdf8f0;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb {
+    font-family: var(--font-body-family);
+    color: #334155;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__hero {
+    background: var(--pst-navy);
+    padding: 3.2rem 2rem 3.8rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__hero-title {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.6rem, 4vw, 3.6rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__hero-sub {
+    margin: 0 auto;
+    max-width: 56rem;
+    font-size: 1.65rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__inner {
+    max-width: 130rem;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__section-heading {
+    margin: 0 0 3rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+    font-weight: 800;
+    color: var(--pst-navy);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__methods {
+    background: #fff;
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__methods-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__cards-3 {
+    display: grid;
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-htb__cards-3 {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.2rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__method-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem 2rem 2.2rem;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.07);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__badge {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    padding: 0.3rem 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--pst-magenta);
+    border-radius: 0.35rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__icon-lg {
+    font-size: 3.8rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__card-title {
+    margin: 0 0 1.2rem;
+    font-family: var(--font-heading-family);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__steps {
+    text-align: left;
+    margin: 0 0 1.8rem;
+    padding-left: 1.2rem;
+    font-size: 1.4rem;
+    line-height: 1.55;
+    flex-grow: 1;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__steps li {
+    margin-bottom: 0.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.8rem;
+    width: 100%;
+    padding: 0 1.5rem;
+    font-family: var(--font-body-family);
+    font-size: 1.45rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: filter 0.2s ease, background 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__btn--magenta {
+    background: var(--pst-magenta);
+    color: #fff;
+    border: 2px solid var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__btn--magenta:hover,
+  #shopify-section-{{ section.id }} .pst-htb__btn--magenta:focus {
+    filter: brightness(1.06);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__btn--outline {
+    background: transparent;
+    color: var(--pst-navy);
+    border: 2px solid var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__btn--outline:hover,
+  #shopify-section-{{ section.id }} .pst-htb__btn--outline:focus {
+    background: rgba(10, 37, 64, 0.06);
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__po-section {
+    background: var(--pst-warm);
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__po-inner {
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__po-heading {
+    margin: 0 0 2.5rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3vw, 2.9rem);
+    font-weight: 800;
+    color: var(--pst-navy);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__timeline-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.2rem 1.8rem;
+    align-items: start;
+    padding: 1.2rem 1.4rem;
+    background: #fff;
+    border-radius: 0.65rem;
+    border: 1px solid rgba(15, 72, 114, 0.08);
+    box-shadow: 0 2px 12px rgba(10, 37, 64, 0.05);
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__step-num {
+    width: 4.2rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading-family);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    background: var(--pst-magenta);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__step-body h3 {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__step-body p {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__funding {
+    background: #fff;
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__funding-inner {
+    max-width: 110rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__grid-2 {
+    display: grid;
+    gap: 1.8rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-htb__grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__fund-card {
+    padding: 2rem 1.8rem;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.65rem;
+    box-shadow: 0 3px 16px rgba(10, 37, 64, 0.06);
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__fund-icon {
+    font-size: 2.4rem;
+    margin-bottom: 0.6rem;
+    line-height: 1;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__fund-card h3 {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__fund-card p {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__faq-strip {
+    background: var(--pst-navy);
+    padding: 3.5rem 2rem 4rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__faq-inner {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__faq-grid {
+    display: grid;
+    gap: 1.4rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-htb__faq-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__faq-card {
+    padding: 1.6rem 1.5rem;
+    background: #fff;
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__faq-q {
+    margin: 0 0 0.6rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__faq-a {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.45;
+    color: #475569;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__bottom-cta {
+    background: var(--pst-magenta);
+    padding: 3.2rem 2rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__bottom-title {
+    margin: 0 0 1.4rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__bottom-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5rem;
+    padding: 0 2.6rem;
+    margin-bottom: 1.2rem;
+    font-family: var(--font-body-family);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pst-magenta);
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: filter 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__bottom-btn:hover,
+  #shopify-section-{{ section.id }} .pst-htb__bottom-btn:focus {
+    filter: brightness(0.98);
+    color: var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__bottom-phone {
+    display: block;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .pst-htb__bottom-phone:hover {
+    text-decoration: underline;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign htb_quote_url = section.settings.quote_url
+  if htb_quote_url == blank
+    if pages.contact != empty
+      assign htb_quote_url = pages.contact.url
+    else
+      assign htb_quote_url = '/pages/contact'
+    endif
+  endif
+
+  assign htb_shop_url = section.settings.shop_url
+  if htb_shop_url == blank
+    assign htb_shop_url = routes.all_products_collection_url
+  endif
+
+  assign htb_cta_url = section.settings.cta_btn_url
+  if htb_cta_url == blank
+    if pages.contact != empty
+      assign htb_cta_url = pages.contact.url
+    else
+      assign htb_cta_url = '/pages/contact'
+    endif
+  endif
+-%}
+
+<div class="pst-htb">
+  <header class="pst-htb__hero">
+    <h1 class="pst-htb__hero-title">{{ section.settings.hero_title | escape }}</h1>
+    <p class="pst-htb__hero-sub">{{ section.settings.hero_subtext | escape }}</p>
+  </header>
+
+  <section class="pst-htb__methods" aria-labelledby="pst-htb-methods-heading">
+    <div class="pst-htb__methods-inner">
+      <h2 id="pst-htb-methods-heading" class="pst-htb__section-heading">{{ section.settings.methods_heading | escape }}</h2>
+      <div class="pst-htb__cards-3">
+        <article class="pst-htb__method-card">
+          <span class="pst-htb__badge">{{ section.settings.po_badge | escape }}</span>
+          <div class="pst-htb__icon-lg" style="color: var(--pst-gold);" aria-hidden="true">📄</div>
+          <h3 class="pst-htb__card-title">{{ section.settings.po_title | escape }}</h3>
+          <ol class="pst-htb__steps">
+            <li>Request a quote online or by phone</li>
+            <li>We send you a formal quote</li>
+            <li>Submit your PO via email</li>
+            <li>We process and ship within 2-3 days</li>
+          </ol>
+          {%- if section.settings.quote_btn_label != blank -%}
+            <a class="pst-htb__btn pst-htb__btn--magenta" href="{{ htb_quote_url }}">{{ section.settings.quote_btn_label | escape }}</a>
+          {%- endif -%}
+        </article>
+
+        <article class="pst-htb__method-card">
+          <div class="pst-htb__icon-lg" style="color: var(--pst-gold);" aria-hidden="true">💳</div>
+          <h3 class="pst-htb__card-title">{{ section.settings.cc_title | escape }}</h3>
+          <ol class="pst-htb__steps">
+            <li>Browse our products online</li>
+            <li>Add to cart or request quote</li>
+            <li>Pay securely by credit card</li>
+            <li>Ships within 2-3 business days</li>
+          </ol>
+          {%- if section.settings.shop_btn_label != blank -%}
+            <a class="pst-htb__btn pst-htb__btn--outline" href="{{ htb_shop_url }}">{{ section.settings.shop_btn_label | escape }}</a>
+          {%- endif -%}
+        </article>
+
+        <article class="pst-htb__method-card">
+          <div class="pst-htb__icon-lg" style="color: var(--pst-gold);" aria-hidden="true">📞</div>
+          <h3 class="pst-htb__card-title">{{ section.settings.phone_title | escape }}</h3>
+          <ol class="pst-htb__steps">
+            <li>Call {{ section.settings.phone_display | escape }}</li>
+            <li>Speak with an education specialist</li>
+            <li>Get personalized recommendations</li>
+            <li>Order over the phone</li>
+          </ol>
+          <a
+            class="pst-htb__btn pst-htb__btn--outline"
+            href="tel:{{ section.settings.phone_tel | escape }}"
+          >
+            {{- section.settings.phone_display | escape -}}
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-htb__po-section" aria-labelledby="pst-htb-po-heading">
+    <div class="pst-htb__po-inner">
+      <h2 id="pst-htb-po-heading" class="pst-htb__po-heading">{{ section.settings.po_process_heading | escape }}</h2>
+      <div class="pst-htb__timeline">
+        <div class="pst-htb__timeline-step">
+          <div class="pst-htb__step-num">1</div>
+          <div class="pst-htb__step-body">
+            <h3>Request a Quote</h3>
+            <p>Submit online form or call us</p>
+          </div>
+        </div>
+        <div class="pst-htb__timeline-step">
+          <div class="pst-htb__step-num">2</div>
+          <div class="pst-htb__step-body">
+            <h3>Receive Your Quote</h3>
+            <p>We email formal quote within 1 business day</p>
+          </div>
+        </div>
+        <div class="pst-htb__timeline-step">
+          <div class="pst-htb__step-num">3</div>
+          <div class="pst-htb__step-body">
+            <h3>Submit Your PO</h3>
+            <p>Email PO to {{ section.settings.orders_email | escape }}</p>
+          </div>
+        </div>
+        <div class="pst-htb__timeline-step">
+          <div class="pst-htb__step-num">4</div>
+          <div class="pst-htb__step-body">
+            <h3>Order Confirmed</h3>
+            <p>We confirm receipt and process immediately</p>
+          </div>
+        </div>
+        <div class="pst-htb__timeline-step">
+          <div class="pst-htb__step-num">5</div>
+          <div class="pst-htb__step-body">
+            <h3>Shipped!</h3>
+            <p>Your order ships within 2-3 business days</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-htb__funding" aria-labelledby="pst-htb-fund-heading">
+    <div class="pst-htb__funding-inner">
+      <h2 id="pst-htb-fund-heading" class="pst-htb__section-heading">{{ section.settings.funding_heading | escape }}</h2>
+      <div class="pst-htb__grid-2">
+        <div class="pst-htb__fund-card">
+          <div class="pst-htb__fund-icon" aria-hidden="true">📚</div>
+          <h3>Title I Funds</h3>
+          <p>Many of our systems qualify for Title I funding</p>
+        </div>
+        <div class="pst-htb__fund-card">
+          <div class="pst-htb__fund-icon" aria-hidden="true">🌐</div>
+          <h3>E-Rate Program</h3>
+          <p>E-Rate eligible for qualifying equipment</p>
+        </div>
+        <div class="pst-htb__fund-card">
+          <div class="pst-htb__fund-icon" aria-hidden="true">🏫</div>
+          <h3>School Budget</h3>
+          <p>Standard school budget and department funds</p>
+        </div>
+        <div class="pst-htb__fund-card">
+          <div class="pst-htb__fund-icon" aria-hidden="true">✨</div>
+          <h3>Grants</h3>
+          <p>We can help identify grant opportunities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-htb__faq-strip" aria-label="Frequently asked questions">
+    <div class="pst-htb__faq-inner">
+      <div class="pst-htb__faq-grid">
+        <div class="pst-htb__faq-card">
+          <p class="pst-htb__faq-q">Do you accept Net 30?</p>
+          <p class="pst-htb__faq-a">Yes, Net 30 terms available for districts</p>
+        </div>
+        <div class="pst-htb__faq-card">
+          <p class="pst-htb__faq-q">What is your shipping time?</p>
+          <p class="pst-htb__faq-a">2-3 business days after PO confirmation</p>
+        </div>
+        <div class="pst-htb__faq-card">
+          <p class="pst-htb__faq-q">Do you offer district pricing?</p>
+          <p class="pst-htb__faq-a">Yes, contact us for volume discounts</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pst-htb__bottom-cta">
+    <h2 class="pst-htb__bottom-title">{{ section.settings.cta_title | escape }}</h2>
+    {%- if section.settings.cta_btn_label != blank -%}
+      <a class="pst-htb__bottom-btn" href="{{ htb_cta_url }}">{{ section.settings.cta_btn_label | escape }}</a>
+    {%- endif -%}
+    <a class="pst-htb__bottom-phone" href="tel:{{ section.settings.phone_tel | escape }}">{{ section.settings.phone_display | escape }}</a>
+  </footer>
+</div>
+
+{% schema %}
+{
+  "name": "PST How to buy",
+  "tag": "section",
+  "class": "pst-how-to-buy-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero title",
+      "default": "How to Buy from Perfect School Tools"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtext",
+      "label": "Hero subtext",
+      "default": "We make it easy for schools and districts to get the visual tools they need."
+    },
+    {
+      "type": "text",
+      "id": "methods_heading",
+      "label": "Methods section heading",
+      "default": "Three Easy Ways to Purchase"
+    },
+    {
+      "type": "text",
+      "id": "po_badge",
+      "label": "PO card badge",
+      "default": "Most Popular"
+    },
+    {
+      "type": "text",
+      "id": "po_title",
+      "label": "PO card title",
+      "default": "Purchase Order (PO)"
+    },
+    {
+      "type": "text",
+      "id": "quote_btn_label",
+      "label": "Quote button label",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "quote_url",
+      "label": "Quote button link"
+    },
+    {
+      "type": "text",
+      "id": "cc_title",
+      "label": "Credit card card title",
+      "default": "Credit Card"
+    },
+    {
+      "type": "text",
+      "id": "shop_btn_label",
+      "label": "Shop button label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "shop_url",
+      "label": "Shop button link"
+    },
+    {
+      "type": "text",
+      "id": "phone_title",
+      "label": "Phone card title",
+      "default": "Call Us Direct"
+    },
+    {
+      "type": "text",
+      "id": "phone_display",
+      "label": "Phone (display)",
+      "default": "(888) 535-4431"
+    },
+    {
+      "type": "text",
+      "id": "phone_tel",
+      "label": "Phone (tel href)",
+      "default": "8885354431",
+      "info": "Digits only for tel: link"
+    },
+    {
+      "type": "text",
+      "id": "po_process_heading",
+      "label": "PO process heading",
+      "default": "Purchase Order Process — Step by Step"
+    },
+    {
+      "type": "text",
+      "id": "orders_email",
+      "label": "Orders email (in step 3)",
+      "default": "orders@perfectposter.com"
+    },
+    {
+      "type": "text",
+      "id": "funding_heading",
+      "label": "Funding section heading",
+      "default": "Funding Your Purchase"
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "Bottom CTA title",
+      "default": "Ready to Get Started?"
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_label",
+      "label": "Bottom CTA button label",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "cta_btn_url",
+      "label": "Bottom CTA button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PST How to buy",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
