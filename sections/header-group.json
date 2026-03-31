@@ -27,6 +27,8 @@
         "cta_button_size": "small",
         "hamburger_position": "left",
         "hamburger_color": "#0a2540",
+        "mobile_logo_width": 130,
+        "mobile_logo_alignment": "left",
         "header_background": "#ffffff",
         "header_sticky": true,
         "header_border": true,
