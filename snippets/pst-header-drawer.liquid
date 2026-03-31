@@ -1,5 +1,5 @@
 {% comment %}
-  Mobile / tablet menu — hardcoded Gary’s nav (matches desktop pst-header).
+  Mobile / tablet menu — PST nav (matches desktop pst-header).
 {% endcomment %}
 
 {%- liquid
@@ -15,53 +15,308 @@
 -%}
 
 {%- style -%}
-  #menu-drawer-pst .pst-drawer__actions {
-    padding: 16px;
-    border-bottom: 1px solid #e8e8e8;
-    margin-bottom: 8px;
+  /* Overlay: dark scrim + blur */
+  #Details-pst-menu-drawer[open] > summary::before {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
   }
 
-  #menu-drawer-pst .pst-drawer__cta {
+  #menu-drawer-pst.pst-drawer--pst {
+    width: 85vw !important;
+    max-width: 360px !important;
+    padding: 0 !important;
+    background: #fff !important;
+    background-color: #fff !important;
+    border: none !important;
+    filter: none !important;
+    box-shadow: 4px 0 24px rgba(10, 37, 64, 0.12);
+  }
+
+  .js details[open].menu-opening > #menu-drawer-pst.pst-drawer--pst,
+  .js details[open] > #menu-drawer-pst.pst-drawer--pst {
+    transition:
+      transform 0.3s ease,
+      visibility 0.3s ease !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__inner-container {
+    padding: 0 !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__navigation-container {
+    grid-template-rows: auto;
+    align-content: start;
+    overflow-x: hidden;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px 12px;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__brand {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    text-decoration: none;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__logo-img {
+    width: 80px !important;
+    max-width: 80px !important;
+    height: auto !important;
     display: block;
-    width: 100%;
-    background: var(--pst-drawer-cta-bg, #e91e8c);
-    color: var(--pst-drawer-cta-fg, #ffffff);
-    text-align: center;
-    padding: 14px;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__brand-text {
+    font-family: var(--font-heading-family);
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #0a2540;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__close-btn {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #0a2540;
+    cursor: pointer;
     border-radius: 8px;
+    transition: background 0.2s ease;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__close-btn:hover {
+    background: #f1f5f9;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__close-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__divider {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+    margin: 0;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__cta {
+    display: block;
+    width: calc(100% - 32px);
+    max-width: none;
+    box-sizing: border-box;
+    margin: 16px;
+    padding: 14px 20px;
+    background: var(--pst-drawer-cta-bg, #e91e8c) !important;
+    color: var(--pst-drawer-cta-fg, #ffffff) !important;
+    text-align: center;
     font-weight: 600;
     font-size: 15px;
     text-decoration: none;
-    margin-bottom: 12px;
+    border-radius: 8px;
+    border: none;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__cta:hover {
+    filter: brightness(1.05);
+    color: var(--pst-drawer-cta-fg, #ffffff) !important;
+  }
+
+  /* List / nav reset */
+  #menu-drawer-pst.pst-drawer--pst .header__menu-item,
+  #menu-drawer-pst.pst-drawer--pst .header__menu-item a,
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__menu,
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__menu li,
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__menu ul {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__menu {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__navigation {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .js .menu-drawer__menu li {
+    margin-bottom: 0 !important;
+    list-style: none !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__menu-item {
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    font-size: 1.5rem;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst a.pst-drawer__text-link {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: #0a2540 !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid #f1f5f9;
+    width: 100%;
     box-sizing: border-box;
   }
 
-  #menu-drawer-pst .pst-drawer__cta:hover {
-    filter: brightness(1.05);
-    color: var(--pst-drawer-cta-fg, #ffffff);
-  }
-
-  #menu-drawer-pst .pst-drawer__icons {
-    display: flex;
-    justify-content: space-around;
-    padding: 8px 0;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  #menu-drawer-pst .pst-drawer__icons a {
-    color: #0a2540;
-    font-weight: 600;
-    text-decoration: none;
+  #menu-drawer-pst.pst-drawer--pst a.pst-drawer__text-link::after {
+    content: '→';
     font-size: 14px;
+    color: #64748b;
+    flex-shrink: 0;
   }
 
-  #menu-drawer-pst .pst-drawer__icons a:hover {
-    text-decoration: underline;
+  #menu-drawer-pst.pst-drawer--pst a.pst-drawer__text-link:hover {
+    background: #f8fafc !important;
+    color: #e91e8c !important;
   }
 
-  #menu-drawer-pst .menu-drawer__utility-links a.menu-drawer__account {
+  #menu-drawer-pst.pst-drawer--pst a.pst-drawer__text-link--sub {
+    padding: 12px 20px 12px 32px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #64748b !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst a.pst-drawer__text-link--sub::after {
+    content: none !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst a.pst-drawer__text-link--sub:hover {
+    color: #e91e8c !important;
+    background: #f8fafc !important;
+  }
+
+  /* Parent row (Shop) */
+  #menu-drawer-pst.pst-drawer--pst details summary.menu-drawer__menu-item {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: #0a2540 !important;
+    border-bottom: 1px solid #f1f5f9;
+    list-style: none !important;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst details summary.menu-drawer__menu-item::-webkit-details-marker {
+    display: none;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst details summary.menu-drawer__menu-item .svg-wrapper {
     display: none !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst details summary.menu-drawer__menu-item::after {
+    content: '▾';
+    font-size: 12px;
+    color: #64748b;
+    flex-shrink: 0;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst details summary.menu-drawer__menu-item:hover {
+    background: #f8fafc;
+    color: #e91e8c !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__close-button {
+    margin: 0 !important;
+    padding: 14px 20px !important;
+    font-size: 14px !important;
+    font-weight: 600;
+    color: #0a2540 !important;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__inner-submenu {
+    padding: 0 !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__inner-submenu .menu-drawer__menu {
+    padding: 0 !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__inner-submenu .menu-drawer__menu-item {
+    padding: 0 !important;
+  }
+
+  /* Bottom: account + cart */
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px;
+    border-top: 1px solid #e8e8e8;
+    margin-top: 0;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__bottom-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0a2540 !important;
+    text-decoration: none !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__bottom-link .svg-wrapper {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .pst-drawer__bottom-link:hover {
+    color: #e91e8c !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__utility-links {
+    padding: 12px 20px 16px !important;
+    background: #fff !important;
+    margin: 0 !important;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer__utility-links a.menu-drawer__account {
+    display: none !important;
+  }
+
+  #menu-drawer-pst.pst-drawer--pst .menu-drawer .list-social {
+    margin: 8px 0 0 !important;
+    justify-content: center !important;
   }
 {%- endstyle -%}
 
@@ -78,44 +333,53 @@
     </summary>
     <div
       id="menu-drawer-pst"
-      class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}"
+      class="gradient menu-drawer motion-reduce pst-drawer pst-drawer--pst pst-drawer--panel color-{{ section.settings.menu_color_scheme }}"
       style="--pst-drawer-cta-bg: {{ drawer_cta_bg }}; --pst-drawer-cta-fg: {{ drawer_cta_fg }};"
     >
-      <div class="menu-drawer__inner-container">
-        <div class="menu-drawer__navigation-container">
-          <div class="pst-drawer__actions">
-            {%- if drawer_show_cta and drawer_cta_url != blank -%}
-              <a href="{{ drawer_cta_url }}" class="pst-drawer__cta">
-                {{ drawer_cta_label | escape }}
-              </a>
-            {%- endif -%}
-            <div class="pst-drawer__icons">
-              {%- if shop.customer_accounts_enabled -%}
-                <a
-                  href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-                  class="pst-drawer__icon-link"
-                  rel="nofollow"
-                >
-                  {%- liquid
-                    if customer
-                      echo 'customer.account_fallback' | t
-                    else
-                      echo 'customer.log_in' | t
-                    endif
-                  -%}
-                </a>
+      <div class="menu-drawer__inner-container pst-drawer__inner">
+        <div class="menu-drawer__navigation-container pst-drawer__nav-container">
+          <div class="pst-drawer__masthead">
+            <a href="{{ routes.root_url }}" class="pst-drawer__brand focus-inset">
+              {%- if settings.logo != blank -%}
+                {%- assign drawer_logo_alt = settings.logo.alt | default: shop.name | escape -%}
+                {%- assign drawer_logo_h = 80 | times: 1.0 | divided_by: settings.logo.aspect_ratio | round -%}
+                {{
+                  settings.logo
+                  | image_url: width: 240
+                  | image_tag:
+                    class: 'pst-drawer__logo-img',
+                    width: 80,
+                    height: drawer_logo_h,
+                    alt: drawer_logo_alt,
+                    loading: 'lazy'
+                }}
+              {%- else -%}
+                <span class="pst-drawer__brand-text">{{ shop.name | escape }}</span>
               {%- endif -%}
-              <a href="{{ routes.cart_url }}" class="pst-drawer__icon-link">
-                {{- 'templates.cart.cart' | t }} ({{ cart.item_count }})
-              </a>
-            </div>
+            </a>
+            <button
+              type="button"
+              class="pst-drawer__close-btn"
+              aria-label="{{ 'accessibility.close' | t }}"
+            >
+              <span class="svg-wrapper">{{ 'icon-close.svg' | inline_asset_content }}</span>
+            </button>
           </div>
-          <nav class="menu-drawer__navigation">
-            <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+
+          <hr class="pst-drawer__divider" aria-hidden="true">
+
+          {%- if drawer_show_cta and drawer_cta_url != blank -%}
+            <a href="{{ drawer_cta_url }}" class="pst-drawer__cta">
+              {{ drawer_cta_label | escape }}
+            </a>
+          {%- endif -%}
+
+          <nav class="menu-drawer__navigation pst-drawer__navigation" aria-label="{{ 'sections.header.menu' | t }}">
+            <ul class="menu-drawer__menu has-submenu list-menu pst-drawer__menu-root" role="list">
               <li>
                 <a
                   href="https://perfectposter.com/pages/postermaker"
-                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset"
+                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset pst-drawer__text-link"
                 >
                   Poster Makers
                 </a>
@@ -123,7 +387,7 @@
               <li>
                 <a
                   href="https://perfectposter.com/pages/perfect-awards-systems"
-                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset"
+                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset pst-drawer__text-link"
                 >
                   Awards Systems
                 </a>
@@ -131,7 +395,7 @@
               <li>
                 <a
                   href="https://perfectposter.com/collections/lamination"
-                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset"
+                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset pst-drawer__text-link"
                 >
                   Laminators
                 </a>
@@ -153,7 +417,7 @@
                         <li>
                           <a
                             href="https://perfectposter.com/collections/paper-media"
-                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset pst-drawer__text-link pst-drawer__text-link--sub"
                           >
                             Poster Paper &amp; Materials
                           </a>
@@ -161,7 +425,7 @@
                         <li>
                           <a
                             href="https://perfectposter.com/collections/ink"
-                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset pst-drawer__text-link pst-drawer__text-link--sub"
                           >
                             Poster Maker Ink
                           </a>
@@ -169,7 +433,7 @@
                         <li>
                           <a
                             href="https://perfectposter.com/collections/lamination"
-                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset pst-drawer__text-link pst-drawer__text-link--sub"
                           >
                             Lamination Supplies
                           </a>
@@ -177,7 +441,7 @@
                         <li>
                           <a
                             href="https://perfectposter.com/collections/maintenance"
-                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset pst-drawer__text-link pst-drawer__text-link--sub"
                           >
                             Maintenance Supplies
                           </a>
@@ -185,7 +449,7 @@
                         <li>
                           <a
                             href="https://perfectposter.com/collections/awards-maker-labels"
-                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset pst-drawer__text-link pst-drawer__text-link--sub"
                           >
                             Award System Supplies
                           </a>
@@ -193,7 +457,7 @@
                         <li>
                           <a
                             href="https://perfectposter.com/collections/perfect-bundles"
-                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset pst-drawer__text-link pst-drawer__text-link--sub"
                           >
                             Bundled Supply Packages
                           </a>
@@ -201,7 +465,7 @@
                         <li>
                           <a
                             href="https://perfectposter.com/collections/current-specials"
-                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset pst-drawer__text-link pst-drawer__text-link--sub"
                           >
                             Current Specials
                           </a>
@@ -214,7 +478,7 @@
               <li>
                 <a
                   href="https://perfectposter.com/collections/free-poster-template-downloads"
-                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset"
+                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset pst-drawer__text-link"
                 >
                   Free Resources
                 </a>
@@ -222,7 +486,7 @@
               <li>
                 <a
                   href="{{ routes.root_url }}pages/about"
-                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset"
+                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset pst-drawer__text-link"
                 >
                   About Us
                 </a>
@@ -230,13 +494,43 @@
               <li>
                 <a
                   href="{{ routes.root_url }}pages/contact"
-                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset"
+                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset pst-drawer__text-link"
                 >
                   Contact
                 </a>
               </li>
             </ul>
           </nav>
+
+          <div class="pst-drawer__bottom">
+            {%- if shop.customer_accounts_enabled -%}
+              <a
+                href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+                class="pst-drawer__bottom-link"
+                rel="nofollow"
+              >
+                <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+                <span>
+                  {%- liquid
+                    if customer
+                      echo 'customer.account_fallback' | t
+                    else
+                      echo 'customer.log_in' | t
+                    endif
+                  -%}
+                </span>
+              </a>
+            {%- endif -%}
+            <a href="{{ routes.cart_url }}" class="pst-drawer__bottom-link pst-drawer__bottom-cart">
+              {% if cart == empty %}
+                <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
+              {% else %}
+                <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
+              {% endif %}
+              <span>{{ 'templates.cart.cart' | t }} ({{ cart.item_count }})</span>
+            </a>
+          </div>
+
           <div class="menu-drawer__utility-links">
             {%- if shop.customer_accounts_enabled -%}
               <a
@@ -377,3 +671,16 @@
     </div>
   </details>
 </header-drawer>
+
+<script>
+  (function () {
+    var root = document.getElementById('Details-pst-menu-drawer');
+    if (!root) return;
+    var btn = root.querySelector('.pst-drawer__close-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      root.removeAttribute('open');
+    });
+  })();
+</script>
