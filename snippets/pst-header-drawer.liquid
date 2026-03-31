@@ -2,6 +2,69 @@
   Mobile / tablet menu — hardcoded Gary’s nav (matches desktop pst-header).
 {% endcomment %}
 
+{%- liquid
+  assign drawer_cta_url = pst_drawer_cta_url
+  assign drawer_cta_label = pst_drawer_cta_label | default: 'Request a Quote'
+  if pst_drawer_show_cta == false
+    assign drawer_show_cta = false
+  else
+    assign drawer_show_cta = true
+  endif
+  assign drawer_cta_bg = pst_drawer_cta_bg | default: '#E91E8C'
+  assign drawer_cta_fg = pst_drawer_cta_fg | default: '#ffffff'
+-%}
+
+{%- style -%}
+  #menu-drawer-pst .pst-drawer__actions {
+    padding: 16px;
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 8px;
+  }
+
+  #menu-drawer-pst .pst-drawer__cta {
+    display: block;
+    width: 100%;
+    background: var(--pst-drawer-cta-bg, #e91e8c);
+    color: var(--pst-drawer-cta-fg, #ffffff);
+    text-align: center;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+  }
+
+  #menu-drawer-pst .pst-drawer__cta:hover {
+    filter: brightness(1.05);
+    color: var(--pst-drawer-cta-fg, #ffffff);
+  }
+
+  #menu-drawer-pst .pst-drawer__icons {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  #menu-drawer-pst .pst-drawer__icons a {
+    color: #0a2540;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  #menu-drawer-pst .pst-drawer__icons a:hover {
+    text-decoration: underline;
+  }
+
+  #menu-drawer-pst .menu-drawer__utility-links a.menu-drawer__account {
+    display: none !important;
+  }
+{%- endstyle -%}
+
 <header-drawer data-breakpoint="tablet">
   <details id="Details-pst-menu-drawer" class="menu-drawer-container">
     <summary
@@ -13,9 +76,40 @@
         {{- 'icon-close.svg' | inline_asset_content -}}
       </span>
     </summary>
-    <div id="menu-drawer-pst" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
+    <div
+      id="menu-drawer-pst"
+      class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}"
+      style="--pst-drawer-cta-bg: {{ drawer_cta_bg }}; --pst-drawer-cta-fg: {{ drawer_cta_fg }};"
+    >
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
+          <div class="pst-drawer__actions">
+            {%- if drawer_show_cta and drawer_cta_url != blank -%}
+              <a href="{{ drawer_cta_url }}" class="pst-drawer__cta">
+                {{ drawer_cta_label | escape }}
+              </a>
+            {%- endif -%}
+            <div class="pst-drawer__icons">
+              {%- if shop.customer_accounts_enabled -%}
+                <a
+                  href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+                  class="pst-drawer__icon-link"
+                  rel="nofollow"
+                >
+                  {%- liquid
+                    if customer
+                      echo 'customer.account_fallback' | t
+                    else
+                      echo 'customer.log_in' | t
+                    endif
+                  -%}
+                </a>
+              {%- endif -%}
+              <a href="{{ routes.cart_url }}" class="pst-drawer__icon-link">
+                {{- 'templates.cart.cart' | t }} ({{ cart.item_count }})
+              </a>
+            </div>
+          </div>
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               <li>

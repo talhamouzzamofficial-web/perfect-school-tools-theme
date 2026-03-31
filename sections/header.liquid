@@ -502,6 +502,83 @@
   header-drawer {
     justify-self: start;
   }
+
+  /* Mobile (≤768px): flex header, centered logo, hamburger right, hide CTA + header cart/account */
+  @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .pst-header__grid {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      grid-template-areas: none;
+      grid-template-columns: unset;
+      gap: 0.5rem;
+    }
+
+    #shopify-section-{{ section.id }} .pst-header__drawer {
+      order: 3;
+      margin-left: 0;
+      margin-right: -1rem;
+      z-index: 2;
+      justify-self: unset;
+    }
+
+    #shopify-section-{{ section.id }} .pst-header__actions {
+      order: 1;
+      z-index: 2;
+      justify-self: unset;
+    }
+
+    #shopify-section-{{ section.id }} .pst-header__logo {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 1;
+      margin: 0;
+      justify-self: unset;
+      text-align: center;
+      min-width: 0;
+      grid-area: unset;
+    }
+
+    #shopify-section-{{ section.id }} .pst-header__logo .header__heading {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: auto;
+      margin: 0;
+      max-width: min(72vw, 280px);
+    }
+
+    #shopify-section-{{ section.id }} .pst-header__logo > a.header__heading-link {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: auto;
+      max-width: min(72vw, 280px);
+    }
+
+    #shopify-section-{{ section.id }} .pst-header__logo .header__heading-link {
+      pointer-events: auto;
+    }
+
+    #shopify-section-{{ section.id }} .pst-header__cta,
+    #shopify-section-{{ section.id }} .pst-header__quote {
+      display: none !important;
+    }
+
+    #shopify-section-{{ section.id }} .pst-header__icons .header__icon--account,
+    #shopify-section-{{ section.id }} .pst-header__icons .header__icon--cart {
+      display: none !important;
+    }
+  }
 </style>
 
 {%- style -%}
@@ -562,6 +639,18 @@
   endif
 
   assign pst_logo_width = section.settings.logo_width | default: settings.logo_width | default: 150
+
+  assign pst_drawer_cta_url = section.settings.cta_button_link
+  if pst_drawer_cta_url == blank
+    assign pst_drawer_cta_url = section.settings.quote_url
+  endif
+  if pst_drawer_cta_url == blank
+    if pages.contact != blank
+      assign pst_drawer_cta_url = pages.contact.url
+    else
+      assign pst_drawer_cta_url = '/pages/contact'
+    endif
+  endif
 %}
 
 <{{ header_tag }}
@@ -577,7 +666,13 @@
   >
     <div class="pst-header__grid{% if section.settings.hamburger_position == 'right' %} pst-header--hamburger-right{% endif %}">
       <div class="pst-header__drawer">
-        {% render 'pst-header-drawer' %}
+        {% render 'pst-header-drawer',
+          pst_drawer_cta_url: pst_drawer_cta_url,
+          pst_drawer_cta_label: section.settings.cta_button_text,
+          pst_drawer_show_cta: section.settings.show_cta_button,
+          pst_drawer_cta_bg: section.settings.cta_button_color,
+          pst_drawer_cta_fg: section.settings.cta_text_color
+        %}
       </div>
 
       <div class="pst-header__logo">
