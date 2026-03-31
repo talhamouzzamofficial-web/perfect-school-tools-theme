@@ -1,129 +1,339 @@
 {%- style -%}
   #shopify-section-{{ section.id }} .pst-testimonials {
-    background-color: var(--pst-color-warm-white, #fdf8f0);
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: var(--pst-color-warm, #fdf8f0);
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
   }
 
-  #shopify-section-{{ section.id }} .pst-testimonials__inner {
-    max-width: var(--page-width);
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  #shopify-section-{{ section.id }} .pst-testimonials__title {
-    margin: 0 0 3.5rem;
-    font-family: var(--font-heading-family);
-    font-size: clamp(2.8rem, 4vw, 3.8rem);
-    font-weight: 800;
-    line-height: 1.15;
+  #shopify-section-{{ section.id }} .pst-testimonials__heading {
     text-align: center;
-    color: var(--pst-color-navy, #0f4872);
+    font-family: var(--font-heading-family);
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: #0a2540;
+    margin: 0 0 8px;
   }
 
-  #shopify-section-{{ section.id }} .pst-testimonials__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  #shopify-section-{{ section.id }} .pst-testimonials__subtitle {
+    text-align: center;
+    color: #334155;
+    margin: 0 0 48px;
+    font-size: 16px;
+    line-height: 1.5;
   }
 
-  @media screen and (min-width: 990px) {
-    #shopify-section-{{ section.id }} .pst-testimonials__grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      align-items: stretch;
-    }
+  #shopify-section-{{ section.id }} .pst-testimonials__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 
-  #shopify-section-{{ section.id }} .pst-testimonials__card {
+  #shopify-section-{{ section.id }} .pst-slider {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .pst-slider__track {
     display: flex;
-    flex-direction: column;
-    padding: 2.4rem 2rem 2.2rem;
+    transition: transform 0.4s ease;
+    will-change: transform;
+  }
+
+  #shopify-section-{{ section.id }} .pst-slider__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  #shopify-section-{{ section.id }} .pst-testimonial-card {
     background: #fff;
-    border-radius: 0.6rem;
-    border: 1px solid rgba(15, 72, 114, 0.08);
-    box-shadow: 0 2px 12px rgba(10, 37, 64, 0.06);
+    border-radius: 16px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.08);
+    height: 100%;
+    position: relative;
   }
 
-  #shopify-section-{{ section.id }} .pst-testimonials__mark {
-    display: block;
-    margin: 0 0 0.8rem;
+  #shopify-section-{{ section.id }} .pst-testimonial-card__quote {
+    font-size: 60px;
+    line-height: 1;
+    color: #e91e8c;
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 4.5rem;
-    font-weight: 700;
-    line-height: 0.85;
-    color: var(--pst-color-magenta, #e91e8c);
+    margin: 0 0 16px;
+    display: block;
   }
 
-  #shopify-section-{{ section.id }} .pst-testimonials__quote {
-    margin: 0 0 1.6rem;
-    flex-grow: 1;
-    font-family: var(--font-body-family);
-    font-size: 1.5rem;
-    line-height: 1.55;
-    font-weight: 400;
-    color: var(--pst-color-slate, #334155);
-  }
-
-  #shopify-section-{{ section.id }} .pst-testimonials__author {
-    margin: 0 0 0.35rem;
-    font-family: var(--font-body-family);
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: var(--pst-color-primary-dark-navy, #0a2540);
-  }
-
-  #shopify-section-{{ section.id }} .pst-testimonials__meta {
-    margin: 0;
-    font-family: var(--font-body-family);
-    font-size: 1.35rem;
+  #shopify-section-{{ section.id }} .pst-testimonial-card__text {
+    color: #334155;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0 0 24px;
     font-style: italic;
-    font-weight: 400;
-    color: var(--pst-color-slate, #334155);
+  }
+
+  #shopify-section-{{ section.id }} .pst-testimonial-card__name {
+    font-weight: 700;
+    color: #0a2540;
+    font-size: 15px;
+  }
+
+  #shopify-section-{{ section.id }} .pst-testimonial-card__role {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 4px;
+  }
+
+  #shopify-section-{{ section.id }} .pst-slider__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .pst-slider__nav.is-hidden {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .pst-slider__btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #0a2540;
+    background: #fff;
+    color: #0a2540;
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  #shopify-section-{{ section.id }} .pst-slider__btn:hover {
+    background: #e91e8c;
+    border-color: #e91e8c;
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-slider__btn:focus-visible {
+    outline: 2px solid #f5b731;
+    outline-offset: 2px;
+  }
+
+  #shopify-section-{{ section.id }} .pst-slider__dots {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-slider__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition:
+      background 0.3s ease,
+      width 0.3s ease,
+      border-radius 0.3s ease;
+    border: none;
+    padding: 0;
+  }
+
+  #shopify-section-{{ section.id }} .pst-slider__dot.active {
+    background: #e91e8c;
+    width: 24px;
+    border-radius: 5px;
   }
 {%- endstyle -%}
 
-<section class="pst-testimonials">
-  <div class="pst-testimonials__inner">
-    {%- if section.settings.heading != blank -%}
-      <h2 class="pst-testimonials__title">{{ section.settings.heading | escape }}</h2>
-    {%- endif -%}
+<div class="pst-testimonials">
+  <div class="pst-testimonials__wrapper">
+    <h2 class="pst-testimonials__heading">{{ section.settings.heading | escape }}</h2>
+    {% if section.settings.subtitle != blank %}
+      <p class="pst-testimonials__subtitle">{{ section.settings.subtitle | escape }}</p>
+    {% endif %}
 
-    <div class="pst-testimonials__grid">
-      {%- for block in section.blocks -%}
-        <blockquote class="pst-testimonials__card" {{ block.shopify_attributes }}>
-          <span class="pst-testimonials__mark" aria-hidden="true">&#8220;</span>
-          {%- if block.settings.quote != blank -%}
-            <p class="pst-testimonials__quote">{{ block.settings.quote | escape }}</p>
-          {%- endif -%}
-          {%- if block.settings.name != blank -%}
-            <cite class="pst-testimonials__author">{{ block.settings.name | escape }}</cite>
-          {%- endif -%}
-          {%- if block.settings.role != blank or block.settings.region != blank -%}
-            <p class="pst-testimonials__meta">
-              {%- if block.settings.role != blank -%}
-                <span>{{ block.settings.role | escape }}</span>
-              {%- endif -%}
-              {%- if block.settings.role != blank and block.settings.region != blank -%}
-                <span>, </span>
-              {%- endif -%}
-              {%- if block.settings.region != blank -%}
-                <span>{{ block.settings.region | escape }}</span>
-              {%- endif -%}
-            </p>
-          {%- endif -%}
-        </blockquote>
-      {%- endfor -%}
+    <div
+      class="pst-slider"
+      id="pst-testimonial-slider-{{ section.id }}"
+      data-pst-testimonials-root
+    >
+      <div class="pst-slider__track" id="pst-track-{{ section.id }}">
+        {% for block in section.blocks %}
+          <div class="pst-slider__slide" {{ block.shopify_attributes }}>
+            <div class="pst-testimonial-card">
+              <span class="pst-testimonial-card__quote" aria-hidden="true">&#8220;</span>
+              {% if block.settings.quote != blank %}
+                <p class="pst-testimonial-card__text">{{ block.settings.quote | escape }}</p>
+              {% endif %}
+              {% if block.settings.name != blank %}
+                <div class="pst-testimonial-card__name">{{ block.settings.name | escape }}</div>
+              {% endif %}
+              {% if block.settings.role != blank %}
+                <div class="pst-testimonial-card__role">{{ block.settings.role | escape }}</div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="pst-slider__nav{% if section.blocks.size == 0 %} is-hidden{% endif %}" id="pst-nav-{{ section.id }}">
+      <button type="button" class="pst-slider__btn" id="pst-prev-{{ section.id }}" aria-label="{{ 'general.pagination.previous' | t }}">
+        &#8592;
+      </button>
+      <div class="pst-slider__dots" id="pst-dots-{{ section.id }}" role="tablist" aria-label="Testimonial slides"></div>
+      <button type="button" class="pst-slider__btn" id="pst-next-{{ section.id }}" aria-label="{{ 'general.pagination.next' | t }}">
+        &#8594;
+      </button>
     </div>
   </div>
-</section>
+</div>
+
+<script>
+  (function () {
+    var sectionId = '{{ section.id }}';
+    var track = document.getElementById('pst-track-' + sectionId);
+    var slider = document.getElementById('pst-testimonial-slider-' + sectionId);
+    var dotsContainer = document.getElementById('pst-dots-' + sectionId);
+    var navEl = document.getElementById('pst-nav-' + sectionId);
+    if (!track || !slider || !dotsContainer) return;
+
+    var slides = track.querySelectorAll('.pst-slider__slide');
+    var current = 0;
+    var autoplayTimer = null;
+
+    function getSlidesVisible() {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 768) return 2;
+      return 1;
+    }
+
+    function pageCount() {
+      var v = getSlidesVisible();
+      if (!slides.length) return 0;
+      return Math.ceil(slides.length / v);
+    }
+
+    function setSlideWidths() {
+      var v = getSlidesVisible();
+      var w = slider.clientWidth / v;
+      slides.forEach(function (s) {
+        s.style.flexBasis = w + 'px';
+        s.style.flexShrink = '0';
+      });
+    }
+
+    function buildDots() {
+      dotsContainer.innerHTML = '';
+      var pages = pageCount();
+      for (var i = 0; i < pages; i++) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'pst-slider__dot' + (i === current ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1) + ' of ' + pages);
+        dot.setAttribute('aria-pressed', i === current ? 'true' : 'false');
+        (function (idx) {
+          dot.addEventListener('click', function () {
+            goTo(idx);
+            restartAutoplay();
+          });
+        })(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateDots() {
+      var dots = dotsContainer.querySelectorAll('.pst-slider__dot');
+      dots.forEach(function (d, i) {
+        d.classList.toggle('active', i === current);
+        d.setAttribute('aria-pressed', i === current ? 'true' : 'false');
+      });
+    }
+
+    function goTo(index) {
+      var pages = pageCount();
+      if (pages < 1) return;
+      current = Math.max(0, Math.min(index, pages - 1));
+      track.style.transform = 'translateX(-' + current * slider.clientWidth + 'px)';
+      updateDots();
+    }
+
+    function onResize() {
+      setSlideWidths();
+      buildDots();
+      var pages = pageCount();
+      if (current >= pages) current = Math.max(0, pages - 1);
+      goTo(current);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayTimer = setInterval(function () {
+        var pages = pageCount();
+        if (pages <= 1) return;
+        goTo(current + 1 < pages ? current + 1 : 0);
+      }, 5000);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+
+    function restartAutoplay() {
+      startAutoplay();
+    }
+
+    if (!slides.length) {
+      if (navEl) navEl.classList.add('is-hidden');
+      return;
+    }
+
+    setSlideWidths();
+    buildDots();
+    goTo(0);
+
+    var prevBtn = document.getElementById('pst-prev-' + sectionId);
+    var nextBtn = document.getElementById('pst-next-' + sectionId);
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        var pages = pageCount();
+        goTo(current - 1 < 0 ? pages - 1 : current - 1);
+        restartAutoplay();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        var pages = pageCount();
+        goTo(current + 1 >= pages ? 0 : current + 1);
+        restartAutoplay();
+      });
+    }
+
+    window.addEventListener('resize', onResize);
+
+    slider.addEventListener('mouseenter', stopAutoplay);
+    slider.addEventListener('mouseleave', startAutoplay);
+    slider.addEventListener('focusin', stopAutoplay);
+    slider.addEventListener('focusout', startAutoplay);
+
+    startAutoplay();
+  })();
+</script>
 
 {% schema %}
 {
   "name": "PST Testimonials",
   "tag": "section",
   "class": "pst-testimonials-section",
-  "max_blocks": 6,
+  "max_blocks": 20,
   "settings": [
     {
       "type": "text",
@@ -132,23 +342,29 @@
       "default": "What Schools Are Saying"
     },
     {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Trusted by educators across the nation"
+    },
+    {
       "type": "range",
       "id": "padding_top",
-      "min": 24,
-      "max": 120,
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Padding top",
       "default": 72
     },
     {
       "type": "range",
       "id": "padding_bottom",
-      "min": 24,
-      "max": 120,
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Padding bottom",
       "default": 72
     }
   ],
@@ -161,25 +377,19 @@
           "type": "textarea",
           "id": "quote",
           "label": "Quote",
-          "default": "Testimonial text."
+          "default": "The Perfect Poster Maker has transformed how we communicate with students and parents."
         },
         {
           "type": "text",
           "id": "name",
           "label": "Name",
-          "default": "Name"
+          "default": "Laura M."
         },
         {
           "type": "text",
           "id": "role",
-          "label": "Role",
-          "default": "Role title"
-        },
-        {
-          "type": "text",
-          "id": "region",
-          "label": "State or location",
-          "default": "State"
+          "label": "Role & location",
+          "default": "Media Specialist, North Carolina"
         }
       ]
     }
@@ -191,28 +401,25 @@
         {
           "type": "quote",
           "settings": {
-            "quote": "The Perfect Poster Maker has transformed how we communicate...",
+            "quote": "The Perfect Poster Maker has transformed how we communicate with students and parents. Our hallways have never looked better!",
             "name": "Laura M.",
-            "role": "Media Specialist",
-            "region": "North Carolina"
+            "role": "Media Specialist, North Carolina"
           }
         },
         {
           "type": "quote",
           "settings": {
-            "quote": "As a principal, I needed a solution that was easy for staff...",
+            "quote": "As a principal, I needed a solution that was easy for staff to use and wouldn't break our budget. Perfect School Tools delivered!",
             "name": "William T.",
-            "role": "Principal",
-            "region": "Florida"
+            "role": "Principal, Florida"
           }
         },
         {
           "type": "quote",
           "settings": {
-            "quote": "The purchase order process was seamless...",
+            "quote": "The purchase order process was seamless, and the system paid for itself within the first semester.",
             "name": "Christine F.",
-            "role": "Bookkeeper",
-            "region": "South Carolina"
+            "role": "Bookkeeper, South Carolina"
           }
         }
       ]

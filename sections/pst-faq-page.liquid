@@ -1,0 +1,938 @@
+{%- liquid
+  assign pst_faq_ns = 'faq-' | append: section.id
+-%}
+
+<div id="pst-faq-root-{{ section.id }}" class="pst-faq-page">
+  {%- comment -%} Section 1 — Hero {%- endcomment -%}
+  <div class="pst-faq-page__hero">
+    <div class="pst-faq-page__hero-inner page-width">
+      <h1 class="pst-faq-page__title">{{ section.settings.hero_heading | escape }}</h1>
+      {% if section.settings.hero_subtext != blank %}
+        <p class="pst-faq-page__intro">{{ section.settings.hero_subtext | escape }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  {%- comment -%} Section 2 — Category filters {%- endcomment -%}
+  <div class="pst-faq-page__filters-wrap" data-faq-filters>
+    <div class="page-width">
+      <div
+        class="pst-faq-page__filters"
+        role="tablist"
+        aria-label="FAQ categories"
+      >
+        <button
+          type="button"
+          class="pst-faq-page__filter is-active"
+          role="tab"
+          aria-selected="true"
+          data-faq-filter="all"
+        >
+          {{ section.settings.filter_all_label | escape }}
+        </button>
+        <button
+          type="button"
+          class="pst-faq-page__filter"
+          role="tab"
+          aria-selected="false"
+          data-faq-filter="ordering"
+        >
+          {{ section.settings.filter_ordering_label | escape }}
+        </button>
+        <button
+          type="button"
+          class="pst-faq-page__filter"
+          role="tab"
+          aria-selected="false"
+          data-faq-filter="products"
+        >
+          {{ section.settings.filter_products_label | escape }}
+        </button>
+        <button
+          type="button"
+          class="pst-faq-page__filter"
+          role="tab"
+          aria-selected="false"
+          data-faq-filter="shipping"
+        >
+          {{ section.settings.filter_shipping_label | escape }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} Section 3 — Accordion {%- endcomment -%}
+  <div class="pst-faq-page__accordion-wrap">
+    <div class="page-width">
+      <div class="pst-faq-page__accordion" data-faq-accordion>
+        {%- comment -%} Ordering & Payment {%- endcomment -%}
+        <article class="pst-faq-page__item" data-category="ordering">
+          <h2 class="visually-hidden">{{ section.settings.filter_ordering_label | escape }}</h2>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a1"
+              id="{{ pst_faq_ns }}-q1"
+            >
+              <span class="pst-faq-page__question-text">Do you accept Purchase Orders (POs)?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a1"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q1"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Yes! We gladly accept school purchase orders. Simply email your PO to
+                  <a href="mailto:orders@perfectposter.com">orders@perfectposter.com</a>
+                  and we will process your order immediately. We accept POs from all K-12 schools and districts
+                  nationwide.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a2"
+              id="{{ pst_faq_ns }}-q2"
+            >
+              <span class="pst-faq-page__question-text">What are your payment options?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a2"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q2"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  We accept Purchase Orders (Net 30 for qualifying districts), Visa, Mastercard, American Express,
+                  Discover, and PayPal. We also offer district pricing for multi-school purchases.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a3"
+              id="{{ pst_faq_ns }}-q3"
+            >
+              <span class="pst-faq-page__question-text">Do you offer Net 30 terms?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a3"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q3"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Yes, Net 30 terms are available for qualifying school districts. Contact us at
+                  <a href="tel:+18885354431">(888) 535-4431</a> to set up a Net 30 account for your district.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a4"
+              id="{{ pst_faq_ns }}-q4"
+            >
+              <span class="pst-faq-page__question-text">Can I get a quote before ordering?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a4"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q4"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Absolutely! Request a free personalized quote through our website or call us at
+                  <a href="tel:+18885354431">(888) 535-4431</a>. We typically respond within 1 business day.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a5"
+              id="{{ pst_faq_ns }}-q5"
+            >
+              <span class="pst-faq-page__question-text">Do you offer district-wide pricing?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a5"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q5"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Yes! We offer special volume pricing for district-level purchases. Contact our education
+                  specialists for custom district pricing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        {%- comment -%} Products & Systems {%- endcomment -%}
+        <article class="pst-faq-page__item" data-category="products">
+          <h2 class="visually-hidden">{{ section.settings.filter_products_label | escape }}</h2>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a6"
+              id="{{ pst_faq_ns }}-q6"
+            >
+              <span class="pst-faq-page__question-text">What is included with the Poster Maker System?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a6"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q6"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  The Perfect Poster Maker System ($3,795) includes: 24-inch full-color printer, full set of ink
+                  (225-275 poster yield), premium paper roll, and free access to thousands of digital poster
+                  templates.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a7"
+              id="{{ pst_faq_ns }}-q7"
+            >
+              <span class="pst-faq-page__question-text">How much does it cost to print each poster?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a7"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q7"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  With our system, you can print full-color 24-inch posters for approximately $1.50-$3.00 each —
+                  compared to $15-$30 at print shops. The system pays for itself quickly!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a8"
+              id="{{ pst_faq_ns }}-q8"
+            >
+              <span class="pst-faq-page__question-text">Do you offer cold laminators?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a8"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q8"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Yes! Our Cold Laminator Systems start from $99. Cold laminators require no heat, making them safe
+                  for classroom use. They protect posters, awards, and educational materials.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a9"
+              id="{{ pst_faq_ns }}-q9"
+            >
+              <span class="pst-faq-page__question-text">What warranty do you offer?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a9"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q9"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Every system comes with a warranty and our satisfaction guarantee. Contact us at
+                  <a href="tel:+18885354431">(888) 535-4431</a> for specific warranty details on each product.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a10"
+              id="{{ pst_faq_ns }}-q10"
+            >
+              <span class="pst-faq-page__question-text">Are templates included?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a10"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q10"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Yes! Every poster maker system includes free access to thousands of ready-to-print educational
+                  poster templates for all subjects and grade levels.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        {%- comment -%} Shipping & Support {%- endcomment -%}
+        <article class="pst-faq-page__item" data-category="shipping">
+          <h2 class="visually-hidden">{{ section.settings.filter_shipping_label | escape }}</h2>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a11"
+              id="{{ pst_faq_ns }}-q11"
+            >
+              <span class="pst-faq-page__question-text">What is your shipping time?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a11"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q11"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Most orders ship within 2-3 business days after payment or PO confirmation. Free shipping is
+                  available on qualifying orders.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a12"
+              id="{{ pst_faq_ns }}-q12"
+            >
+              <span class="pst-faq-page__question-text">Do you offer free shipping?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a12"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q12"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Yes! We offer free shipping on qualifying orders to all K-12 schools and districts in the
+                  continental United States.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a13"
+              id="{{ pst_faq_ns }}-q13"
+            >
+              <span class="pst-faq-page__question-text">What kind of support do you offer?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a13"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q13"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Every system includes unlimited phone and web support from our education specialists. Call us at
+                  <a href="tel:+18885354431">(888) 535-4431</a>, Monday-Friday 8am-5pm EST.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a14"
+              id="{{ pst_faq_ns }}-q14"
+            >
+              <span class="pst-faq-page__question-text">Can you help with installation and training?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a14"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q14"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Yes! We provide complete setup guidance and training for all our systems. Our education
+                  specialists will walk you through everything you need to get started.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button
+              type="button"
+              class="pst-faq-page__question"
+              aria-expanded="false"
+              aria-controls="{{ pst_faq_ns }}-a15"
+              id="{{ pst_faq_ns }}-q15"
+            >
+              <span class="pst-faq-page__question-text">What if I need to return a product?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div
+              class="pst-faq-page__answer"
+              id="{{ pst_faq_ns }}-a15"
+              role="region"
+              aria-labelledby="{{ pst_faq_ns }}-q15"
+            >
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  We stand behind every product we sell. Contact us at
+                  <a href="tel:+18885354431">(888) 535-4431</a> or
+                  <a href="mailto:orders@perfectposter.com">orders@perfectposter.com</a> within 30 days of receipt
+                  to discuss returns or exchanges.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} Section 4 — CTA {%- endcomment -%}
+  <div class="pst-faq-page__cta">
+    <div class="page-width pst-faq-page__cta-inner">
+      <h2 class="pst-faq-page__cta-title">{{ section.settings.cta_heading | escape }}</h2>
+      {% if section.settings.cta_text != blank %}
+        <p class="pst-faq-page__cta-text">{{ section.settings.cta_text | escape }}</p>
+      {% endif %}
+      {%- liquid
+        assign pst_faq_quote_url = section.settings.cta_quote_url
+        if pst_faq_quote_url == blank
+          assign pst_faq_quote_url = '/pages/contact'
+        endif
+        assign pst_faq_phone_url = section.settings.cta_phone_url
+        if pst_faq_phone_url == blank
+          assign pst_faq_phone_url = 'tel:8885354431'
+        endif
+      -%}
+      <div class="pst-faq-page__cta-buttons">
+        <a class="pst-faq-page__btn pst-faq-page__btn--primary" href="{{ pst_faq_quote_url }}">
+          {{- section.settings.cta_quote_label | escape -}}
+        </a>
+        <a class="pst-faq-page__btn pst-faq-page__btn--outline" href="{{ pst_faq_phone_url }}">
+          {{- section.settings.cta_phone_label | escape -}}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .pst-faq-page {
+    --pst-faq-navy: #0a2540;
+    --pst-faq-magenta: #e91e8c;
+    --pst-faq-gold: #f5b731;
+    --pst-faq-warm: #fdf8f0;
+    --pst-faq-slate: #334155;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__hero {
+    background: var(--pst-faq-navy);
+    padding: clamp(3.2rem, 8vw, 5.6rem) 1.5rem;
+    text-align: center;
+    border-bottom: 3px solid var(--pst-faq-gold);
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__hero-inner {
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__title {
+    font-family: Outfit, system-ui, sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.2rem, 5vw, 3.25rem);
+    line-height: 1.15;
+    color: #fff;
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__intro {
+    font-family: var(--font-body-family);
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 auto;
+    max-width: 40rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__filters-wrap {
+    background: #fff;
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__filter {
+    font-family: var(--font-body-family);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.65rem 1.15rem;
+    border-radius: 999px;
+    border: 2px solid var(--pst-faq-navy);
+    background: #fff;
+    color: var(--pst-faq-navy);
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__filter:hover {
+    background: var(--pst-faq-navy);
+    color: #fff;
+    border-color: var(--pst-faq-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__filter.is-active {
+    background: var(--pst-faq-magenta);
+    color: #fff;
+    border-color: var(--pst-faq-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__filter.is-active:hover {
+    background: #c91778;
+    border-color: #c91778;
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__accordion-wrap {
+    background: var(--pst-faq-warm);
+    padding: 2rem 1.5rem 3.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__accordion {
+    max-width: 48rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__item {
+    display: contents;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__item.is-hidden {
+    display: none !important;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__card {
+    background: #fff;
+    border: 1px solid rgba(10, 37, 64, 0.12);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 12px rgba(10, 37, 64, 0.06);
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    text-align: left;
+    padding: 1.25rem;
+    margin: 0;
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--pst-faq-navy);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-faq-page__question {
+      padding: 1.25rem 1.25rem;
+      font-size: 1.1rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__question:hover,
+  #shopify-section-{{ section.id }} .pst-faq-page__question:focus-visible {
+    color: var(--pst-faq-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__question.is-open {
+    color: var(--pst-faq-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__question-text {
+    flex: 1;
+    line-height: 1.35;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__question-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__question-icon svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__question.is-open .pst-faq-page__question-icon {
+    transform: rotate(180deg);
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__answer.is-open {
+    max-height: 60rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__answer-inner {
+    padding: 0 1.25rem 1.25rem;
+    font-family: var(--font-body-family);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--pst-faq-slate);
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__answer-inner p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__answer-inner a {
+    color: var(--pst-faq-magenta);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__answer-inner a:hover {
+    color: var(--pst-faq-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__cta {
+    background: var(--pst-faq-navy);
+    padding: clamp(3rem, 7vw, 4.5rem) 1.5rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__cta-inner {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__cta-title {
+    font-family: Outfit, system-ui, sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    color: #fff;
+    margin: 0 0 0.75rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__cta-text {
+    font-family: var(--font-body-family);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 1.75rem;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.25rem;
+    padding: 0 1.75rem;
+    font-family: var(--font-body-family);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.15s ease;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__btn--primary {
+    background: var(--pst-faq-magenta);
+    color: #fff;
+    border: 2px solid var(--pst-faq-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__btn--primary:hover {
+    filter: brightness(1.06);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__btn--outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-faq-page__btn--outline:hover {
+    background: #fff;
+    color: var(--pst-faq-navy);
+  }
+{%- endstyle -%}
+
+<script>
+  (function () {
+    var root = document.getElementById('pst-faq-root-{{ section.id }}');
+    if (!root) return;
+
+    var accordion = root.querySelector('[data-faq-accordion]');
+    var filtersWrap = root.querySelector('[data-faq-filters]');
+    if (!accordion || !filtersWrap) return;
+
+    var filterButtons = filtersWrap.querySelectorAll('[data-faq-filter]');
+    var categoryArticles = accordion.querySelectorAll('.pst-faq-page__item[data-category]');
+
+    function setActiveFilter(activeBtn) {
+      filterButtons.forEach(function (btn) {
+        var on = btn === activeBtn;
+        btn.classList.toggle('is-active', on);
+        btn.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+    }
+
+    function applyCategory(filter) {
+      categoryArticles.forEach(function (article) {
+        var cat = article.getAttribute('data-category');
+        var show = filter === 'all' || cat === filter;
+        article.classList.toggle('is-hidden', !show);
+        if (!show) {
+          article.querySelectorAll('.pst-faq-page__question.is-open').forEach(function (q) {
+            q.classList.remove('is-open');
+            q.setAttribute('aria-expanded', 'false');
+            var ans = q.nextElementSibling;
+            if (ans && ans.classList.contains('pst-faq-page__answer')) {
+              ans.classList.remove('is-open');
+            }
+          });
+        }
+      });
+    }
+
+    filterButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var filter = btn.getAttribute('data-faq-filter') || 'all';
+        setActiveFilter(btn);
+        applyCategory(filter);
+      });
+    });
+
+    function closeAllQuestions() {
+      accordion.querySelectorAll('.pst-faq-page__question.is-open').forEach(function (openQ) {
+        openQ.classList.remove('is-open');
+        openQ.setAttribute('aria-expanded', 'false');
+        var ans = openQ.nextElementSibling;
+        if (ans && ans.classList.contains('pst-faq-page__answer')) {
+          ans.classList.remove('is-open');
+        }
+      });
+    }
+
+    accordion.querySelectorAll('.pst-faq-page__question').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var opening = !btn.classList.contains('is-open');
+        var answer = btn.nextElementSibling;
+
+        closeAllQuestions();
+
+        if (opening && answer && answer.classList.contains('pst-faq-page__answer')) {
+          btn.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+          answer.classList.add('is-open');
+        }
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ page (Perfect Poster)",
+  "tag": "section",
+  "class": "pst-faq-page-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "hero_heading",
+      "label": "Hero heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtext",
+      "label": "Hero subtext",
+      "default": "Everything you need to know about our products, ordering, and support."
+    },
+    {
+      "type": "text",
+      "id": "filter_all_label",
+      "label": "Filter: All",
+      "default": "All Questions"
+    },
+    {
+      "type": "text",
+      "id": "filter_ordering_label",
+      "label": "Filter: Ordering",
+      "default": "Ordering & Payment"
+    },
+    {
+      "type": "text",
+      "id": "filter_products_label",
+      "label": "Filter: Products",
+      "default": "Products & Systems"
+    },
+    {
+      "type": "text",
+      "id": "filter_shipping_label",
+      "label": "Filter: Shipping",
+      "default": "Shipping & Support"
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "CTA heading",
+      "default": "Still Have Questions?"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Our education specialists are here to help."
+    },
+    {
+      "type": "text",
+      "id": "cta_quote_label",
+      "label": "Primary button label",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "cta_quote_url",
+      "label": "Primary button link",
+      "info": "Defaults to /pages/contact if empty."
+    },
+    {
+      "type": "text",
+      "id": "cta_phone_label",
+      "label": "Secondary button label",
+      "default": "Call (888) 535-4431"
+    },
+    {
+      "type": "url",
+      "id": "cta_phone_url",
+      "label": "Secondary button link",
+      "info": "Defaults to tel:8885354431 if empty."
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ page (Perfect Poster)"
+    }
+  ]
+}
+{% endschema %}
