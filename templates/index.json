@@ -146,7 +146,7 @@
         "columns_desktop": 4,
         "enable_desktop_slider": false,
         "full_width": false,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
@@ -157,14 +157,15 @@
         "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "pst_products_showcase": {
       "type": "pst-products-showcase",
       "settings": {
         "heading": "Professional Visual Tools for Every School",
+        "subtitle": "Poster makers, awards systems, and laminators built for classrooms and districts.",
         "quote_label": "Request a Quote",
         "quote_link": "/pages/contact",
         "learn_label": "Learn More",
@@ -181,8 +182,7 @@
           "settings": {
             "quote": "The Perfect Poster Maker has transformed how we communicate...",
             "name": "Laura M.",
-            "role": "Media Specialist",
-            "region": "North Carolina"
+            "role": "Media Specialist"
           }
         },
         "quote_2": {
@@ -190,8 +190,7 @@
           "settings": {
             "quote": "As a principal, I needed a solution that was easy for staff...",
             "name": "William T.",
-            "role": "Principal",
-            "region": "Florida"
+            "role": "Principal"
           }
         },
         "quote_3": {
@@ -199,8 +198,7 @@
           "settings": {
             "quote": "The purchase order process was seamless...",
             "name": "Christine F.",
-            "role": "Bookkeeper",
-            "region": "South Carolina"
+            "role": "Bookkeeper"
           }
         }
       },
@@ -211,6 +209,7 @@
       ],
       "settings": {
         "heading": "What Schools Are Saying",
+        "subtitle": "Trusted by educators across the nation",
         "padding_top": 72,
         "padding_bottom": 72
       }
