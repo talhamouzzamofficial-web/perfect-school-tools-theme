@@ -1,0 +1,1123 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --pst-navy: #0a2540;
+    --pst-magenta: #e91e8c;
+    --pst-gold: #f5b731;
+    --pst-warm: #fdf8f0;
+    --pst-body: #334155;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about {
+    font-family: var(--font-body-family);
+    color: var(--pst-body);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__hero {
+    background: linear-gradient(160deg, #0a2540 0%, #143a5c 48%, #0a2540 100%);
+    padding: 3rem 2rem 3.8rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__badge {
+    display: inline-block;
+    margin: 0 0 1.2rem;
+    padding: 0.45rem 1rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--pst-gold);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(245, 183, 49, 0.45);
+    border-radius: 999px;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__hero-title {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.6rem, 4vw, 3.6rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__hero-sub {
+    margin: 0 auto 2rem;
+    max-width: 56rem;
+    font-size: 1.65rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.8rem;
+    padding: 0 1.8rem;
+    font-family: var(--font-body-family);
+    font-size: 1.45rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: filter 0.2s ease, background 0.2s ease;
+    flex: 1 1 auto;
+    min-width: min(100%, 16rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--magenta {
+    background: var(--pst-magenta);
+    color: #fff;
+    border: 2px solid var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--magenta:hover,
+  #shopify-section-{{ section.id }} .pst-about__btn--magenta:focus {
+    filter: brightness(1.06);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--outline-light {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--outline-light:hover,
+  #shopify-section-{{ section.id }} .pst-about__btn--outline-light:focus {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__trust {
+    background: var(--pst-gold);
+    padding: 1.4rem 1.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__trust-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-about__trust-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__trust-item {
+    padding: 1.15rem 0.85rem;
+    text-align: center;
+    font-family: var(--font-body-family);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--pst-navy);
+    border: 1px solid rgba(10, 37, 64, 0.12);
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-about__trust-item {
+      padding: 1.5rem 1rem;
+      font-size: 1.35rem;
+      border-left: none;
+    }
+
+    #shopify-section-{{ section.id }} .pst-about__trust-item:first-child {
+      border-left: 1px solid rgba(10, 37, 64, 0.12);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__who {
+    background: #fff;
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__who-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+    display: grid;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-about__who-inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__section-heading {
+    margin: 0 0 1.4rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3vw, 2.9rem);
+    font-weight: 800;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__story p {
+    margin: 0 0 1.2rem;
+    font-size: 1.45rem;
+    line-height: 1.6;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__story p:last-of-type {
+    margin-bottom: 1.6rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__tagline {
+    margin: 0 0 1.4rem;
+    padding: 0 0 0 1rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--pst-navy);
+    border-left: 4px solid var(--pst-gold);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__motto {
+    padding: 1.4rem 1.6rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #fff;
+    text-align: center;
+    background: var(--pst-navy);
+    border-radius: 0.65rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.12);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__stat-card {
+    padding: 1.6rem 1.2rem;
+    text-align: center;
+    background: var(--pst-warm);
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.65rem;
+    box-shadow: 0 3px 14px rgba(10, 37, 64, 0.06);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__stat-value {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.4rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__stat-label {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__offer {
+    background: var(--pst-warm);
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__offer-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__offer-heading {
+    margin: 0 0 2.5rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+    font-weight: 800;
+    color: var(--pst-navy);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__offer-grid {
+    display: grid;
+    gap: 1.8rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-about__offer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-about__offer-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__offer-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.6rem;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.07);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__offer-icon {
+    width: 5.2rem;
+    height: 5.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: #fff;
+    background: var(--pst-navy);
+    border-radius: 0.65rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__offer-title {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__offer-text {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__rewards {
+    position: relative;
+    background: #061a2e;
+    padding: 4rem 2rem 4.5rem;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__rewards-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 110rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__rewards-layout {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-about__rewards-layout {
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__rewards-heading {
+    margin: 0 0 1.4rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3vw, 2.9rem);
+    font-weight: 800;
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__rewards-list {
+    margin: 0 0 1.8rem;
+    padding-left: 1.4rem;
+    font-size: 1.45rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.94);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__rewards-list li {
+    margin-bottom: 0.55rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__rewards-note {
+    margin: 0 0 1.8rem;
+    font-size: 1.35rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.78);
+    font-style: italic;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__rewards-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--gold {
+    background: var(--pst-gold);
+    color: var(--pst-navy);
+    border: 2px solid var(--pst-gold);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--gold:hover,
+  #shopify-section-{{ section.id }} .pst-about__btn--gold:focus {
+    filter: brightness(1.05);
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--outline-gold {
+    background: transparent;
+    color: var(--pst-gold);
+    border: 2px solid var(--pst-gold);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--outline-gold:hover,
+  #shopify-section-{{ section.id }} .pst-about__btn--outline-gold:focus {
+    background: rgba(245, 183, 49, 0.12);
+    color: var(--pst-gold);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__rewards-badge-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__rewards-badge {
+    width: 14rem;
+    height: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    text-align: center;
+    font-family: var(--font-heading-family);
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--pst-navy);
+    background: var(--pst-gold);
+    border-radius: 50%;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__rewards-badge span {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__webinar {
+    background: var(--pst-warm);
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__webinar-inner {
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__webinar-heading {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3vw, 2.9rem);
+    font-weight: 800;
+    color: var(--pst-navy);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__webinar-lead {
+    margin: 0 auto 2rem;
+    max-width: 52rem;
+    font-size: 1.45rem;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__notice {
+    padding: 2rem 1.8rem;
+    margin-bottom: 2rem;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.12);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.07);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__notice-title {
+    margin: 0 0 0.6rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__notice-text {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__webinar-cta {
+    display: flex;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--navy {
+    background: var(--pst-navy);
+    color: #fff;
+    border: 2px solid var(--pst-navy);
+    min-width: min(100%, 22rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--navy:hover,
+  #shopify-section-{{ section.id }} .pst-about__btn--navy:focus {
+    filter: brightness(1.08);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__bottom-cta {
+    background: linear-gradient(135deg, #e91e8c 0%, #b8146e 55%, #e91e8c 100%);
+    padding: 3.2rem 2rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__bottom-title {
+    margin: 0 0 1.6rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__bottom-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--bottom-magenta {
+    background: #fff;
+    color: var(--pst-magenta);
+    border: 2px solid #fff;
+    min-width: min(100%, 18rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--bottom-magenta:hover,
+  #shopify-section-{{ section.id }} .pst-about__btn--bottom-magenta:focus {
+    filter: brightness(0.98);
+    color: var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--bottom-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    min-width: min(100%, 18rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-about__btn--bottom-outline:hover,
+  #shopify-section-{{ section.id }} .pst-about__btn--bottom-outline:focus {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign pst_quote_url = section.settings.quote_url
+  if pst_quote_url == blank
+    if pages.contact != empty
+      assign pst_quote_url = pages.contact.url
+    else
+      assign pst_quote_url = '/pages/contact'
+    endif
+  endif
+
+  assign pst_contact_url = section.settings.contact_url
+  if pst_contact_url == blank
+    if pages.contact != empty
+      assign pst_contact_url = pages.contact.url
+    else
+      assign pst_contact_url = '/pages/contact'
+    endif
+  endif
+
+  assign pst_register_url = section.settings.register_url
+  if pst_register_url == blank
+    assign pst_register_url = routes.account_register_url
+  endif
+
+  assign pst_login_url = section.settings.login_url
+  if pst_login_url == blank
+    assign pst_login_url = routes.account_login_url
+  endif
+-%}
+
+<div class="pst-about">
+  <header class="pst-about__hero">
+    <span class="pst-about__badge">{{ section.settings.hero_badge | escape }}</span>
+    <h1 class="pst-about__hero-title">{{ section.settings.hero_title | escape }}</h1>
+    <p class="pst-about__hero-sub">{{ section.settings.hero_subtext | escape }}</p>
+    <div class="pst-about__hero-actions">
+      {%- if section.settings.quote_btn_label != blank -%}
+        <a class="pst-about__btn pst-about__btn--magenta" href="{{ pst_quote_url }}">{{ section.settings.quote_btn_label | escape }}</a>
+      {%- endif -%}
+      <a class="pst-about__btn pst-about__btn--outline-light" href="tel:{{ section.settings.phone_tel | escape }}">{{ section.settings.phone_display | escape }}</a>
+    </div>
+  </header>
+
+  <div class="pst-about__trust" role="region" aria-label="{{ section.settings.trust_aria_label | escape }}">
+    <div class="pst-about__trust-inner">
+      <div class="pst-about__trust-grid">
+        <div class="pst-about__trust-item">{{ section.settings.trust_1 | escape }}</div>
+        <div class="pst-about__trust-item">{{ section.settings.trust_2 | escape }}</div>
+        <div class="pst-about__trust-item">{{ section.settings.trust_3 | escape }}</div>
+        <div class="pst-about__trust-item">{{ section.settings.trust_4 | escape }}</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="pst-about__who" aria-labelledby="pst-about-who-heading">
+    <div class="pst-about__who-inner">
+      <div class="pst-about__story">
+        <h2 id="pst-about-who-heading" class="pst-about__section-heading">{{ section.settings.who_heading | escape }}</h2>
+        <p>{{ section.settings.story_paragraph | escape | newline_to_br }}</p>
+        {%- if section.settings.tagline_quote != blank -%}
+          <p class="pst-about__tagline">{{ section.settings.tagline_quote | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.motto_text != blank -%}
+          <p class="pst-about__motto">{{ section.settings.motto_text | escape }}</p>
+        {%- endif -%}
+      </div>
+      <div class="pst-about__stats-grid" aria-label="{{ section.settings.stats_aria_label | escape }}">
+        <div class="pst-about__stat-card">
+          <span class="pst-about__stat-value">{{ section.settings.stat_1_value | escape }}</span>
+          <span class="pst-about__stat-label">{{ section.settings.stat_1_label | escape }}</span>
+        </div>
+        <div class="pst-about__stat-card">
+          <span class="pst-about__stat-value">{{ section.settings.stat_2_value | escape }}</span>
+          <span class="pst-about__stat-label">{{ section.settings.stat_2_label | escape }}</span>
+        </div>
+        <div class="pst-about__stat-card">
+          <span class="pst-about__stat-value">{{ section.settings.stat_3_value | escape }}</span>
+          <span class="pst-about__stat-label">{{ section.settings.stat_3_label | escape }}</span>
+        </div>
+        <div class="pst-about__stat-card">
+          <span class="pst-about__stat-value">{{ section.settings.stat_4_value | escape }}</span>
+          <span class="pst-about__stat-label">{{ section.settings.stat_4_label | escape }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-about__offer" aria-labelledby="pst-about-offer-heading">
+    <div class="pst-about__offer-inner">
+      <h2 id="pst-about-offer-heading" class="pst-about__offer-heading">{{ section.settings.offer_heading | escape }}</h2>
+      <div class="pst-about__offer-grid">
+        <article class="pst-about__offer-card">
+          <div class="pst-about__offer-icon" aria-hidden="true">{{ section.settings.offer_1_icon | escape }}</div>
+          <h3 class="pst-about__offer-title">{{ section.settings.offer_1_title | escape }}</h3>
+          <p class="pst-about__offer-text">{{ section.settings.offer_1_text | escape }}</p>
+        </article>
+        <article class="pst-about__offer-card">
+          <div class="pst-about__offer-icon" aria-hidden="true">{{ section.settings.offer_2_icon | escape }}</div>
+          <h3 class="pst-about__offer-title">{{ section.settings.offer_2_title | escape }}</h3>
+          <p class="pst-about__offer-text">{{ section.settings.offer_2_text | escape }}</p>
+        </article>
+        <article class="pst-about__offer-card">
+          <div class="pst-about__offer-icon" aria-hidden="true">{{ section.settings.offer_3_icon | escape }}</div>
+          <h3 class="pst-about__offer-title">{{ section.settings.offer_3_title | escape }}</h3>
+          <p class="pst-about__offer-text">{{ section.settings.offer_3_text | escape }}</p>
+        </article>
+        <article class="pst-about__offer-card">
+          <div class="pst-about__offer-icon" aria-hidden="true">{{ section.settings.offer_4_icon | escape }}</div>
+          <h3 class="pst-about__offer-title">{{ section.settings.offer_4_title | escape }}</h3>
+          <p class="pst-about__offer-text">{{ section.settings.offer_4_text | escape }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-about__rewards" aria-labelledby="pst-about-rewards-heading">
+    <div class="pst-about__rewards-inner">
+      <div class="pst-about__rewards-layout">
+        <div>
+          <h2 id="pst-about-rewards-heading" class="pst-about__rewards-heading">{{ section.settings.rewards_heading | escape }}</h2>
+          <ul class="pst-about__rewards-list">
+            <li>{{ section.settings.rewards_li_1 | escape }}</li>
+            <li>{{ section.settings.rewards_li_2 | escape }}</li>
+            <li>{{ section.settings.rewards_li_3 | escape }}</li>
+            <li>{{ section.settings.rewards_li_4 | escape }}</li>
+          </ul>
+          <p class="pst-about__rewards-note">{{ section.settings.rewards_note | escape }}</p>
+          <div class="pst-about__rewards-actions">
+            <a class="pst-about__btn pst-about__btn--gold" href="{{ pst_register_url }}">{{ section.settings.register_btn_label | escape }}</a>
+            <a class="pst-about__btn pst-about__btn--outline-gold" href="{{ pst_login_url }}">{{ section.settings.login_btn_label | escape }}</a>
+          </div>
+        </div>
+        <div class="pst-about__rewards-badge-wrap">
+          <div class="pst-about__rewards-badge" role="img" aria-label="{{ section.settings.badge_aria_label | escape }}">
+            <span>{{ section.settings.badge_percent | escape }}</span>
+            {{ section.settings.badge_line_1 | escape }}<br>
+            {{ section.settings.badge_line_2 | escape }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-about__webinar" aria-labelledby="pst-about-webinar-heading">
+    <div class="pst-about__webinar-inner">
+      <h2 id="pst-about-webinar-heading" class="pst-about__webinar-heading">{{ section.settings.webinar_heading | escape }}</h2>
+      <p class="pst-about__webinar-lead">{{ section.settings.webinar_lead | escape }}</p>
+      <div class="pst-about__notice">
+        <h3 class="pst-about__notice-title">{{ section.settings.notice_title | escape }}</h3>
+        <p class="pst-about__notice-text">{{ section.settings.notice_text | escape }}</p>
+      </div>
+      <div class="pst-about__webinar-cta">
+        <a class="pst-about__btn pst-about__btn--navy" href="{{ pst_contact_url }}">{{ section.settings.webinar_btn_label | escape }}</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pst-about__bottom-cta">
+    <h2 class="pst-about__bottom-title">{{ section.settings.bottom_title | escape }}</h2>
+    <div class="pst-about__bottom-actions">
+      {%- if section.settings.bottom_quote_label != blank -%}
+        <a class="pst-about__btn pst-about__btn--bottom-magenta" href="{{ pst_quote_url }}">{{ section.settings.bottom_quote_label | escape }}</a>
+      {%- endif -%}
+      <a class="pst-about__btn pst-about__btn--bottom-outline" href="tel:{{ section.settings.phone_tel | escape }}">{{ section.settings.phone_display | escape }}</a>
+    </div>
+  </footer>
+</div>
+
+{% schema %}
+{
+  "name": "PST About",
+  "tag": "section",
+  "class": "pst-about-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "text",
+      "id": "hero_badge",
+      "label": "Badge",
+      "default": "Our Story"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Title",
+      "default": "About Perfect School Tools"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtext",
+      "label": "Subtitle",
+      "default": "For more than 30 years, we’ve partnered with schools nationwide — delivering reliable equipment, fast shipping, and unlimited support educators can count on."
+    },
+    {
+      "type": "text",
+      "id": "quote_btn_label",
+      "label": "Quote button label",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "quote_url",
+      "label": "Quote button link"
+    },
+    {
+      "type": "text",
+      "id": "phone_display",
+      "label": "Phone (display)",
+      "default": "(888) 535-4431"
+    },
+    {
+      "type": "text",
+      "id": "phone_tel",
+      "label": "Phone (tel href)",
+      "default": "8885354431",
+      "info": "Digits only for tel: link"
+    },
+    {
+      "type": "header",
+      "content": "Trust bar"
+    },
+    {
+      "type": "text",
+      "id": "trust_aria_label",
+      "label": "Region label (accessibility)",
+      "default": "Why schools choose us"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Item 1",
+      "default": "Purchase Orders Accepted"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Item 2",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Item 3",
+      "default": "Unlimited Support"
+    },
+    {
+      "type": "text",
+      "id": "trust_4",
+      "label": "Item 4",
+      "default": "30+ Years Serving Schools"
+    },
+    {
+      "type": "header",
+      "content": "Who we are"
+    },
+    {
+      "type": "text",
+      "id": "who_heading",
+      "label": "Heading",
+      "default": "Who We Are"
+    },
+    {
+      "type": "textarea",
+      "id": "story_paragraph",
+      "label": "Story",
+      "default": "At Perfect School Tools, we understand the daily challenges schools face and the dedication of staff working hard for their students. That's why we're committed to delivering service that goes above and beyond expectations. Whether you need high-quality poster printers, award maker systems, cold laminators, or the supplies to keep them running, we deliver fast — because we know most school projects come with tight deadlines and little time to spare. Our solutions help educators and students create visually impactful projects — delivered quickly to keep you on schedule. With over 30 years of experience serving schools, teachers, and staff, we've earned a reputation for reliability, speed, and excellence — proudly supporting those who support our students."
+    },
+    {
+      "type": "text",
+      "id": "tagline_quote",
+      "label": "Tagline quote",
+      "default": "We believe every school deserves tools that work as hard as they do."
+    },
+    {
+      "type": "text",
+      "id": "motto_text",
+      "label": "Motto box",
+      "default": "We Serve Those Who Serve Our Students. Together!"
+    },
+    {
+      "type": "text",
+      "id": "stats_aria_label",
+      "label": "Stats region label (accessibility)",
+      "default": "By the numbers"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_value",
+      "label": "Stat 1 value",
+      "default": "30+"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 label",
+      "default": "Years"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_value",
+      "label": "Stat 2 value",
+      "default": "10K+"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 label",
+      "default": "Schools"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_value",
+      "label": "Stat 3 value",
+      "default": "50"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Stat 3 label",
+      "default": "States"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_value",
+      "label": "Stat 4 value",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_label",
+      "label": "Stat 4 label",
+      "default": "Satisfaction"
+    },
+    {
+      "type": "header",
+      "content": "What we offer"
+    },
+    {
+      "type": "text",
+      "id": "offer_heading",
+      "label": "Heading",
+      "default": "What We Offer"
+    },
+    {
+      "type": "text",
+      "id": "offer_1_icon",
+      "label": "Card 1 icon (emoji)",
+      "default": "🖨️"
+    },
+    {
+      "type": "text",
+      "id": "offer_1_title",
+      "label": "Card 1 title",
+      "default": "Poster Makers"
+    },
+    {
+      "type": "textarea",
+      "id": "offer_1_text",
+      "label": "Card 1 text",
+      "default": "High-quality poster printers for bold, classroom-ready visuals."
+    },
+    {
+      "type": "text",
+      "id": "offer_2_icon",
+      "label": "Card 2 icon (emoji)",
+      "default": "🏆"
+    },
+    {
+      "type": "text",
+      "id": "offer_2_title",
+      "label": "Card 2 title",
+      "default": "Award Makers"
+    },
+    {
+      "type": "textarea",
+      "id": "offer_2_text",
+      "label": "Card 2 text",
+      "default": "Recognition systems that celebrate student achievement."
+    },
+    {
+      "type": "text",
+      "id": "offer_3_icon",
+      "label": "Card 3 icon (emoji)",
+      "default": "📐"
+    },
+    {
+      "type": "text",
+      "id": "offer_3_title",
+      "label": "Card 3 title",
+      "default": "Cold Laminators"
+    },
+    {
+      "type": "textarea",
+      "id": "offer_3_text",
+      "label": "Card 3 text",
+      "default": "Durable lamination to protect posters, signs, and displays."
+    },
+    {
+      "type": "text",
+      "id": "offer_4_icon",
+      "label": "Card 4 icon (emoji)",
+      "default": "📦"
+    },
+    {
+      "type": "text",
+      "id": "offer_4_title",
+      "label": "Card 4 title",
+      "default": "Supplies & Accessories"
+    },
+    {
+      "type": "textarea",
+      "id": "offer_4_text",
+      "label": "Card 4 text",
+      "default": "Inks, media, and parts to keep your equipment running smoothly."
+    },
+    {
+      "type": "header",
+      "content": "PST Points"
+    },
+    {
+      "type": "text",
+      "id": "rewards_heading",
+      "label": "Heading",
+      "default": "PST Points Rewards & Loyalty Program"
+    },
+    {
+      "type": "text",
+      "id": "rewards_li_1",
+      "label": "Bullet 1",
+      "default": "Join for free"
+    },
+    {
+      "type": "text",
+      "id": "rewards_li_2",
+      "label": "Bullet 2",
+      "default": "Earn 3% back on all purchases"
+    },
+    {
+      "type": "text",
+      "id": "rewards_li_3",
+      "label": "Bullet 3",
+      "default": "Refer other schools to earn rewards"
+    },
+    {
+      "type": "text",
+      "id": "rewards_li_4",
+      "label": "Bullet 4",
+      "default": "Exclusive member perks"
+    },
+    {
+      "type": "textarea",
+      "id": "rewards_note",
+      "label": "Rewards note",
+      "default": "Click the Rewards icon in the lower right corner to track your points"
+    },
+    {
+      "type": "text",
+      "id": "register_btn_label",
+      "label": "Register button",
+      "default": "Become a Member — It's Free!"
+    },
+    {
+      "type": "url",
+      "id": "register_url",
+      "label": "Register link",
+      "info": "Leave blank to use the storefront register URL"
+    },
+    {
+      "type": "text",
+      "id": "login_btn_label",
+      "label": "Sign in button",
+      "default": "Already a Member? Sign In"
+    },
+    {
+      "type": "url",
+      "id": "login_url",
+      "label": "Sign in link",
+      "info": "Leave blank to use the storefront login URL"
+    },
+    {
+      "type": "text",
+      "id": "badge_percent",
+      "label": "Badge percent line",
+      "default": "3%"
+    },
+    {
+      "type": "text",
+      "id": "badge_line_1",
+      "label": "Badge line 1",
+      "default": "Back on Every"
+    },
+    {
+      "type": "text",
+      "id": "badge_line_2",
+      "label": "Badge line 2",
+      "default": "Purchase"
+    },
+    {
+      "type": "text",
+      "id": "badge_aria_label",
+      "label": "Badge (accessibility)",
+      "default": "3 percent back on every purchase"
+    },
+    {
+      "type": "header",
+      "content": "Webinars"
+    },
+    {
+      "type": "text",
+      "id": "webinar_heading",
+      "label": "Heading",
+      "default": "Live Webinar Events"
+    },
+    {
+      "type": "textarea",
+      "id": "webinar_lead",
+      "label": "Intro text",
+      "default": "Join upcoming webinars on Perfect Award Systems — learn tips, see demos, and ask our team questions live."
+    },
+    {
+      "type": "text",
+      "id": "notice_title",
+      "label": "Notice title",
+      "default": "New Schedule Coming Soon"
+    },
+    {
+      "type": "textarea",
+      "id": "notice_text",
+      "label": "Notice text",
+      "default": "Our next webinar schedule is being finalized. Check back shortly."
+    },
+    {
+      "type": "text",
+      "id": "webinar_btn_label",
+      "label": "Button label",
+      "default": "Contact Us"
+    },
+    {
+      "type": "url",
+      "id": "contact_url",
+      "label": "Contact button link"
+    },
+    {
+      "type": "header",
+      "content": "Bottom banner"
+    },
+    {
+      "type": "text",
+      "id": "bottom_title",
+      "label": "Title",
+      "default": "Ready to Bring Visual Learning to Your School?"
+    },
+    {
+      "type": "text",
+      "id": "bottom_quote_label",
+      "label": "Quote button",
+      "default": "Request a Quote"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PST About"
+    }
+  ]
+}
+{% endschema %}
