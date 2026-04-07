@@ -1,0 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pst_collection_hero": {
+      "type": "pst-collection-hero",
+      "settings": {
+        "collection_badge": "All Products",
+        "hero_subtitle": "Browse all Perfect School Tools products — poster makers, award systems, cold laminators, supplies, paper, ink, and bundles. Purchase orders accepted.",
+        "intro_heading": "All Products for Schools",
+        "intro_text": "Perfect School Tools offers a complete range of visual learning products for K-12 schools. Browse our full catalog including poster maker systems, award makers, cold laminators, and all the supplies you need.",
+        "products_per_page": 12
+      }
+    }
+  },
+  "order": ["pst_collection_hero"]
+}

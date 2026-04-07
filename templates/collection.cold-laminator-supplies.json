@@ -1,0 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pst_collection_hero": {
+      "type": "pst-collection-hero",
+      "settings": {
+        "collection_badge": "Cold Laminator Supplies",
+        "hero_subtitle": "Cold laminator film, adhesive rolls, and accessories for schools. Multiple widths and finishes available. Fast shipping. Purchase orders accepted.",
+        "intro_heading": "Cold Laminator Supplies for Schools",
+        "intro_text": "Keep your cold laminator running with our full range of lamination film, adhesive rolls, and accessories. Available in multiple widths and finishes to suit all your school lamination needs.",
+        "products_per_page": 12
+      }
+    }
+  },
+  "order": ["pst_collection_hero"]
+}

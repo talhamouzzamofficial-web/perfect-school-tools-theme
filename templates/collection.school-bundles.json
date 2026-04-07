@@ -1,0 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pst_collection_hero": {
+      "type": "pst-collection-hero",
+      "settings": {
+        "collection_badge": "School Bundles",
+        "hero_subtitle": "Save with complete poster maker bundle packages for schools. System plus extra supplies at discounted prices. Free shipping. Purchase orders accepted.",
+        "intro_heading": "School Poster Maker Bundles",
+        "intro_text": "Get everything your school needs in one convenient bundle. Our poster maker bundle packages include the system, starter supplies, and everything to get printing immediately — at a discounted bundle price.",
+        "products_per_page": 12
+      }
+    }
+  },
+  "order": ["pst_collection_hero"]
+}

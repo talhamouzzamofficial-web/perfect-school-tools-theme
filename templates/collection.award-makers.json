@@ -1,0 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pst_collection_hero": {
+      "type": "pst-collection-hero",
+      "settings": {
+        "collection_badge": "Award Makers",
+        "hero_subtitle": "Professional award maker systems for K-12 schools. Print certificates, recognition awards, and student achievement materials in-house. Purchase orders accepted.",
+        "intro_heading": "Award Maker Systems for K-12 Schools",
+        "intro_text": "Perfect School Tools award maker systems help schools celebrate student achievements with professionally printed certificates and awards. Print full-color awards in-house at a fraction of outside printing costs. Ideal for media specialists, teachers, and administrators.",
+        "products_per_page": 12
+      }
+    }
+  },
+  "order": ["pst_collection_hero"]
+}

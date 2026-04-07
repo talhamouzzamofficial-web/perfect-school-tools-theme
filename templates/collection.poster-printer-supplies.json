@@ -1,0 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pst_collection_hero": {
+      "type": "pst-collection-hero",
+      "settings": {
+        "collection_badge": "Poster Printer Supplies",
+        "hero_subtitle": "Complete poster printer supplies for schools — paper rolls, ink cartridges, lamination film, and more. Fast shipping. Purchase orders accepted.",
+        "intro_heading": "Poster Printer Supplies for Schools",
+        "intro_text": "Keep your Perfect School Tools systems running smoothly with our full range of poster printer supplies. From paper rolls and ink cartridges to lamination film and maintenance kits — we have everything your school needs for uninterrupted printing.",
+        "products_per_page": 12
+      }
+    }
+  },
+  "order": ["pst_collection_hero"]
+}

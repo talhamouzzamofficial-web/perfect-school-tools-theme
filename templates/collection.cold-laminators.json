@@ -1,0 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pst_collection_hero": {
+      "type": "pst-collection-hero",
+      "settings": {
+        "collection_badge": "Cold Laminators",
+        "hero_subtitle": "Safe, heat-free cold laminator systems for K-12 schools. Protect posters, awards, and educational materials. No heat means safe for any classroom. Purchase orders accepted.",
+        "intro_heading": "Cold Laminators for K-12 Schools",
+        "intro_text": "Perfect School Tools cold laminators protect your printed posters, awards, and educational materials without heat — making them completely safe for classroom use. Our systems are easy to use and built for the demands of a busy school environment.",
+        "products_per_page": 12
+      }
+    }
+  },
+  "order": ["pst_collection_hero"]
+}
