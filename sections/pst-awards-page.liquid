@@ -1,0 +1,1129 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --pst-navy: #0a2540;
+    --pst-magenta: #e91e8c;
+    --pst-gold: #f5b731;
+    --pst-warm: #fdf8f0;
+    --pst-body: #334155;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards {
+    font-family: var(--font-body-family);
+    color: var(--pst-body);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__hero {
+    background: linear-gradient(165deg, #0a2540 0%, #0f4872 52%, #0a2540 100%);
+    padding: 3rem 2rem 3.8rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__badge {
+    display: inline-block;
+    margin: 0 0 1.2rem;
+    padding: 0.45rem 1rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--pst-gold);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(245, 183, 49, 0.45);
+    border-radius: 999px;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__hero-title {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__hero-sub {
+    margin: 0 auto 2rem;
+    max-width: 56rem;
+    font-size: 1.65rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.8rem;
+    padding: 0 1.8rem;
+    font-family: var(--font-body-family);
+    font-size: 1.45rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: filter 0.2s ease, background 0.2s ease;
+    flex: 1 1 auto;
+    min-width: min(100%, 17rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__btn--magenta {
+    background: var(--pst-magenta);
+    color: #fff;
+    border: 2px solid var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__btn--magenta:hover,
+  #shopify-section-{{ section.id }} .pst-awards__btn--magenta:focus {
+    filter: brightness(1.06);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__btn--outline-light {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__btn--outline-light:hover,
+  #shopify-section-{{ section.id }} .pst-awards__btn--outline-light:focus {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__trust {
+    background: var(--pst-gold);
+    padding: 1.4rem 1.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__trust-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-awards__trust-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__trust-item {
+    padding: 1.15rem 0.85rem;
+    text-align: center;
+    font-family: var(--font-body-family);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--pst-navy);
+    border: 1px solid rgba(10, 37, 64, 0.12);
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-awards__trust-item {
+      padding: 1.5rem 1rem;
+      font-size: 1.32rem;
+      border-left: none;
+    }
+
+    #shopify-section-{{ section.id }} .pst-awards__trust-item:first-child {
+      border-left: 1px solid rgba(10, 37, 64, 0.12);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__products {
+    background: var(--pst-warm);
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__products-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__h2 {
+    margin: 0 0 2.5rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-weight: 800;
+    color: var(--pst-navy);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__product-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-awards__product-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.2rem;
+      align-items: stretch;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem 2rem 2.2rem;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.07);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__card-badge {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    padding: 0.3rem 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--pst-magenta);
+    border-radius: 0.35rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__card-title {
+    margin: 0 0 1rem;
+    padding-right: 7rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.85rem, 2.5vw, 2.2rem);
+    font-weight: 800;
+    color: var(--pst-navy);
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__card-desc {
+    margin: 0 0 1.2rem;
+    font-size: 1.45rem;
+    line-height: 1.55;
+    flex-grow: 0;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__card-list {
+    margin: 0 0 1.8rem;
+    padding-left: 1.2rem;
+    font-size: 1.4rem;
+    line-height: 1.55;
+    flex-grow: 1;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__card-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__btn--navy {
+    background: var(--pst-navy);
+    color: #fff;
+    border: 2px solid var(--pst-navy);
+    width: 100%;
+    margin-top: auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__btn--navy:hover,
+  #shopify-section-{{ section.id }} .pst-awards__btn--navy:focus {
+    filter: brightness(1.08);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__use {
+    background: #fff;
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__use-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__use-grid {
+    display: grid;
+    gap: 1.8rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 600px) {
+    #shopify-section-{{ section.id }} .pst-awards__use-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-awards__use-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__use-card {
+    padding: 1.8rem 1.5rem;
+    background: var(--pst-warm);
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.65rem;
+    box-shadow: 0 3px 14px rgba(10, 37, 64, 0.06);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__use-icon {
+    font-size: 2.6rem;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__use-card h3 {
+    margin: 0 0 0.6rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__use-card p {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__how {
+    background: var(--pst-warm);
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__how-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__steps {
+    display: grid;
+    gap: 1.8rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-awards__steps {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+      align-items: stretch;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__step {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.07);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__step-num {
+    width: 4.2rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    background: var(--pst-magenta);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__step-title {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+    line-height: 1.25;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__step-text {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.55;
+    flex-grow: 1;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__faq {
+    background: #fff;
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__faq-inner {
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__faq-item {
+    border: 1px solid rgba(15, 72, 114, 0.12);
+    border-radius: 0.65rem;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(10, 37, 64, 0.05);
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__faq-item[open] {
+    box-shadow: 0 4px 18px rgba(10, 37, 64, 0.08);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__faq-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.35rem 1.4rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__faq-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__faq-summary::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--pst-magenta);
+    background: rgba(233, 30, 140, 0.1);
+    border-radius: 0.35rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__faq-item[open] .pst-awards__faq-summary::after {
+    content: '−';
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__faq-answer {
+    padding: 0 1.4rem 1.35rem;
+    font-size: 1.4rem;
+    line-height: 1.55;
+    border-top: 1px solid rgba(15, 72, 114, 0.08);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__faq-answer p {
+    margin: 1rem 0 0;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__bottom {
+    background: linear-gradient(135deg, #e91e8c 0%, #c91578 55%, #e91e8c 100%);
+    padding: 3.2rem 2rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__bottom-title {
+    margin: 0 0 0.85rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__bottom-sub {
+    margin: 0 auto 1.8rem;
+    max-width: 48rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__bottom-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__btn--white {
+    background: #fff;
+    color: var(--pst-magenta);
+    border: 2px solid #fff;
+    min-width: min(100%, 20rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__btn--white:hover,
+  #shopify-section-{{ section.id }} .pst-awards__btn--white:focus {
+    filter: brightness(0.98);
+    color: var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__btn--bottom-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    min-width: min(100%, 20rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-awards__btn--bottom-outline:hover,
+  #shopify-section-{{ section.id }} .pst-awards__btn--bottom-outline:focus {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign pst_awards_shop = section.settings.shop_collection_url
+  if pst_awards_shop == blank
+    assign pst_awards_shop = '/collections/perfect-awards-cut-collection'
+  endif
+
+  assign pst_awards_contact = section.settings.contact_url
+  if pst_awards_contact == blank
+    if pages.contact != empty
+      assign pst_awards_contact = pages.contact.url
+    else
+      assign pst_awards_contact = '/pages/contact'
+    endif
+  endif
+-%}
+
+<div class="pst-awards">
+  <header class="pst-awards__hero">
+    <span class="pst-awards__badge">{{ section.settings.hero_badge | escape }}</span>
+    <h1 class="pst-awards__hero-title">{{ section.settings.hero_title | escape }}</h1>
+    <p class="pst-awards__hero-sub">{{ section.settings.hero_subtitle | escape }}</p>
+    <div class="pst-awards__hero-actions">
+      <a class="pst-awards__btn pst-awards__btn--magenta" href="{{ pst_awards_shop }}">{{ section.settings.hero_btn_shop | escape }}</a>
+      <a class="pst-awards__btn pst-awards__btn--outline-light" href="{{ pst_awards_contact }}">{{ section.settings.hero_btn_quote | escape }}</a>
+    </div>
+  </header>
+
+  <div class="pst-awards__trust" role="region" aria-label="{{ section.settings.trust_aria | escape }}">
+    <div class="pst-awards__trust-inner">
+      <div class="pst-awards__trust-grid">
+        <div class="pst-awards__trust-item">{{ section.settings.trust_1 | escape }}</div>
+        <div class="pst-awards__trust-item">{{ section.settings.trust_2 | escape }}</div>
+        <div class="pst-awards__trust-item">{{ section.settings.trust_3 | escape }}</div>
+        <div class="pst-awards__trust-item">{{ section.settings.trust_4 | escape }}</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="pst-awards__products" aria-labelledby="pst-awards-products-heading">
+    <div class="pst-awards__products-inner">
+      <h2 id="pst-awards-products-heading" class="pst-awards__h2">{{ section.settings.products_heading | escape }}</h2>
+      <div class="pst-awards__product-grid">
+        <article class="pst-awards__product-card">
+          <span class="pst-awards__card-badge">{{ section.settings.card1_badge | escape }}</span>
+          <h3 class="pst-awards__card-title">{{ section.settings.card1_title | escape }}</h3>
+          <p class="pst-awards__card-desc">{{ section.settings.card1_desc | escape }}</p>
+          <ul class="pst-awards__card-list">
+            <li>{{ section.settings.card1_li1 | escape }}</li>
+            <li>{{ section.settings.card1_li2 | escape }}</li>
+            <li>{{ section.settings.card1_li3 | escape }}</li>
+            <li>{{ section.settings.card1_li4 | escape }}</li>
+          </ul>
+          <a class="pst-awards__btn pst-awards__btn--navy" href="{{ pst_awards_shop }}">{{ section.settings.card_btn | escape }}</a>
+        </article>
+        <article class="pst-awards__product-card">
+          <span class="pst-awards__card-badge">{{ section.settings.card2_badge | escape }}</span>
+          <h3 class="pst-awards__card-title">{{ section.settings.card2_title | escape }}</h3>
+          <p class="pst-awards__card-desc">{{ section.settings.card2_desc | escape }}</p>
+          <ul class="pst-awards__card-list">
+            <li>{{ section.settings.card2_li1 | escape }}</li>
+            <li>{{ section.settings.card2_li2 | escape }}</li>
+            <li>{{ section.settings.card2_li3 | escape }}</li>
+            <li>{{ section.settings.card2_li4 | escape }}</li>
+          </ul>
+          <a class="pst-awards__btn pst-awards__btn--navy" href="{{ pst_awards_shop }}">{{ section.settings.card_btn | escape }}</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-awards__use" aria-labelledby="pst-awards-use-heading">
+    <div class="pst-awards__use-inner">
+      <h2 id="pst-awards-use-heading" class="pst-awards__h2">{{ section.settings.use_heading | escape }}</h2>
+      <div class="pst-awards__use-grid">
+        <div class="pst-awards__use-card">
+          <div class="pst-awards__use-icon" aria-hidden="true">{{ section.settings.use1_icon | escape }}</div>
+          <h3>{{ section.settings.use1_title | escape }}</h3>
+          <p>{{ section.settings.use1_text | escape }}</p>
+        </div>
+        <div class="pst-awards__use-card">
+          <div class="pst-awards__use-icon" aria-hidden="true">{{ section.settings.use2_icon | escape }}</div>
+          <h3>{{ section.settings.use2_title | escape }}</h3>
+          <p>{{ section.settings.use2_text | escape }}</p>
+        </div>
+        <div class="pst-awards__use-card">
+          <div class="pst-awards__use-icon" aria-hidden="true">{{ section.settings.use3_icon | escape }}</div>
+          <h3>{{ section.settings.use3_title | escape }}</h3>
+          <p>{{ section.settings.use3_text | escape }}</p>
+        </div>
+        <div class="pst-awards__use-card">
+          <div class="pst-awards__use-icon" aria-hidden="true">{{ section.settings.use4_icon | escape }}</div>
+          <h3>{{ section.settings.use4_title | escape }}</h3>
+          <p>{{ section.settings.use4_text | escape }}</p>
+        </div>
+        <div class="pst-awards__use-card">
+          <div class="pst-awards__use-icon" aria-hidden="true">{{ section.settings.use5_icon | escape }}</div>
+          <h3>{{ section.settings.use5_title | escape }}</h3>
+          <p>{{ section.settings.use5_text | escape }}</p>
+        </div>
+        <div class="pst-awards__use-card">
+          <div class="pst-awards__use-icon" aria-hidden="true">{{ section.settings.use6_icon | escape }}</div>
+          <h3>{{ section.settings.use6_title | escape }}</h3>
+          <p>{{ section.settings.use6_text | escape }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-awards__how" aria-labelledby="pst-awards-how-heading">
+    <div class="pst-awards__how-inner">
+      <h2 id="pst-awards-how-heading" class="pst-awards__h2">{{ section.settings.how_heading | escape }}</h2>
+      <div class="pst-awards__steps">
+        <article class="pst-awards__step">
+          <div class="pst-awards__step-num" aria-hidden="true">1</div>
+          <h3 class="pst-awards__step-title">{{ section.settings.step1_title | escape }}</h3>
+          <p class="pst-awards__step-text">{{ section.settings.step1_text | escape }}</p>
+        </article>
+        <article class="pst-awards__step">
+          <div class="pst-awards__step-num" aria-hidden="true">2</div>
+          <h3 class="pst-awards__step-title">{{ section.settings.step2_title | escape }}</h3>
+          <p class="pst-awards__step-text">{{ section.settings.step2_text | escape }}</p>
+        </article>
+        <article class="pst-awards__step">
+          <div class="pst-awards__step-num" aria-hidden="true">3</div>
+          <h3 class="pst-awards__step-title">{{ section.settings.step3_title | escape }}</h3>
+          <p class="pst-awards__step-text">{{ section.settings.step3_text | escape }}</p>
+        </article>
+        <article class="pst-awards__step">
+          <div class="pst-awards__step-num" aria-hidden="true">4</div>
+          <h3 class="pst-awards__step-title">{{ section.settings.step4_title | escape }}</h3>
+          <p class="pst-awards__step-text">{{ section.settings.step4_text | escape }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-awards__faq" aria-labelledby="pst-awards-faq-heading">
+    <div class="pst-awards__faq-inner">
+      <h2 id="pst-awards-faq-heading" class="pst-awards__h2">{{ section.settings.faq_heading | escape }}</h2>
+      <div class="pst-awards__faq-list">
+        <details class="pst-awards__faq-item">
+          <summary class="pst-awards__faq-summary">{{ section.settings.faq1_q | escape }}</summary>
+          <div class="pst-awards__faq-answer"><p>{{ section.settings.faq1_a | escape }}</p></div>
+        </details>
+        <details class="pst-awards__faq-item">
+          <summary class="pst-awards__faq-summary">{{ section.settings.faq2_q | escape }}</summary>
+          <div class="pst-awards__faq-answer"><p>{{ section.settings.faq2_a | escape }}</p></div>
+        </details>
+        <details class="pst-awards__faq-item">
+          <summary class="pst-awards__faq-summary">{{ section.settings.faq3_q | escape }}</summary>
+          <div class="pst-awards__faq-answer"><p>{{ section.settings.faq3_a | escape }}</p></div>
+        </details>
+        <details class="pst-awards__faq-item">
+          <summary class="pst-awards__faq-summary">{{ section.settings.faq4_q | escape }}</summary>
+          <div class="pst-awards__faq-answer"><p>{{ section.settings.faq4_a | escape }}</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pst-awards__bottom">
+    <h2 class="pst-awards__bottom-title">{{ section.settings.bottom_title | escape }}</h2>
+    <p class="pst-awards__bottom-sub">{{ section.settings.bottom_sub | escape }}</p>
+    <div class="pst-awards__bottom-actions">
+      <a class="pst-awards__btn pst-awards__btn--white" href="{{ pst_awards_shop }}">{{ section.settings.bottom_btn_shop | escape }}</a>
+      <a class="pst-awards__btn pst-awards__btn--bottom-outline" href="{{ pst_awards_contact }}">{{ section.settings.bottom_btn_quote | escape }}</a>
+    </div>
+  </footer>
+</div>
+
+{% schema %}
+{
+  "name": "PST Awards page",
+  "tag": "section",
+  "class": "pst-awards-page-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "text",
+      "id": "hero_badge",
+      "label": "Badge",
+      "default": "Award Systems"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Title",
+      "default": "Award Makers for Schools"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtitle",
+      "label": "Subtitle",
+      "default": "All-in-one systems for printing certificates, recognition awards, die-cut shapes, and student achievement materials in-house. Purchase orders accepted."
+    },
+    {
+      "type": "text",
+      "id": "hero_btn_shop",
+      "label": "Shop button",
+      "default": "Shop Award Systems"
+    },
+    {
+      "type": "text",
+      "id": "hero_btn_quote",
+      "label": "Quote button",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "shop_collection_url",
+      "label": "Shop collection link",
+      "info": "Defaults to /collections/perfect-awards-cut-collection"
+    },
+    {
+      "type": "url",
+      "id": "contact_url",
+      "label": "Contact link",
+      "info": "Defaults to Contact page"
+    },
+    {
+      "type": "header",
+      "content": "Trust bar"
+    },
+    {
+      "type": "text",
+      "id": "trust_aria",
+      "label": "Region label (accessibility)",
+      "default": "Why schools choose us"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust 1",
+      "default": "Purchase Orders Accepted"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust 2",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Trust 3",
+      "default": "Unlimited Support"
+    },
+    {
+      "type": "text",
+      "id": "trust_4",
+      "label": "Trust 4",
+      "default": "30+ Years Serving Schools"
+    },
+    {
+      "type": "header",
+      "content": "Product highlights"
+    },
+    {
+      "type": "text",
+      "id": "products_heading",
+      "label": "Heading",
+      "default": "Our Award Systems"
+    },
+    {
+      "type": "text",
+      "id": "card1_badge",
+      "label": "Card 1 badge",
+      "default": "Most Popular"
+    },
+    {
+      "type": "text",
+      "id": "card1_title",
+      "label": "Card 1 title",
+      "default": "Perfect Awards & Cut System"
+    },
+    {
+      "type": "textarea",
+      "id": "card1_desc",
+      "label": "Card 1 description",
+      "default": "The ultimate three-in-one solution — print, die-cut, and laminate in one system. Perfect for schools that want professional awards, certificates, and recognition materials with laminated finish and custom shapes."
+    },
+    {
+      "type": "text",
+      "id": "card1_li1",
+      "label": "Card 1 feature 1",
+      "default": "Print full-color awards and certificates"
+    },
+    {
+      "type": "text",
+      "id": "card1_li2",
+      "label": "Card 1 feature 2",
+      "default": "Built-in die cutter for custom shapes"
+    },
+    {
+      "type": "text",
+      "id": "card1_li3",
+      "label": "Card 1 feature 3",
+      "default": "Cold lamination included"
+    },
+    {
+      "type": "text",
+      "id": "card1_li4",
+      "label": "Card 1 feature 4",
+      "default": "Ideal for K-12 schools and districts"
+    },
+    {
+      "type": "text",
+      "id": "card2_badge",
+      "label": "Card 2 badge",
+      "default": "Simple & Affordable"
+    },
+    {
+      "type": "text",
+      "id": "card2_title",
+      "label": "Card 2 title",
+      "default": "Perfect Awards Maker"
+    },
+    {
+      "type": "textarea",
+      "id": "card2_desc",
+      "label": "Card 2 description",
+      "default": "The all-in-one tool for school awards, certificates, recognition programs, and rewarding student achievements. Easy to use, fast to print, and built for busy school environments."
+    },
+    {
+      "type": "text",
+      "id": "card2_li1",
+      "label": "Card 2 feature 1",
+      "default": "Print professional awards in minutes"
+    },
+    {
+      "type": "text",
+      "id": "card2_li2",
+      "label": "Card 2 feature 2",
+      "default": "Thousands of free templates included"
+    },
+    {
+      "type": "text",
+      "id": "card2_li3",
+      "label": "Card 2 feature 3",
+      "default": "Ideal for teachers and media specialists"
+    },
+    {
+      "type": "text",
+      "id": "card2_li4",
+      "label": "Card 2 feature 4",
+      "default": "Purchase orders accepted"
+    },
+    {
+      "type": "text",
+      "id": "card_btn",
+      "label": "Card button",
+      "default": "View Product"
+    },
+    {
+      "type": "header",
+      "content": "Use cases"
+    },
+    {
+      "type": "text",
+      "id": "use_heading",
+      "label": "Heading",
+      "default": "What Schools Use Award Systems For"
+    },
+    {
+      "type": "text",
+      "id": "use1_icon",
+      "label": "Card 1 emoji",
+      "default": "🏆"
+    },
+    {
+      "type": "text",
+      "id": "use1_title",
+      "label": "Card 1 title",
+      "default": "Student Achievement Awards"
+    },
+    {
+      "type": "textarea",
+      "id": "use1_text",
+      "label": "Card 1 text",
+      "default": "Recognize academic excellence, honor roll, and outstanding performance"
+    },
+    {
+      "type": "text",
+      "id": "use2_icon",
+      "label": "Card 2 emoji",
+      "default": "📜"
+    },
+    {
+      "type": "text",
+      "id": "use2_title",
+      "label": "Card 2 title",
+      "default": "Certificates"
+    },
+    {
+      "type": "textarea",
+      "id": "use2_text",
+      "label": "Card 2 text",
+      "default": "Print professional certificates for graduations, completions, and special events"
+    },
+    {
+      "type": "text",
+      "id": "use3_icon",
+      "label": "Card 3 emoji",
+      "default": "✂️"
+    },
+    {
+      "type": "text",
+      "id": "use3_title",
+      "label": "Card 3 title",
+      "default": "Die-Cut Shapes"
+    },
+    {
+      "type": "textarea",
+      "id": "use3_text",
+      "label": "Card 3 text",
+      "default": "Create custom die-cut shapes for displays, decorations, and projects"
+    },
+    {
+      "type": "text",
+      "id": "use4_icon",
+      "label": "Card 4 emoji",
+      "default": "🎓"
+    },
+    {
+      "type": "text",
+      "id": "use4_title",
+      "label": "Card 4 title",
+      "default": "Recognition Programs"
+    },
+    {
+      "type": "textarea",
+      "id": "use4_text",
+      "label": "Card 4 text",
+      "default": "Run school-wide recognition programs with consistent, professional materials"
+    },
+    {
+      "type": "text",
+      "id": "use5_icon",
+      "label": "Card 5 emoji",
+      "default": "🏫"
+    },
+    {
+      "type": "text",
+      "id": "use5_title",
+      "label": "Card 5 title",
+      "default": "Classroom Rewards"
+    },
+    {
+      "type": "textarea",
+      "id": "use5_text",
+      "label": "Card 5 text",
+      "default": "Teachers use award systems to motivate students with personalized rewards"
+    },
+    {
+      "type": "text",
+      "id": "use6_icon",
+      "label": "Card 6 emoji",
+      "default": "📅"
+    },
+    {
+      "type": "text",
+      "id": "use6_title",
+      "label": "Card 6 title",
+      "default": "Special Events"
+    },
+    {
+      "type": "textarea",
+      "id": "use6_text",
+      "label": "Card 6 text",
+      "default": "Perfect for assemblies, award ceremonies, and end-of-year celebrations"
+    },
+    {
+      "type": "header",
+      "content": "How it works"
+    },
+    {
+      "type": "text",
+      "id": "how_heading",
+      "label": "Heading",
+      "default": "How It Works"
+    },
+    {
+      "type": "text",
+      "id": "step1_title",
+      "label": "Step 1 title",
+      "default": "Choose Your Template"
+    },
+    {
+      "type": "textarea",
+      "id": "step1_text",
+      "label": "Step 1 text",
+      "default": "Browse thousands of free award and certificate templates included with every system."
+    },
+    {
+      "type": "text",
+      "id": "step2_title",
+      "label": "Step 2 title",
+      "default": "Customize Your Award"
+    },
+    {
+      "type": "textarea",
+      "id": "step2_text",
+      "label": "Step 2 text",
+      "default": "Add student names, dates, and personalized messages using simple software."
+    },
+    {
+      "type": "text",
+      "id": "step3_title",
+      "label": "Step 3 title",
+      "default": "Print in Seconds"
+    },
+    {
+      "type": "textarea",
+      "id": "step3_text",
+      "label": "Step 3 text",
+      "default": "Print full-color professional awards in seconds directly from your system."
+    },
+    {
+      "type": "text",
+      "id": "step4_title",
+      "label": "Step 4 title",
+      "default": "Cut & Laminate"
+    },
+    {
+      "type": "textarea",
+      "id": "step4_text",
+      "label": "Step 4 text",
+      "default": "Use the built-in die cutter and laminator for a fully finished professional award."
+    },
+    {
+      "type": "header",
+      "content": "FAQ"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "faq1_q",
+      "label": "FAQ 1 question",
+      "default": "What is included with an award maker system?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq1_a",
+      "label": "FAQ 1 answer",
+      "default": "Every system includes the printer unit, starter supplies, free access to thousands of award templates, and unlimited support. The Awards & Cut System also includes die-cutting and lamination capabilities."
+    },
+    {
+      "type": "text",
+      "id": "faq2_q",
+      "label": "FAQ 2 question",
+      "default": "Can I print certificates and diplomas?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq2_a",
+      "label": "FAQ 2 answer",
+      "default": "Yes! Our award systems are perfect for printing certificates, diplomas, recognition awards, and any other achievement materials your school needs."
+    },
+    {
+      "type": "text",
+      "id": "faq3_q",
+      "label": "FAQ 3 question",
+      "default": "Do you accept purchase orders?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq3_a",
+      "label": "FAQ 3 answer",
+      "default": "Absolutely. We accept purchase orders from all K-12 public schools, private schools, charter schools, and school districts. Email your PO to orders@perfectposter.com."
+    },
+    {
+      "type": "text",
+      "id": "faq4_q",
+      "label": "FAQ 4 question",
+      "default": "What templates are included?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq4_a",
+      "label": "FAQ 4 answer",
+      "default": "Every system comes with access to thousands of professionally designed award and certificate templates for every occasion — achievement awards, honor roll, attendance, sports, and more."
+    },
+    {
+      "type": "header",
+      "content": "Bottom banner"
+    },
+    {
+      "type": "text",
+      "id": "bottom_title",
+      "label": "Title",
+      "default": "Ready to Recognize Your Students?"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_sub",
+      "label": "Subtitle",
+      "default": "Join thousands of schools using Perfect Award Systems."
+    },
+    {
+      "type": "text",
+      "id": "bottom_btn_shop",
+      "label": "Shop button",
+      "default": "Shop Award Systems"
+    },
+    {
+      "type": "text",
+      "id": "bottom_btn_quote",
+      "label": "Quote button",
+      "default": "Request a Quote"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PST Awards page"
+    }
+  ]
+}
+{% endschema %}
