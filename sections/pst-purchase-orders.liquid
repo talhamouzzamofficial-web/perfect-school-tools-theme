@@ -1,0 +1,1080 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --pst-navy: #0a2540;
+    --pst-magenta: #e91e8c;
+    --pst-gold: #f5b731;
+    --pst-warm: #fdf8f0;
+    --pst-body: #334155;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po {
+    font-family: var(--font-body-family);
+    color: var(--pst-body);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__hero {
+    background: linear-gradient(165deg, #0a2540 0%, #0f4872 52%, #0a2540 100%);
+    padding: 3rem 2rem 3.8rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__badge {
+    display: inline-block;
+    margin: 0 0 1.2rem;
+    padding: 0.45rem 1rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--pst-gold);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(245, 183, 49, 0.45);
+    border-radius: 999px;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__hero-title {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__hero-sub {
+    margin: 0 auto 2rem;
+    max-width: 56rem;
+    font-size: 1.65rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.8rem;
+    padding: 0 1.8rem;
+    font-family: var(--font-body-family);
+    font-size: 1.45rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: filter 0.2s ease, background 0.2s ease;
+    flex: 1 1 auto;
+    min-width: min(100%, 17rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__btn--magenta {
+    background: var(--pst-magenta);
+    color: #fff;
+    border: 2px solid var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__btn--magenta:hover,
+  #shopify-section-{{ section.id }} .pst-po__btn--magenta:focus {
+    filter: brightness(1.06);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__btn--outline-light {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__btn--outline-light:hover,
+  #shopify-section-{{ section.id }} .pst-po__btn--outline-light:focus {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__trust {
+    background: var(--pst-gold);
+    padding: 1.4rem 1.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__trust-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-po__trust-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__trust-item {
+    padding: 1.15rem 0.85rem;
+    text-align: center;
+    font-family: var(--font-body-family);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--pst-navy);
+    border: 1px solid rgba(10, 37, 64, 0.12);
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-po__trust-item {
+      padding: 1.5rem 1rem;
+      font-size: 1.32rem;
+      border-left: none;
+    }
+
+    #shopify-section-{{ section.id }} .pst-po__trust-item:first-child {
+      border-left: 1px solid rgba(10, 37, 64, 0.12);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__how {
+    background: var(--pst-warm);
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__how-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__eyebrow {
+    margin: 0 0 0.6rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pst-magenta);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__h2 {
+    margin: 0 0 2.5rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-weight: 800;
+    color: var(--pst-navy);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__steps {
+    display: grid;
+    gap: 1.8rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-po__steps {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+      align-items: stretch;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__step {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.07);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__step-num {
+    width: 4.2rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    background: var(--pst-magenta);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__step-title {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+    line-height: 1.25;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__step-text {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.55;
+    flex-grow: 1;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__req {
+    background: #fff;
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__req-inner {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__req-grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-po__req-grid {
+      grid-template-columns: 1fr minmax(28rem, 34rem);
+      gap: 3rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__req-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__req-list li {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    font-size: 1.45rem;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__req-list li::before {
+    content: '✓';
+    flex-shrink: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #fff;
+    background: var(--pst-navy);
+    border-radius: 50%;
+    margin-top: 0.1rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__card-navy {
+    padding: 2.2rem 2rem;
+    background: var(--pst-navy);
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 28px rgba(10, 37, 64, 0.18);
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__card-navy h3 {
+    margin: 0 0 1.4rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__card-line {
+    margin: 0 0 1rem;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__card-line a {
+    color: var(--pst-gold);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__card-line a:hover {
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__card-navy .pst-po__btn {
+    width: 100%;
+    margin-top: 1.2rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__pay {
+    background: var(--pst-warm);
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__pay-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__cards-3 {
+    display: grid;
+    gap: 1.8rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-po__cards-3 {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__pay-card {
+    padding: 2.2rem 1.8rem;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.07);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__pay-card h3 {
+    margin: 0 0 0.85rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__pay-card p {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.55;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__faq {
+    background: #fff;
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__faq-inner {
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__faq-item {
+    border: 1px solid rgba(15, 72, 114, 0.12);
+    border-radius: 0.65rem;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(10, 37, 64, 0.05);
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__faq-item[open] {
+    box-shadow: 0 4px 18px rgba(10, 37, 64, 0.08);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__faq-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.35rem 1.4rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__faq-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__faq-summary::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--pst-magenta);
+    background: rgba(233, 30, 140, 0.1);
+    border-radius: 0.35rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__faq-item[open] .pst-po__faq-summary::after {
+    content: '−';
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__faq-answer {
+    padding: 0 1.4rem 1.35rem;
+    font-size: 1.4rem;
+    line-height: 1.55;
+    border-top: 1px solid rgba(15, 72, 114, 0.08);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__faq-answer p {
+    margin: 1rem 0 0;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__bottom {
+    background: linear-gradient(135deg, #e91e8c 0%, #c91578 55%, #e91e8c 100%);
+    padding: 3.2rem 2rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__bottom-title {
+    margin: 0 0 0.85rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__bottom-sub {
+    margin: 0 auto 1.8rem;
+    max-width: 48rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__bottom-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__btn--white {
+    background: #fff;
+    color: var(--pst-magenta);
+    border: 2px solid #fff;
+    min-width: min(100%, 18rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__btn--white:hover,
+  #shopify-section-{{ section.id }} .pst-po__btn--white:focus {
+    filter: brightness(0.98);
+    color: var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__btn--bottom-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    min-width: min(100%, 18rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-po__btn--bottom-outline:hover,
+  #shopify-section-{{ section.id }} .pst-po__btn--bottom-outline:focus {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign pst_po_contact = section.settings.contact_url
+  if pst_po_contact == blank
+    if pages.contact != empty
+      assign pst_po_contact = pages.contact.url
+    else
+      assign pst_po_contact = '/pages/contact'
+    endif
+  endif
+
+  assign pst_po_email = section.settings.orders_email
+  if pst_po_email == blank
+    assign pst_po_email = 'orders@perfectposter.com'
+  endif
+
+  assign pst_po_phone_display = section.settings.phone_display
+  if pst_po_phone_display == blank
+    assign pst_po_phone_display = '(888) 535-4431'
+  endif
+
+  assign pst_po_phone_tel = section.settings.phone_tel
+  if pst_po_phone_tel == blank
+    assign pst_po_phone_tel = '8885354431'
+  endif
+-%}
+
+<div class="pst-po">
+  <header class="pst-po__hero">
+    <span class="pst-po__badge">{{ section.settings.hero_badge | escape }}</span>
+    <h1 class="pst-po__hero-title">{{ section.settings.hero_title | escape }}</h1>
+    <p class="pst-po__hero-sub">{{ section.settings.hero_subtext | escape }}</p>
+    <div class="pst-po__hero-actions">
+      <a class="pst-po__btn pst-po__btn--magenta" href="{{ pst_po_contact }}">{{ section.settings.hero_btn_primary | escape }}</a>
+      <a class="pst-po__btn pst-po__btn--outline-light" href="tel:{{ pst_po_phone_tel | escape }}">{{ section.settings.hero_btn_call | escape }}</a>
+    </div>
+  </header>
+
+  <div class="pst-po__trust" role="region" aria-label="{{ section.settings.trust_aria | escape }}">
+    <div class="pst-po__trust-inner">
+      <div class="pst-po__trust-grid">
+        <div class="pst-po__trust-item">{{ section.settings.trust_1 | escape }}</div>
+        <div class="pst-po__trust-item">{{ section.settings.trust_2 | escape }}</div>
+        <div class="pst-po__trust-item">{{ section.settings.trust_3 | escape }}</div>
+        <div class="pst-po__trust-item">{{ section.settings.trust_4 | escape }}</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="pst-po__how" aria-labelledby="pst-po-how-heading">
+    <div class="pst-po__how-inner">
+      <p class="pst-po__eyebrow">{{ section.settings.how_label | escape }}</p>
+      <h2 id="pst-po-how-heading" class="pst-po__h2">{{ section.settings.how_heading | escape }}</h2>
+      <div class="pst-po__steps">
+        <article class="pst-po__step">
+          <div class="pst-po__step-num" aria-hidden="true">1</div>
+          <h3 class="pst-po__step-title">{{ section.settings.step1_title | escape }}</h3>
+          <p class="pst-po__step-text">{{ section.settings.step1_text | escape }}</p>
+        </article>
+        <article class="pst-po__step">
+          <div class="pst-po__step-num" aria-hidden="true">2</div>
+          <h3 class="pst-po__step-title">{{ section.settings.step2_title | escape }}</h3>
+          <p class="pst-po__step-text">{{ section.settings.step2_text | escape }}</p>
+        </article>
+        <article class="pst-po__step">
+          <div class="pst-po__step-num" aria-hidden="true">3</div>
+          <h3 class="pst-po__step-title">{{ section.settings.step3_title | escape }}</h3>
+          <p class="pst-po__step-text">{{ section.settings.step3_text | escape }}</p>
+        </article>
+        <article class="pst-po__step">
+          <div class="pst-po__step-num" aria-hidden="true">4</div>
+          <h3 class="pst-po__step-title">{{ section.settings.step4_title | escape }}</h3>
+          <p class="pst-po__step-text">{{ section.settings.step4_text | escape }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-po__req" aria-labelledby="pst-po-req-heading">
+    <div class="pst-po__req-inner">
+      <p class="pst-po__eyebrow">{{ section.settings.req_label | escape }}</p>
+      <h2 id="pst-po-req-heading" class="pst-po__h2">{{ section.settings.req_heading | escape }}</h2>
+      <div class="pst-po__req-grid">
+        <ul class="pst-po__req-list">
+          <li>{{ section.settings.req_item_1 | escape }}</li>
+          <li>{{ section.settings.req_item_2 | escape }}</li>
+          <li>{{ section.settings.req_item_3 | escape }}</li>
+          <li>{{ section.settings.req_item_4 | escape }}</li>
+          <li>{{ section.settings.req_item_5 | escape }}</li>
+          <li>{{ section.settings.req_item_6 | escape }}</li>
+          <li>{{ section.settings.req_item_7 | escape }}</li>
+        </ul>
+        <aside class="pst-po__card-navy">
+          <h3>{{ section.settings.card_title | escape }}</h3>
+          <p class="pst-po__card-line">
+            {{ section.settings.card_email_label | escape }}
+            <a href="mailto:{{ pst_po_email }}">{{ pst_po_email }}</a>
+          </p>
+          <p class="pst-po__card-line">
+            {{ section.settings.card_phone_label | escape }}
+            <a href="tel:{{ pst_po_phone_tel | escape }}">{{ pst_po_phone_display | escape }}</a>
+          </p>
+          <a class="pst-po__btn pst-po__btn--magenta" href="mailto:{{ pst_po_email }}">{{ section.settings.card_btn | escape }}</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-po__pay" aria-labelledby="pst-po-pay-heading">
+    <div class="pst-po__pay-inner">
+      <p class="pst-po__eyebrow">{{ section.settings.pay_label | escape }}</p>
+      <h2 id="pst-po-pay-heading" class="pst-po__h2">{{ section.settings.pay_heading | escape }}</h2>
+      <div class="pst-po__cards-3">
+        <article class="pst-po__pay-card">
+          <h3>{{ section.settings.pay1_title | escape }}</h3>
+          <p>{{ section.settings.pay1_text | escape }}</p>
+        </article>
+        <article class="pst-po__pay-card">
+          <h3>{{ section.settings.pay2_title | escape }}</h3>
+          <p>{{ section.settings.pay2_text | escape }}</p>
+        </article>
+        <article class="pst-po__pay-card">
+          <h3>{{ section.settings.pay3_title | escape }}</h3>
+          <p>{{ section.settings.pay3_text | escape }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-po__faq" aria-labelledby="pst-po-faq-heading">
+    <div class="pst-po__faq-inner">
+      <p class="pst-po__eyebrow">{{ section.settings.faq_label | escape }}</p>
+      <h2 id="pst-po-faq-heading" class="pst-po__h2">{{ section.settings.faq_heading | escape }}</h2>
+      <div class="pst-po__faq-list">
+        <details class="pst-po__faq-item">
+          <summary class="pst-po__faq-summary">{{ section.settings.faq1_q | escape }}</summary>
+          <div class="pst-po__faq-answer"><p>{{ section.settings.faq1_a | escape }}</p></div>
+        </details>
+        <details class="pst-po__faq-item">
+          <summary class="pst-po__faq-summary">{{ section.settings.faq2_q | escape }}</summary>
+          <div class="pst-po__faq-answer"><p>{{ section.settings.faq2_a | escape }}</p></div>
+        </details>
+        <details class="pst-po__faq-item">
+          <summary class="pst-po__faq-summary">{{ section.settings.faq3_q | escape }}</summary>
+          <div class="pst-po__faq-answer"><p>{{ section.settings.faq3_a | escape }}</p></div>
+        </details>
+        <details class="pst-po__faq-item">
+          <summary class="pst-po__faq-summary">{{ section.settings.faq4_q | escape }}</summary>
+          <div class="pst-po__faq-answer"><p>{{ section.settings.faq4_a | escape }}</p></div>
+        </details>
+        <details class="pst-po__faq-item">
+          <summary class="pst-po__faq-summary">{{ section.settings.faq5_q | escape }}</summary>
+          <div class="pst-po__faq-answer"><p>{{ section.settings.faq5_a | escape }}</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pst-po__bottom">
+    <h2 class="pst-po__bottom-title">{{ section.settings.bottom_title | escape }}</h2>
+    <p class="pst-po__bottom-sub">{{ section.settings.bottom_sub | escape }}</p>
+    <div class="pst-po__bottom-actions">
+      <a class="pst-po__btn pst-po__btn--white" href="{{ pst_po_contact }}">{{ section.settings.bottom_btn_primary | escape }}</a>
+      <a class="pst-po__btn pst-po__btn--bottom-outline" href="tel:{{ pst_po_phone_tel | escape }}">{{ section.settings.bottom_btn_call | escape }}</a>
+    </div>
+  </footer>
+</div>
+
+{% schema %}
+{
+  "name": "PST Purchase orders",
+  "tag": "section",
+  "class": "pst-purchase-orders-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "text",
+      "id": "hero_badge",
+      "label": "Badge",
+      "default": "Easy Procurement"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Title",
+      "default": "Purchase Orders for School Poster Makers"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtext",
+      "label": "Subtitle",
+      "default": "We make it easy for schools and districts to purchase using purchase orders. No credit card needed — just send your PO and we handle the rest."
+    },
+    {
+      "type": "text",
+      "id": "hero_btn_primary",
+      "label": "Primary button",
+      "default": "Submit a Purchase Order"
+    },
+    {
+      "type": "text",
+      "id": "hero_btn_call",
+      "label": "Call button label",
+      "default": "Call Us"
+    },
+    {
+      "type": "url",
+      "id": "contact_url",
+      "label": "Primary button link",
+      "info": "Defaults to Contact page"
+    },
+    {
+      "type": "text",
+      "id": "phone_display",
+      "label": "Phone (display)",
+      "default": "(888) 535-4431"
+    },
+    {
+      "type": "text",
+      "id": "phone_tel",
+      "label": "Phone (tel href)",
+      "default": "8885354431"
+    },
+    {
+      "type": "header",
+      "content": "Trust bar"
+    },
+    {
+      "type": "text",
+      "id": "trust_aria",
+      "label": "Region label (accessibility)",
+      "default": "Purchase order benefits"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Item 1",
+      "default": "Purchase Orders Accepted"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Item 2",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Item 3",
+      "default": "Net 30 Available"
+    },
+    {
+      "type": "text",
+      "id": "trust_4",
+      "label": "Item 4",
+      "default": "30+ Years Serving Schools"
+    },
+    {
+      "type": "header",
+      "content": "How it works"
+    },
+    {
+      "type": "text",
+      "id": "how_label",
+      "label": "Section label",
+      "default": "Simple Process"
+    },
+    {
+      "type": "text",
+      "id": "how_heading",
+      "label": "Heading",
+      "default": "How to Submit a Purchase Order"
+    },
+    {
+      "type": "text",
+      "id": "step1_title",
+      "label": "Step 1 title",
+      "default": "Choose Your Products"
+    },
+    {
+      "type": "textarea",
+      "id": "step1_text",
+      "label": "Step 1 text",
+      "default": "Browse our poster makers, award systems, cold laminators, and supplies. Add items to your cart or request a quote."
+    },
+    {
+      "type": "text",
+      "id": "step2_title",
+      "label": "Step 2 title",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "textarea",
+      "id": "step2_text",
+      "label": "Step 2 text",
+      "default": "Contact us by phone or email to receive a formal quote with itemized pricing and shipping details."
+    },
+    {
+      "type": "text",
+      "id": "step3_title",
+      "label": "Step 3 title",
+      "default": "Send Your PO"
+    },
+    {
+      "type": "textarea",
+      "id": "step3_text",
+      "label": "Step 3 text",
+      "default": "Email your official purchase order to orders@perfectposter.com or fax it to us. Include your school name, billing address, and shipping address."
+    },
+    {
+      "type": "text",
+      "id": "step4_title",
+      "label": "Step 4 title",
+      "default": "We Ship Fast"
+    },
+    {
+      "type": "textarea",
+      "id": "step4_text",
+      "label": "Step 4 text",
+      "default": "Once your PO is received and verified, we process and ship your order quickly — because we know school deadlines are tight."
+    },
+    {
+      "type": "header",
+      "content": "PO requirements"
+    },
+    {
+      "type": "text",
+      "id": "req_label",
+      "label": "Section label",
+      "default": "What We Need"
+    },
+    {
+      "type": "text",
+      "id": "req_heading",
+      "label": "Heading",
+      "default": "Purchase Order Requirements"
+    },
+    {
+      "type": "text",
+      "id": "req_item_1",
+      "label": "Requirement 1",
+      "default": "Official school or district letterhead"
+    },
+    {
+      "type": "text",
+      "id": "req_item_2",
+      "label": "Requirement 2",
+      "default": "Authorized signature from administrator or bookkeeper"
+    },
+    {
+      "type": "text",
+      "id": "req_item_3",
+      "label": "Requirement 3",
+      "default": "School name and billing address"
+    },
+    {
+      "type": "text",
+      "id": "req_item_4",
+      "label": "Requirement 4",
+      "default": "Ship-to address (if different)"
+    },
+    {
+      "type": "text",
+      "id": "req_item_5",
+      "label": "Requirement 5",
+      "default": "Itemized list of products and quantities"
+    },
+    {
+      "type": "text",
+      "id": "req_item_6",
+      "label": "Requirement 6",
+      "default": "Purchase order number"
+    },
+    {
+      "type": "text",
+      "id": "req_item_7",
+      "label": "Requirement 7",
+      "default": "Expected payment terms (Net 30 accepted)"
+    },
+    {
+      "type": "text",
+      "id": "card_title",
+      "label": "Contact card title",
+      "default": "Ready to Submit?"
+    },
+    {
+      "type": "text",
+      "id": "card_email_label",
+      "label": "Email line label",
+      "default": "Email your PO to:"
+    },
+    {
+      "type": "text",
+      "id": "orders_email",
+      "label": "Orders email",
+      "default": "orders@perfectposter.com"
+    },
+    {
+      "type": "text",
+      "id": "card_phone_label",
+      "label": "Phone line label",
+      "default": "Call us:"
+    },
+    {
+      "type": "text",
+      "id": "card_btn",
+      "label": "Contact card button",
+      "default": "Email Your PO"
+    },
+    {
+      "type": "header",
+      "content": "Payment terms"
+    },
+    {
+      "type": "text",
+      "id": "pay_label",
+      "label": "Section label",
+      "default": "Payment Options"
+    },
+    {
+      "type": "text",
+      "id": "pay_heading",
+      "label": "Heading",
+      "default": "Flexible Payment Terms for Schools"
+    },
+    {
+      "type": "text",
+      "id": "pay1_title",
+      "label": "Card 1 title",
+      "default": "Net 30"
+    },
+    {
+      "type": "textarea",
+      "id": "pay1_text",
+      "label": "Card 1 text",
+      "default": "Standard Net 30 terms available for approved schools and districts. Invoice sent upon shipment."
+    },
+    {
+      "type": "text",
+      "id": "pay2_title",
+      "label": "Card 2 title",
+      "default": "Credit Card"
+    },
+    {
+      "type": "textarea",
+      "id": "pay2_text",
+      "label": "Card 2 text",
+      "default": "We also accept all major credit cards for faster processing if preferred."
+    },
+    {
+      "type": "text",
+      "id": "pay3_title",
+      "label": "Card 3 title",
+      "default": "Check/ACH"
+    },
+    {
+      "type": "textarea",
+      "id": "pay3_text",
+      "label": "Card 3 text",
+      "default": "School checks and ACH bank transfers accepted. Contact us for banking details."
+    },
+    {
+      "type": "header",
+      "content": "FAQ"
+    },
+    {
+      "type": "text",
+      "id": "faq_label",
+      "label": "Section label",
+      "default": "Common Questions"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading",
+      "label": "Heading",
+      "default": "Purchase Order FAQs"
+    },
+    {
+      "type": "text",
+      "id": "faq1_q",
+      "label": "FAQ 1 question",
+      "default": "Can any school submit a purchase order?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq1_a",
+      "label": "FAQ 1 answer",
+      "default": "Yes! We accept purchase orders from all K-12 public and private schools, charter schools, and school districts across the United States."
+    },
+    {
+      "type": "text",
+      "id": "faq2_q",
+      "label": "FAQ 2 question",
+      "default": "How long does PO processing take?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq2_a",
+      "label": "FAQ 2 answer",
+      "default": "Most purchase orders are processed within 1–2 business days. Orders typically ship within 2–3 business days after PO approval."
+    },
+    {
+      "type": "text",
+      "id": "faq3_q",
+      "label": "FAQ 3 question",
+      "default": "Do you offer Net 30 terms?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq3_a",
+      "label": "FAQ 3 answer",
+      "default": "Yes, we offer Net 30 payment terms for approved schools and districts. Contact us to set up your account."
+    },
+    {
+      "type": "text",
+      "id": "faq4_q",
+      "label": "FAQ 4 question",
+      "default": "Can I submit a PO for supplies only?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq4_a",
+      "label": "FAQ 4 answer",
+      "default": "Absolutely! We accept purchase orders for all products including paper rolls, ink cartridges, lamination film, and all other supplies."
+    },
+    {
+      "type": "text",
+      "id": "faq5_q",
+      "label": "FAQ 5 question",
+      "default": "Who do I contact if I have questions about my PO?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq5_a",
+      "label": "FAQ 5 answer",
+      "default": "Call us at (888) 535-4431 or email orders@perfectposter.com. Our team is available Monday–Friday to assist you."
+    },
+    {
+      "type": "header",
+      "content": "Bottom banner"
+    },
+    {
+      "type": "text",
+      "id": "bottom_title",
+      "label": "Title",
+      "default": "Ready to Submit Your Purchase Order?"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_sub",
+      "label": "Subtitle",
+      "default": "Join thousands of schools who purchase with confidence using purchase orders."
+    },
+    {
+      "type": "text",
+      "id": "bottom_btn_primary",
+      "label": "Primary button",
+      "default": "Submit a PO Now"
+    },
+    {
+      "type": "text",
+      "id": "bottom_btn_call",
+      "label": "Call button",
+      "default": "Call (888) 535-4431"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PST Purchase orders"
+    }
+  ]
+}
+{% endschema %}
