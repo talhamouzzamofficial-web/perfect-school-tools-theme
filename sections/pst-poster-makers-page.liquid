@@ -1,0 +1,1209 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --pst-navy: #0a2540;
+    --pst-magenta: #e91e8c;
+    --pst-gold: #f5b731;
+    --pst-warm: #fdf8f0;
+    --pst-body: #334155;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm {
+    font-family: var(--font-body-family);
+    color: var(--pst-body);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__hero {
+    background: linear-gradient(165deg, #0a2540 0%, #0f4872 52%, #0a2540 100%);
+    padding: 3rem 2rem 3.8rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__badge {
+    display: inline-block;
+    margin: 0 0 1.2rem;
+    padding: 0.45rem 1rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--pst-gold);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(245, 183, 49, 0.45);
+    border-radius: 999px;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__hero-title {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__hero-sub {
+    margin: 0 auto 2rem;
+    max-width: 58rem;
+    font-size: 1.65rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.8rem;
+    padding: 0 1.8rem;
+    font-family: var(--font-body-family);
+    font-size: 1.45rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: filter 0.2s ease, background 0.2s ease;
+    flex: 1 1 auto;
+    min-width: min(100%, 17rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn--magenta {
+    background: var(--pst-magenta);
+    color: #fff;
+    border: 2px solid var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn--magenta:hover,
+  #shopify-section-{{ section.id }} .pst-pm__btn--magenta:focus {
+    filter: brightness(1.06);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn--outline-light {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn--outline-light:hover,
+  #shopify-section-{{ section.id }} .pst-pm__btn--outline-light:focus {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__trust {
+    background: var(--pst-gold);
+    padding: 1.4rem 1.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__trust-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-pm__trust-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__trust-item {
+    padding: 1.15rem 0.85rem;
+    text-align: center;
+    font-family: var(--font-body-family);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--pst-navy);
+    border: 1px solid rgba(10, 37, 64, 0.12);
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-pm__trust-item {
+      padding: 1.5rem 1rem;
+      font-size: 1.32rem;
+      border-left: none;
+    }
+
+    #shopify-section-{{ section.id }} .pst-pm__trust-item:first-child {
+      border-left: 1px solid rgba(10, 37, 64, 0.12);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__features {
+    background: var(--pst-warm);
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__features-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__eyebrow {
+    margin: 0 0 0.6rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pst-magenta);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__h2 {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-weight: 800;
+    color: var(--pst-navy);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__intro {
+    margin: 0 auto 2.5rem;
+    max-width: 56rem;
+    font-size: 1.45rem;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__feature-grid {
+    display: grid;
+    gap: 1.8rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 600px) {
+    #shopify-section-{{ section.id }} .pst-pm__feature-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__feature-card {
+    padding: 2rem 1.6rem;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.07);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__feature-icon {
+    font-size: 2.8rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__feature-card h3 {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__feature-card p {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.55;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__mid-cta {
+    background: var(--pst-navy);
+    padding: 3.5rem 2rem 4rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__mid-cta-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__mid-cta .pst-pm__h2 {
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__mid-sub {
+    margin: 0 0 1.8rem;
+    font-size: 1.5rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.94);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn--outline-gold {
+    background: transparent;
+    color: var(--pst-gold);
+    border: 2px solid var(--pst-gold);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn--outline-gold:hover,
+  #shopify-section-{{ section.id }} .pst-pm__btn--outline-gold:focus {
+    background: rgba(245, 183, 49, 0.12);
+    color: var(--pst-gold);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__supplies {
+    background: #fff;
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__supplies-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__supply-grid {
+    display: grid;
+    gap: 1.8rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 600px) {
+    #shopify-section-{{ section.id }} .pst-pm__supply-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-pm__supply-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__supply-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2rem 1.5rem;
+    background: var(--pst-warm);
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.06);
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__supply-card:hover {
+    box-shadow: 0 8px 28px rgba(10, 37, 64, 0.1);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__supply-icon {
+    font-size: 2.6rem;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__supply-card h3 {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__supply-link {
+    margin-top: auto;
+    padding-top: 1rem;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__mission {
+    background: var(--pst-navy);
+    padding: 4rem 2rem 4.5rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__mission-inner {
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__mission-quote-wrap {
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.15rem 0.35rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__q-mark {
+    font-family: var(--font-heading-family);
+    font-size: clamp(3.5rem, 8vw, 5rem);
+    font-weight: 800;
+    line-height: 0.85;
+    color: var(--pst-gold);
+    vertical-align: super;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__mission-quote {
+    margin: 0;
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.85rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.35;
+    color: #fff;
+    display: inline;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__mission-sub {
+    margin: 0 0 1.8rem;
+    font-size: 1.45rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn--gold {
+    background: var(--pst-gold);
+    color: var(--pst-navy);
+    border: 2px solid var(--pst-gold);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn--gold:hover,
+  #shopify-section-{{ section.id }} .pst-pm__btn--gold:focus {
+    filter: brightness(1.05);
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__testimonials {
+    background: var(--pst-warm);
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__testimonials-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__test-grid {
+    display: grid;
+    gap: 1.8rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 600px) {
+    #shopify-section-{{ section.id }} .pst-pm__test-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-pm__test-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__test-card {
+    padding: 1.8rem 1.5rem;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.07);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__stars {
+    margin-bottom: 0.85rem;
+    font-size: 1.35rem;
+    letter-spacing: 0.12em;
+    color: var(--pst-gold);
+    line-height: 1;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__test-quote {
+    margin: 0 0 1.2rem;
+    font-size: 1.35rem;
+    line-height: 1.55;
+    flex-grow: 1;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__test-name {
+    font-weight: 700;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__test-meta {
+    font-size: 1.3rem;
+    color: var(--pst-magenta);
+    font-weight: 600;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__bottom {
+    background: linear-gradient(135deg, #e91e8c 0%, #c91578 55%, #e91e8c 100%);
+    padding: 3.2rem 2rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__bottom-title {
+    margin: 0 0 0.85rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__bottom-sub {
+    margin: 0 auto 1.8rem;
+    max-width: 48rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__bottom-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn--white {
+    background: #fff;
+    color: var(--pst-magenta);
+    border: 2px solid #fff;
+    min-width: min(100%, 20rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn--white:hover,
+  #shopify-section-{{ section.id }} .pst-pm__btn--white:focus {
+    filter: brightness(0.98);
+    color: var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn--bottom-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    min-width: min(100%, 20rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-pm__btn--bottom-outline:hover,
+  #shopify-section-{{ section.id }} .pst-pm__btn--bottom-outline:focus {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign pst_pm_contact = section.settings.contact_url
+  if pst_pm_contact == blank
+    if pages.contact != empty
+      assign pst_pm_contact = pages.contact.url
+    else
+      assign pst_pm_contact = '/pages/contact'
+    endif
+  endif
+
+  assign pst_pm_discover = section.settings.discover_url
+  if pst_pm_discover == blank
+    assign pst_pm_discover = '/collections/perfect-systems'
+  endif
+
+  assign pst_pm_about = section.settings.about_url
+  if pst_pm_about == blank
+    if pages.about != empty
+      assign pst_pm_about = pages.about.url
+    else
+      assign pst_pm_about = '/pages/about'
+    endif
+  endif
+
+  assign pst_pm_s1 = section.settings.supply1_url
+  if pst_pm_s1 == blank
+    assign pst_pm_s1 = '/collections/poster-printer-paper'
+  endif
+  assign pst_pm_s2 = section.settings.supply2_url
+  if pst_pm_s2 == blank
+    assign pst_pm_s2 = '/collections/poster-printer-ink-cartridges-all'
+  endif
+  assign pst_pm_s3 = section.settings.supply3_url
+  if pst_pm_s3 == blank
+    assign pst_pm_s3 = '/collections/maintenance-products-all'
+  endif
+  assign pst_pm_s4 = section.settings.supply4_url
+  if pst_pm_s4 == blank
+    assign pst_pm_s4 = '/collections/laminators-lamination'
+  endif
+
+  assign pst_pm_phone_tel = section.settings.bottom_phone_tel
+  if pst_pm_phone_tel == blank
+    assign pst_pm_phone_tel = '+18885354431'
+  endif
+-%}
+
+<div class="pst-pm">
+  <header class="pst-pm__hero">
+    <span class="pst-pm__badge">{{ section.settings.hero_badge | escape }}</span>
+    <h1 class="pst-pm__hero-title">{{ section.settings.hero_title | escape }}</h1>
+    <p class="pst-pm__hero-sub">{{ section.settings.hero_subtitle | escape }}</p>
+    <div class="pst-pm__hero-actions">
+      <a class="pst-pm__btn pst-pm__btn--magenta" href="{{ pst_pm_contact }}">{{ section.settings.hero_btn_quote | escape }}</a>
+      <a class="pst-pm__btn pst-pm__btn--outline-light" href="{{ pst_pm_discover }}">{{ section.settings.hero_btn_discover | escape }}</a>
+    </div>
+  </header>
+
+  <div class="pst-pm__trust" role="region" aria-label="{{ section.settings.trust_aria | escape }}">
+    <div class="pst-pm__trust-inner">
+      <div class="pst-pm__trust-grid">
+        <div class="pst-pm__trust-item">{{ section.settings.trust_1 | escape }}</div>
+        <div class="pst-pm__trust-item">{{ section.settings.trust_2 | escape }}</div>
+        <div class="pst-pm__trust-item">{{ section.settings.trust_3 | escape }}</div>
+        <div class="pst-pm__trust-item">{{ section.settings.trust_4 | escape }}</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="pst-pm__features" aria-labelledby="pst-pm-features-heading">
+    <div class="pst-pm__features-inner">
+      <p class="pst-pm__eyebrow">{{ section.settings.features_label | escape }}</p>
+      <h2 id="pst-pm-features-heading" class="pst-pm__h2">{{ section.settings.features_heading | escape }}</h2>
+      <p class="pst-pm__intro">{{ section.settings.features_intro | escape }}</p>
+      <div class="pst-pm__feature-grid">
+        <article class="pst-pm__feature-card">
+          <div class="pst-pm__feature-icon" aria-hidden="true">{{ section.settings.f1_icon | escape }}</div>
+          <h3>{{ section.settings.f1_title | escape }}</h3>
+          <p>{{ section.settings.f1_text | escape }}</p>
+        </article>
+        <article class="pst-pm__feature-card">
+          <div class="pst-pm__feature-icon" aria-hidden="true">{{ section.settings.f2_icon | escape }}</div>
+          <h3>{{ section.settings.f2_title | escape }}</h3>
+          <p>{{ section.settings.f2_text | escape }}</p>
+        </article>
+        <article class="pst-pm__feature-card">
+          <div class="pst-pm__feature-icon" aria-hidden="true">{{ section.settings.f3_icon | escape }}</div>
+          <h3>{{ section.settings.f3_title | escape }}</h3>
+          <p>{{ section.settings.f3_text | escape }}</p>
+        </article>
+        <article class="pst-pm__feature-card">
+          <div class="pst-pm__feature-icon" aria-hidden="true">{{ section.settings.f4_icon | escape }}</div>
+          <h3>{{ section.settings.f4_title | escape }}</h3>
+          <p>{{ section.settings.f4_text | escape }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-pm__mid-cta" aria-labelledby="pst-pm-mid-heading">
+    <div class="pst-pm__mid-cta-inner">
+      <h2 id="pst-pm-mid-heading" class="pst-pm__h2">{{ section.settings.mid_heading | escape }}</h2>
+      <p class="pst-pm__mid-sub">{{ section.settings.mid_subtitle | escape }}</p>
+      <div class="pst-pm__hero-actions">
+        <a class="pst-pm__btn pst-pm__btn--magenta" href="{{ pst_pm_contact }}">{{ section.settings.mid_btn_quote | escape }}</a>
+        <a class="pst-pm__btn pst-pm__btn--outline-gold" href="{{ pst_pm_discover }}">{{ section.settings.mid_btn_discover | escape }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-pm__supplies" aria-labelledby="pst-pm-supply-heading">
+    <div class="pst-pm__supplies-inner">
+      <p class="pst-pm__eyebrow">{{ section.settings.supply_label | escape }}</p>
+      <h2 id="pst-pm-supply-heading" class="pst-pm__h2">{{ section.settings.supply_heading | escape }}</h2>
+      <div class="pst-pm__supply-grid">
+        <a class="pst-pm__supply-card" href="{{ pst_pm_s1 }}">
+          <div class="pst-pm__supply-icon" aria-hidden="true">{{ section.settings.supply1_icon | escape }}</div>
+          <h3>{{ section.settings.supply1_title | escape }}</h3>
+          <span class="pst-pm__supply-link">{{ section.settings.supply_link_text | escape }}</span>
+        </a>
+        <a class="pst-pm__supply-card" href="{{ pst_pm_s2 }}">
+          <div class="pst-pm__supply-icon" aria-hidden="true">{{ section.settings.supply2_icon | escape }}</div>
+          <h3>{{ section.settings.supply2_title | escape }}</h3>
+          <span class="pst-pm__supply-link">{{ section.settings.supply_link_text | escape }}</span>
+        </a>
+        <a class="pst-pm__supply-card" href="{{ pst_pm_s3 }}">
+          <div class="pst-pm__supply-icon" aria-hidden="true">{{ section.settings.supply3_icon | escape }}</div>
+          <h3>{{ section.settings.supply3_title | escape }}</h3>
+          <span class="pst-pm__supply-link">{{ section.settings.supply_link_text | escape }}</span>
+        </a>
+        <a class="pst-pm__supply-card" href="{{ pst_pm_s4 }}">
+          <div class="pst-pm__supply-icon" aria-hidden="true">{{ section.settings.supply4_icon | escape }}</div>
+          <h3>{{ section.settings.supply4_title | escape }}</h3>
+          <span class="pst-pm__supply-link">{{ section.settings.supply_link_text | escape }}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pst-pm__mission" aria-labelledby="pst-pm-mission-quote">
+    <div class="pst-pm__mission-inner">
+      <div class="pst-pm__mission-quote-wrap">
+        <span class="pst-pm__q-mark" aria-hidden="true">“</span>
+        <p id="pst-pm-mission-quote" class="pst-pm__mission-quote">{{ section.settings.mission_quote | escape }}</p>
+        <span class="pst-pm__q-mark" aria-hidden="true">”</span>
+      </div>
+      <p class="pst-pm__mission-sub">{{ section.settings.mission_sub | escape }}</p>
+      <a class="pst-pm__btn pst-pm__btn--gold" href="{{ pst_pm_about }}">{{ section.settings.mission_btn | escape }}</a>
+    </div>
+  </section>
+
+  <section class="pst-pm__testimonials" aria-labelledby="pst-pm-test-heading">
+    <div class="pst-pm__testimonials-inner">
+      <p class="pst-pm__eyebrow">{{ section.settings.test_label | escape }}</p>
+      <h2 id="pst-pm-test-heading" class="pst-pm__h2">{{ section.settings.test_heading | escape }}</h2>
+      <div class="pst-pm__test-grid">
+        <article class="pst-pm__test-card">
+          <div class="pst-pm__stars" aria-hidden="true">★★★★★</div>
+          <p class="pst-pm__test-quote">{{ section.settings.t1_quote | escape }}</p>
+          <p><span class="pst-pm__test-name">{{ section.settings.t1_name | escape }}</span><br><span class="pst-pm__test-meta">{{ section.settings.t1_meta | escape }}</span></p>
+        </article>
+        <article class="pst-pm__test-card">
+          <div class="pst-pm__stars" aria-hidden="true">★★★★★</div>
+          <p class="pst-pm__test-quote">{{ section.settings.t2_quote | escape }}</p>
+          <p><span class="pst-pm__test-name">{{ section.settings.t2_name | escape }}</span><br><span class="pst-pm__test-meta">{{ section.settings.t2_meta | escape }}</span></p>
+        </article>
+        <article class="pst-pm__test-card">
+          <div class="pst-pm__stars" aria-hidden="true">★★★★★</div>
+          <p class="pst-pm__test-quote">{{ section.settings.t3_quote | escape }}</p>
+          <p><span class="pst-pm__test-name">{{ section.settings.t3_name | escape }}</span><br><span class="pst-pm__test-meta">{{ section.settings.t3_meta | escape }}</span></p>
+        </article>
+        <article class="pst-pm__test-card">
+          <div class="pst-pm__stars" aria-hidden="true">★★★★★</div>
+          <p class="pst-pm__test-quote">{{ section.settings.t4_quote | escape }}</p>
+          <p><span class="pst-pm__test-name">{{ section.settings.t4_name | escape }}</span><br><span class="pst-pm__test-meta">{{ section.settings.t4_meta | escape }}</span></p>
+        </article>
+        <article class="pst-pm__test-card">
+          <div class="pst-pm__stars" aria-hidden="true">★★★★★</div>
+          <p class="pst-pm__test-quote">{{ section.settings.t5_quote | escape }}</p>
+          <p><span class="pst-pm__test-name">{{ section.settings.t5_name | escape }}</span><br><span class="pst-pm__test-meta">{{ section.settings.t5_meta | escape }}</span></p>
+        </article>
+        <article class="pst-pm__test-card">
+          <div class="pst-pm__stars" aria-hidden="true">★★★★★</div>
+          <p class="pst-pm__test-quote">{{ section.settings.t6_quote | escape }}</p>
+          <p><span class="pst-pm__test-name">{{ section.settings.t6_name | escape }}</span><br><span class="pst-pm__test-meta">{{ section.settings.t6_meta | escape }}</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pst-pm__bottom">
+    <h2 class="pst-pm__bottom-title">{{ section.settings.bottom_title | escape }}</h2>
+    <p class="pst-pm__bottom-sub">{{ section.settings.bottom_sub | escape }}</p>
+    <div class="pst-pm__bottom-actions">
+      <a class="pst-pm__btn pst-pm__btn--white" href="{{ pst_pm_contact }}">{{ section.settings.bottom_btn_quote | escape }}</a>
+      <a class="pst-pm__btn pst-pm__btn--bottom-outline" href="tel:{{ pst_pm_phone_tel | escape }}">{{ section.settings.bottom_phone_label | escape }}</a>
+    </div>
+  </footer>
+</div>
+
+{% schema %}
+{
+  "name": "PST Poster makers page",
+  "tag": "section",
+  "class": "pst-poster-makers-page-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "text",
+      "id": "hero_badge",
+      "label": "Badge",
+      "default": "Poster Maker Systems"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Title",
+      "default": "The Perfect Poster Maker System for Schools"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtitle",
+      "label": "Subtitle",
+      "default": "Our Poster Maker System provides schools with the perfect tool to improve student outcomes, increase engagement, simplify classroom & hallway messaging, and promote school pride!"
+    },
+    {
+      "type": "text",
+      "id": "hero_btn_quote",
+      "label": "Quote button",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "text",
+      "id": "hero_btn_discover",
+      "label": "Discover button",
+      "default": "Discover Now"
+    },
+    {
+      "type": "url",
+      "id": "contact_url",
+      "label": "Contact link",
+      "info": "Defaults to Contact page"
+    },
+    {
+      "type": "url",
+      "id": "discover_url",
+      "label": "Discover link",
+      "info": "Defaults to /collections/perfect-systems"
+    },
+    {
+      "type": "header",
+      "content": "Trust bar"
+    },
+    {
+      "type": "text",
+      "id": "trust_aria",
+      "label": "Region label (accessibility)",
+      "default": "Why schools choose us"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust 1",
+      "default": "Purchase Orders Accepted"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust 2",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Trust 3",
+      "default": "Unlimited Support"
+    },
+    {
+      "type": "text",
+      "id": "trust_4",
+      "label": "Trust 4",
+      "default": "30+ Years Serving Schools"
+    },
+    {
+      "type": "header",
+      "content": "Features"
+    },
+    {
+      "type": "text",
+      "id": "features_label",
+      "label": "Section label",
+      "default": "Why Choose PST"
+    },
+    {
+      "type": "text",
+      "id": "features_heading",
+      "label": "Heading",
+      "default": "School Poster Printer System You Can Trust"
+    },
+    {
+      "type": "textarea",
+      "id": "features_intro",
+      "label": "Intro",
+      "default": "Our Poster Maker Systems are designed to print various materials for eye-popping displays & crisp designs for your school!"
+    },
+    {
+      "type": "text",
+      "id": "f1_icon",
+      "label": "Feature 1 icon",
+      "default": "📚"
+    },
+    {
+      "type": "text",
+      "id": "f1_title",
+      "label": "Feature 1 title",
+      "default": "Full Library of School Content"
+    },
+    {
+      "type": "textarea",
+      "id": "f1_text",
+      "label": "Feature 1 text",
+      "default": "Trusted & curated content created by educators! Our system gives you everything you need without sacrificing creativity."
+    },
+    {
+      "type": "text",
+      "id": "f2_icon",
+      "label": "Feature 2 icon",
+      "default": "💻"
+    },
+    {
+      "type": "text",
+      "id": "f2_title",
+      "label": "Feature 2 title",
+      "default": "Simple to Use Software"
+    },
+    {
+      "type": "textarea",
+      "id": "f2_text",
+      "label": "Feature 2 text",
+      "default": "Poster printer design software that is simple to use and flexible for all your school needs — included with the system. Saving teachers hours in creation!"
+    },
+    {
+      "type": "text",
+      "id": "f3_icon",
+      "label": "Feature 3 icon",
+      "default": "🔌"
+    },
+    {
+      "type": "text",
+      "id": "f3_title",
+      "label": "Feature 3 title",
+      "default": "All In One Plug & Play"
+    },
+    {
+      "type": "textarea",
+      "id": "f3_text",
+      "label": "Feature 3 text",
+      "default": "Combined with our All In One Plug & Play Workstation — no need for installation or set up! Simply start creating!"
+    },
+    {
+      "type": "text",
+      "id": "f4_icon",
+      "label": "Feature 4 icon",
+      "default": "💰"
+    },
+    {
+      "type": "text",
+      "id": "f4_title",
+      "label": "Feature 4 title",
+      "default": "Cost Effective Printing"
+    },
+    {
+      "type": "textarea",
+      "id": "f4_text",
+      "label": "Feature 4 text",
+      "default": "Cost of poster printing in schools is an expense you don't need. Create posters in minutes for classrooms for just $1.50–$3.00 each."
+    },
+    {
+      "type": "header",
+      "content": "Mid CTA"
+    },
+    {
+      "type": "text",
+      "id": "mid_heading",
+      "label": "Heading",
+      "default": "All-In-One Plug & Play Poster Maker System"
+    },
+    {
+      "type": "textarea",
+      "id": "mid_subtitle",
+      "label": "Subtitle",
+      "default": "Enhance Your Classroom & School Today! Discover ways your school can improve student outcomes, streamline communication while saving your teachers & staff time and money!"
+    },
+    {
+      "type": "text",
+      "id": "mid_btn_quote",
+      "label": "Quote button",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "text",
+      "id": "mid_btn_discover",
+      "label": "Discover button",
+      "default": "Discover Now"
+    },
+    {
+      "type": "header",
+      "content": "Supplies"
+    },
+    {
+      "type": "text",
+      "id": "supply_label",
+      "label": "Section label",
+      "default": "Complete Ecosystem"
+    },
+    {
+      "type": "text",
+      "id": "supply_heading",
+      "label": "Heading",
+      "default": "From Set Up Through The Life of Your System — We Got You Covered!"
+    },
+    {
+      "type": "text",
+      "id": "supply_link_text",
+      "label": "Card link text",
+      "default": "Shop Now →"
+    },
+    {
+      "type": "text",
+      "id": "supply1_icon",
+      "label": "Card 1 icon",
+      "default": "🖨️"
+    },
+    {
+      "type": "text",
+      "id": "supply1_title",
+      "label": "Card 1 title",
+      "default": "Poster Maker Media"
+    },
+    {
+      "type": "url",
+      "id": "supply1_url",
+      "label": "Card 1 link",
+      "info": "Defaults to poster printer paper collection"
+    },
+    {
+      "type": "text",
+      "id": "supply2_icon",
+      "label": "Card 2 icon",
+      "default": "🎨"
+    },
+    {
+      "type": "text",
+      "id": "supply2_title",
+      "label": "Card 2 title",
+      "default": "Poster Maker Ink"
+    },
+    {
+      "type": "url",
+      "id": "supply2_url",
+      "label": "Card 2 link",
+      "info": "Defaults to ink cartridges collection"
+    },
+    {
+      "type": "text",
+      "id": "supply3_icon",
+      "label": "Card 3 icon",
+      "default": "🔧"
+    },
+    {
+      "type": "text",
+      "id": "supply3_title",
+      "label": "Card 3 title",
+      "default": "Poster Maker Maintenance"
+    },
+    {
+      "type": "url",
+      "id": "supply3_url",
+      "label": "Card 3 link",
+      "info": "Defaults to maintenance products"
+    },
+    {
+      "type": "text",
+      "id": "supply4_icon",
+      "label": "Card 4 icon",
+      "default": "🛡️"
+    },
+    {
+      "type": "text",
+      "id": "supply4_title",
+      "label": "Card 4 title",
+      "default": "Cold Laminators & Lamination"
+    },
+    {
+      "type": "url",
+      "id": "supply4_url",
+      "label": "Card 4 link",
+      "info": "Defaults to laminators collection"
+    },
+    {
+      "type": "header",
+      "content": "Mission"
+    },
+    {
+      "type": "text",
+      "id": "mission_quote",
+      "label": "Quote",
+      "default": "We serve those who serve our students"
+    },
+    {
+      "type": "textarea",
+      "id": "mission_sub",
+      "label": "Subtitle",
+      "default": "Our mission drives everything we do — from the products we carry to the support we provide."
+    },
+    {
+      "type": "text",
+      "id": "mission_btn",
+      "label": "Button",
+      "default": "About Us"
+    },
+    {
+      "type": "url",
+      "id": "about_url",
+      "label": "About link",
+      "info": "Defaults to About page"
+    },
+    {
+      "type": "header",
+      "content": "Testimonials"
+    },
+    {
+      "type": "text",
+      "id": "test_label",
+      "label": "Section label",
+      "default": "What Our Partners Say"
+    },
+    {
+      "type": "text",
+      "id": "test_heading",
+      "label": "Heading",
+      "default": "Trusted by Schools Across America"
+    },
+    {
+      "type": "textarea",
+      "id": "t1_quote",
+      "label": "Testimonial 1 quote",
+      "default": "Very friendly staff. They answered ALL my questions and I received our new Awards Maker within a week! My staff can't wait to play"
+    },
+    {
+      "type": "text",
+      "id": "t1_name",
+      "label": "Testimonial 1 name",
+      "default": "William T."
+    },
+    {
+      "type": "text",
+      "id": "t1_meta",
+      "label": "Testimonial 1 role",
+      "default": "Principal, FL"
+    },
+    {
+      "type": "textarea",
+      "id": "t2_quote",
+      "label": "Testimonial 2 quote",
+      "default": "I used to spend hours chasing down orders and apologizing for delays. Since switching to Perfect School Tools, I haven't had to worry once. Supplies show up fast and exactly match my machine. It's one less thing on my plate!"
+    },
+    {
+      "type": "text",
+      "id": "t2_name",
+      "label": "Testimonial 2 name",
+      "default": "Laura M."
+    },
+    {
+      "type": "text",
+      "id": "t2_meta",
+      "label": "Testimonial 2 role",
+      "default": "Media Specialist, NC"
+    },
+    {
+      "type": "textarea",
+      "id": "t3_quote",
+      "label": "Testimonial 3 quote",
+      "default": "We ordered the Perfect Award System before the school year started. PST was with us every step of the way. They helped us with deciding what we needed based on OUR requests. Super simple to use!"
+    },
+    {
+      "type": "text",
+      "id": "t3_name",
+      "label": "Testimonial 3 name",
+      "default": "Pam T."
+    },
+    {
+      "type": "text",
+      "id": "t3_meta",
+      "label": "Testimonial 3 role",
+      "default": "Principal, SC"
+    },
+    {
+      "type": "textarea",
+      "id": "t4_quote",
+      "label": "Testimonial 4 quote",
+      "default": "Perfect School Tools has been a game-changer. I place the order, and it's here fast — no guessing, no backorders. Now when teachers come to me for posters, I know I've got them covered."
+    },
+    {
+      "type": "text",
+      "id": "t4_name",
+      "label": "Testimonial 4 name",
+      "default": "Sarah S."
+    },
+    {
+      "type": "text",
+      "id": "t4_meta",
+      "label": "Testimonial 4 role",
+      "default": "Media Specialist, GA"
+    },
+    {
+      "type": "textarea",
+      "id": "t5_quote",
+      "label": "Testimonial 5 quote",
+      "default": "Perfect School Tools has been a game-changer. I place the order, and it's here fast — no guessing, no backorders. Now when teachers come to me for posters, I know I've got them covered."
+    },
+    {
+      "type": "text",
+      "id": "t5_name",
+      "label": "Testimonial 5 name",
+      "default": "Christine F."
+    },
+    {
+      "type": "text",
+      "id": "t5_meta",
+      "label": "Testimonial 5 role",
+      "default": "Bookkeeper, SC"
+    },
+    {
+      "type": "textarea",
+      "id": "t6_quote",
+      "label": "Testimonial 6 quote",
+      "default": "Perfect School Tools Printers should be in schools across America. As a teacher, I've spent countless hours cutting, laminating, and piecing together bulletin boards by hand. This machine changes everything."
+    },
+    {
+      "type": "text",
+      "id": "t6_name",
+      "label": "Testimonial 6 name",
+      "default": "Laila Modzelewski"
+    },
+    {
+      "type": "text",
+      "id": "t6_meta",
+      "label": "Testimonial 6 role",
+      "default": "Teacher/Founder, BBC"
+    },
+    {
+      "type": "header",
+      "content": "Bottom banner"
+    },
+    {
+      "type": "text",
+      "id": "bottom_title",
+      "label": "Title",
+      "default": "Ready to Transform Your School?"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_sub",
+      "label": "Subtitle",
+      "default": "Join thousands of schools who trust Perfect School Tools for their visual learning needs."
+    },
+    {
+      "type": "text",
+      "id": "bottom_btn_quote",
+      "label": "Quote button",
+      "default": "Request a Free Quote"
+    },
+    {
+      "type": "text",
+      "id": "bottom_phone_label",
+      "label": "Phone button",
+      "default": "Call (888) 535-4431"
+    },
+    {
+      "type": "text",
+      "id": "bottom_phone_tel",
+      "label": "Phone tel href",
+      "default": "+18885354431",
+      "info": "Include country code"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PST Poster makers page"
+    }
+  ]
+}
+{% endschema %}
