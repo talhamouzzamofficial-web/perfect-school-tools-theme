@@ -1,0 +1,1333 @@
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --pst-navy: #0a2540;
+    --pst-magenta: #e91e8c;
+    --pst-gold: #f5b731;
+    --pst-warm: #fdf8f0;
+    --pst-body: #334155;
+    --pst-free-green: #15803d;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr {
+    font-family: var(--font-body-family);
+    color: var(--pst-body);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(165deg, #0a2540 0%, #0f4872 52%, #0a2540 100%);
+    padding: 3rem 2rem 3.8rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__hero::before {
+    content: '';
+    position: absolute;
+    top: -25%;
+    right: -20%;
+    width: min(70vw, 52rem);
+    height: 140%;
+    background: radial-gradient(ellipse 80% 70% at 70% 40%, rgba(233, 30, 140, 0.28) 0%, rgba(233, 30, 140, 0.06) 45%, transparent 72%);
+    pointer-events: none;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__badge {
+    display: inline-block;
+    margin: 0 0 1.2rem;
+    padding: 0.45rem 1rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--pst-gold);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(245, 183, 49, 0.45);
+    border-radius: 999px;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__hero-title {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__hero-sub {
+    margin: 0 auto 2rem;
+    max-width: 58rem;
+    font-size: 1.65rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 52rem;
+    margin: 0 auto 1.4rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__trust-note {
+    margin: 0 auto;
+    max-width: 56rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.8rem;
+    padding: 0 1.8rem;
+    font-family: var(--font-body-family);
+    font-size: 1.45rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: filter 0.2s ease, background 0.2s ease;
+    flex: 1 1 auto;
+    min-width: min(100%, 17rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__btn--magenta {
+    background: var(--pst-magenta);
+    color: #fff;
+    border: 2px solid var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__btn--magenta:hover,
+  #shopify-section-{{ section.id }} .pst-fr__btn--magenta:focus {
+    filter: brightness(1.06);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__btn--outline-light {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__btn--outline-light:hover,
+  #shopify-section-{{ section.id }} .pst-fr__btn--outline-light:focus {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__trust {
+    background: var(--pst-gold);
+    padding: 1.4rem 1.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__trust-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-fr__trust-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__trust-item {
+    padding: 1.15rem 0.85rem;
+    text-align: center;
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--pst-navy);
+    border: 1px solid rgba(10, 37, 64, 0.12);
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-fr__trust-item {
+      padding: 1.5rem 1rem;
+      font-size: 1.2rem;
+      border-left: none;
+    }
+
+    #shopify-section-{{ section.id }} .pst-fr__trust-item:first-child {
+      border-left: 1px solid rgba(10, 37, 64, 0.12);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__how {
+    background: var(--pst-warm);
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__how-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__eyebrow {
+    margin: 0 0 0.6rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pst-magenta);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__h2 {
+    margin: 0 0 2.5rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-weight: 800;
+    color: var(--pst-navy);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__steps-grid {
+    display: grid;
+    gap: 1.8rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-fr__steps-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__step {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.07);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__step-num {
+    width: 4.2rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    background: var(--pst-magenta);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__step-title {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+    line-height: 1.25;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__step-text {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.55;
+    flex-grow: 1;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__cats {
+    background: #fff;
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__cats-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__cat-grid {
+    display: grid;
+    gap: 1.8rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 600px) {
+    #shopify-section-{{ section.id }} .pst-fr__cat-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-fr__cat-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__cat-card {
+    padding: 2rem 1.5rem;
+    background: var(--pst-warm);
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.06);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__cat-icon {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 2.4rem;
+    line-height: 1;
+    border-radius: 0.65rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__cat-icon--1 {
+    background: #dbeafe;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__cat-icon--2 {
+    background: #d1fae5;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__cat-icon--3 {
+    background: #fce7f3;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__cat-icon--4 {
+    background: #fff7ed;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__cat-card h3 {
+    margin: 0 0 0.65rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__cat-card p {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__grid-wrap {
+    background: #fff;
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__grid-inner {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__grid-sub {
+    margin: 0 auto 2.2rem;
+    max-width: 48rem;
+    font-size: 1.45rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #64748b;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__product-grid {
+    display: grid;
+    gap: 1.8rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 600px) {
+    #shopify-section-{{ section.id }} .pst-fr__product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .pst-fr__product-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    #shopify-section-{{ section.id }} .pst-fr__product-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.07);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__product-card:hover {
+    box-shadow: 0 8px 28px rgba(10, 37, 64, 0.12);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__product-media {
+    position: relative;
+    aspect-ratio: 1;
+    background: #f1f5f9;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__product-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__product-media .placeholder-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 2rem;
+    opacity: 0.45;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__free-badge {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    z-index: 1;
+    padding: 0.35rem 0.65rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #fff;
+    background: var(--pst-free-green);
+    border-radius: 0.35rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__product-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.4rem 1.3rem 1.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__product-title {
+    margin: 0 0 0.6rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__product-price {
+    margin-bottom: 1rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__product-btn {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.4rem;
+    padding: 0 1.2rem;
+    font-family: var(--font-body-family);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    background: var(--pst-magenta);
+    border-radius: 0.5rem;
+    transition: filter 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__product-btn:hover,
+  #shopify-section-{{ section.id }} .pst-fr__product-btn:focus {
+    filter: brightness(1.06);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__empty {
+    padding: 3rem 2rem;
+    text-align: center;
+    font-size: 1.45rem;
+    color: #64748b;
+    background: var(--pst-warm);
+    border-radius: 0.75rem;
+    border: 1px dashed rgba(15, 72, 114, 0.2);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__pagination {
+    margin-top: 2.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__proof {
+    background: var(--pst-navy);
+    padding: 4rem 2rem 4.5rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__proof-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__proof-quote-wrap {
+    margin: 0 0 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.15rem 0.35rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__q-mark {
+    font-family: var(--font-heading-family);
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-weight: 800;
+    line-height: 0.85;
+    color: var(--pst-gold);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__proof-quote {
+    margin: 0;
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.65rem, 3vw, 2.2rem);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.35;
+    color: #fff;
+    display: inline;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__proof-sub {
+    margin: 0 0 2.2rem;
+    font-size: 1.45rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__stats {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-fr__stats {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__stat {
+    padding: 1.6rem 1.2rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.65rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--pst-gold);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__upsell {
+    background: var(--pst-warm);
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__upsell-inner {
+    max-width: 110rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__upsell-sub {
+    margin: 0 auto 2rem;
+    max-width: 56rem;
+    font-size: 1.45rem;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__upsell-grid {
+    display: grid;
+    gap: 1.8rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .pst-fr__upsell-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__upsell-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2.2rem 2rem;
+    background: #fff;
+    border: 1px solid rgba(15, 72, 114, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.07);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__upsell-card h3 {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--pst-navy);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__upsell-card p {
+    margin: 0 0 1.5rem;
+    font-size: 1.4rem;
+    line-height: 1.55;
+    flex-grow: 1;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__upsell-card .pst-fr__btn {
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__btn--navy {
+    background: var(--pst-navy);
+    color: #fff;
+    border: 2px solid var(--pst-navy);
+    width: 100%;
+    margin-top: auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__btn--navy:hover,
+  #shopify-section-{{ section.id }} .pst-fr__btn--navy:focus {
+    filter: brightness(1.08);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__bottom {
+    background: linear-gradient(135deg, #e91e8c 0%, #c91578 55%, #e91e8c 100%);
+    padding: 3.2rem 2rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__bottom-title {
+    margin: 0 0 0.85rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__bottom-sub {
+    margin: 0 auto 1.8rem;
+    max-width: 48rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__bottom-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__btn--white {
+    background: #fff;
+    color: var(--pst-magenta);
+    border: 2px solid #fff;
+    min-width: min(100%, 20rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__btn--white:hover,
+  #shopify-section-{{ section.id }} .pst-fr__btn--white:focus {
+    filter: brightness(0.98);
+    color: var(--pst-magenta);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__btn--bottom-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    min-width: min(100%, 20rem);
+  }
+
+  #shopify-section-{{ section.id }} .pst-fr__btn--bottom-outline:hover,
+  #shopify-section-{{ section.id }} .pst-fr__btn--bottom-outline:focus {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign pst_fr_pp = section.settings.products_per_page
+  if pst_fr_pp == blank or pst_fr_pp < 1
+    assign pst_fr_pp = 16
+  endif
+
+  assign pst_fr_shop = section.settings.shop_systems_url
+  if pst_fr_shop == blank
+    assign pst_fr_shop = '/collections/perfect-systems'
+  endif
+
+  assign pst_fr_contact = section.settings.contact_url
+  if pst_fr_contact == blank
+    if pages.contact != empty
+      assign pst_fr_contact = pages.contact.url
+    else
+      assign pst_fr_contact = '/pages/contact'
+    endif
+  endif
+
+  assign pst_fr_phone = section.settings.bottom_phone_tel
+  if pst_fr_phone == blank
+    assign pst_fr_phone = '+18885354431'
+  endif
+-%}
+
+<div class="pst-fr">
+  {%- if collection -%}
+    <header class="pst-fr__hero">
+      <div class="pst-fr__hero-inner">
+        <span class="pst-fr__badge">{{ section.settings.hero_badge | escape }}</span>
+        <h1 class="pst-fr__hero-title">{{ section.settings.hero_title | escape }}</h1>
+        <p class="pst-fr__hero-sub">{{ section.settings.hero_subtitle | escape }}</p>
+        <div class="pst-fr__hero-actions">
+          <a class="pst-fr__btn pst-fr__btn--magenta" href="#pst-free-grid">{{ section.settings.hero_btn_browse | escape }}</a>
+          <a class="pst-fr__btn pst-fr__btn--outline-light" href="#pst-how-it-works">{{ section.settings.hero_btn_how | escape }}</a>
+        </div>
+        <p class="pst-fr__trust-note">{{ section.settings.hero_trust_note | escape }}</p>
+      </div>
+    </header>
+
+    <div class="pst-fr__trust" role="region" aria-label="{{ section.settings.trust_aria | escape }}">
+      <div class="pst-fr__trust-inner">
+        <div class="pst-fr__trust-grid">
+          <div class="pst-fr__trust-item">{{ section.settings.trust_1 | escape }}</div>
+          <div class="pst-fr__trust-item">{{ section.settings.trust_2 | escape }}</div>
+          <div class="pst-fr__trust-item">{{ section.settings.trust_3 | escape }}</div>
+          <div class="pst-fr__trust-item">{{ section.settings.trust_4 | escape }}</div>
+        </div>
+      </div>
+    </div>
+
+    <section id="pst-how-it-works" class="pst-fr__how" aria-labelledby="pst-fr-how-heading">
+      <div class="pst-fr__how-inner">
+        <p class="pst-fr__eyebrow">{{ section.settings.how_label | escape }}</p>
+        <h2 id="pst-fr-how-heading" class="pst-fr__h2">{{ section.settings.how_heading | escape }}</h2>
+        <div class="pst-fr__steps-grid">
+          <article class="pst-fr__step">
+            <div class="pst-fr__step-num" aria-hidden="true">1</div>
+            <h3 class="pst-fr__step-title">{{ section.settings.step1_title | escape }}</h3>
+            <p class="pst-fr__step-text">{{ section.settings.step1_text | escape }}</p>
+          </article>
+          <article class="pst-fr__step">
+            <div class="pst-fr__step-num" aria-hidden="true">2</div>
+            <h3 class="pst-fr__step-title">{{ section.settings.step2_title | escape }}</h3>
+            <p class="pst-fr__step-text">{{ section.settings.step2_text | escape }}</p>
+          </article>
+          <article class="pst-fr__step">
+            <div class="pst-fr__step-num" aria-hidden="true">3</div>
+            <h3 class="pst-fr__step-title">{{ section.settings.step3_title | escape }}</h3>
+            <p class="pst-fr__step-text">{{ section.settings.step3_text | escape }}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pst-fr__cats" aria-labelledby="pst-fr-cats-heading">
+      <div class="pst-fr__cats-inner">
+        <p class="pst-fr__eyebrow">{{ section.settings.cats_label | escape }}</p>
+        <h2 id="pst-fr-cats-heading" class="pst-fr__h2">{{ section.settings.cats_heading | escape }}</h2>
+        <div class="pst-fr__cat-grid">
+          <article class="pst-fr__cat-card">
+            <div class="pst-fr__cat-icon pst-fr__cat-icon--1" aria-hidden="true">{{ section.settings.cat1_icon | escape }}</div>
+            <h3>{{ section.settings.cat1_title | escape }}</h3>
+            <p>{{ section.settings.cat1_text | escape }}</p>
+          </article>
+          <article class="pst-fr__cat-card">
+            <div class="pst-fr__cat-icon pst-fr__cat-icon--2" aria-hidden="true">{{ section.settings.cat2_icon | escape }}</div>
+            <h3>{{ section.settings.cat2_title | escape }}</h3>
+            <p>{{ section.settings.cat2_text | escape }}</p>
+          </article>
+          <article class="pst-fr__cat-card">
+            <div class="pst-fr__cat-icon pst-fr__cat-icon--3" aria-hidden="true">{{ section.settings.cat3_icon | escape }}</div>
+            <h3>{{ section.settings.cat3_title | escape }}</h3>
+            <p>{{ section.settings.cat3_text | escape }}</p>
+          </article>
+          <article class="pst-fr__cat-card">
+            <div class="pst-fr__cat-icon pst-fr__cat-icon--4" aria-hidden="true">{{ section.settings.cat4_icon | escape }}</div>
+            <h3>{{ section.settings.cat4_title | escape }}</h3>
+            <p>{{ section.settings.cat4_text | escape }}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pst-free-grid" class="pst-fr__grid-wrap" aria-labelledby="pst-fr-grid-heading">
+      <div class="pst-fr__grid-inner">
+        <p class="pst-fr__eyebrow">{{ section.settings.grid_label | escape }}</p>
+        <h2 id="pst-fr-grid-heading" class="pst-fr__h2">{{ section.settings.grid_heading | escape }}</h2>
+        <p class="pst-fr__grid-sub">{{ section.settings.grid_subtitle | escape }}</p>
+
+        {%- paginate collection.products by pst_fr_pp -%}
+          {%- if collection.products.size > 0 -%}
+            <div class="pst-fr__product-grid">
+              {%- for product in collection.products -%}
+                <article class="pst-fr__product-card">
+                  <div class="pst-fr__product-media">
+                    <span class="pst-fr__free-badge">{{ section.settings.free_badge_label | escape }}</span>
+                    {%- if product.featured_media -%}
+                      <img
+                        src="{{ product.featured_media | image_url: width: 720 }}"
+                        srcset="
+                          {{ product.featured_media | image_url: width: 360 }} 360w,
+                          {{ product.featured_media | image_url: width: 540 }} 540w,
+                          {{ product.featured_media | image_url: width: 720 }} 720w
+                        "
+                        sizes="(min-width: 1200px) 25vw, (min-width: 990px) 33vw, (min-width: 600px) 50vw, 100vw"
+                        width="{{ product.featured_media.width }}"
+                        height="{{ product.featured_media.height }}"
+                        loading="lazy"
+                        alt="{{ product.featured_media.alt | default: product.title | escape }}"
+                      >
+                    {%- else -%}
+                      {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {%- endif -%}
+                  </div>
+                  <div class="pst-fr__product-body">
+                    <h3 class="pst-fr__product-title">{{ product.title | escape }}</h3>
+                    <div class="pst-fr__product-price">
+                      {%- render 'price', product: product, show_compare_at_price: true -%}
+                    </div>
+                    <a class="pst-fr__product-btn" href="{{ product.url }}">{{ section.settings.product_btn_label | escape }}</a>
+                  </div>
+                </article>
+              {%- endfor -%}
+            </div>
+            {%- if paginate.pages > 1 -%}
+              <div class="pst-fr__pagination">
+                {%- render 'pagination', paginate: paginate, anchor: '#pst-free-grid' -%}
+              </div>
+            {%- endif -%}
+          {%- else -%}
+            <div class="pst-fr__empty" role="status">{{ section.settings.empty_message | escape }}</div>
+          {%- endif -%}
+        {%- endpaginate -%}
+      </div>
+    </section>
+
+    <section class="pst-fr__proof" aria-labelledby="pst-fr-proof-quote">
+      <div class="pst-fr__proof-inner">
+        <div class="pst-fr__proof-quote-wrap">
+          <span class="pst-fr__q-mark" aria-hidden="true">“</span>
+          <p id="pst-fr-proof-quote" class="pst-fr__proof-quote">{{ section.settings.proof_quote | escape }}</p>
+          <span class="pst-fr__q-mark" aria-hidden="true">”</span>
+        </div>
+        <p class="pst-fr__proof-sub">{{ section.settings.proof_sub | escape }}</p>
+        <div class="pst-fr__stats">
+          <div class="pst-fr__stat">{{ section.settings.stat1 | escape }}</div>
+          <div class="pst-fr__stat">{{ section.settings.stat2 | escape }}</div>
+          <div class="pst-fr__stat">{{ section.settings.stat3 | escape }}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pst-fr__upsell" aria-labelledby="pst-fr-upsell-heading">
+      <div class="pst-fr__upsell-inner">
+        <p class="pst-fr__eyebrow">{{ section.settings.upsell_label | escape }}</p>
+        <h2 id="pst-fr-upsell-heading" class="pst-fr__h2">{{ section.settings.upsell_heading | escape }}</h2>
+        <p class="pst-fr__upsell-sub">{{ section.settings.upsell_subtitle | escape }}</p>
+        <div class="pst-fr__upsell-grid">
+          <article class="pst-fr__upsell-card">
+            <h3>{{ section.settings.upsell1_title | escape }}</h3>
+            <p>{{ section.settings.upsell1_text | escape }}</p>
+            <a class="pst-fr__btn pst-fr__btn--navy" href="{{ pst_fr_shop }}">{{ section.settings.upsell1_btn | escape }}</a>
+          </article>
+          <article class="pst-fr__upsell-card">
+            <h3>{{ section.settings.upsell2_title | escape }}</h3>
+            <p>{{ section.settings.upsell2_text | escape }}</p>
+            <a class="pst-fr__btn pst-fr__btn--magenta" href="{{ pst_fr_contact }}">{{ section.settings.upsell2_btn | escape }}</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pst-fr__bottom">
+      <h2 class="pst-fr__bottom-title">{{ section.settings.bottom_title | escape }}</h2>
+      <p class="pst-fr__bottom-sub">{{ section.settings.bottom_sub | escape }}</p>
+      <div class="pst-fr__bottom-actions">
+        <a class="pst-fr__btn pst-fr__btn--white" href="#pst-free-grid">{{ section.settings.bottom_btn_templates | escape }}</a>
+        <a class="pst-fr__btn pst-fr__btn--bottom-outline" href="tel:{{ pst_fr_phone | escape }}">{{ section.settings.bottom_phone_label | escape }}</a>
+      </div>
+    </footer>
+  {%- else -%}
+    <div class="pst-fr__hero">
+      <div class="pst-fr__hero-inner">
+        <p class="pst-fr__hero-sub">{{ section.settings.no_collection_message | escape }}</p>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "PST Free resources hero",
+  "tag": "section",
+  "class": "pst-free-resources-hero-section",
+  "enabled_on": {
+    "templates": ["collection"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "text",
+      "id": "hero_badge",
+      "label": "Badge",
+      "default": "🎁 Free Gift From Us To You"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Title",
+      "default": "Free Educational Poster Templates for Schools"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtitle",
+      "label": "Subtitle",
+      "default": "You have enough to do daily serving students. We hope this will save some time in your busy day! Simply add any template to your cart and we'll email you the file — completely free!"
+    },
+    {
+      "type": "text",
+      "id": "hero_btn_browse",
+      "label": "Browse button",
+      "default": "Browse Free Templates"
+    },
+    {
+      "type": "text",
+      "id": "hero_btn_how",
+      "label": "How it works button",
+      "default": "How It Works"
+    },
+    {
+      "type": "text",
+      "id": "hero_trust_note",
+      "label": "Trust note",
+      "default": "✓ No credit card required  ✓ Instant email delivery  ✓ Print-ready files"
+    },
+    {
+      "type": "header",
+      "content": "Trust bar"
+    },
+    {
+      "type": "text",
+      "id": "trust_aria",
+      "label": "Region label (accessibility)",
+      "default": "Free template benefits"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust 1",
+      "default": "100% Free — No Credit Card"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust 2",
+      "default": "Email Delivery"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Trust 3",
+      "default": "Print-Ready Files"
+    },
+    {
+      "type": "text",
+      "id": "trust_4",
+      "label": "Trust 4",
+      "default": "16+ Templates Available"
+    },
+    {
+      "type": "header",
+      "content": "How it works"
+    },
+    {
+      "type": "text",
+      "id": "how_label",
+      "label": "Section label",
+      "default": "Simple Process"
+    },
+    {
+      "type": "text",
+      "id": "how_heading",
+      "label": "Heading",
+      "default": "How to Get Your Free Templates"
+    },
+    {
+      "type": "text",
+      "id": "step1_title",
+      "label": "Step 1 title",
+      "default": "Browse & Choose"
+    },
+    {
+      "type": "textarea",
+      "id": "step1_text",
+      "label": "Step 1 text",
+      "default": "Browse our library of free educational poster templates. Find the ones that work for your classroom or school."
+    },
+    {
+      "type": "text",
+      "id": "step2_title",
+      "label": "Step 2 title",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "textarea",
+      "id": "step2_text",
+      "label": "Step 2 text",
+      "default": "Add your chosen templates to your cart. Everything is priced at $0.00 — no payment required."
+    },
+    {
+      "type": "text",
+      "id": "step3_title",
+      "label": "Step 3 title",
+      "default": "Check Your Email"
+    },
+    {
+      "type": "textarea",
+      "id": "step3_text",
+      "label": "Step 3 text",
+      "default": "Complete checkout and we'll email you the print-ready file instantly. Print it on your poster maker!"
+    },
+    {
+      "type": "header",
+      "content": "Categories"
+    },
+    {
+      "type": "text",
+      "id": "cats_label",
+      "label": "Section label",
+      "default": "Template Categories"
+    },
+    {
+      "type": "text",
+      "id": "cats_heading",
+      "label": "Heading",
+      "default": "Templates for Every Classroom Need"
+    },
+    {
+      "type": "text",
+      "id": "cat1_icon",
+      "label": "Card 1 icon",
+      "default": "📐"
+    },
+    {
+      "type": "text",
+      "id": "cat1_title",
+      "label": "Card 1 title",
+      "default": "Math Templates"
+    },
+    {
+      "type": "textarea",
+      "id": "cat1_text",
+      "label": "Card 1 text",
+      "default": "Fraction charts, multiplication tables, and math reference posters"
+    },
+    {
+      "type": "text",
+      "id": "cat2_icon",
+      "label": "Card 2 icon",
+      "default": "🔬"
+    },
+    {
+      "type": "text",
+      "id": "cat2_title",
+      "label": "Card 2 title",
+      "default": "Science Templates"
+    },
+    {
+      "type": "textarea",
+      "id": "cat2_text",
+      "label": "Card 2 text",
+      "default": "Periodic tables, science diagrams, and lab reference posters"
+    },
+    {
+      "type": "text",
+      "id": "cat3_icon",
+      "label": "Card 3 icon",
+      "default": "📖"
+    },
+    {
+      "type": "text",
+      "id": "cat3_title",
+      "label": "Card 3 title",
+      "default": "ELA Templates"
+    },
+    {
+      "type": "textarea",
+      "id": "cat3_text",
+      "label": "Card 3 text",
+      "default": "Text structures, word walls, and language arts posters"
+    },
+    {
+      "type": "text",
+      "id": "cat4_icon",
+      "label": "Card 4 icon",
+      "default": "🏫"
+    },
+    {
+      "type": "text",
+      "id": "cat4_title",
+      "label": "Card 4 title",
+      "default": "School Resources"
+    },
+    {
+      "type": "textarea",
+      "id": "cat4_text",
+      "label": "Card 4 text",
+      "default": "Smart Goals, growth mindset, anti-bullying, and event posters"
+    },
+    {
+      "type": "header",
+      "content": "Product grid"
+    },
+    {
+      "type": "text",
+      "id": "grid_label",
+      "label": "Section label",
+      "default": "Free Templates"
+    },
+    {
+      "type": "text",
+      "id": "grid_heading",
+      "label": "Heading",
+      "default": "Browse All Free Poster Templates"
+    },
+    {
+      "type": "textarea",
+      "id": "grid_subtitle",
+      "label": "Subtitle",
+      "default": "All templates are 100% free. Add to cart and receive via email."
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 24,
+      "step": 4,
+      "label": "Products per page",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "free_badge_label",
+      "label": "Image badge",
+      "default": "FREE"
+    },
+    {
+      "type": "text",
+      "id": "product_btn_label",
+      "label": "Product button",
+      "default": "Get Free Template"
+    },
+    {
+      "type": "text",
+      "id": "empty_message",
+      "label": "Empty state",
+      "default": "Check back soon for new free templates!"
+    },
+    {
+      "type": "header",
+      "content": "Social proof"
+    },
+    {
+      "type": "text",
+      "id": "proof_quote",
+      "label": "Quote",
+      "default": "Perfect School Tools saves teachers hours every week with ready-to-print templates!"
+    },
+    {
+      "type": "text",
+      "id": "proof_sub",
+      "label": "Subtitle",
+      "default": "Join thousands of schools using our free resources"
+    },
+    {
+      "type": "text",
+      "id": "stat1",
+      "label": "Stat 1",
+      "default": "16+ Free Templates"
+    },
+    {
+      "type": "text",
+      "id": "stat2",
+      "label": "Stat 2",
+      "default": "100% Print-Ready"
+    },
+    {
+      "type": "text",
+      "id": "stat3",
+      "label": "Stat 3",
+      "default": "Instant Email Delivery"
+    },
+    {
+      "type": "header",
+      "content": "Upsell"
+    },
+    {
+      "type": "text",
+      "id": "upsell_label",
+      "label": "Section label",
+      "default": "Ready to Print These?"
+    },
+    {
+      "type": "text",
+      "id": "upsell_heading",
+      "label": "Heading",
+      "default": "Get a Poster Maker to Print These Templates!"
+    },
+    {
+      "type": "textarea",
+      "id": "upsell_subtitle",
+      "label": "Subtitle",
+      "default": "These templates are designed for Perfect School Tools poster maker systems. Print full-color 24-inch posters in-house for just $1.50–$3.00 each!"
+    },
+    {
+      "type": "text",
+      "id": "upsell1_title",
+      "label": "Card 1 title",
+      "default": "Poster Maker Systems"
+    },
+    {
+      "type": "textarea",
+      "id": "upsell1_text",
+      "label": "Card 1 text",
+      "default": "Print all these templates in full color on your own poster maker. Purchase orders accepted."
+    },
+    {
+      "type": "text",
+      "id": "upsell1_btn",
+      "label": "Card 1 button",
+      "default": "Shop Poster Makers"
+    },
+    {
+      "type": "url",
+      "id": "shop_systems_url",
+      "label": "Shop systems link",
+      "info": "Defaults to /collections/perfect-systems"
+    },
+    {
+      "type": "text",
+      "id": "upsell2_title",
+      "label": "Card 2 title",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "textarea",
+      "id": "upsell2_text",
+      "label": "Card 2 text",
+      "default": "Get a personalized quote for your school. We accept purchase orders and offer free shipping."
+    },
+    {
+      "type": "text",
+      "id": "upsell2_btn",
+      "label": "Card 2 button",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "contact_url",
+      "label": "Contact link",
+      "info": "Defaults to Contact page"
+    },
+    {
+      "type": "header",
+      "content": "Bottom banner"
+    },
+    {
+      "type": "text",
+      "id": "bottom_title",
+      "label": "Title",
+      "default": "Start Saving Time Today — It's Free!"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_sub",
+      "label": "Subtitle",
+      "default": "Download professional poster templates and spend less time creating, more time teaching."
+    },
+    {
+      "type": "text",
+      "id": "bottom_btn_templates",
+      "label": "Templates button",
+      "default": "Get Free Templates"
+    },
+    {
+      "type": "text",
+      "id": "bottom_phone_label",
+      "label": "Phone button",
+      "default": "Call (888) 535-4431"
+    },
+    {
+      "type": "text",
+      "id": "bottom_phone_tel",
+      "label": "Phone tel href",
+      "default": "+18885354431"
+    },
+    {
+      "type": "header",
+      "content": "Fallback"
+    },
+    {
+      "type": "text",
+      "id": "no_collection_message",
+      "label": "Message when not on a collection",
+      "default": "This section is for free resources collections."
+    }
+  ],
+  "presets": [
+    {
+      "name": "PST Free resources hero"
+    }
+  ]
+}
+{% endschema %}
