@@ -221,6 +221,21 @@
           "bottom_title": "Ready to Bring Visual Learning to Your School?",
           "bottom_quote_label": "Request a Quote"
         }
+      },
+      "pst-contact-page": {
+        "type": "pst-contact-page",
+        "settings": {
+          "hero_heading": "Request a Quote",
+          "hero_subtext": "Fill out the form below.  We'll respond within 1 business day. We accept approved purchase orders.",
+          "form_heading": "Get Your Personalized Quote",
+          "submit_label": "Submit Quote Request",
+          "success_message": "Thank you! We received your quote request and will respond within one business day.",
+          "phone": "(888) 535-4431",
+          "po_email": "orders@perfectschooltools.com",
+          "bottom_cta_text": "Questions? Call us at (888) 535-4431",
+          "bottom_cta_btn_label": "View Our Products",
+          "bottom_cta_btn_url": ""
+        }
       }
     },
     "content_for_index": [],
