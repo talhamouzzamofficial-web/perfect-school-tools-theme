@@ -106,7 +106,7 @@
           "settings": {
             "icon": "🚚",
             "title": "Fast, Reliable Shipping",
-            "text": "Free shipping on qualifying orders. Most orders ship same business days."
+            "text": "Free shipping on qualifying orders. Most supply orders ship same business days."
           }
         },
         "feature_6": {
@@ -169,7 +169,7 @@
         "quote_label": "Request a Quote",
         "quote_link": "/pages/contact",
         "learn_label": "Learn More",
-        "learn_link": "https://perfectposter.com/collections/all",
+        "learn_link": "shopify://collections",
         "padding_top": 72,
         "padding_bottom": 72
       }
