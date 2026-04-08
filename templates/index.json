@@ -36,15 +36,15 @@
         "stat_2": {
           "type": "stat",
           "settings": {
-            "value": "5,000+",
-            "label": "Schools Nationwide"
+            "value": "NATIONWIDE",
+            "label": "Schools Across the Country"
           }
         },
         "stat_3": {
           "type": "stat",
           "settings": {
-            "value": "1,500+",
-            "label": "Districts Served"
+            "value": "TRUSTED",
+            "label": "With School Districts"
           }
         },
         "stat_4": {
