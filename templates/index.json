@@ -13,14 +13,14 @@
       "type": "pst-hero",
       "settings": {
         "badge_text": "We Accept School Purchase Orders",
-        "heading": "Poster Makers & Visual Tools for Schools",
-        "subtext": "Empower your school with professional poster printers, awards systems, and visual learning tools. Trusted schools and  districts nationwide.",
+        "heading": "Poster Makers & Visual Supplies for Schools",
+        "subtext": "Empower your school with professional poster printing, awards systems, and visual learning tools. Trusted by schools and districts nationwide.",
         "quote_label": "Request a Quote",
         "quote_link": "/pages/contact",
         "products_label": "View Products",
-        "products_link": "https://perfectposter.com/pages/postermaker",
+        "products_link": "https://perfectschooltools.com/pages/postermaker",
         "phone": "(888) 535-4431",
-        "shipping_note": ""
+        "shipping_note": "Fast Shipping Available"
       }
     },
     "pst_stats_bar": {
@@ -36,15 +36,15 @@
         "stat_2": {
           "type": "stat",
           "settings": {
-            "value": "TRUSTED",
-            "label": "With School Districts"
+            "value": "",
+            "label": "Trusted by Schools Nationwide"
           }
         },
         "stat_3": {
           "type": "stat",
           "settings": {
-            "value": "NATIONWIDE",
-            "label": "Schools Across the Country"
+            "value": "",
+            "label": "K-12 Specialists Since 1993"
           }
         },
         "stat_4": {
@@ -98,15 +98,15 @@
           "settings": {
             "icon": "🎨",
             "title": "Free Digital Resources",
-            "text": "Access free ready-to-print educational poster templates."
+            "text": "Access thousands of ready-to-print educational poster templates."
           }
         },
         "feature_5": {
           "type": "feature",
           "settings": {
             "icon": "🚚",
-            "title": "Fast, Reliable Shipping",
-            "text": "Free shipping on qualifying orders. Most supply orders ship same business days."
+            "title": "Fast Shipping",
+            "text": "Fast Shipping on qualifying orders. Most systems ship within 2-3 business days."
           }
         },
         "feature_6": {
@@ -136,7 +136,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "featured",
+        "collection": "all",
         "products_to_show": 12,
         "title": "Featured products",
         "heading_size": "h2",
@@ -146,7 +146,7 @@
         "columns_desktop": 4,
         "enable_desktop_slider": false,
         "full_width": false,
-        "show_view_all": false,
+        "show_view_all": true,
         "view_all_style": "solid",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
@@ -157,22 +157,74 @@
         "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 44,
+        "padding_bottom": 36
       }
     },
     "pst_products_showcase": {
       "type": "pst-products-showcase",
       "settings": {
         "heading": "Professional Visual Tools for Every School",
-        "subtitle": "Poster makers, awards systems, and laminators built for classrooms, hallways, and student recognition.",
         "quote_label": "Request a Quote",
         "quote_link": "/pages/contact",
         "learn_label": "Learn More",
-        "learn_link_1": "",
-        "learn_link_2": "",
-        "learn_link_3": "",
-        "learn_link_4": "",
+        "learn_link_1": "/collections/poster-makers-for-schools",
+        "learn_link_2": "/pages/awards-cut-system",
+        "learn_link_3": "/pages/awards-maker",
+        "learn_link_4": "/collections/cold-laminators-for-schools",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "pst_for_your_role": {
+      "type": "pst-for-your-role",
+      "blocks": {
+        "role_admin": {
+          "type": "role",
+          "settings": {
+            "title": "Administrators",
+            "text": "Streamline visual communication across your entire school or district. Manage budgets, approve purchases, and equip every department with professional printing tools.",
+            "button_label": "Learn More",
+            "button_link": "/pages/for-administrators"
+          }
+        },
+        "role_media": {
+          "type": "role",
+          "settings": {
+            "title": "Media Specialists",
+            "text": "Equip your library or media center with poster makers, award systems, and laminators built for student displays and literacy programs.",
+            "button_label": "Learn More",
+            "button_link": "/pages/for-media-specialists"
+          }
+        },
+        "role_bookkeeper": {
+          "type": "role",
+          "settings": {
+            "title": "Bookkeepers",
+            "text": "We gladly accept school purchase orders. Get clear invoicing, Net terms, and a straightforward reorder process for your district.",
+            "button_label": "Learn More",
+            "button_link": "/pages/for-bookkeepers"
+          }
+        },
+        "role_teacher": {
+          "type": "role",
+          "settings": {
+            "title": "Teachers",
+            "text": "Create classroom visuals and student recognition in minutes with tools designed for busy educators.",
+            "button_label": "Learn More",
+            "button_link": "/pages/for-teachers"
+          }
+        }
+      },
+      "block_order": [
+        "role_admin",
+        "role_media",
+        "role_bookkeeper",
+        "role_teacher"
+      ],
+      "settings": {
+        "heading": "For Your Role",
+        "subtitle": "Resources tailored to how your school buys and uses visual tools.",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -212,7 +264,6 @@
       ],
       "settings": {
         "heading": "What Schools Are Saying",
-        "subtitle": "Trusted by educators across the nation",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -234,6 +285,7 @@
     "pst_hero",
     "pst_stats_bar",
     "pst_features",
+    "pst_for_your_role",
     "featured_collection",
     "pst_products_showcase",
     "pst_testimonials",
