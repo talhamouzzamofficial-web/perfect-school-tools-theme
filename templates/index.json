@@ -20,7 +20,7 @@
         "products_label": "View Products",
         "products_link": "https://perfectposter.com/pages/postermaker",
         "phone": "(888) 535-4431",
-        "shipping_note": "Customized Quotes Available"
+        "shipping_note": ""
       }
     },
     "pst_stats_bar": {
@@ -169,7 +169,10 @@
         "quote_label": "Request a Quote",
         "quote_link": "/pages/contact",
         "learn_label": "Learn More",
-        "learn_link": "shopify://collections",
+        "learn_link_1": "",
+        "learn_link_2": "",
+        "learn_link_3": "",
+        "learn_link_4": "",
         "padding_top": 72,
         "padding_bottom": 72
       }
