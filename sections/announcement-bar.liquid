@@ -86,42 +86,25 @@
     text-decoration: underline;
   }
 
-  #shopify-section-{{ section.id }} .pst-announcement-bar__mobile {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.35rem;
-    width: 100%;
-  }
-
   @media screen and (max-width: 768px) {
     #shopify-section-{{ section.id }} .pst-announcement-bar {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      padding: 6px 16px;
-      font-size: 12px;
+      padding: 0.6rem 1rem;
+      font-size: clamp(1.15rem, 3.2vw, 1.3rem);
     }
 
     #shopify-section-{{ section.id }} .pst-announcement-bar__inner {
-      padding: 0.5rem 0;
+      padding: 0.65rem 1rem;
       width: 100%;
     }
 
-    #shopify-section-{{ section.id }} .pst-announcement-bar__desktop {
-      display: none;
+    #shopify-section-{{ section.id }} .pst-announcement-bar__badge {
+      white-space: normal;
+      text-align: center;
+      max-width: 100%;
     }
 
-    #shopify-section-{{ section.id }} .pst-announcement-bar__mobile {
-      display: flex;
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__mobile-line1 {
-      font-weight: 600;
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__mobile-line2 {
-      font-weight: 600;
+    #shopify-section-{{ section.id }} .pst-announcement-bar__tagline {
+      max-width: 100%;
     }
   }
 
@@ -129,7 +112,7 @@
 
 <div class="pst-announcement-bar">
   <div class="pst-announcement-bar__inner page-width">
-    <div class="pst-announcement-bar__desktop pst-announcement-bar__left">
+    <div class="pst-announcement-bar__left">
       {%- if section.settings.badge_text != blank -%}
         <span class="pst-announcement-bar__badge">{{ section.settings.badge_text | escape }}</span>
       {%- endif -%}
@@ -137,7 +120,7 @@
         <span class="pst-announcement-bar__tagline">{{ section.settings.tagline_text | escape }}</span>
       {%- endif -%}
     </div>
-    <div class="pst-announcement-bar__desktop pst-announcement-bar__right">
+    <div class="pst-announcement-bar__right">
       {%- if section.settings.phone_number != blank -%}
         <a
           class="pst-announcement-bar__link-accent"
@@ -149,28 +132,6 @@
       {%- if section.settings.email_address != blank -%}
         <a
           class="pst-announcement-bar__email pst-email pst-announcement-bar__link-accent"
-          href="mailto:{{ section.settings.email_address | escape }}"
-        >
-          {{- section.settings.email_address | escape -}}
-        </a>
-      {%- endif -%}
-    </div>
-
-    <div class="pst-announcement-bar__mobile">
-      {%- if section.settings.mobile_line1 != blank -%}
-        <div class="pst-announcement-bar__mobile-line1">{{ section.settings.mobile_line1 | escape }}</div>
-      {%- endif -%}
-      {%- if section.settings.mobile_line2 != blank -%}
-        <a
-          class="pst-announcement-bar__mobile-line2 pst-announcement-bar__link-accent"
-          href="{{- section.settings.phone_link | default: 'tel:8885354431' | escape -}}"
-        >
-          {{- section.settings.mobile_line2 | escape -}}
-        </a>
-      {%- endif -%}
-      {%- if section.settings.show_email_mobile and section.settings.email_address != blank -%}
-        <a
-          class="pst-email pst-announcement-bar__link-accent"
           href="mailto:{{ section.settings.email_address | escape }}"
         >
           {{- section.settings.email_address | escape -}}
@@ -220,7 +181,7 @@
       "type": "text",
       "id": "email_address",
       "label": "Email Address",
-      "default": "orders@perfectposter.com"
+      "default": "orders@perfectschooltools.com"
     },
     {
       "type": "checkbox",

@@ -1,4 +1,5 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{%- assign pst_footer_orders_email = 'orders@perfectschooltools.com' -%}
 {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
 
@@ -372,7 +373,7 @@
         </div>
         <div class="pst-footer__contact">
           <a href="tel:+18885354431">(888) 535-4431</a>
-          <a href="mailto:orders@perfectposter.com">orders@perfectposter.com</a>
+          <a href="mailto:{{ pst_footer_orders_email | escape }}">{{ pst_footer_orders_email | escape }}</a>
         </div>
       </div>
     </div>
@@ -404,6 +405,7 @@
         <div class="pst-footer__col">
           <h2 class="pst-footer__col-heading">For Your Role</h2>
           <ul class="pst-footer__list">
+            <li><a href="/pages/for-administrators">For Administrators</a></li>
             <li><a href="/pages/for-media-specialists">For Media Specialists</a></li>
             <li><a href="/pages/for-bookkeepers">For Bookkeepers</a></li>
             <li><a href="/pages/for-teachers">For Teachers</a></li>
@@ -428,16 +430,6 @@
             <li><a href="/pages/contact">Contact Us</a></li>
           </ul>
         </div>
-        <div class="pst-footer__col">
-          <h2 class="pst-footer__col-heading">Service Areas</h2>
-          <ul class="pst-footer__list">
-            <li><a href="/pages/poster-makers-virginia">Virginia</a></li>
-            <li><a href="/pages/poster-makers-north-carolina">North Carolina</a></li>
-            <li><a href="/pages/poster-makers-south-carolina">South Carolina</a></li>
-            <li><a href="/pages/poster-makers-georgia">Georgia</a></li>
-            <li><a href="/pages/poster-makers-florida">Florida</a></li>
-          </ul>
-        </div>
       </nav>
     </div>
 
@@ -449,7 +441,7 @@
         </div>
         <div class="pst-footer__trust-item">
           <span class="pst-footer__trust-icon" aria-hidden="true">🚚</span>
-          <span>Free Shipping</span>
+          <span>Fast Shipping</span>
         </div>
         <div class="pst-footer__trust-item">
           <span class="pst-footer__trust-icon" aria-hidden="true">📞</span>
@@ -457,7 +449,7 @@
         </div>
         <div class="pst-footer__trust-item">
           <span class="pst-footer__trust-icon" aria-hidden="true">🏆</span>
-          <span>30+ Years Serving Schools</span>
+          <span>30+ Years Experience Serving Schools</span>
         </div>
       </div>
     </div>

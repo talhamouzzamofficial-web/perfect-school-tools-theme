@@ -334,6 +334,25 @@
   }
 {%- endstyle -%}
 
+{%- liquid
+  assign pst_ps_learn_1 = section.settings.learn_link_1
+  if pst_ps_learn_1 == blank
+    assign pst_ps_learn_1 = '/collections/poster-makers-for-schools'
+  endif
+  assign pst_ps_learn_2 = section.settings.learn_link_2
+  if pst_ps_learn_2 == blank
+    assign pst_ps_learn_2 = '/pages/awards-cut-system'
+  endif
+  assign pst_ps_learn_3 = section.settings.learn_link_3
+  if pst_ps_learn_3 == blank
+    assign pst_ps_learn_3 = '/pages/awards-maker'
+  endif
+  assign pst_ps_learn_4 = section.settings.learn_link_4
+  if pst_ps_learn_4 == blank
+    assign pst_ps_learn_4 = '/collections/cold-laminators-for-schools'
+  endif
+-%}
+
 <section class="pst-showcase">
   <div class="pst-showcase__inner">
     <header class="pst-showcase__header">
@@ -366,8 +385,8 @@
                 {{- section.settings.quote_label | escape -}}
               </a>
             {%- endif -%}
-            {%- if section.settings.learn_label != blank and section.settings.learn_link != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ section.settings.learn_link }}">
+            {%- if section.settings.learn_label != blank and pst_ps_learn_1 != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ pst_ps_learn_1 }}">
                 {{- section.settings.learn_label | escape -}}
               </a>
             {%- endif -%}
@@ -389,7 +408,7 @@
             <li>Awards Printer</li>
             <li>Cutting System</li>
             <li>Award Templates</li>
-            <li>Certificate Paper</li>
+            <li>Customized Supplies</li>
           </ul>
           <div class="pst-showcase__actions">
             {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
@@ -397,8 +416,8 @@
                 {{- section.settings.quote_label | escape -}}
               </a>
             {%- endif -%}
-            {%- if section.settings.learn_label != blank and section.settings.learn_link != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ section.settings.learn_link }}">
+            {%- if section.settings.learn_label != blank and pst_ps_learn_2 != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ pst_ps_learn_2 }}">
                 {{- section.settings.learn_label | escape -}}
               </a>
             {%- endif -%}
@@ -425,8 +444,8 @@
                 {{- section.settings.quote_label | escape -}}
               </a>
             {%- endif -%}
-            {%- if section.settings.learn_label != blank and section.settings.learn_link != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ section.settings.learn_link }}">
+            {%- if section.settings.learn_label != blank and pst_ps_learn_3 != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ pst_ps_learn_3 }}">
                 {{- section.settings.learn_label | escape -}}
               </a>
             {%- endif -%}
@@ -440,12 +459,11 @@
           <h3 class="pst-showcase__hero-title">{{ 'Cold Laminator System' | escape }}</h3>
         </div>
         <div class="pst-showcase__body">
-          <p class="pst-showcase__price">{{ 'From $99' | escape }}</p>
           <ul class="pst-showcase__list">
             <li>No Heat Required</li>
             <li>Safe for Schools</li>
             <li>Multiple Sizes</li>
-            <li>Peel &amp; Stick Options</li>
+            <li>No Electricity</li>
           </ul>
           <div class="pst-showcase__actions">
             {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
@@ -453,8 +471,8 @@
                 {{- section.settings.quote_label | escape -}}
               </a>
             {%- endif -%}
-            {%- if section.settings.learn_label != blank and section.settings.learn_link != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ section.settings.learn_link }}">
+            {%- if section.settings.learn_label != blank and pst_ps_learn_4 != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ pst_ps_learn_4 }}">
                 {{- section.settings.learn_label | escape -}}
               </a>
             {%- endif -%}
@@ -485,7 +503,7 @@
     },
     {
       "type": "paragraph",
-      "content": "Quote and Learn More buttons use the links below for all four cards."
+      "content": "Quote and Learn More buttons: Quote uses the links below for all four cards; Learn More uses per-card links."
     },
     {
       "type": "text",
@@ -506,8 +524,23 @@
     },
     {
       "type": "url",
-      "id": "learn_link",
-      "label": "Learn more link"
+      "id": "learn_link_1",
+      "label": "Learn more link — Poster Maker"
+    },
+    {
+      "type": "url",
+      "id": "learn_link_2",
+      "label": "Learn more link — Awards & Cut"
+    },
+    {
+      "type": "url",
+      "id": "learn_link_3",
+      "label": "Learn more link — Awards Maker"
+    },
+    {
+      "type": "url",
+      "id": "learn_link_4",
+      "label": "Learn more link — Cold Laminator"
     },
     {
       "type": "paragraph",
