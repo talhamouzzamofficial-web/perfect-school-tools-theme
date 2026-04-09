@@ -220,7 +220,15 @@
     box-shadow: 0 4px 14px rgba(245, 183, 49, 0.45);
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__icon {
+  #shopify-section-{{ section.id }} .pst-product-card__image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto 1rem;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .pst-product-card__icon {
     font-size: 80px;
     line-height: 1;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
@@ -368,7 +376,15 @@
       <article class="pst-showcase__card pst-showcase__card--1">
         <div class="pst-showcase__card-hero">
           <span class="pst-showcase__badge pst-showcase__badge--magenta">{{ 'Most Popular' | escape }}</span>
-          <span class="pst-showcase__icon" aria-hidden="true">🖨️</span>
+          {%- if section.settings.card1_image != blank -%}
+            {{
+              section.settings.card1_image
+              | image_url: width: 120
+              | image_tag: alt: 'Poster Maker System', class: 'pst-product-card__image', loading: 'lazy'
+            }}
+          {%- else -%}
+            <div class="pst-product-card__icon" aria-hidden="true">🖨️</div>
+          {%- endif -%}
           <h3 class="pst-showcase__hero-title">{{ 'Perfect Poster Maker System' | escape }}</h3>
         </div>
         <div class="pst-showcase__body">
@@ -397,7 +413,15 @@
       <article class="pst-showcase__card pst-showcase__card--2">
         <div class="pst-showcase__card-hero">
           <span class="pst-showcase__badge pst-showcase__badge--gold">{{ 'Best Value' | escape }}</span>
-          <span class="pst-showcase__icon" aria-hidden="true">🏆</span>
+          {%- if section.settings.card2_image != blank -%}
+            {{
+              section.settings.card2_image
+              | image_url: width: 120
+              | image_tag: alt: 'Awards & Cut System', class: 'pst-product-card__image', loading: 'lazy'
+            }}
+          {%- else -%}
+            <div class="pst-product-card__icon" aria-hidden="true">🏆</div>
+          {%- endif -%}
           <h3 class="pst-showcase__hero-title">
             {{ 'Perfect Awards & Cut System' | escape }}
           </h3>
@@ -427,7 +451,15 @@
 
       <article class="pst-showcase__card pst-showcase__card--3">
         <div class="pst-showcase__card-hero">
-          <span class="pst-showcase__icon" aria-hidden="true">🎖️</span>
+          {%- if section.settings.card3_image != blank -%}
+            {{
+              section.settings.card3_image
+              | image_url: width: 120
+              | image_tag: alt: 'Awards Maker', class: 'pst-product-card__image', loading: 'lazy'
+            }}
+          {%- else -%}
+            <div class="pst-product-card__icon" aria-hidden="true">🎖️</div>
+          {%- endif -%}
           <h3 class="pst-showcase__hero-title">{{ 'Perfect Awards Maker' | escape }}</h3>
         </div>
         <div class="pst-showcase__body">
@@ -455,7 +487,15 @@
 
       <article class="pst-showcase__card pst-showcase__card--4">
         <div class="pst-showcase__card-hero">
-          <span class="pst-showcase__icon" aria-hidden="true">🗂️</span>
+          {%- if section.settings.card4_image != blank -%}
+            {{
+              section.settings.card4_image
+              | image_url: width: 120
+              | image_tag: alt: 'Cold Laminator System', class: 'pst-product-card__image', loading: 'lazy'
+            }}
+          {%- else -%}
+            <div class="pst-product-card__icon" aria-hidden="true">🗂️</div>
+          {%- endif -%}
           <h3 class="pst-showcase__hero-title">{{ 'Cold Laminator System' | escape }}</h3>
         </div>
         <div class="pst-showcase__body">
@@ -500,6 +540,30 @@
       "id": "subtitle",
       "label": "Subtitle",
       "default": "Poster makers, awards systems, and laminators built for classrooms and districts."
+    },
+    {
+      "type": "header",
+      "content": "Card images"
+    },
+    {
+      "type": "image_picker",
+      "id": "card1_image",
+      "label": "Poster Maker — Card Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "card2_image",
+      "label": "Awards & Cut System — Card Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "card3_image",
+      "label": "Awards Maker — Card Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "card4_image",
+      "label": "Cold Laminator — Card Image"
     },
     {
       "type": "paragraph",
