@@ -1,5 +1,7 @@
 {%- style -%}
   #shopify-section-{{ section.id }} {
+    overflow-x: hidden;
+    max-width: 100%;
     --pst-ps-navy: #0a2540;
     --pst-ps-navy-mid: #0f4872;
     --pst-ps-blue: #1a6ba0;
@@ -71,6 +73,19 @@
     #shopify-section-{{ section.id }} .pst-showcase__inner {
       padding: 0 1rem;
     }
+
+    #shopify-section-{{ section.id }} .pst-showcase__title {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+    }
+
+    #shopify-section-{{ section.id }} .pst-showcase__card-hero {
+      min-height: 14rem;
+      padding: 2rem 1rem 1.5rem;
+    }
+
+    #shopify-section-{{ section.id }} .pst-showcase__body {
+      padding: 1.35rem 1.15rem 1.5rem;
+    }
   }
 
   #shopify-section-{{ section.id }} .pst-showcase__header {
@@ -115,6 +130,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    min-width: 0;
   }
 
   @media screen and (min-width: 769px) and (max-width: 1023px) {
@@ -134,6 +150,7 @@
   #shopify-section-{{ section.id }} .pst-showcase__card {
     display: flex;
     flex-direction: column;
+    min-width: 0;
     height: 100%;
     background: var(--pst-ps-white);
     border-radius: var(--pst-ps-radius);
@@ -222,7 +239,8 @@
 
   #shopify-section-{{ section.id }} .pst-product-card__image {
     width: 80px;
-    height: 80px;
+    height: auto;
+    max-width: 100%;
     object-fit: contain;
     margin: 0 auto 1rem;
     display: block;

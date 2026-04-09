@@ -1,5 +1,7 @@
 {%- style -%}
   #shopify-section-{{ section.id }} {
+    overflow-x: hidden;
+    max-width: 100%;
     --pst-navy: #0a2540;
     --pst-magenta: #e91e8c;
     --pst-gold: #f5b731;
@@ -515,7 +517,7 @@
 
   assign pst_po_email = section.settings.orders_email
   if pst_po_email == blank
-    assign pst_po_email = 'orders@perfectposter.com'
+    assign pst_po_email = 'orders@perfectschooltools.com'
   endif
 
   assign pst_po_phone_display = section.settings.phone_display
@@ -748,7 +750,7 @@
       "type": "text",
       "id": "trust_2",
       "label": "Item 2",
-      "default": "Free Shipping"
+      "default": "Fast Shipping"
     },
     {
       "type": "text",
@@ -760,7 +762,7 @@
       "type": "text",
       "id": "trust_4",
       "label": "Item 4",
-      "default": "30+ Years Serving Schools"
+      "default": "30+ Years Experience Serving Schools"
     },
     {
       "type": "header",
@@ -812,7 +814,7 @@
       "type": "textarea",
       "id": "step3_text",
       "label": "Step 3 text",
-      "default": "Email your official purchase order to orders@perfectposter.com or fax it to us. Include your school name, billing address, and shipping address."
+      "default": "Email your official purchase order to orders@perfectschooltools.com or fax it to us. Include your school name, billing address, and shipping address."
     },
     {
       "type": "text",
@@ -900,7 +902,7 @@
       "type": "text",
       "id": "orders_email",
       "label": "Orders email",
-      "default": "orders@perfectposter.com"
+      "default": "orders@perfectschooltools.com"
     },
     {
       "type": "text",
@@ -1040,7 +1042,7 @@
       "type": "textarea",
       "id": "faq5_a",
       "label": "FAQ 5 answer",
-      "default": "Call us at (888) 535-4431 or email orders@perfectposter.com. Our team is available Monday–Friday to assist you."
+      "default": "Call us at (888) 535-4431 or email orders@perfectschooltools.com. Our team is available Monday–Friday to assist you."
     },
     {
       "type": "header",

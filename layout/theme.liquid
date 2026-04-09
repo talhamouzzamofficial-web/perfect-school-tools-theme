@@ -1,8 +1,6 @@
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
- {%- if content_for_header contains 'tapita-seo-script-tags' -%}{%- include 'tapita-seo-schema' -%}{%- endif -%} 
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -37,7 +35,7 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
-    {% render 'meta-tags', page_description: page_description, page_title: page_title  %}
+    {% render 'meta-tags' %}
 
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
@@ -274,13 +272,15 @@
       *,
       *::before,
       *::after {
-        box-sizing: inherit;
+        box-sizing: border-box;
       }
 
       html {
         box-sizing: border-box;
         font-size: calc(var(--font-body-scale) * 62.5%);
         height: 100%;
+        overflow-x: hidden;
+        max-width: 100%;
       }
 
       body {
@@ -295,6 +295,22 @@
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
+        overflow-x: hidden;
+        max-width: 100%;
+      }
+
+      #MainContent {
+        overflow-x: hidden;
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      img,
+      video,
+      iframe,
+      svg {
+        max-width: 100%;
+        height: auto;
       }
 
       @media screen and (min-width: 750px) {
