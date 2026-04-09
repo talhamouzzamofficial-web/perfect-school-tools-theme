@@ -144,17 +144,17 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "badge_text": "✓ Purchase Orders Accepted",
+          "badge_text": "",
           "badge_color": "#e91e8c",
-          "tagline_text": "Serving schools & districts nationwide",
-          "phone_number": "(888) 535-4431",
-          "phone_link": "tel:8885354431",
-          "email_address": "orders@perfectschooltools.com",
+          "tagline_text": "",
+          "phone_number": "Fast Shipping",
+          "phone_link": "",
+          "email_address": "",
           "show_email_mobile": false,
           "bar_background": "#0a2540",
           "text_color": "#fdf8f0",
           "mobile_line1": "",
-          "mobile_line2": "Free Shipping On All Supply Orders!"
+          "mobile_line2": ""
         }
       },
       "pst-about": {
