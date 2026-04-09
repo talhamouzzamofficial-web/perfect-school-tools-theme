@@ -1,143 +1,202 @@
 {%- style -%}
+  #shopify-section-{{ section.id }} {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  /* Desktop bar — hide on mobile */
+  #shopify-section-{{ section.id }} .pst-announcement-bar--desktop {
+    display: flex;
+  }
+
+  #shopify-section-{{ section.id }} .pst-announcement-bar--mobile {
+    display: none;
+  }
+
+  /* Mobile bar — hide on desktop, show on mobile */
+  @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .pst-announcement-bar--desktop {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar--mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 6px 16px;
+      font-size: 12px;
+      gap: 2px;
+    }
+
+    #shopify-section-{{ section.id }} .pst-announcement-bar__mobile-line {
+      width: 100%;
+    }
+  }
+
+  /* Theme editor (html.shopify-design-mode): show both bars — scoped to this section only */
+  html.shopify-design-mode #shopify-section-{{ section.id }} .pst-announcement-bar--desktop,
+  html.shopify-design-mode #shopify-section-{{ section.id }} .pst-announcement-bar--mobile {
+    display: flex;
+  }
+
+  html.shopify-design-mode #shopify-section-{{ section.id }} .pst-announcement-bar--mobile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 6px 16px;
+    font-size: 12px;
+    gap: 2px;
+    margin-top: 0.35rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.28);
+  }
+
+  html.shopify-design-mode #shopify-section-{{ section.id }} .pst-announcement-bar__mobile-line {
+    width: 100%;
+  }
+
+  /* Shared styles */
   #shopify-section-{{ section.id }} .pst-announcement-bar {
-    background-color: {{ section.settings.bar_background }};
-    color: {{ section.settings.text_color }};
-    font-family: var(--font-body-family);
-    font-size: 1.3rem;
-    line-height: 1.4;
-    letter-spacing: 0.02em;
+    width: 100%;
+    padding: 8px 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13px;
+    position: relative;
+    z-index: 100;
+    box-sizing: border-box;
   }
 
   #shopify-section-{{ section.id }} .pst-announcement-bar__inner {
     max-width: var(--page-width, 140rem);
     margin: 0 auto;
-    padding: 0.9rem 2rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    text-align: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex: 1;
+    width: 100%;
   }
 
   #shopify-section-{{ section.id }} .pst-announcement-bar__left {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.6rem;
-  }
-
-  @media screen and (min-width: 769px) {
-    #shopify-section-{{ section.id }} .pst-announcement-bar__inner {
-      flex-direction: row;
-      justify-content: space-between;
-      text-align: left;
-      gap: 1.5rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__left {
-      flex-direction: row;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-  }
-
-  #shopify-section-{{ section.id }} .pst-announcement-bar__badge {
-    display: inline-flex;
-    align-items: center;
-    background-color: {{ section.settings.badge_color }};
-    color: #fff;
-    font-weight: 600;
-    font-size: 1.2rem;
-    padding: 0.35rem 0.9rem;
-    border-radius: 0.4rem;
-    white-space: nowrap;
-  }
-
-  #shopify-section-{{ section.id }} .pst-announcement-bar__tagline {
-    color: {{ section.settings.text_color }};
-    font-weight: 400;
-    opacity: 0.95;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
   #shopify-section-{{ section.id }} .pst-announcement-bar__right {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
-  @media screen and (min-width: 769px) {
-    #shopify-section-{{ section.id }} .pst-announcement-bar__right {
-      flex-direction: row;
-      align-items: center;
-      gap: 2rem;
-    }
+  #shopify-section-{{ section.id }} .pst-announcement-badge {
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
   }
 
-  #shopify-section-{{ section.id }} .pst-announcement-bar__link-accent {
-    color: var(--pst-color-gold, #f5b731);
+  #shopify-section-{{ section.id }} .pst-announcement-bar__tagline {
+    font-weight: 400;
+  }
+
+  #shopify-section-{{ section.id }} .pst-announcement-bar__phone,
+  #shopify-section-{{ section.id }} .pst-announcement-bar__email {
     text-decoration: none;
     font-weight: 600;
+    white-space: nowrap;
   }
 
-  #shopify-section-{{ section.id }} .pst-announcement-bar__link-accent:hover,
-  #shopify-section-{{ section.id }} .pst-announcement-bar__link-accent:focus {
+  #shopify-section-{{ section.id }} .pst-announcement-bar__phone:hover,
+  #shopify-section-{{ section.id }} .pst-announcement-bar__email:hover,
+  #shopify-section-{{ section.id }} .pst-announcement-bar__phone:focus,
+  #shopify-section-{{ section.id }} .pst-announcement-bar__email:focus {
     text-decoration: underline;
   }
 
-  @media screen and (max-width: 768px) {
-    #shopify-section-{{ section.id }} .pst-announcement-bar {
-      padding: 0.6rem 1rem;
-      font-size: clamp(1.15rem, 3.2vw, 1.3rem);
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__inner {
-      padding: 0.65rem 1rem;
-      width: 100%;
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__badge {
-      white-space: normal;
-      text-align: center;
-      max-width: 100%;
-    }
-
-    #shopify-section-{{ section.id }} .pst-announcement-bar__tagline {
-      max-width: 100%;
-    }
+  #shopify-section-{{ section.id }} .pst-announcement-bar__mobile-inner {
+    max-width: var(--page-width, 140rem);
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
   }
-
 {%- endstyle -%}
 
-<div class="pst-announcement-bar">
-  <div class="pst-announcement-bar__inner page-width">
+<!-- DESKTOP BAR — hidden on mobile -->
+<div
+  class="pst-announcement-bar pst-announcement-bar--desktop"
+  style="background-color: {{ section.settings.bar_bg_color }}; color: {{ section.settings.text_color }};"
+>
+  <div class="pst-announcement-bar__inner">
     <div class="pst-announcement-bar__left">
       {%- if section.settings.badge_text != blank -%}
-        <span class="pst-announcement-bar__badge">{{ section.settings.badge_text | escape }}</span>
+        <span
+          class="pst-announcement-badge"
+          style="background-color: {{ section.settings.badge_color }};"
+        >
+          {{- section.settings.badge_text | escape -}}
+        </span>
       {%- endif -%}
       {%- if section.settings.tagline_text != blank -%}
-        <span class="pst-announcement-bar__tagline">{{ section.settings.tagline_text | escape }}</span>
+        <span class="pst-announcement-bar__tagline">
+          {{- section.settings.tagline_text | escape -}}
+        </span>
       {%- endif -%}
     </div>
     <div class="pst-announcement-bar__right">
       {%- if section.settings.phone_number != blank -%}
         <a
-          class="pst-announcement-bar__link-accent"
-          href="{{- section.settings.phone_link | default: 'tel:8885354431' | escape -}}"
+          href="{{ section.settings.phone_link | default: 'tel:8885354431' | escape }}"
+          class="pst-announcement-bar__phone"
+          style="color: {{ section.settings.text_color }};"
         >
-          {{- section.settings.phone_number | escape -}}
+          <span aria-hidden="true">📞</span>
+          {{ section.settings.phone_number | escape }}
         </a>
       {%- endif -%}
-      {%- if section.settings.email_address != blank -%}
+      {%- if section.settings.show_email_desktop and section.settings.email_address != blank -%}
         <a
-          class="pst-announcement-bar__email pst-email pst-announcement-bar__link-accent"
           href="mailto:{{ section.settings.email_address | escape }}"
+          class="pst-announcement-bar__email pst-email"
+          style="color: {{ section.settings.text_color }};"
         >
-          {{- section.settings.email_address | escape -}}
+          <span aria-hidden="true">✉️</span>
+          {{ section.settings.email_address | escape }}
         </a>
       {%- endif -%}
     </div>
+  </div>
+</div>
+
+<!-- MOBILE BAR — hidden on desktop -->
+<div
+  class="pst-announcement-bar pst-announcement-bar--mobile"
+  style="background-color: {{ section.settings.bar_bg_color }}; color: {{ section.settings.text_color }};"
+>
+  <div class="pst-announcement-bar__mobile-inner">
+    {%- if section.settings.mobile_line1 != blank -%}
+      <div class="pst-announcement-bar__mobile-line">
+        {{- section.settings.mobile_line1 | escape -}}
+      </div>
+    {%- endif -%}
+    {%- if section.settings.mobile_line2 != blank -%}
+      <div class="pst-announcement-bar__mobile-line">
+        {{- section.settings.mobile_line2 | escape -}}
+      </div>
+    {%- endif -%}
+    {%- if section.settings.show_email_mobile and section.settings.mobile_email != blank -%}
+      <div class="pst-announcement-bar__mobile-line">
+        {{- section.settings.mobile_email | escape -}}
+      </div>
+    {%- endif -%}
   </div>
 </div>
 
@@ -148,51 +207,87 @@
   "tag": "section",
   "settings": [
     {
+      "type": "header",
+      "content": "Desktop Bar Settings"
+    },
+    {
       "type": "text",
       "id": "badge_text",
-      "label": "Badge Text",
-      "default": "✓ Purchase Orders Accepted"
+      "label": "Desktop — Badge Text",
+      "default": "Purchase Orders Accepted"
     },
     {
       "type": "color",
       "id": "badge_color",
-      "label": "Badge Color",
+      "label": "Desktop — Badge Color",
       "default": "#E91E8C"
     },
     {
       "type": "text",
       "id": "tagline_text",
-      "label": "Tagline Text",
-      "default": "Serving schools & districts for 30+ years"
+      "label": "Desktop — Tagline Text",
+      "default": "Serving schools & districts nationwide"
     },
     {
       "type": "text",
       "id": "phone_number",
-      "label": "Phone Number",
+      "label": "Desktop — Phone Number",
       "default": "(888) 535-4431"
     },
     {
       "type": "text",
       "id": "phone_link",
-      "label": "Phone Link",
+      "label": "Desktop — Phone Link",
       "default": "tel:8885354431"
     },
     {
       "type": "text",
       "id": "email_address",
-      "label": "Email Address",
+      "label": "Desktop — Email Address",
       "default": "orders@perfectschooltools.com"
     },
     {
       "type": "checkbox",
+      "id": "show_email_desktop",
+      "label": "Desktop — Show Email",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Mobile Bar Settings"
+    },
+    {
+      "type": "text",
+      "id": "mobile_line1",
+      "label": "Mobile — Line 1 Text",
+      "default": "(888) 535-4431"
+    },
+    {
+      "type": "text",
+      "id": "mobile_line2",
+      "label": "Mobile — Line 2 Text",
+      "default": "Purchase Orders Accepted"
+    },
+    {
+      "type": "checkbox",
       "id": "show_email_mobile",
-      "label": "Show Email on Mobile",
-      "default": false
+      "label": "Mobile — Show Email",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "mobile_email",
+      "label": "Mobile — Email Address",
+      "default": "orders@perfectschooltools.com"
+    },
+    {
+      "type": "header",
+      "content": "Bar Styling"
     },
     {
       "type": "color",
-      "id": "bar_background",
-      "label": "Bar Background Color",
+      "id": "bar_bg_color",
+      "label": "Background Color",
       "default": "#0A2540"
     },
     {
@@ -200,18 +295,6 @@
       "id": "text_color",
       "label": "Text Color",
       "default": "#FDF8F0"
-    },
-    {
-      "type": "text",
-      "id": "mobile_line1",
-      "label": "Mobile Line 1 Text",
-      "default": "✓ Purchase Orders Accepted"
-    },
-    {
-      "type": "text",
-      "id": "mobile_line2",
-      "label": "Mobile Line 2 Text",
-      "default": "(888) 535-4431"
     }
   ]
 }
