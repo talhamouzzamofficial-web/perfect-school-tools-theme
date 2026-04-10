@@ -13,8 +13,8 @@
       "type": "pst-hero",
       "settings": {
         "badge_text": "We Accept School Purchase Orders",
-        "heading": "Poster Makers & Visual Supplies for Schools",
-        "subtext": "Empower your school with professional poster printing, awards systems, and visual learning tools. Trusted by schools and districts nationwide.",
+        "heading": "Poster Makers & Visual Tools for Schools",
+        "subtext": "Empower your school with professional poster printers, awards systems, and visual learning tools. Trusted by schools and districts nationwide.",
         "quote_label": "Request a Quote",
         "quote_link": "/pages/contact",
         "products_label": "View Products",
@@ -133,49 +133,6 @@
         "padding_bottom": 72
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "all",
-        "products_to_show": 12,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
-    },
-    "pst_products_showcase": {
-      "type": "pst-products-showcase",
-      "settings": {
-        "heading": "Professional Visual Tools for Every School",
-        "quote_label": "Request a Quote",
-        "quote_link": "/pages/contact",
-        "learn_label": "Learn More",
-        "learn_link_1": "/collections/poster-makers-for-schools",
-        "learn_link_2": "/pages/awards-cut-system",
-        "learn_link_3": "/pages/awards-maker",
-        "learn_link_4": "/collections/cold-laminators-for-schools",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
     "pst_for_your_role": {
       "type": "pst-for-your-role",
       "blocks": {
@@ -229,6 +186,50 @@
         "padding_bottom": 72
       }
     },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "all",
+        "products_to_show": 12,
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "pst_products_showcase": {
+      "type": "pst-products-showcase",
+      "settings": {
+        "heading": "Professional Visual Tools for Every School",
+        "subtitle": "Poster makers, awards systems, and laminators built for classrooms and districts.",
+        "quote_label": "Request a Quote",
+        "quote_link": "/pages/contact",
+        "learn_label": "Learn More",
+        "learn_link_1": "/collections/poster-makers-for-schools",
+        "learn_link_2": "/pages/awards-cut-system",
+        "learn_link_3": "/pages/awards-maker",
+        "learn_link_4": "/collections/cold-laminators-for-schools",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
     "pst_testimonials": {
       "type": "pst-testimonials",
       "blocks": {
@@ -264,6 +265,7 @@
       ],
       "settings": {
         "heading": "What Schools Are Saying",
+        "subtitle": "Trusted by educators across the nation",
         "padding_top": 72,
         "padding_bottom": 72
       }
