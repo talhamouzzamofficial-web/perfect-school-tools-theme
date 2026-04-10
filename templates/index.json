@@ -36,15 +36,15 @@
         "stat_2": {
           "type": "stat",
           "settings": {
-            "value": "",
-            "label": "Trusted by Schools Nationwide"
+            "value": "Trusted",
+            "label": "By Schools Nationwide"
           }
         },
         "stat_3": {
           "type": "stat",
           "settings": {
-            "value": "",
-            "label": "K-12 Specialists Since 1993"
+            "value": "Partner",
+            "label": "To School Districts Across The US"
           }
         },
         "stat_4": {
