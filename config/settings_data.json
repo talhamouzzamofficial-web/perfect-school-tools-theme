@@ -145,13 +145,16 @@
         "settings": {
           "badge_text": "✓ Purchase Orders Accepted",
           "badge_color": "#e91e8c",
-          "tagline_text": "Serving schools & districts for 30+ years",
+          "tagline_text": "Experience Serving Schools for 30+ years",
           "phone_number": "(888) 535-4431",
           "phone_link": "tel:8885354431",
           "email_address": "orders@perfectschooltools.com",
+          "show_email_desktop": true,
           "mobile_line1": "",
           "mobile_line2": "Fast Shipping On All Supply Orders!",
           "show_email_mobile": true,
+          "mobile_email": "orders@perfectschooltools.com",
+          "bar_bg_color": "#0a2540",
           "text_color": "#fdf8f0"
         }
       }
