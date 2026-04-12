@@ -171,12 +171,11 @@
     box-sizing: border-box;
     min-height: 140px;
     height: auto;
+    width: 100%;
     padding: 2.5rem 1.5rem 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
     gap: 0.75rem;
     overflow: visible;
     background: transparent;
@@ -275,6 +274,7 @@
     flex-direction: column;
     gap: 0.75rem;
     margin-top: auto;
+    width: 100%;
   }
 
   #shopify-section-{{ section.id }} .pst-showcase__btn {
@@ -332,14 +332,40 @@
 
     <div class="pst-showcase__grid">
       <article class="pst-showcase__card pst-showcase__card--1">
-        <div class="pst-showcase__card-hero">
+        {%- liquid
+          assign pm_align = section.settings.poster_maker_align | default: section.settings.cards_default_align | default: 'center'
+          assign pm_hero_flex = 'center'
+          if pm_align == 'left'
+            assign pm_hero_flex = 'flex-start'
+          elsif pm_align == 'right'
+            assign pm_hero_flex = 'flex-end'
+          endif
+          if pm_align == 'center'
+            assign pm_list_extra = 'padding-left: 0; list-style-position: inside;'
+          elsif pm_align == 'right'
+            assign pm_list_extra = 'padding-left: 0; padding-right: 20px; list-style: none; direction: rtl;'
+          else
+            assign pm_list_extra = 'padding-left: 20px;'
+          endif
+          assign pm_list_style = 'text-align: ' | append: pm_align | append: '; ' | append: pm_list_extra
+          assign pm_actions_flex = 'stretch'
+          if pm_align == 'left'
+            assign pm_actions_flex = 'flex-start'
+          elsif pm_align == 'right'
+            assign pm_actions_flex = 'flex-end'
+          endif
+        -%}
+        <div
+          class="pst-showcase__card-hero"
+          style="text-align: {{ pm_align }}; align-items: {{ pm_hero_flex }};"
+        >
           {%- liquid
             assign poster_maker_size = section.settings.poster_maker_image_size | default: 160
             assign poster_maker_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: poster_maker_size | append: 'px; object-fit: contain;'
           -%}
           <span class="pst-showcase__badge pst-showcase__badge--magenta">{{ 'Most Popular' | escape }}</span>
           {%- if section.settings.poster_maker_image != blank -%}
-            {%- assign pm_alt = section.settings.poster_maker_image.alt | default: 'Perfect Poster Maker System' -%}
+            {%- assign pm_alt = section.settings.poster_maker_image.alt | default: section.settings.poster_maker_title | default: 'Perfect Poster Maker System' -%}
             {{
               section.settings.poster_maker_image
               | image_url: width: 320
@@ -349,17 +375,19 @@
             <span class="pst-showcase__icon" aria-hidden="true" style="font-size: {{ poster_maker_size }}px; line-height: 1;">🖨️</span>
           {%- endif -%}
           {%- if section.settings.poster_maker_show_title != false -%}
-            <h3 class="pst-showcase__card-title">{{ 'Perfect Poster Maker System' | escape }}</h3>
+            <h3 class="pst-showcase__card-title" style="text-align: {{ pm_align }};">
+              {{- section.settings.poster_maker_title | escape -}}
+            </h3>
           {%- endif -%}
         </div>
-        <div class="pst-showcase__body">
-          <ul class="pst-showcase__list">
+        <div class="pst-showcase__body" style="text-align: {{ pm_align }};">
+          <ul class="pst-showcase__list" style="{{ pm_list_style }}">
             <li>24&quot; Full Color Printer</li>
             <li>Full Set of Ink</li>
             <li>Premium Paper Roll</li>
             <li>Free Digital Content Access</li>
           </ul>
-          <div class="pst-showcase__actions">
+          <div class="pst-showcase__actions" style="align-items: {{ pm_actions_flex }};">
             {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
               <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
                 {{- section.settings.quote_label | escape -}}
@@ -381,14 +409,40 @@
       </article>
 
       <article class="pst-showcase__card pst-showcase__card--2">
-        <div class="pst-showcase__card-hero">
+        {%- liquid
+          assign ac_align = section.settings.awards_cut_align | default: section.settings.cards_default_align | default: 'center'
+          assign ac_hero_flex = 'center'
+          if ac_align == 'left'
+            assign ac_hero_flex = 'flex-start'
+          elsif ac_align == 'right'
+            assign ac_hero_flex = 'flex-end'
+          endif
+          if ac_align == 'center'
+            assign ac_list_extra = 'padding-left: 0; list-style-position: inside;'
+          elsif ac_align == 'right'
+            assign ac_list_extra = 'padding-left: 0; padding-right: 20px; list-style: none; direction: rtl;'
+          else
+            assign ac_list_extra = 'padding-left: 20px;'
+          endif
+          assign ac_list_style = 'text-align: ' | append: ac_align | append: '; ' | append: ac_list_extra
+          assign ac_actions_flex = 'stretch'
+          if ac_align == 'left'
+            assign ac_actions_flex = 'flex-start'
+          elsif ac_align == 'right'
+            assign ac_actions_flex = 'flex-end'
+          endif
+        -%}
+        <div
+          class="pst-showcase__card-hero"
+          style="text-align: {{ ac_align }}; align-items: {{ ac_hero_flex }};"
+        >
           {%- liquid
             assign awards_cut_size = section.settings.awards_cut_image_size | default: 160
             assign awards_cut_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: awards_cut_size | append: 'px; object-fit: contain;'
           -%}
           <span class="pst-showcase__badge pst-showcase__badge--gold">{{ 'Best Value' | escape }}</span>
           {%- if section.settings.awards_cut_image != blank -%}
-            {%- assign ac_alt = section.settings.awards_cut_image.alt | default: 'Perfect Awards & Cut System' -%}
+            {%- assign ac_alt = section.settings.awards_cut_image.alt | default: section.settings.awards_cut_title | default: 'Perfect Awards & Cut System' -%}
             {{
               section.settings.awards_cut_image
               | image_url: width: 320
@@ -398,17 +452,19 @@
             <span class="pst-showcase__icon" aria-hidden="true" style="font-size: {{ awards_cut_size }}px; line-height: 1;">🏆</span>
           {%- endif -%}
           {%- if section.settings.awards_cut_show_title != false -%}
-            <h3 class="pst-showcase__card-title">{{ 'Perfect Awards & Cut System' | escape }}</h3>
+            <h3 class="pst-showcase__card-title" style="text-align: {{ ac_align }};">
+              {{- section.settings.awards_cut_title | escape -}}
+            </h3>
           {%- endif -%}
         </div>
-        <div class="pst-showcase__body">
-          <ul class="pst-showcase__list">
+        <div class="pst-showcase__body" style="text-align: {{ ac_align }};">
+          <ul class="pst-showcase__list" style="{{ ac_list_style }}">
             <li>Awards Printer</li>
             <li>Cutting System</li>
             <li>Award Templates</li>
             <li>Customized Supplies</li>
           </ul>
-          <div class="pst-showcase__actions">
+          <div class="pst-showcase__actions" style="align-items: {{ ac_actions_flex }};">
             {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
               <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
                 {{- section.settings.quote_label | escape -}}
@@ -430,13 +486,39 @@
       </article>
 
       <article class="pst-showcase__card pst-showcase__card--3">
-        <div class="pst-showcase__card-hero">
+        {%- liquid
+          assign am_align = section.settings.awards_maker_align | default: section.settings.cards_default_align | default: 'center'
+          assign am_hero_flex = 'center'
+          if am_align == 'left'
+            assign am_hero_flex = 'flex-start'
+          elsif am_align == 'right'
+            assign am_hero_flex = 'flex-end'
+          endif
+          if am_align == 'center'
+            assign am_list_extra = 'padding-left: 0; list-style-position: inside;'
+          elsif am_align == 'right'
+            assign am_list_extra = 'padding-left: 0; padding-right: 20px; list-style: none; direction: rtl;'
+          else
+            assign am_list_extra = 'padding-left: 20px;'
+          endif
+          assign am_list_style = 'text-align: ' | append: am_align | append: '; ' | append: am_list_extra
+          assign am_actions_flex = 'stretch'
+          if am_align == 'left'
+            assign am_actions_flex = 'flex-start'
+          elsif am_align == 'right'
+            assign am_actions_flex = 'flex-end'
+          endif
+        -%}
+        <div
+          class="pst-showcase__card-hero"
+          style="text-align: {{ am_align }}; align-items: {{ am_hero_flex }};"
+        >
           {%- liquid
             assign awards_maker_size = section.settings.awards_maker_image_size | default: 160
             assign awards_maker_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: awards_maker_size | append: 'px; object-fit: contain;'
           -%}
           {%- if section.settings.awards_maker_image != blank -%}
-            {%- assign awards_alt = section.settings.awards_maker_image.alt | default: 'Perfect Awards Maker' -%}
+            {%- assign awards_alt = section.settings.awards_maker_image.alt | default: section.settings.awards_maker_title | default: 'Perfect Awards Maker' -%}
             {{
               section.settings.awards_maker_image
               | image_url: width: 320
@@ -446,17 +528,19 @@
             <span class="pst-showcase__icon" aria-hidden="true" style="font-size: {{ awards_maker_size }}px; line-height: 1;">🎖️</span>
           {%- endif -%}
           {%- if section.settings.awards_maker_show_title != false -%}
-            <h3 class="pst-showcase__card-title">{{ 'Perfect Awards Maker' | escape }}</h3>
+            <h3 class="pst-showcase__card-title" style="text-align: {{ am_align }};">
+              {{- section.settings.awards_maker_title | escape -}}
+            </h3>
           {%- endif -%}
         </div>
-        <div class="pst-showcase__body">
-          <ul class="pst-showcase__list">
+        <div class="pst-showcase__body" style="text-align: {{ am_align }};">
+          <ul class="pst-showcase__list" style="{{ am_list_style }}">
             <li>Awards Printer</li>
             <li>Template Library</li>
             <li>Plaque Supplies</li>
             <li>Full Ink Set</li>
           </ul>
-          <div class="pst-showcase__actions">
+          <div class="pst-showcase__actions" style="align-items: {{ am_actions_flex }};">
             {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
               <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
                 {{- section.settings.quote_label | escape -}}
@@ -478,13 +562,39 @@
       </article>
 
       <article class="pst-showcase__card pst-showcase__card--4">
-        <div class="pst-showcase__card-hero">
+        {%- liquid
+          assign lam_align = section.settings.cold_laminator_align | default: section.settings.cards_default_align | default: 'center'
+          assign lam_hero_flex = 'center'
+          if lam_align == 'left'
+            assign lam_hero_flex = 'flex-start'
+          elsif lam_align == 'right'
+            assign lam_hero_flex = 'flex-end'
+          endif
+          if lam_align == 'center'
+            assign lam_list_extra = 'padding-left: 0; list-style-position: inside;'
+          elsif lam_align == 'right'
+            assign lam_list_extra = 'padding-left: 0; padding-right: 20px; list-style: none; direction: rtl;'
+          else
+            assign lam_list_extra = 'padding-left: 20px;'
+          endif
+          assign lam_list_style = 'text-align: ' | append: lam_align | append: '; ' | append: lam_list_extra
+          assign lam_actions_flex = 'stretch'
+          if lam_align == 'left'
+            assign lam_actions_flex = 'flex-start'
+          elsif lam_align == 'right'
+            assign lam_actions_flex = 'flex-end'
+          endif
+        -%}
+        <div
+          class="pst-showcase__card-hero"
+          style="text-align: {{ lam_align }}; align-items: {{ lam_hero_flex }};"
+        >
           {%- liquid
             assign cold_laminator_size = section.settings.cold_laminator_image_size | default: 160
             assign cold_laminator_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: cold_laminator_size | append: 'px; object-fit: contain;'
           -%}
           {%- if section.settings.cold_laminator_image != blank -%}
-            {%- assign lam_alt = section.settings.cold_laminator_image.alt | default: 'Cold Laminator System' -%}
+            {%- assign lam_alt = section.settings.cold_laminator_image.alt | default: section.settings.cold_laminator_title | default: 'Cold Laminator System' -%}
             {{
               section.settings.cold_laminator_image
               | image_url: width: 320
@@ -494,17 +604,19 @@
             <span class="pst-showcase__icon" aria-hidden="true" style="font-size: {{ cold_laminator_size }}px; line-height: 1;">🗂️</span>
           {%- endif -%}
           {%- if section.settings.cold_laminator_show_title != false -%}
-            <h3 class="pst-showcase__card-title">{{ 'Cold Laminator System' | escape }}</h3>
+            <h3 class="pst-showcase__card-title" style="text-align: {{ lam_align }};">
+              {{- section.settings.cold_laminator_title | escape -}}
+            </h3>
           {%- endif -%}
         </div>
-        <div class="pst-showcase__body">
-          <ul class="pst-showcase__list">
+        <div class="pst-showcase__body" style="text-align: {{ lam_align }};">
+          <ul class="pst-showcase__list" style="{{ lam_list_style }}">
             <li>No Heat Required</li>
             <li>Safe for Schools</li>
             <li>Multiple Sizes</li>
             <li>No Electricity</li>
           </ul>
-          <div class="pst-showcase__actions">
+          <div class="pst-showcase__actions" style="align-items: {{ lam_actions_flex }};">
             {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
               <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
                 {{- section.settings.quote_label | escape -}}
@@ -551,6 +663,17 @@
       "content": "Quote button uses the link below. Each product card has its own Learn more URL."
     },
     {
+      "type": "select",
+      "id": "cards_default_align",
+      "label": "All Cards — Default Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
       "type": "image_picker",
       "id": "poster_maker_image",
       "label": "Poster Maker — Product Image",
@@ -571,6 +694,23 @@
       "id": "poster_maker_show_title",
       "label": "Poster Maker — Show title on card",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "poster_maker_title",
+      "label": "Poster Maker — Card Title",
+      "default": "Perfect Poster Maker System"
+    },
+    {
+      "type": "select",
+      "id": "poster_maker_align",
+      "label": "Poster Maker — Content Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
     },
     {
       "type": "image_picker",
@@ -595,6 +735,23 @@
       "default": true
     },
     {
+      "type": "text",
+      "id": "awards_cut_title",
+      "label": "Awards & Cut — Card Title",
+      "default": "Perfect Awards & Cut System"
+    },
+    {
+      "type": "select",
+      "id": "awards_cut_align",
+      "label": "Awards & Cut — Content Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
       "type": "image_picker",
       "id": "awards_maker_image",
       "label": "Awards Maker — Product Image",
@@ -617,6 +774,23 @@
       "default": true
     },
     {
+      "type": "text",
+      "id": "awards_maker_title",
+      "label": "Awards Maker — Card Title",
+      "default": "Perfect Awards Maker"
+    },
+    {
+      "type": "select",
+      "id": "awards_maker_align",
+      "label": "Awards Maker — Content Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
       "type": "image_picker",
       "id": "cold_laminator_image",
       "label": "Cold Laminator — Product Image",
@@ -637,6 +811,23 @@
       "id": "cold_laminator_show_title",
       "label": "Cold Laminator — Show title on card",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "cold_laminator_title",
+      "label": "Cold Laminator — Card Title",
+      "default": "Cold Laminator System"
+    },
+    {
+      "type": "select",
+      "id": "cold_laminator_align",
+      "label": "Cold Laminator — Content Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
     },
     {
       "type": "text",
