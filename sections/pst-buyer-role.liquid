@@ -1,0 +1,613 @@
+{%- style -%}
+
+/* HERO */
+#shopify-section-{{ section.id }} .pst-role__hero {
+  background: linear-gradient(135deg, #0A2540, #0F4872);
+  padding: 80px 20px 60px;
+  position: relative;
+  overflow: hidden;
+}
+#shopify-section-{{ section.id }} .pst-role__hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+#shopify-section-{{ section.id }} .pst-role__hero-badge {
+  display: inline-block;
+  background: rgba(233,30,140,0.2);
+  color: #E91E8C;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin: 0 0 16px;
+  border: 1px solid rgba(233,30,140,0.3);
+}
+#shopify-section-{{ section.id }} .pst-role__hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0 0 18px;
+}
+#shopify-section-{{ section.id }} .pst-role__hero-intro {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 17px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.7;
+  margin: 0 0 28px;
+}
+#shopify-section-{{ section.id }} .pst-role__hero-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+#shopify-section-{{ section.id }} .pst-role__btn-primary {
+  display: inline-block;
+  padding: 13px 28px;
+  background: #E91E8C;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-role__btn-primary:hover { background: #C4186F; }
+#shopify-section-{{ section.id }} .pst-role__btn-secondary {
+  display: inline-block;
+  padding: 12px 28px;
+  background: transparent;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.4);
+  transition: all 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-role__btn-secondary:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+#shopify-section-{{ section.id }} .pst-role__hero-img-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+#shopify-section-{{ section.id }} .pst-role__hero-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* TRUST BAR */
+#shopify-section-{{ section.id }} .pst-role__trust {
+  background: #F5B731;
+  padding: 14px 20px;
+}
+#shopify-section-{{ section.id }} .pst-role__trust-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+#shopify-section-{{ section.id }} .pst-role__trust-item {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0A2540;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* CHALLENGES + HOW WE HELP */
+#shopify-section-{{ section.id }} .pst-role__body {
+  background: #FDF8F0;
+  padding: 80px 20px;
+}
+#shopify-section-{{ section.id }} .pst-role__body-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+#shopify-section-{{ section.id }} .pst-role__col-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 800;
+  color: #0A2540;
+  margin: 0 0 28px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #E91E8C;
+  display: inline-block;
+}
+#shopify-section-{{ section.id }} .pst-role__item {
+  margin-bottom: 28px;
+}
+#shopify-section-{{ section.id }} .pst-role__item-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0A2540;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+#shopify-section-{{ section.id }} .pst-role__item-icon {
+  color: #E91E8C;
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+#shopify-section-{{ section.id }} .pst-role__item-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.65;
+  margin: 0;
+  padding-left: 26px;
+}
+
+/* TESTIMONIAL */
+#shopify-section-{{ section.id }} .pst-role__testimonial {
+  background: #0A2540;
+  padding: 60px 20px;
+}
+#shopify-section-{{ section.id }}
+  .pst-role__testimonial-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+#shopify-section-{{ section.id }} .pst-role__quote-mark {
+  font-size: 72px;
+  line-height: 0.8;
+  color: #E91E8C;
+  font-family: Georgia, serif;
+  margin-bottom: 16px;
+  display: block;
+}
+#shopify-section-{{ section.id }} .pst-role__quote-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 19px;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.7;
+  font-style: italic;
+  margin: 0 0 24px;
+}
+#shopify-section-{{ section.id }} .pst-role__quote-author {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #F5B731;
+  margin: 0 0 4px;
+}
+#shopify-section-{{ section.id }} .pst-role__quote-role {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
+
+/* RESOURCES LINKS */
+#shopify-section-{{ section.id }} .pst-role__resources {
+  background: #ffffff;
+  padding: 60px 20px;
+}
+#shopify-section-{{ section.id }}
+  .pst-role__resources-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+#shopify-section-{{ section.id }}
+  .pst-role__resources-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0A2540;
+  margin: 0 0 28px;
+}
+#shopify-section-{{ section.id }} .pst-role__resource-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#shopify-section-{{ section.id }} .pst-role__resource-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #FDF8F0;
+  color: #0A2540;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid rgba(10,37,64,0.12);
+  transition: all 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-role__resource-link:hover {
+  background: #0A2540;
+  color: #fff;
+  border-color: #0A2540;
+}
+
+/* CTA BANNER */
+#shopify-section-{{ section.id }} .pst-role__cta {
+  background: linear-gradient(135deg, #E91E8C, #C4186F);
+  padding: 60px 20px;
+  text-align: center;
+}
+#shopify-section-{{ section.id }} .pst-role__cta-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 12px;
+}
+#shopify-section-{{ section.id }} .pst-role__cta-sub {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 28px;
+}
+#shopify-section-{{ section.id }} .pst-role__cta-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#shopify-section-{{ section.id }} .pst-role__cta-btn-white {
+  display: inline-block;
+  padding: 13px 28px;
+  background: #fff;
+  color: #E91E8C;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-role__cta-btn-white:hover {
+  background: #FDF8F0;
+}
+#shopify-section-{{ section.id }} .pst-role__cta-btn-outline {
+  display: inline-block;
+  padding: 12px 28px;
+  background: transparent;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.6);
+  transition: all 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-role__cta-btn-outline:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #shopify-section-{{ section.id }} .pst-role__hero-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  #shopify-section-{{ section.id }} .pst-role__hero-img-wrap {
+    display: none;
+  }
+  #shopify-section-{{ section.id }} .pst-role__body-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  #shopify-section-{{ section.id }} .pst-role__trust-inner {
+    gap: 16px;
+  }
+}
+
+{%- endstyle -%}
+
+<!-- HERO -->
+<div class="pst-role__hero">
+  <div class="pst-role__hero-inner">
+    <div class="pst-role__hero-content">
+      {%- if section.settings.hero_badge != blank -%}
+        <p class="pst-role__hero-badge">
+          {{ section.settings.hero_badge }}
+        </p>
+      {%- endif -%}
+      <h1 class="pst-role__hero-title">
+        {{ section.settings.hero_title }}
+      </h1>
+      <p class="pst-role__hero-intro">
+        {{ section.settings.hero_intro }}
+      </p>
+      <div class="pst-role__hero-btns">
+        <a href="{{ section.settings.cta_primary_link | default: '/pages/contact' }}"
+           class="pst-role__btn-primary">
+          {{ section.settings.cta_primary_label }}
+        </a>
+        {%- if section.settings.phone != blank -%}
+          <a href="tel:{{ section.settings.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' }}"
+             class="pst-role__btn-secondary">
+            {{ section.settings.phone }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+    {%- if section.settings.hero_image != blank -%}
+      <div class="pst-role__hero-img-wrap">
+        {{ section.settings.hero_image
+           | image_url: width: 840
+           | image_tag:
+               alt: section.settings.hero_title,
+               class: 'pst-role__hero-img',
+               loading: 'eager' }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="pst-role__trust">
+  <div class="pst-role__trust-inner">
+    <span class="pst-role__trust-item">&#10003; Purchase Orders Accepted</span>
+    <span class="pst-role__trust-item">&#128666; Fast Shipping</span>
+    <span class="pst-role__trust-item">&#128222; Unlimited Support</span>
+    <span class="pst-role__trust-item">&#127942; 30+ Years Experience</span>
+  </div>
+</div>
+
+<!-- CHALLENGES + HOW WE HELP -->
+<div class="pst-role__body">
+  <div class="pst-role__body-inner">
+
+    <div class="pst-role__challenges">
+      <h2 class="pst-role__col-title">
+        {{ section.settings.challenges_title }}
+      </h2>
+      {%- for i in (1..4) -%}
+        {%- assign t = 'challenge_' | append: i | append: '_title' -%}
+        {%- assign d = 'challenge_' | append: i | append: '_desc' -%}
+        {%- if section.settings[t] != blank -%}
+          <div class="pst-role__item">
+            <p class="pst-role__item-title">
+              <span class="pst-role__item-icon">&#10005;</span>
+              {{ section.settings[t] }}
+            </p>
+            <p class="pst-role__item-text">
+              {{ section.settings[d] }}
+            </p>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="pst-role__solutions">
+      <h2 class="pst-role__col-title">
+        {{ section.settings.solutions_title }}
+      </h2>
+      {%- for i in (1..4) -%}
+        {%- assign t = 'solution_' | append: i | append: '_title' -%}
+        {%- assign d = 'solution_' | append: i | append: '_desc' -%}
+        {%- if section.settings[t] != blank -%}
+          <div class="pst-role__item">
+            <p class="pst-role__item-title">
+              <span class="pst-role__item-icon">&#10003;</span>
+              {{ section.settings[t] }}
+            </p>
+            <p class="pst-role__item-text">
+              {{ section.settings[d] }}
+            </p>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+  </div>
+</div>
+
+<!-- TESTIMONIAL -->
+{%- if section.settings.quote_text != blank -%}
+  <div class="pst-role__testimonial">
+    <div class="pst-role__testimonial-inner">
+      <span class="pst-role__quote-mark">&ldquo;</span>
+      <p class="pst-role__quote-text">
+        {{ section.settings.quote_text }}
+      </p>
+      <p class="pst-role__quote-author">
+        {{ section.settings.quote_author }}
+      </p>
+      <p class="pst-role__quote-role">
+        {{ section.settings.quote_role }}
+      </p>
+    </div>
+  </div>
+{%- endif -%}
+
+<!-- RESOURCES -->
+<div class="pst-role__resources">
+  <div class="pst-role__resources-inner">
+    <h2 class="pst-role__resources-title">
+      {{ section.settings.resources_title }}
+    </h2>
+    <div class="pst-role__resource-links">
+      {%- for i in (1..5) -%}
+        {%- assign lbl = 'resource_' | append: i | append: '_label' -%}
+        {%- assign url = 'resource_' | append: i | append: '_url' -%}
+        {%- if section.settings[lbl] != blank -%}
+          <a href="{{ section.settings[url] | default: '#' }}"
+             class="pst-role__resource-link">
+            {{ section.settings[lbl] }}
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="pst-role__cta">
+  <h2 class="pst-role__cta-title">
+    {{ section.settings.cta_banner_title }}
+  </h2>
+  <p class="pst-role__cta-sub">
+    {{ section.settings.cta_banner_sub }}
+  </p>
+  <div class="pst-role__cta-btns">
+    <a href="{{ section.settings.cta_primary_link | default: '/pages/contact' }}"
+       class="pst-role__cta-btn-white">
+      {{ section.settings.cta_primary_label }}
+    </a>
+    {%- if section.settings.phone != blank -%}
+      <a href="tel:{{ section.settings.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' }}"
+         class="pst-role__cta-btn-outline">
+        {{ section.settings.phone }}
+      </a>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PST Buyer Role Page",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "hero_badge",
+      "label": "Badge Text",
+      "default": "For Your Role" },
+    { "type": "text", "id": "hero_title",
+      "label": "Page Title",
+      "default": "Poster Solutions for Schools" },
+    { "type": "textarea", "id": "hero_intro",
+      "label": "Intro Paragraph",
+      "default": "Description goes here." },
+    { "type": "image_picker", "id": "hero_image",
+      "label": "Hero Image" },
+
+    { "type": "header", "content": "Contact" },
+    { "type": "text", "id": "phone",
+      "label": "Phone Number",
+      "default": "(888) 535-4431" },
+
+    { "type": "header", "content": "Challenges" },
+    { "type": "text", "id": "challenges_title",
+      "label": "Section Title",
+      "default": "Challenges We Solve" },
+    { "type": "text", "id": "challenge_1_title",
+      "label": "Challenge 1 Title" },
+    { "type": "textarea", "id": "challenge_1_desc",
+      "label": "Challenge 1 Description" },
+    { "type": "text", "id": "challenge_2_title",
+      "label": "Challenge 2 Title" },
+    { "type": "textarea", "id": "challenge_2_desc",
+      "label": "Challenge 2 Description" },
+    { "type": "text", "id": "challenge_3_title",
+      "label": "Challenge 3 Title" },
+    { "type": "textarea", "id": "challenge_3_desc",
+      "label": "Challenge 3 Description" },
+    { "type": "text", "id": "challenge_4_title",
+      "label": "Challenge 4 Title" },
+    { "type": "textarea", "id": "challenge_4_desc",
+      "label": "Challenge 4 Description" },
+
+    { "type": "header", "content": "How We Help" },
+    { "type": "text", "id": "solutions_title",
+      "label": "Section Title",
+      "default": "How We Help" },
+    { "type": "text", "id": "solution_1_title",
+      "label": "Solution 1 Title" },
+    { "type": "textarea", "id": "solution_1_desc",
+      "label": "Solution 1 Description" },
+    { "type": "text", "id": "solution_2_title",
+      "label": "Solution 2 Title" },
+    { "type": "textarea", "id": "solution_2_desc",
+      "label": "Solution 2 Description" },
+    { "type": "text", "id": "solution_3_title",
+      "label": "Solution 3 Title" },
+    { "type": "textarea", "id": "solution_3_desc",
+      "label": "Solution 3 Description" },
+    { "type": "text", "id": "solution_4_title",
+      "label": "Solution 4 Title" },
+    { "type": "textarea", "id": "solution_4_desc",
+      "label": "Solution 4 Description" },
+
+    { "type": "header", "content": "Testimonial" },
+    { "type": "textarea", "id": "quote_text",
+      "label": "Quote Text" },
+    { "type": "text", "id": "quote_author",
+      "label": "Author Name" },
+    { "type": "text", "id": "quote_role",
+      "label": "Author Role and Location" },
+
+    { "type": "header", "content": "Resources" },
+    { "type": "text", "id": "resources_title",
+      "label": "Section Title",
+      "default": "Helpful Resources" },
+    { "type": "text", "id": "resource_1_label",
+      "label": "Resource 1 Label" },
+    { "type": "url", "id": "resource_1_url",
+      "label": "Resource 1 URL" },
+    { "type": "text", "id": "resource_2_label",
+      "label": "Resource 2 Label" },
+    { "type": "url", "id": "resource_2_url",
+      "label": "Resource 2 URL" },
+    { "type": "text", "id": "resource_3_label",
+      "label": "Resource 3 Label" },
+    { "type": "url", "id": "resource_3_url",
+      "label": "Resource 3 URL" },
+    { "type": "text", "id": "resource_4_label",
+      "label": "Resource 4 Label" },
+    { "type": "url", "id": "resource_4_url",
+      "label": "Resource 4 URL" },
+    { "type": "text", "id": "resource_5_label",
+      "label": "Resource 5 Label" },
+    { "type": "url", "id": "resource_5_url",
+      "label": "Resource 5 URL" },
+
+    { "type": "header", "content": "CTA Banner" },
+    { "type": "text", "id": "cta_banner_title",
+      "label": "CTA Title",
+      "default": "Ready to Transform Your School?" },
+    { "type": "text", "id": "cta_banner_sub",
+      "label": "CTA Subtitle",
+      "default": "Get a personalized quote. We accept purchase orders and offer special pricing for districts." },
+    { "type": "text", "id": "cta_primary_label",
+      "label": "Primary Button Label",
+      "default": "Request a Quote" },
+    { "type": "url", "id": "cta_primary_link",
+      "label": "Primary Button Link" }
+  ],
+  "presets": [{ "name": "PST Buyer Role Page" }]
+}
+{% endschema %}

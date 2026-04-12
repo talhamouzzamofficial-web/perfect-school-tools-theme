@@ -1,0 +1,59 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pst-buyer-role": {
+      "type": "pst-buyer-role",
+      "settings": {
+        "hero_badge": "For Teachers",
+        "hero_title": "Classroom Poster Tools for Teachers",
+        "hero_intro": "Teachers are the heart of every school, and visual materials are essential to effective teaching. Perfect School Tools poster makers let you create custom anchor charts, classroom rules posters, subject-specific visual aids, hallway displays, and student recognition materials — all printed in vibrant full color, right at your school. No more spending your own money at the copy shop.",
+        "phone": "(888) 535-4431",
+        "challenges_title": "Challenges We Solve",
+        "challenge_1_title": "Spending personal money on classroom materials",
+        "challenge_1_desc": "Teachers shouldn't have to pay out of pocket for classroom posters. Our systems let your school print unlimited posters for a fraction of the cost.",
+        "challenge_2_title": "Waiting for commercial print shops",
+        "challenge_2_desc": "When you need a poster for Monday's lesson, you can't wait two weeks. Print what you need, when you need it.",
+        "challenge_3_title": "Low-quality hand-drawn posters",
+        "challenge_3_desc": "Hand-drawn anchor charts fade, tear, and look unprofessional. Printed posters are vibrant, durable, and reusable year after year.",
+        "challenge_4_title": "Limited template options",
+        "challenge_4_desc": "Our free digital content library includes thousands of educational poster templates across all subjects and grade levels.",
+        "solutions_title": "How We Help",
+        "solution_1_title": "Print custom anchor charts and visual aids",
+        "solution_1_desc": "Create professional-quality anchor charts for any subject — math, reading, science, social studies — in minutes.",
+        "solution_2_title": "Build engaging classroom environments",
+        "solution_2_desc": "Classroom rules, motivational quotes, subject headers, and seasonal decorations — all printed in vivid full color.",
+        "solution_3_title": "Create hallway displays that impress",
+        "solution_3_desc": "Showcase student work, celebrate achievements, and communicate with parents through professional hallway displays.",
+        "solution_4_title": "Access thousands of free templates",
+        "solution_4_desc": "Browse our content library for ready-to-print posters, or customize templates with your own text and images.",
+        "quote_text": "I used to spend hours making hand-drawn anchor charts that looked terrible. Now I print professional posters in minutes. My classroom has never looked better, and my students are more engaged with the visual materials.",
+        "quote_author": "Sarah K.",
+        "quote_role": "4th Grade Teacher, Georgia",
+        "resources_title": "Resources for Teachers",
+        "resource_1_label": "Poster Maker Systems",
+        "resource_1_url": "/pages/poster-makers-for-schools",
+        "resource_2_label": "Free Templates",
+        "resource_2_url": "/pages/free-resources",
+        "resource_3_label": "Award Makers",
+        "resource_3_url": "/pages/award-makers-for-schools",
+        "resource_4_label": "Hallway Display Ideas",
+        "resource_4_url": "/blogs/news/school-hallway-display-ideas",
+        "resource_5_label": "Request a Quote",
+        "resource_5_url": "/pages/contact",
+        "cta_banner_title": "Ready to Transform Your School?",
+        "cta_banner_sub": "Get a personalized quote for your school or district. We accept purchase orders and offer special pricing for multi-school purchases.",
+        "cta_primary_label": "Request a Quote",
+        "cta_primary_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["pst-buyer-role"]
+}

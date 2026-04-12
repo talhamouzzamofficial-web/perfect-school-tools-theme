@@ -1,0 +1,59 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pst-buyer-role": {
+      "type": "pst-buyer-role",
+      "settings": {
+        "hero_badge": "For School Bookkeepers",
+        "hero_title": "Easy Ordering for School Bookkeepers",
+        "hero_intro": "We know that as a school bookkeeper, your job is to keep procurement simple, compliant, and on budget. Perfect School Tools makes ordering poster maker systems and supplies as easy as possible for school financial staff. We accept purchase orders, provide clear invoicing, offer consistent pricing, and make reordering a one-call process. No complicated vendor portals, no surprise fees, no minimum orders.",
+        "phone": "(888) 535-4431",
+        "challenges_title": "Challenges We Solve",
+        "challenge_1_title": "Complicated vendor ordering processes",
+        "challenge_1_desc": "Many vendors make school purchasing unnecessarily complex. We accept POs by email, phone, or fax — and process them the same day.",
+        "challenge_2_title": "Unclear pricing and hidden fees",
+        "challenge_2_desc": "Our pricing is transparent and consistent. No setup fees, no handling charges, no surprises. What we quote is what you pay.",
+        "challenge_3_title": "Difficult reordering",
+        "challenge_3_desc": "When teachers need more paper or ink, reordering should take minutes, not hours. Call us or email a PO and we ship the same day.",
+        "challenge_4_title": "Budget justification",
+        "challenge_4_desc": "We provide clear cost-per-poster calculations and ROI documentation to help you justify the investment to administrators.",
+        "solutions_title": "How We Help",
+        "solution_1_title": "Purchase orders accepted and processed same-day",
+        "solution_1_desc": "Email your PO to orders@perfectschooltools.com or call (888) 535-4431. We process and ship the same business day.",
+        "solution_2_title": "Clear, consistent pricing",
+        "solution_2_desc": "No hidden fees, no minimum orders, no surprises. District-level pricing available for multi-school purchases.",
+        "solution_3_title": "One-call reordering",
+        "solution_3_desc": "We keep your order history on file. When you need more supplies, just call and say 'same as last time' — we'll handle the rest.",
+        "solution_4_title": "Budget-friendly documentation",
+        "solution_4_desc": "We provide cost analysis documents showing per-poster savings vs. outsourcing, making budget approval easier.",
+        "quote_text": "The purchase order process was seamless, and reordering supplies is as easy as a phone call. I recommend Perfect School Tools to every bookkeeper I know in our district.",
+        "quote_author": "Christine F.",
+        "quote_role": "Bookkeeper, South Carolina",
+        "resources_title": "Resources for School Bookkeepers",
+        "resource_1_label": "Purchase Order Process",
+        "resource_1_url": "/pages/purchase-orders",
+        "resource_2_label": "District Pricing",
+        "resource_2_url": "/pages/district-pricing",
+        "resource_3_label": "Reorder Supplies",
+        "resource_3_url": "/pages/reorder-supplies",
+        "resource_4_label": "Supplies Catalog",
+        "resource_4_url": "/pages/poster-printer-supplies",
+        "resource_5_label": "How to Buy",
+        "resource_5_url": "/pages/how-to-buy",
+        "cta_banner_title": "Ready to Transform Your School?",
+        "cta_banner_sub": "Get a personalized quote for your school or district. We accept purchase orders and offer special pricing for multi-school purchases.",
+        "cta_primary_label": "Request a Quote",
+        "cta_primary_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["pst-buyer-role"]
+}

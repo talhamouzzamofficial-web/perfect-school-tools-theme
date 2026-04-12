@@ -1,0 +1,59 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pst-buyer-role": {
+      "type": "pst-buyer-role",
+      "settings": {
+        "hero_badge": "For Administrators",
+        "hero_title": "School Poster Makers for Administrators",
+        "hero_intro": "As a school administrator, you need visual communication tools that are reliable, cost-effective, and easy for your staff to use. Perfect School Tools provides poster maker systems that reduce outsourcing costs, support your teachers and media specialists, and help your school create a professional visual environment — all backed by dedicated support and flexible purchasing options.",
+        "phone": "(888) 535-4431",
+        "challenges_title": "Challenges We Solve",
+        "challenge_1_title": "High outsourced printing costs",
+        "challenge_1_desc": "Commercial printing for school posters and signage adds up fast. Our systems reduce per-poster costs to $1.50-$3.00, delivering significant budget savings.",
+        "challenge_2_title": "Staff spending personal money",
+        "challenge_2_desc": "Teachers and staff shouldn't pay out of pocket for classroom materials. An in-house poster system puts that resource in their hands at no personal cost.",
+        "challenge_3_title": "Slow turnaround for printed materials",
+        "challenge_3_desc": "Events, programs, and classroom needs move fast. In-house printing means your staff gets what they need the same day.",
+        "challenge_4_title": "Inconsistent school branding",
+        "challenge_4_desc": "Standardized templates ensure all school signage and materials reflect your brand consistently across classrooms and hallways.",
+        "solutions_title": "How We Help",
+        "solution_1_title": "Significant and measurable cost savings",
+        "solution_1_desc": "Most schools recover the full system cost within the first year through reduced outsourcing. We provide ROI documentation for your records.",
+        "solution_2_title": "Flexible purchasing — POs accepted",
+        "solution_2_desc": "We work within your school's procurement process. Purchase orders are accepted and processed the same day.",
+        "solution_3_title": "District-wide pricing available",
+        "solution_3_desc": "Equip multiple schools with volume pricing. Contact us for a district proposal tailored to your needs.",
+        "solution_4_title": "Dedicated support for your team",
+        "solution_4_desc": "Every system includes unlimited support and onboarding. Your staff will be up and running quickly with our help.",
+        "quote_text": "As a principal, I needed a solution that was easy for staff to use and wouldn't break our budget. Perfect School Tools delivered on both counts. The support team is exceptional.",
+        "quote_author": "William T.",
+        "quote_role": "Principal, Florida",
+        "resources_title": "Resources for Administrators",
+        "resource_1_label": "Poster Maker Systems",
+        "resource_1_url": "/pages/poster-makers-for-schools",
+        "resource_2_label": "District Pricing",
+        "resource_2_url": "/pages/district-pricing",
+        "resource_3_label": "Purchase Orders",
+        "resource_3_url": "/pages/purchase-orders",
+        "resource_4_label": "How to Buy",
+        "resource_4_url": "/pages/how-to-buy",
+        "resource_5_label": "Request a Quote",
+        "resource_5_url": "/pages/contact",
+        "cta_banner_title": "Ready to Equip Your School?",
+        "cta_banner_sub": "Get a district quote today. We accept purchase orders, offer volume pricing, and provide full onboarding support.",
+        "cta_primary_label": "Request a Quote",
+        "cta_primary_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["pst-buyer-role"]
+}
