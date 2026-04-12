@@ -1,817 +1,777 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
-{%- assign pst_footer_orders_email = 'orders@perfectschooltools.com' -%}
-{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
-{{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
-
-{%- style -%}
-  #shopify-section-{{ section.id }} {
-    overflow-x: hidden;
-    max-width: 100%;
-    --pst-navy: #0a2540;
-    --pst-navy-mid: #0f4872;
-    --pst-navy-dark: #061a2e;
-    --pst-gold: #f5b731;
-    --pst-magenta: #e91e8c;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer {
-    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
-    font-family: var(--font-body-family);
-    color: rgba(255, 255, 255, 0.75);
-  }
-
-  @media screen and (min-width: 750px) {
-    #shopify-section-{{ section.id }} .pst-footer {
-      margin-top: {{ section.settings.margin_top }}px;
-    }
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__top {
-    background: var(--pst-navy);
-    padding: 2rem 2rem 2.2rem;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__top-inner {
-    max-width: var(--page-width, 140rem);
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__logo-link {
-    display: inline-block;
-    text-decoration: none;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__logo-link img {
-    max-width: 18rem;
-    height: auto;
-    display: block;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__logo-text {
-    font-family: var(--font-heading-family);
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: -0.02em;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__contact {
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-    text-align: left;
-  }
-
-  @media screen and (min-width: 750px) {
-    #shopify-section-{{ section.id }} .pst-footer__contact {
-      text-align: right;
-      align-items: flex-end;
-    }
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__contact a {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__contact a:hover {
-    color: #fff;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__main {
-    background: var(--pst-navy);
-    padding: 0 2rem 3rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    #shopify-section-{{ section.id }} .pst-footer__top {
-      padding: 1.5rem 1rem 1.75rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-footer__top-inner {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.25rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-footer__contact {
-      text-align: left;
-      align-items: flex-start;
-    }
-
-    #shopify-section-{{ section.id }} .pst-footer__main {
-      padding: 0 1rem 2rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-footer__trust {
-      padding: 1.25rem 1rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-footer__newsletter {
-      padding: 2rem 1rem;
-    }
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__links {
-    max-width: var(--page-width, 140rem);
-    margin: 0 auto;
-    display: grid;
-    gap: 2.4rem 1.5rem;
-    grid-template-columns: 1fr;
-  }
-
-  @media screen and (min-width: 480px) {
-    #shopify-section-{{ section.id }} .pst-footer__links {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media screen and (min-width: 750px) {
-    #shopify-section-{{ section.id }} .pst-footer__links {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media screen and (min-width: 1200px) {
-    #shopify-section-{{ section.id }} .pst-footer__links {
-      grid-template-columns: repeat(6, 1fr);
-    }
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__col-heading {
-    margin: 0 0 1.2rem;
-    font-family: var(--font-heading-family);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--pst-gold);
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__list li {
-    margin-bottom: 0.65rem;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__list a {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__list a:hover {
-    color: #fff;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__trust {
-    background: var(--pst-navy-mid);
-    padding: 1.4rem 2rem;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__trust-inner {
-    max-width: var(--page-width, 140rem);
-    margin: 0 auto;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr;
-  }
-
-  @media screen and (min-width: 600px) {
-    #shopify-section-{{ section.id }} .pst-footer__trust-inner {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media screen and (min-width: 990px) {
-    #shopify-section-{{ section.id }} .pst-footer__trust-inner {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__trust-item {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: #fff;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__trust-icon {
-    color: var(--pst-gold);
-    flex-shrink: 0;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__newsletter {
-    background: var(--pst-navy-dark);
-    padding: 3rem 2rem;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__newsletter-inner {
-    max-width: var(--page-width, 140rem);
-    margin: 0 auto;
-    display: grid;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  @media screen and (min-width: 990px) {
-    #shopify-section-{{ section.id }} .pst-footer__newsletter-inner {
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__newsletter-text h3 {
-    margin: 0 0 0.75rem;
-    font-family: var(--font-heading-family);
-    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
-    font-weight: 800;
-    color: #fff;
-    line-height: 1.2;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__newsletter-text p {
-    margin: 0;
-    font-size: 1.45rem;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.82);
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__newsletter .newsletter-form__field-wrapper {
-    max-width: 100%;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__newsletter .pst-footer__newsletter-field.field {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    align-items: stretch;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__newsletter .pst-footer__newsletter-field .field__input {
-    flex: 1 1 16rem;
-    min-height: 4.8rem;
-    padding: 0 1.2rem;
-    border-radius: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.08);
-    color: #fff;
-    font-family: var(--font-body-family);
-    font-size: 1.4rem;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__newsletter .field__input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__newsletter .field__label {
-    color: rgba(255, 255, 255, 0.75);
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__newsletter .pst-footer__subscribe {
-    min-height: 4.8rem;
-    padding: 0 2rem;
-    font-family: var(--font-body-family);
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #fff;
-    background: var(--pst-magenta);
-    border: 2px solid var(--pst-magenta);
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: filter 0.2s ease;
-    flex-shrink: 0;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__newsletter .pst-footer__subscribe:hover {
-    filter: brightness(1.06);
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__bottom {
-    background: var(--pst-navy-dark);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1.8rem 2rem;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__bottom-inner {
-    max-width: var(--page-width, 140rem);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.4rem;
-    align-items: center;
-    text-align: center;
-  }
-
-  @media screen and (min-width: 990px) {
-    #shopify-section-{{ section.id }} .pst-footer__bottom-inner {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      text-align: left;
-      align-items: center;
-    }
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__copyright {
-    font-size: 1.35rem;
-    color: rgba(255, 255, 255, 0.65);
-    margin: 0;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__policies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 1.5rem;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__policies a {
-    font-size: 1.35rem;
-    color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__policies a:hover {
-    color: #fff;
-  }
-
-  #shopify-section-{{ section.id }} .pst-footer__payment .list-payment {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  #shopify-section-{{ section.id }} .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    #shopify-section-{{ section.id }} .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-
-<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
-  <div class="pst-footer">
-    <div class="pst-footer__top">
-      <div class="pst-footer__top-inner">
-        <div class="pst-footer__brand">
-          <a href="{{ routes.root_url }}" class="pst-footer__logo-link">
-            {%- if section.settings.logo != blank -%}
-              {%- liquid
-                assign pst_footer_logo_h = 180 | divided_by: section.settings.logo.aspect_ratio | round
-              -%}
-              {{
-                section.settings.logo
-                | image_url: width: 180
-                | image_tag:
-                  loading: 'lazy',
-                  widths: '180, 360',
-                  width: 180,
-                  height: pst_footer_logo_h,
-                  alt: 'Perfect School Tools',
-                  class: 'pst-footer__logo-img'
-              }}
-            {%- else -%}
-              <span class="pst-footer__logo-text">Perfect School Tools</span>
-            {%- endif -%}
-          </a>
-        </div>
-        <div class="pst-footer__contact">
-          <a href="tel:+18885354431">(888) 535-4431</a>
-          <a href="mailto:{{ pst_footer_orders_email | escape }}">{{ pst_footer_orders_email | escape }}</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pst-footer__main">
-      <nav class="pst-footer__links" aria-label="Footer">
-        <div class="pst-footer__col">
-          <h2 class="pst-footer__col-heading">Products</h2>
-          <ul class="pst-footer__list">
-            <li><a href="/pages/poster-makers">Poster Makers</a></li>
-            <li><a href="/pages/award-systems">Award Systems</a></li>
-            <li><a href="/collections/laminators-lamination">Cold Laminators</a></li>
-            <li><a href="/collections/poster-printer-supplies">Poster Printer Supplies</a></li>
-            <li><a href="/collections/poster-printer-paper">Poster Printer Paper</a></li>
-            <li><a href="/collections/poster-printer-ink-cartridges-all">Poster Printer Ink</a></li>
-            <li><a href="/collections/perfect-supply-bundles">School Bundles</a></li>
-            <li><a href="/collections/free-poster-template-downloads">Free Resources</a></li>
-          </ul>
-        </div>
-        <div class="pst-footer__col">
-          <h2 class="pst-footer__col-heading">Buying</h2>
-          <ul class="pst-footer__list">
-            <li><a href="/pages/how-to-buy">How to Buy</a></li>
-            <li><a href="/pages/purchase-orders">Purchase Orders</a></li>
-            <li><a href="/pages/district-pricing">District Pricing</a></li>
-            <li><a href="/pages/reorder-supplies">Reorder Supplies</a></li>
-          </ul>
-        </div>
-        <div class="pst-footer__col">
-          <h2 class="pst-footer__col-heading">For Your Role</h2>
-          <ul class="pst-footer__list">
-            <li><a href="/pages/for-administrators">For Administrators</a></li>
-            <li><a href="/pages/for-media-specialists">For Media Specialists</a></li>
-            <li><a href="/pages/for-bookkeepers">For Bookkeepers</a></li>
-            <li><a href="/pages/for-teachers">For Teachers</a></li>
-          </ul>
-        </div>
-        <div class="pst-footer__col">
-          <h2 class="pst-footer__col-heading">Resources</h2>
-          <ul class="pst-footer__list">
-            <li><a href="/blogs/news">Blog</a></li>
-            <li><a href="/blogs/news/best-poster-makers-for-schools">Best Poster Makers</a></li>
-            <li><a href="/blogs/news/best-cold-laminators-for-schools">Best Cold Laminators</a></li>
-            <li><a href="/blogs/news/poster-printer-paper-guide">Paper Guide</a></li>
-            <li><a href="/blogs/news/cold-vs-hot-laminator-schools">Cold vs Hot Laminator</a></li>
-            <li><a href="/blogs/news/school-hallway-display-ideas">Hallway Display Ideas</a></li>
-          </ul>
-        </div>
-        <div class="pst-footer__col">
-          <h2 class="pst-footer__col-heading">Company</h2>
-          <ul class="pst-footer__list">
-            <li><a href="/pages/faq">FAQ</a></li>
-            <li><a href="/pages/about">About Us</a></li>
-            <li><a href="/pages/contact">Contact Us</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <div class="pst-footer__trust">
-      <div class="pst-footer__trust-inner">
-        <div class="pst-footer__trust-item">
-          <span class="pst-footer__trust-icon" aria-hidden="true">✓</span>
-          <span>Purchase Orders Accepted</span>
-        </div>
-        <div class="pst-footer__trust-item">
-          <span class="pst-footer__trust-icon" aria-hidden="true">🚚</span>
-          <span>Fast Shipping</span>
-        </div>
-        <div class="pst-footer__trust-item">
-          <span class="pst-footer__trust-icon" aria-hidden="true">📞</span>
-          <span>Unlimited Support</span>
-        </div>
-        <div class="pst-footer__trust-item">
-          <span class="pst-footer__trust-icon" aria-hidden="true">🏆</span>
-          <span>30+ Years Experience Serving Schools</span>
-        </div>
-      </div>
-    </div>
-
-    {%- if section.settings.newsletter_enable -%}
-      <div class="pst-footer__newsletter">
-        <div class="pst-footer__newsletter-inner">
-          <div class="pst-footer__newsletter-text">
-            <h3>Stay Connected with Perfect School Tools</h3>
-            <p>Get tips, resources, and updates for school educators.</p>
-          </div>
-          <div class="pst-footer__newsletter-form-wrap">
-            {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
-              <input type="hidden" name="contact[tags]" value="newsletter">
-              <div class="newsletter-form__field-wrapper">
-                <div class="field pst-footer__newsletter-field">
-                  <input
-                    id="NewsletterForm--{{ section.id }}"
-                    type="email"
-                    name="contact[email]"
-                    class="field__input"
-                    value="{{ form.email }}"
-                    aria-required="true"
-                    autocorrect="off"
-                    autocapitalize="off"
-                    autocomplete="email"
-                    {% if form.errors %}
-                      autofocus
-                      aria-invalid="true"
-                      aria-describedby="ContactFooter-error"
-                    {% elsif form.posted_successfully? %}
-                      aria-describedby="ContactFooter-success"
-                    {% endif %}
-                    placeholder="{{ 'newsletter.label' | t }}"
-                    required
-                  >
-                  <label class="field__label visually-hidden" for="NewsletterForm--{{ section.id }}">
-                    {{ 'newsletter.label' | t }}
-                  </label>
-                  <button type="submit" class="pst-footer__subscribe" name="commit" id="Subscribe-{{ section.id }}">
-                    Subscribe
-                  </button>
-                </div>
-                {%- if form.errors -%}
-                  <small class="newsletter-form__message form__message" id="ContactFooter-error">
-                    <span class="svg-wrapper">
-                      {{- 'icon-error.svg' | inline_asset_content -}}
-                    </span>
-                    {{- form.errors.translated_fields.email | capitalize }}
-                    {{ form.errors.messages.email -}}
-                  </small>
-                {%- endif -%}
-              </div>
-              {%- if form.posted_successfully? -%}
-                <h3
-                  class="newsletter-form__message newsletter-form__message--success form__message"
-                  id="ContactFooter-success"
-                  tabindex="-1"
-                  autofocus
-                >
-                  <span class="svg-wrapper">
-                    {{- 'icon-success.svg' | inline_asset_content -}}
-                  </span>
-                  {{- 'newsletter.success' | t }}
-                </h3>
-              {%- endif -%}
-            {%- endform -%}
-          </div>
-        </div>
-      </div>
-    {%- endif -%}
-
-    <div class="pst-footer__bottom">
-      <div class="pst-footer__bottom-inner">
-        <p class="pst-footer__copyright">© {{ 'now' | date: '%Y' }}, Perfect School Tools</p>
-
-        {%- if section.settings.show_policy -%}
-          <ul class="pst-footer__policies">
-            {%- if shop.privacy_policy -%}
-              <li><a href="{{ shop.privacy_policy.url }}">{{ shop.privacy_policy.title }}</a></li>
-            {%- endif -%}
-            {%- if shop.refund_policy -%}
-              <li><a href="{{ shop.refund_policy.url }}">{{ shop.refund_policy.title }}</a></li>
-            {%- endif -%}
-            {%- if shop.terms_of_service -%}
-              <li><a href="{{ shop.terms_of_service.url }}">{{ shop.terms_of_service.title }}</a></li>
-            {%- endif -%}
-          </ul>
+<footer class="pst-foot">
+  {%- comment -%} A. TOP BAR {%- endcomment -%}
+  <div class="pst-foot__top">
+    <div class="pst-foot__top-inner">
+      <div class="pst-foot__brand">
+        {%- if section.settings.footer_logo != blank -%}
+          {{ section.settings.footer_logo | image_url: width: 180
+             | image_tag: alt: shop.name, class: 'pst-foot__logo-img' }}
+        {%- else -%}
+          <span class="pst-foot__logo-text">
+            {{ shop.name }}
+          </span>
         {%- endif -%}
-
-        {%- if section.settings.payment_enable -%}
-          <div class="pst-footer__payment">
-            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
-            <ul class="list list-payment" role="list">
-              {%- for type in shop.enabled_payment_types -%}
-                <li class="list-payment__item">
-                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                </li>
-              {%- endfor -%}
-            </ul>
-          </div>
+        {%- if section.settings.tagline != blank -%}
+          <p class="pst-foot__tagline">
+            {{ section.settings.tagline }}
+          </p>
+        {%- endif -%}
+      </div>
+      <div class="pst-foot__contact">
+        {%- if section.settings.phone != blank -%}
+          <a
+            href="tel:{{ section.settings.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' }}"
+            class="pst-foot__contact-item"
+          >
+            <span class="pst-foot__contact-icon" aria-hidden="true">&#128222;</span>
+            {{ section.settings.phone }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.email != blank -%}
+          <a href="mailto:{{ section.settings.email }}" class="pst-foot__contact-item">
+            <span class="pst-foot__contact-icon" aria-hidden="true">&#9993;</span>
+            {{ section.settings.email }}
+          </a>
         {%- endif -%}
       </div>
     </div>
   </div>
+
+  {%- comment -%} B. MAIN LINKS — 5 columns via blocks {%- endcomment -%}
+  <div class="pst-foot__main">
+    <div class="pst-foot__main-inner">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'link_column' -%}
+          <div class="pst-foot__col" {{ block.shopify_attributes }}>
+            <p class="pst-foot__col-title">
+              {{ block.settings.col_title }}
+            </p>
+            <ul class="pst-foot__links">
+              {%- for i in (1..8) -%}
+                {%- assign lbl = 'link_' | append: i | append: '_label' -%}
+                {%- assign url = 'link_' | append: i | append: '_url' -%}
+                {%- if block.settings[lbl] != blank -%}
+                  <li>
+                    <a href="{{ block.settings[url] | default: '#' }}" class="pst-foot__link">
+                      {{ block.settings[lbl] }}
+                    </a>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- comment -%} C. TRUST BAR {%- endcomment -%}
+  <div class="pst-foot__trust">
+    <div class="pst-foot__trust-inner">
+      {%- for i in (1..4) -%}
+        {%- assign icon_key = 'trust_' | append: i | append: '_icon' -%}
+        {%- assign text_key = 'trust_' | append: i | append: '_text' -%}
+        {%- if section.settings[text_key] != blank -%}
+          <div class="pst-foot__trust-item">
+            <span class="pst-foot__trust-icon">
+              {{ section.settings[icon_key] }}
+            </span>
+            <span class="pst-foot__trust-text">
+              {{ section.settings[text_key] }}
+            </span>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- comment -%} D. NEWSLETTER {%- endcomment -%}
+  {%- if section.settings.newsletter_enable -%}
+    <div class="pst-foot__newsletter">
+      <div class="pst-foot__newsletter-inner">
+        <div class="pst-foot__newsletter-copy">
+          <h3 class="pst-foot__newsletter-title">
+            {{ section.settings.newsletter_heading }}
+          </h3>
+          <p class="pst-foot__newsletter-sub">
+            {{ section.settings.newsletter_subheading }}
+          </p>
+        </div>
+        <div class="pst-foot__newsletter-form">
+          {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="pst-foot__form-row">
+              <input
+                id="NewsletterForm--{{ section.id }}"
+                type="email"
+                name="contact[email]"
+                class="pst-foot__email-input"
+                value="{{ form.email }}"
+                placeholder="{{ section.settings.newsletter_placeholder }}"
+                required
+                autocomplete="email"
+                autocorrect="off"
+                autocapitalize="off"
+                {% if form.errors %}
+                  aria-invalid="true"
+                  aria-describedby="ContactFooter-error-{{ section.id }}"
+                {% endif %}
+              >
+              <button type="submit" class="pst-foot__subscribe-btn" name="commit">
+                {{ section.settings.newsletter_btn }}
+              </button>
+            </div>
+            {%- if form.errors -%}
+              <p class="pst-foot__form-message pst-foot__form-message--error" id="ContactFooter-error-{{ section.id }}">
+                {{ form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email }}
+              </p>
+            {%- endif -%}
+            {%- if form.posted_successfully? -%}
+              <p class="pst-foot__form-message pst-foot__form-message--success" id="ContactFooter-success-{{ section.id }}">
+                {{ 'newsletter.success' | t }}
+              </p>
+            {%- endif -%}
+          {%- endform -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- comment -%} E. BOTTOM BAR {%- endcomment -%}
+  <div class="pst-foot__bottom">
+    <div class="pst-foot__bottom-inner">
+      <p class="pst-foot__copy">
+        &copy; {{ 'now' | date: '%Y' }},
+        {{ shop.name }}
+      </p>
+      <div class="pst-foot__policies">
+        {%- if shop.privacy_policy != blank -%}
+          <a href="{{ shop.privacy_policy.url }}" class="pst-foot__policy-link">
+            Privacy Policy
+          </a>
+        {%- endif -%}
+        {%- if shop.refund_policy != blank -%}
+          <a href="{{ shop.refund_policy.url }}" class="pst-foot__policy-link">
+            Refund Policy
+          </a>
+        {%- endif -%}
+        {%- if shop.terms_of_service != blank -%}
+          <a href="{{ shop.terms_of_service.url }}" class="pst-foot__policy-link">
+            Terms of Service
+          </a>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.payment_enable -%}
+        <div class="pst-foot__payments">
+          {%- for type in shop.enabled_payment_types -%}
+            {{ type | payment_type_svg_tag: class: 'pst-foot__payment-icon' }}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
 </footer>
+
+{%- style -%}
+
+/* ── TOP BAR ── */
+#shopify-section-{{ section.id }} .pst-foot__top {
+  background: #0A2540;
+  padding: 28px 20px;
+}
+#shopify-section-{{ section.id }} .pst-foot__top-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#shopify-section-{{ section.id }} .pst-foot__logo-img {
+  max-height: 60px;
+  width: auto;
+  display: block;
+}
+#shopify-section-{{ section.id }} .pst-foot__logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+}
+#shopify-section-{{ section.id }} .pst-foot__tagline {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin: 6px 0 0;
+}
+#shopify-section-{{ section.id }} .pst-foot__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+#shopify-section-{{ section.id }} .pst-foot__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.85);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-foot__contact-item:hover { color: #F5B731; }
+#shopify-section-{{ section.id }} .pst-foot__contact-icon {
+  font-size: 14px;
+}
+
+/* ── MAIN LINKS ── */
+#shopify-section-{{ section.id }} .pst-foot__main {
+  background: #0A2540;
+  padding: 48px 20px 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+#shopify-section-{{ section.id }} .pst-foot__main-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+}
+@media (max-width: 900px) {
+  #shopify-section-{{ section.id }} .pst-foot__main-inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  #shopify-section-{{ section.id }} .pst-foot__main-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  #shopify-section-{{ section.id }} .pst-foot__contact {
+    align-items: flex-start;
+  }
+}
+#shopify-section-{{ section.id }} .pst-foot__col-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #F5B731;
+  margin: 0 0 14px;
+}
+#shopify-section-{{ section.id }} .pst-foot__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+#shopify-section-{{ section.id }} .pst-foot__link {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.4;
+}
+#shopify-section-{{ section.id }}
+  .pst-foot__link:hover { color: #ffffff; }
+
+/* ── TRUST BAR ── */
+#shopify-section-{{ section.id }} .pst-foot__trust {
+  background: #0F4872;
+  padding: 18px 20px;
+}
+#shopify-section-{{ section.id }} .pst-foot__trust-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+#shopify-section-{{ section.id }} .pst-foot__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#shopify-section-{{ section.id }} .pst-foot__trust-icon {
+  font-size: 16px;
+}
+#shopify-section-{{ section.id }} .pst-foot__trust-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── NEWSLETTER ── */
+#shopify-section-{{ section.id }} .pst-foot__newsletter {
+  background: #061a2e;
+  padding: 48px 20px;
+}
+#shopify-section-{{ section.id }}
+  .pst-foot__newsletter-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+#shopify-section-{{ section.id }}
+  .pst-foot__newsletter-copy { flex: 1; min-width: 260px; }
+#shopify-section-{{ section.id }}
+  .pst-foot__newsletter-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+#shopify-section-{{ section.id }}
+  .pst-foot__newsletter-sub {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+}
+#shopify-section-{{ section.id }}
+  .pst-foot__newsletter-form { flex: 1; min-width: 280px; }
+#shopify-section-{{ section.id }} .pst-foot__form-row {
+  display: flex;
+  gap: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+#shopify-section-{{ section.id }} .pst-foot__email-input {
+  flex: 1;
+  padding: 14px 16px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  border-radius: 8px 0 0 8px;
+}
+#shopify-section-{{ section.id }}
+  .pst-foot__email-input::placeholder {
+  color: rgba(255,255,255,0.45);
+}
+#shopify-section-{{ section.id }} .pst-foot__subscribe-btn {
+  padding: 14px 24px;
+  background: #E91E8C;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 8px 8px 0;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+#shopify-section-{{ section.id }}
+  .pst-foot__subscribe-btn:hover {
+  background: #C4186F;
+}
+#shopify-section-{{ section.id }} .pst-foot__form-message {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  margin: 12px 0 0;
+}
+#shopify-section-{{ section.id }} .pst-foot__form-message--error {
+  color: #ffb4b4;
+}
+#shopify-section-{{ section.id }} .pst-foot__form-message--success {
+  color: #7dffb3;
+}
+
+/* ── BOTTOM BAR ── */
+#shopify-section-{{ section.id }} .pst-foot__bottom {
+  background: #061a2e;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 20px;
+}
+#shopify-section-{{ section.id }} .pst-foot__bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+#shopify-section-{{ section.id }} .pst-foot__copy {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+}
+#shopify-section-{{ section.id }} .pst-foot__policies {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+#shopify-section-{{ section.id }} .pst-foot__policy-link {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-foot__policy-link:hover {
+  color: rgba(255,255,255,0.85);
+}
+#shopify-section-{{ section.id }} .pst-foot__payments {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#shopify-section-{{ section.id }} .pst-foot__payment-icon {
+  height: 24px;
+  width: auto;
+  border-radius: 3px;
+}
+
+{%- endstyle -%}
 
 {% schema %}
 {
-  "name": "t:sections.footer.name",
-  "blocks": [
-    {
-      "type": "@app"
-    },
-    {
-      "type": "link_list",
-      "name": "t:sections.footer.blocks.link_list.name",
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "heading",
-          "default": "t:sections.footer.blocks.link_list.settings.heading.default",
-          "label": "t:sections.footer.blocks.link_list.settings.heading.label"
-        },
-        {
-          "type": "link_list",
-          "id": "menu",
-          "default": "footer",
-          "label": "t:sections.footer.blocks.link_list.settings.menu.label"
-        }
-      ]
-    },
-    {
-      "type": "brand_information",
-      "name": "t:sections.footer.blocks.brand_information.name",
-      "settings": [
-        {
-          "type": "paragraph",
-          "content": "t:sections.footer.blocks.brand_information.settings.paragraph.content"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_social",
-          "default": true,
-          "label": "t:sections.footer.blocks.brand_information.settings.show_social.label",
-          "info": "t:sections.footer.blocks.brand_information.settings.show_social.info"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "name": "t:sections.footer.blocks.text.name",
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "heading",
-          "default": "t:sections.footer.blocks.text.settings.heading.default",
-          "label": "t:sections.footer.blocks.text.settings.heading.label"
-        },
-        {
-          "type": "richtext",
-          "id": "subtext",
-          "default": "t:sections.footer.blocks.text.settings.subtext.default",
-          "label": "t:sections.footer.blocks.text.settings.subtext.label"
-        }
-      ]
-    },
-    {
-      "type": "image",
-      "name": "Image",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "range",
-          "id": "image_width",
-          "min": 50,
-          "max": 550,
-          "step": 5,
-          "unit": "px",
-          "label": "Width",
-          "default": 100
-        },
-        {
-          "type": "select",
-          "id": "alignment",
-          "label": "Alignment",
-          "options": [
-            {
-              "value": "",
-              "label": "Left"
-            },
-            {
-              "value": "center",
-              "label": "Center"
-            },
-            {
-              "value": "right",
-              "label": "Right"
-            }
-          ],
-          "default": "center"
-        }
-      ]
-    }
-  ],
+  "name": "Footer",
+  "tag": "section",
+  "class": "footer-section",
   "settings": [
+
+    {
+      "type": "header",
+      "content": "Brand"
+    },
     {
       "type": "image_picker",
-      "id": "logo",
+      "id": "footer_logo",
       "label": "Footer Logo"
     },
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline under logo",
+      "default": "Visual Learning Solutions"
     },
+
     {
       "type": "header",
-      "content": "t:sections.footer.settings.header__1.content",
-      "info": "t:sections.footer.settings.header__1.info"
+      "content": "Contact Info"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone Number",
+      "default": "(888) 535-4431"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email Address",
+      "default": "orders@perfectschooltools.com"
+    },
+
+    {
+      "type": "header",
+      "content": "Trust Bar"
+    },
+    {
+      "type": "text",
+      "id": "trust_1_icon",
+      "label": "Trust Item 1 — Icon (emoji)",
+      "default": "\u2713"
+    },
+    {
+      "type": "text",
+      "id": "trust_1_text",
+      "label": "Trust Item 1 — Text",
+      "default": "Purchase Orders Accepted"
+    },
+    {
+      "type": "text",
+      "id": "trust_2_icon",
+      "label": "Trust Item 2 — Icon (emoji)",
+      "default": "\uD83D\uDE9A"
+    },
+    {
+      "type": "text",
+      "id": "trust_2_text",
+      "label": "Trust Item 2 — Text",
+      "default": "Fast Shipping"
+    },
+    {
+      "type": "text",
+      "id": "trust_3_icon",
+      "label": "Trust Item 3 — Icon (emoji)",
+      "default": "\uD83D\uDCDE"
+    },
+    {
+      "type": "text",
+      "id": "trust_3_text",
+      "label": "Trust Item 3 — Text",
+      "default": "Unlimited Support"
+    },
+    {
+      "type": "text",
+      "id": "trust_4_icon",
+      "label": "Trust Item 4 — Icon (emoji)",
+      "default": "\uD83C\uDFC6"
+    },
+    {
+      "type": "text",
+      "id": "trust_4_text",
+      "label": "Trust Item 4 — Text",
+      "default": "30+ Years Experience Serving Schools"
+    },
+
+    {
+      "type": "header",
+      "content": "Newsletter"
     },
     {
       "type": "checkbox",
       "id": "newsletter_enable",
-      "default": true,
-      "label": "t:sections.footer.settings.newsletter_enable.label"
+      "label": "Show Newsletter Section",
+      "default": true
     },
     {
-      "type": "inline_richtext",
+      "type": "text",
       "id": "newsletter_heading",
-      "default": "t:sections.footer.settings.newsletter_heading.default",
-      "label": "t:sections.footer.settings.newsletter_heading.label"
+      "label": "Newsletter Heading",
+      "default": "Stay Connected with Perfect School Tools"
     },
+    {
+      "type": "text",
+      "id": "newsletter_subheading",
+      "label": "Newsletter Subheading",
+      "default": "Get tips, resources, and updates for school educators."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Email Input Placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_btn",
+      "label": "Subscribe Button Label",
+      "default": "Subscribe"
+    },
+
     {
       "type": "header",
-      "content": "t:sections.footer.settings.header__9.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_follow_on_shop",
-      "default": true,
-      "label": "t:sections.footer.settings.enable_follow_on_shop.label",
-      "info": "t:sections.footer.settings.enable_follow_on_shop.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_social",
-      "default": true,
-      "label": "t:sections.footer.settings.show_social.label",
-      "info": "t:sections.footer.settings.show_social.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_country_selector",
-      "default": true,
-      "label": "t:sections.footer.settings.enable_country_selector.label",
-      "info": "t:sections.footer.settings.enable_country_selector.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_language_selector",
-      "default": true,
-      "label": "t:sections.footer.settings.enable_language_selector.label",
-      "info": "t:sections.footer.settings.enable_language_selector.info"
+      "content": "Bottom Bar"
     },
     {
       "type": "checkbox",
       "id": "payment_enable",
-      "default": true,
-      "label": "t:sections.footer.settings.payment_enable.label"
-    },
+      "label": "Show Payment Icons",
+      "default": true
+    }
+
+  ],
+  "blocks": [
     {
-      "type": "checkbox",
-      "id": "show_policy",
-      "default": true,
-      "label": "t:sections.footer.settings.show_policy.label",
-      "info": "t:sections.footer.settings.show_policy.info"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.spacing"
-    },
-    {
-      "type": "range",
-      "id": "margin_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.footer.settings.margin_top.label",
-      "default": 0
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "type": "link_column",
+      "name": "Link Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "col_title",
+          "label": "Column Heading",
+          "default": "Column"
+        },
+        {
+          "type": "text",
+          "id": "link_1_label",
+          "label": "Link 1 — Label"
+        },
+        {
+          "type": "url",
+          "id": "link_1_url",
+          "label": "Link 1 — URL"
+        },
+        {
+          "type": "text",
+          "id": "link_2_label",
+          "label": "Link 2 — Label"
+        },
+        {
+          "type": "url",
+          "id": "link_2_url",
+          "label": "Link 2 — URL"
+        },
+        {
+          "type": "text",
+          "id": "link_3_label",
+          "label": "Link 3 — Label"
+        },
+        {
+          "type": "url",
+          "id": "link_3_url",
+          "label": "Link 3 — URL"
+        },
+        {
+          "type": "text",
+          "id": "link_4_label",
+          "label": "Link 4 — Label"
+        },
+        {
+          "type": "url",
+          "id": "link_4_url",
+          "label": "Link 4 — URL"
+        },
+        {
+          "type": "text",
+          "id": "link_5_label",
+          "label": "Link 5 — Label"
+        },
+        {
+          "type": "url",
+          "id": "link_5_url",
+          "label": "Link 5 — URL"
+        },
+        {
+          "type": "text",
+          "id": "link_6_label",
+          "label": "Link 6 — Label"
+        },
+        {
+          "type": "url",
+          "id": "link_6_url",
+          "label": "Link 6 — URL"
+        },
+        {
+          "type": "text",
+          "id": "link_7_label",
+          "label": "Link 7 — Label"
+        },
+        {
+          "type": "url",
+          "id": "link_7_url",
+          "label": "Link 7 — URL"
+        },
+        {
+          "type": "text",
+          "id": "link_8_label",
+          "label": "Link 8 — Label"
+        },
+        {
+          "type": "url",
+          "id": "link_8_url",
+          "label": "Link 8 — URL"
+        }
+      ]
     }
   ],
-  "default": {
-    "blocks": [
-      {
-        "type": "link_list"
-      },
-      {
-        "type": "text"
-      }
-    ]
-  }
+  "presets": [
+    {
+      "name": "PST Footer",
+      "blocks": [
+        {
+          "type": "link_column",
+          "settings": {
+            "col_title": "Products",
+            "link_1_label": "Poster Makers",
+            "link_1_url": "/pages/poster-makers-for-schools",
+            "link_2_label": "Award Systems",
+            "link_2_url": "/pages/award-makers-for-schools",
+            "link_3_label": "Cold Laminators",
+            "link_3_url": "/pages/cold-laminators-for-schools",
+            "link_4_label": "Poster Printer Supplies",
+            "link_4_url": "/pages/poster-printer-supplies",
+            "link_5_label": "Poster Printer Paper",
+            "link_5_url": "/pages/poster-printer-paper",
+            "link_6_label": "Poster Printer Ink",
+            "link_6_url": "/pages/poster-printer-ink",
+            "link_7_label": "School Bundles",
+            "link_7_url": "/pages/school-poster-maker-bundles",
+            "link_8_label": "Free Resources",
+            "link_8_url": "/pages/free-resources"
+          }
+        },
+        {
+          "type": "link_column",
+          "settings": {
+            "col_title": "Buying",
+            "link_1_label": "How to Buy",
+            "link_1_url": "/pages/how-to-buy",
+            "link_2_label": "Purchase Orders",
+            "link_2_url": "/pages/purchase-orders",
+            "link_3_label": "District Pricing",
+            "link_3_url": "/pages/district-pricing",
+            "link_4_label": "Reorder Supplies",
+            "link_4_url": "/pages/reorder-supplies"
+          }
+        },
+        {
+          "type": "link_column",
+          "settings": {
+            "col_title": "For Your Role",
+            "link_1_label": "For Administrators",
+            "link_1_url": "/pages/for-administrators",
+            "link_2_label": "For Media Specialists",
+            "link_2_url": "/pages/for-media-specialists",
+            "link_3_label": "For Bookkeepers",
+            "link_3_url": "/pages/for-bookkeepers",
+            "link_4_label": "For Teachers",
+            "link_4_url": "/pages/for-teachers"
+          }
+        },
+        {
+          "type": "link_column",
+          "settings": {
+            "col_title": "Resources",
+            "link_1_label": "Blog",
+            "link_1_url": "/blogs/news",
+            "link_2_label": "Best Poster Makers",
+            "link_2_url": "/blogs/news/best-poster-makers-for-schools",
+            "link_3_label": "Best Cold Laminators",
+            "link_3_url": "/blogs/news/best-cold-laminators-for-schools",
+            "link_4_label": "Paper Guide",
+            "link_4_url": "/blogs/news/poster-printer-paper-guide",
+            "link_5_label": "Cold vs Hot Laminator",
+            "link_5_url": "/blogs/news/cold-vs-hot-laminator-schools",
+            "link_6_label": "Hallway Display Ideas",
+            "link_6_url": "/blogs/news/school-hallway-display-ideas",
+            "link_7_label": "FAQ",
+            "link_7_url": "/pages/faq"
+          }
+        },
+        {
+          "type": "link_column",
+          "settings": {
+            "col_title": "Company",
+            "link_1_label": "About Us",
+            "link_1_url": "/pages/about",
+            "link_2_label": "Contact Us",
+            "link_2_url": "/pages/contact",
+            "link_3_label": "FAQ",
+            "link_3_url": "/pages/faq"
+          }
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
