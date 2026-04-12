@@ -168,7 +168,9 @@
   #shopify-section-{{ section.id }} .pst-showcase__card-hero {
     position: relative;
     flex-shrink: 0;
-    min-height: 16rem;
+    box-sizing: border-box;
+    min-height: 140px;
+    height: auto;
     padding: 2.5rem 1.5rem 2rem;
     display: flex;
     flex-direction: column;
@@ -176,6 +178,7 @@
     justify-content: center;
     text-align: center;
     gap: 0.75rem;
+    overflow: visible;
   }
 
   #shopify-section-{{ section.id }} .pst-showcase__card--1 .pst-showcase__card-hero {
@@ -226,21 +229,18 @@
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__hero-img {
-    display: block;
-    max-width: 100%;
-    max-height: 7.5rem;
+  #shopify-section-{{ section.id }} .pst-showcase__hero-img,
+  #shopify-section-{{ section.id }} .pst-card-img {
     width: auto;
+    max-width: 100%;
     height: auto;
+    max-height: 180px;
     object-fit: contain;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+    flex-shrink: 0;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__card--1 .pst-showcase__hero-img,
-  #shopify-section-{{ section.id }} .pst-showcase__card--2 .pst-showcase__hero-img,
-  #shopify-section-{{ section.id }} .pst-showcase__card--3 .pst-showcase__hero-img,
-  #shopify-section-{{ section.id }} .pst-showcase__card--4 .pst-showcase__hero-img {
-    max-height: 6.5rem;
   }
 
   #shopify-section-{{ section.id }} .pst-showcase__hero-title {
@@ -361,7 +361,7 @@
             {%- assign pm_alt = section.settings.poster_maker_image.alt | default: 'Perfect Poster Maker System' -%}
             {{
               section.settings.poster_maker_image
-              | image_url: width: 240
+              | image_url: width: 320
               | image_tag: class: 'pst-showcase__hero-img pst-card-img', loading: 'lazy', alt: pm_alt
             }}
           {%- else -%}
@@ -404,7 +404,7 @@
             {%- assign ac_alt = section.settings.awards_cut_image.alt | default: 'Perfect Awards & Cut System' -%}
             {{
               section.settings.awards_cut_image
-              | image_url: width: 240
+              | image_url: width: 320
               | image_tag: class: 'pst-showcase__hero-img pst-card-img', loading: 'lazy', alt: ac_alt
             }}
           {%- else -%}
@@ -448,7 +448,7 @@
             {%- assign awards_alt = section.settings.awards_maker_image.alt | default: 'Perfect Awards Maker' -%}
             {{
               section.settings.awards_maker_image
-              | image_url: width: 240
+              | image_url: width: 320
               | image_tag: class: 'pst-showcase__hero-img pst-card-img', loading: 'lazy', alt: awards_alt
             }}
           {%- else -%}
@@ -490,7 +490,7 @@
             {%- assign lam_alt = section.settings.cold_laminator_image.alt | default: 'Cold Laminator System' -%}
             {{
               section.settings.cold_laminator_image
-              | image_url: width: 240
+              | image_url: width: 320
               | image_tag: class: 'pst-showcase__hero-img pst-card-img', loading: 'lazy', alt: lam_alt
             }}
           {%- else -%}
