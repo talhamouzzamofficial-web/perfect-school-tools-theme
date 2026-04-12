@@ -15,6 +15,7 @@
         "hero_badge": "For School Bookkeepers",
         "hero_title": "Easy Ordering for School Bookkeepers",
         "hero_intro": "We know that as a school bookkeeper, your job is to keep procurement simple, compliant, and on budget. Perfect School Tools makes ordering poster maker systems and supplies as easy as possible for school financial staff. We accept purchase orders, provide clear invoicing, offer consistent pricing, and make reordering a one-call process. No complicated vendor portals, no surprise fees, no minimum orders.",
+        "hero_image": "shopify://shop_images/Staff_Meeting_with_Posters.png",
         "phone": "(888) 535-4431",
         "challenges_title": "Challenges We Solve",
         "challenge_1_title": "Complicated vendor ordering processes",
@@ -55,5 +56,7 @@
       }
     }
   },
-  "order": ["pst-buyer-role"]
+  "order": [
+    "pst-buyer-role"
+  ]
 }
