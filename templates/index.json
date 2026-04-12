@@ -12,6 +12,12 @@
     "pst_hero": {
       "type": "pst-hero",
       "settings": {
+        "hero_bg_image": "shopify://shop_images/Gym_Banner_and_posters.png",
+        "hero_bg_overlay": 90,
+        "hero_overlay_color": "navy",
+        "hero_float_label": "District Pricing",
+        "hero_float_sublabel": "Volume discounts available",
+        "hero_float_icon": "dollar",
         "badge_text": "We Accept School Purchase Orders",
         "heading": "Poster Makers & Visual Supplies for Schools",
         "subtext": "Empower your school with professional poster printing, awards systems, and visual learning tools. Trusted by over 5,000 schools and 1,500 districts nationwide.",
