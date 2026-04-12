@@ -115,11 +115,13 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    align-items: stretch;
   }
 
   @media screen and (min-width: 769px) and (max-width: 1023px) {
     #shopify-section-{{ section.id }} .pst-showcase__grid {
       grid-template-columns: repeat(2, 1fr);
+      align-items: stretch;
     }
   }
 
@@ -132,9 +134,11 @@
   }
 
   #shopify-section-{{ section.id }} .pst-showcase__card {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 28px 24px 24px;
     background: var(--pst-ps-white);
     border-radius: var(--pst-ps-radius);
     overflow: hidden;
@@ -172,10 +176,12 @@
     min-height: 140px;
     height: auto;
     width: 100%;
-    padding: 2.5rem 1.5rem 2rem;
+    padding: 0 0 0.75rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    text-align: center;
     gap: 0.75rem;
     overflow: visible;
     background: transparent;
@@ -227,7 +233,8 @@
 
   #shopify-section-{{ section.id }} .pst-showcase__card-title {
     margin: 0;
-    max-width: 20ch;
+    width: 100%;
+    max-width: none;
     font-family: var(--font-heading-family);
     font-size: 1.55rem;
     font-weight: 800;
@@ -239,7 +246,11 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 1.75rem 1.5rem 2rem;
+    box-sizing: border-box;
+    padding: 0 0 0 20px;
+    margin: 0;
+    text-align: left;
+    direction: ltr;
     background: var(--pst-ps-white);
   }
 
@@ -247,7 +258,9 @@
     margin: 0 0 1.75rem;
     padding: 0;
     list-style: none;
+    list-style-position: outside;
     flex-grow: 1;
+    direction: ltr;
   }
 
   #shopify-section-{{ section.id }} .pst-showcase__list li {
@@ -272,6 +285,7 @@
   #shopify-section-{{ section.id }} .pst-showcase__actions {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: 0.75rem;
     margin-top: auto;
     width: 100%;
@@ -332,33 +346,8 @@
 
     <div class="pst-showcase__grid">
       <article class="pst-showcase__card pst-showcase__card--1">
-        {%- liquid
-          assign pm_align = section.settings.poster_maker_align | default: section.settings.cards_default_align | default: 'center'
-          assign pm_hero_flex = 'center'
-          if pm_align == 'left'
-            assign pm_hero_flex = 'flex-start'
-          elsif pm_align == 'right'
-            assign pm_hero_flex = 'flex-end'
-          endif
-          if pm_align == 'center'
-            assign pm_list_extra = 'padding-left: 0; list-style-position: inside;'
-          elsif pm_align == 'right'
-            assign pm_list_extra = 'padding-left: 0; padding-right: 20px; list-style: none; direction: rtl;'
-          else
-            assign pm_list_extra = 'padding-left: 20px;'
-          endif
-          assign pm_list_style = 'text-align: ' | append: pm_align | append: '; ' | append: pm_list_extra
-          assign pm_actions_flex = 'stretch'
-          if pm_align == 'left'
-            assign pm_actions_flex = 'flex-start'
-          elsif pm_align == 'right'
-            assign pm_actions_flex = 'flex-end'
-          endif
-        -%}
-        <div
-          class="pst-showcase__card-hero"
-          style="text-align: {{ pm_align }}; align-items: {{ pm_hero_flex }};"
-        >
+        {%- assign pm_align = section.settings.poster_maker_align | default: section.settings.cards_default_align | default: 'center' -%}
+        <div class="pst-showcase__card-hero">
           {%- liquid
             assign poster_maker_size = section.settings.poster_maker_image_size | default: 160
             assign poster_maker_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: poster_maker_size | append: 'px; object-fit: contain;'
@@ -380,14 +369,14 @@
             </h3>
           {%- endif -%}
         </div>
-        <div class="pst-showcase__body" style="text-align: {{ pm_align }};">
-          <ul class="pst-showcase__list" style="{{ pm_list_style }}">
+        <div class="pst-showcase__body">
+          <ul class="pst-showcase__list">
             <li>24&quot; Full Color Printer</li>
             <li>Full Set of Ink</li>
             <li>Premium Paper Roll</li>
             <li>Free Digital Content Access</li>
           </ul>
-          <div class="pst-showcase__actions" style="align-items: {{ pm_actions_flex }};">
+          <div class="pst-showcase__actions">
             {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
               <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
                 {{- section.settings.quote_label | escape -}}
@@ -409,33 +398,8 @@
       </article>
 
       <article class="pst-showcase__card pst-showcase__card--2">
-        {%- liquid
-          assign ac_align = section.settings.awards_cut_align | default: section.settings.cards_default_align | default: 'center'
-          assign ac_hero_flex = 'center'
-          if ac_align == 'left'
-            assign ac_hero_flex = 'flex-start'
-          elsif ac_align == 'right'
-            assign ac_hero_flex = 'flex-end'
-          endif
-          if ac_align == 'center'
-            assign ac_list_extra = 'padding-left: 0; list-style-position: inside;'
-          elsif ac_align == 'right'
-            assign ac_list_extra = 'padding-left: 0; padding-right: 20px; list-style: none; direction: rtl;'
-          else
-            assign ac_list_extra = 'padding-left: 20px;'
-          endif
-          assign ac_list_style = 'text-align: ' | append: ac_align | append: '; ' | append: ac_list_extra
-          assign ac_actions_flex = 'stretch'
-          if ac_align == 'left'
-            assign ac_actions_flex = 'flex-start'
-          elsif ac_align == 'right'
-            assign ac_actions_flex = 'flex-end'
-          endif
-        -%}
-        <div
-          class="pst-showcase__card-hero"
-          style="text-align: {{ ac_align }}; align-items: {{ ac_hero_flex }};"
-        >
+        {%- assign ac_align = section.settings.awards_cut_align | default: section.settings.cards_default_align | default: 'center' -%}
+        <div class="pst-showcase__card-hero">
           {%- liquid
             assign awards_cut_size = section.settings.awards_cut_image_size | default: 160
             assign awards_cut_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: awards_cut_size | append: 'px; object-fit: contain;'
@@ -457,14 +421,14 @@
             </h3>
           {%- endif -%}
         </div>
-        <div class="pst-showcase__body" style="text-align: {{ ac_align }};">
-          <ul class="pst-showcase__list" style="{{ ac_list_style }}">
+        <div class="pst-showcase__body">
+          <ul class="pst-showcase__list">
             <li>Awards Printer</li>
             <li>Cutting System</li>
             <li>Award Templates</li>
             <li>Customized Supplies</li>
           </ul>
-          <div class="pst-showcase__actions" style="align-items: {{ ac_actions_flex }};">
+          <div class="pst-showcase__actions">
             {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
               <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
                 {{- section.settings.quote_label | escape -}}
@@ -486,33 +450,8 @@
       </article>
 
       <article class="pst-showcase__card pst-showcase__card--3">
-        {%- liquid
-          assign am_align = section.settings.awards_maker_align | default: section.settings.cards_default_align | default: 'center'
-          assign am_hero_flex = 'center'
-          if am_align == 'left'
-            assign am_hero_flex = 'flex-start'
-          elsif am_align == 'right'
-            assign am_hero_flex = 'flex-end'
-          endif
-          if am_align == 'center'
-            assign am_list_extra = 'padding-left: 0; list-style-position: inside;'
-          elsif am_align == 'right'
-            assign am_list_extra = 'padding-left: 0; padding-right: 20px; list-style: none; direction: rtl;'
-          else
-            assign am_list_extra = 'padding-left: 20px;'
-          endif
-          assign am_list_style = 'text-align: ' | append: am_align | append: '; ' | append: am_list_extra
-          assign am_actions_flex = 'stretch'
-          if am_align == 'left'
-            assign am_actions_flex = 'flex-start'
-          elsif am_align == 'right'
-            assign am_actions_flex = 'flex-end'
-          endif
-        -%}
-        <div
-          class="pst-showcase__card-hero"
-          style="text-align: {{ am_align }}; align-items: {{ am_hero_flex }};"
-        >
+        {%- assign am_align = section.settings.awards_maker_align | default: section.settings.cards_default_align | default: 'center' -%}
+        <div class="pst-showcase__card-hero">
           {%- liquid
             assign awards_maker_size = section.settings.awards_maker_image_size | default: 160
             assign awards_maker_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: awards_maker_size | append: 'px; object-fit: contain;'
@@ -533,14 +472,14 @@
             </h3>
           {%- endif -%}
         </div>
-        <div class="pst-showcase__body" style="text-align: {{ am_align }};">
-          <ul class="pst-showcase__list" style="{{ am_list_style }}">
+        <div class="pst-showcase__body">
+          <ul class="pst-showcase__list">
             <li>Awards Printer</li>
             <li>Template Library</li>
             <li>Plaque Supplies</li>
             <li>Full Ink Set</li>
           </ul>
-          <div class="pst-showcase__actions" style="align-items: {{ am_actions_flex }};">
+          <div class="pst-showcase__actions">
             {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
               <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
                 {{- section.settings.quote_label | escape -}}
@@ -562,33 +501,8 @@
       </article>
 
       <article class="pst-showcase__card pst-showcase__card--4">
-        {%- liquid
-          assign lam_align = section.settings.cold_laminator_align | default: section.settings.cards_default_align | default: 'center'
-          assign lam_hero_flex = 'center'
-          if lam_align == 'left'
-            assign lam_hero_flex = 'flex-start'
-          elsif lam_align == 'right'
-            assign lam_hero_flex = 'flex-end'
-          endif
-          if lam_align == 'center'
-            assign lam_list_extra = 'padding-left: 0; list-style-position: inside;'
-          elsif lam_align == 'right'
-            assign lam_list_extra = 'padding-left: 0; padding-right: 20px; list-style: none; direction: rtl;'
-          else
-            assign lam_list_extra = 'padding-left: 20px;'
-          endif
-          assign lam_list_style = 'text-align: ' | append: lam_align | append: '; ' | append: lam_list_extra
-          assign lam_actions_flex = 'stretch'
-          if lam_align == 'left'
-            assign lam_actions_flex = 'flex-start'
-          elsif lam_align == 'right'
-            assign lam_actions_flex = 'flex-end'
-          endif
-        -%}
-        <div
-          class="pst-showcase__card-hero"
-          style="text-align: {{ lam_align }}; align-items: {{ lam_hero_flex }};"
-        >
+        {%- assign lam_align = section.settings.cold_laminator_align | default: section.settings.cards_default_align | default: 'center' -%}
+        <div class="pst-showcase__card-hero">
           {%- liquid
             assign cold_laminator_size = section.settings.cold_laminator_image_size | default: 160
             assign cold_laminator_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: cold_laminator_size | append: 'px; object-fit: contain;'
@@ -609,14 +523,14 @@
             </h3>
           {%- endif -%}
         </div>
-        <div class="pst-showcase__body" style="text-align: {{ lam_align }};">
-          <ul class="pst-showcase__list" style="{{ lam_list_style }}">
+        <div class="pst-showcase__body">
+          <ul class="pst-showcase__list">
             <li>No Heat Required</li>
             <li>Safe for Schools</li>
             <li>Multiple Sizes</li>
             <li>No Electricity</li>
           </ul>
-          <div class="pst-showcase__actions" style="align-items: {{ lam_actions_flex }};">
+          <div class="pst-showcase__actions">
             {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
               <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
                 {{- section.settings.quote_label | escape -}}
