@@ -1,3 +1,9 @@
+{%- assign overlay_opacity = section.settings.hero_bg_overlay | default: 60 | divided_by: 100.0 -%}
+{%- assign overlay_hex = '#0A2540' -%}
+{%- if section.settings.hero_overlay_color == 'black' -%}
+  {%- assign overlay_hex = '#000000' -%}
+{%- endif -%}
+
 {%- style -%}
   #shopify-section-{{ section.id }} .pst-hero {
     position: relative;
@@ -7,11 +13,37 @@
     justify-content: center;
     overflow: hidden;
     color: #fff;
-    background: linear-gradient(135deg, #0A2540 0%, #0F4872 50%, #1A6BA0 100%);
+    background: linear-gradient(135deg, #0a2540 0%, #0f4872 50%, #1a6ba0 100%);
   }
+
+  {%- if section.settings.hero_bg_image != blank -%}
+    #shopify-section-{{ section.id }} .pst-hero {
+      background-image: url('{{ section.settings.hero_bg_image | image_url: width: 1920 }}');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  {%- endif -%}
+
+  #shopify-section-{{ section.id }} .pst-hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    display: none;
+  }
+
+  {%- if section.settings.hero_bg_image != blank and section.settings.hero_overlay_color != 'none' -%}
+    #shopify-section-{{ section.id }} .pst-hero__overlay {
+      display: block;
+      background-color: {{ overlay_hex }};
+      opacity: {{ overlay_opacity }};
+    }
+  {%- endif -%}
 
   #shopify-section-{{ section.id }} .pst-hero__inner {
     position: relative;
+    z-index: 2;
     width: 100%;
     max-width: var(--page-width);
     margin: 0 auto;
@@ -230,6 +262,34 @@
   "tag": "section",
   "class": "pst-hero-section",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_bg_image",
+      "label": "Hero Background Image",
+      "info": "Displays behind the hero content. Recommended: wide landscape image, min 1440x600px."
+    },
+    {
+      "type": "range",
+      "id": "hero_bg_overlay",
+      "label": "Background Image Overlay Opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "unit": "%",
+      "info": "Higher = darker overlay over the image. 0 = no overlay."
+    },
+    {
+      "type": "select",
+      "id": "hero_overlay_color",
+      "label": "Overlay Color",
+      "options": [
+        { "value": "navy", "label": "Navy (default)" },
+        { "value": "black", "label": "Black" },
+        { "value": "none", "label": "No overlay" }
+      ],
+      "default": "navy"
+    },
     {
       "type": "text",
       "id": "badge_text",
