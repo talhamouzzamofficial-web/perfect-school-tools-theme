@@ -53,9 +53,18 @@
           class="pst-faq-page__filter"
           role="tab"
           aria-selected="false"
-          data-faq-filter="shipping"
+          data-faq-filter="support"
         >
-          {{ section.settings.filter_shipping_label | escape }}
+          {{ section.settings.filter_support_label | escape }}
+        </button>
+        <button
+          type="button"
+          class="pst-faq-page__filter"
+          role="tab"
+          aria-selected="false"
+          data-faq-filter="funding"
+        >
+          {{ section.settings.filter_funding_label | escape }}
         </button>
       </div>
     </div>
@@ -65,395 +74,241 @@
   <div class="pst-faq-page__accordion-wrap">
     <div class="page-width">
       <div class="pst-faq-page__accordion" data-faq-accordion>
-        {%- comment -%} Ordering & Payment {%- endcomment -%}
         <article class="pst-faq-page__item" data-category="ordering">
           <h2 class="visually-hidden">{{ section.settings.filter_ordering_label | escape }}</h2>
           <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a1"
-              id="{{ pst_faq_ns }}-q1"
-            >
-              <span class="pst-faq-page__question-text">Do you accept Purchase Orders (POs)?</span>
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a1" id="{{ pst_faq_ns }}-q1">
+              <span class="pst-faq-page__question-text">Do you accept school purchase orders?</span>
               <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
             </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a1"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q1"
-            >
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a1" role="region" aria-labelledby="{{ pst_faq_ns }}-q1">
               <div class="pst-faq-page__answer-inner">
                 <p>
-                  Yes! We gladly accept school purchase orders. Simply email your PO to
+                  Yes — we gladly accept official school and district purchase orders. Simply email your PO to
                   <a href="mailto:orders@perfectschooltools.com">orders@perfectschooltools.com</a>
-                  and we will process your order immediately. We accept POs from all K-12 schools and districts
-                  nationwide.
+                  and we will process your order promptly. We work with schools and districts nationwide and fully understand the procurement process.
                 </p>
               </div>
             </div>
           </div>
           <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a2"
-              id="{{ pst_faq_ns }}-q2"
-            >
-              <span class="pst-faq-page__question-text">What are your payment options?</span>
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a2" id="{{ pst_faq_ns }}-q2">
+              <span class="pst-faq-page__question-text">What payment methods do you accept?</span>
               <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
             </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a2"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q2"
-            >
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a2" role="region" aria-labelledby="{{ pst_faq_ns }}-q2">
               <div class="pst-faq-page__answer-inner">
                 <p>
-                  We accept Purchase Orders (Net 30 for qualifying districts), Visa, Mastercard, American Express,
-                  Discover, and PayPal. We also offer district pricing for multi-school purchases.
+                  We accept Visa, Mastercard, Discover, PayPal, and school or district purchase orders. For large district orders, we also offer net-30 payment terms upon approval.
                 </p>
               </div>
             </div>
           </div>
           <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a3"
-              id="{{ pst_faq_ns }}-q3"
-            >
-              <span class="pst-faq-page__question-text">Do you offer Net 30 terms?</span>
-              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
-            </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a3"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q3"
-            >
-              <div class="pst-faq-page__answer-inner">
-                <p>
-                  Yes, Net 30 terms are available for qualifying school districts. Contact us at
-                  <a href="tel:+18885354431">(888) 535-4431</a> to set up a Net 30 account for your district.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a4"
-              id="{{ pst_faq_ns }}-q4"
-            >
-              <span class="pst-faq-page__question-text">Can I get a quote before ordering?</span>
-              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
-            </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a4"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q4"
-            >
-              <div class="pst-faq-page__answer-inner">
-                <p>
-                  Absolutely! Request a free personalized quote through our website or call us at
-                  <a href="tel:+18885354431">(888) 535-4431</a>. We typically respond within 1 business day.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a5"
-              id="{{ pst_faq_ns }}-q5"
-            >
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a3" id="{{ pst_faq_ns }}-q3">
               <span class="pst-faq-page__question-text">Do you offer district-wide pricing?</span>
               <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
             </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a5"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q5"
-            >
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a3" role="region" aria-labelledby="{{ pst_faq_ns }}-q3">
               <div class="pst-faq-page__answer-inner">
                 <p>
-                  Yes! We offer special volume pricing for district-level purchases. Contact our education
-                  specialists for custom district pricing.
+                  Yes. We offer special pricing for districts purchasing multiple systems or placing large supply orders. Contact us at
+                  <a href="mailto:orders@perfectschooltools.com">orders@perfectschooltools.com</a> or call <a href="tel:+18885354431">(888) 535-4431</a> to request a district pricing quote.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a4" id="{{ pst_faq_ns }}-q4">
+              <span class="pst-faq-page__question-text">Can I get a formal quote for my school's procurement process?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a4" role="region" aria-labelledby="{{ pst_faq_ns }}-q4">
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Absolutely. We provide formal written quotes suitable for your school's purchasing or bid process. Request a quote online, by email, or by phone and we will respond within one business day.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a5" id="{{ pst_faq_ns }}-q5">
+              <span class="pst-faq-page__question-text">What are your shipping costs and delivery times?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a5" role="region" aria-labelledby="{{ pst_faq_ns }}-q5">
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  We offer fast shipping on all orders. Most orders ship within 1–2 business days and arrive within 5–7 business days. Contact us for expedited shipping options if needed.
                 </p>
               </div>
             </div>
           </div>
         </article>
 
-        {%- comment -%} Products & Systems {%- endcomment -%}
         <article class="pst-faq-page__item" data-category="products">
           <h2 class="visually-hidden">{{ section.settings.filter_products_label | escape }}</h2>
           <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a6"
-              id="{{ pst_faq_ns }}-q6"
-            >
-              <span class="pst-faq-page__question-text">What is included with the Poster Maker System?</span>
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a6" id="{{ pst_faq_ns }}-q6">
+              <span class="pst-faq-page__question-text">What is the difference between the Poster Maker and Awards Maker?</span>
               <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
             </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a6"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q6"
-            >
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a6" role="region" aria-labelledby="{{ pst_faq_ns }}-q6">
               <div class="pst-faq-page__answer-inner">
                 <p>
-                  The Perfect Poster Maker System ($3,795) includes: 24-inch full-color printer, full set of ink
-                  (225-275 poster yield), premium paper roll, and free access to thousands of digital poster
-                  templates.
+                  The Perfect Poster Maker System prints large-format 24&quot; wide full-color posters — ideal for hallway displays, classroom visuals, and school signage. The Perfect Awards Maker is optimized for printing certificates and recognition materials in standard document sizes. The Perfect Awards &amp; Cut System combines both capabilities with an added cutting feature for custom shapes.
                 </p>
               </div>
             </div>
           </div>
           <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a7"
-              id="{{ pst_faq_ns }}-q7"
-            >
-              <span class="pst-faq-page__question-text">How much does it cost to print each poster?</span>
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a7" id="{{ pst_faq_ns }}-q7">
+              <span class="pst-faq-page__question-text">How much does it cost per poster to print?</span>
               <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
             </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a7"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q7"
-            >
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a7" role="region" aria-labelledby="{{ pst_faq_ns }}-q7">
               <div class="pst-faq-page__answer-inner">
                 <p>
-                  With our system, you can print full-color 24-inch posters for approximately $1.50-$3.00 each —
-                  compared to $15-$30 at print shops. The system pays for itself quickly!
+                  With our system, you can print full-color 24&quot; posters for approximately $1.50–$3.00 per poster — a fraction of the cost of outsourcing to a print shop.
                 </p>
               </div>
             </div>
           </div>
           <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a8"
-              id="{{ pst_faq_ns }}-q8"
-            >
-              <span class="pst-faq-page__question-text">Do you offer cold laminators?</span>
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a8" id="{{ pst_faq_ns }}-q8">
+              <span class="pst-faq-page__question-text">How many posters can I print with one set of ink?</span>
               <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
             </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a8"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q8"
-            >
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a8" role="region" aria-labelledby="{{ pst_faq_ns }}-q8">
               <div class="pst-faq-page__answer-inner">
                 <p>
-                  Yes! Our Cold Laminator Systems start from $99. Cold laminators require no heat, making them safe
-                  for classroom use. They protect posters, awards, and educational materials.
+                  One full set of ink cartridges yields approximately 225–275 posters depending on image coverage and poster size. Replacement ink is available directly from us.
                 </p>
               </div>
             </div>
           </div>
           <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a9"
-              id="{{ pst_faq_ns }}-q9"
-            >
-              <span class="pst-faq-page__question-text">What warranty do you offer?</span>
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a9" id="{{ pst_faq_ns }}-q9">
+              <span class="pst-faq-page__question-text">Is the system easy to use? Do I need technical experience?</span>
               <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
             </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a9"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q9"
-            >
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a9" role="region" aria-labelledby="{{ pst_faq_ns }}-q9">
               <div class="pst-faq-page__answer-inner">
                 <p>
-                  Every system comes with a warranty and our satisfaction guarantee. Contact us at
-                  <a href="tel:+18885354431">(888) 535-4431</a> for specific warranty details on each product.
+                  No technical experience is needed. The system is designed specifically for school staff. Setup takes less than an hour, and we provide full onboarding support, instructional guides, and unlimited phone and email support.
                 </p>
               </div>
             </div>
           </div>
           <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a10"
-              id="{{ pst_faq_ns }}-q10"
-            >
-              <span class="pst-faq-page__question-text">Are templates included?</span>
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a10" id="{{ pst_faq_ns }}-q10">
+              <span class="pst-faq-page__question-text">What size posters can I print?</span>
               <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
             </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a10"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q10"
-            >
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a10" role="region" aria-labelledby="{{ pst_faq_ns }}-q10">
               <div class="pst-faq-page__answer-inner">
                 <p>
-                  Yes! Every poster maker system includes free access to thousands of ready-to-print educational
-                  poster templates for all subjects and grade levels.
+                  The Poster Maker System prints up to 24&quot; wide at any length. Common sizes include 24&quot;×36&quot;, 24&quot;×48&quot;, and custom banner lengths.
                 </p>
               </div>
             </div>
           </div>
         </article>
 
-        {%- comment -%} Shipping & Support {%- endcomment -%}
-        <article class="pst-faq-page__item" data-category="shipping">
-          <h2 class="visually-hidden">{{ section.settings.filter_shipping_label | escape }}</h2>
+        <article class="pst-faq-page__item" data-category="support">
+          <h2 class="visually-hidden">{{ section.settings.filter_support_label | escape }}</h2>
           <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a11"
-              id="{{ pst_faq_ns }}-q11"
-            >
-              <span class="pst-faq-page__question-text">What is your shipping time?</span>
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a11" id="{{ pst_faq_ns }}-q11">
+              <span class="pst-faq-page__question-text">What warranty comes with the systems?</span>
               <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
             </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a11"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q11"
-            >
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a11" role="region" aria-labelledby="{{ pst_faq_ns }}-q11">
               <div class="pst-faq-page__answer-inner">
                 <p>
-                  Most orders ship within 2-3 business days after payment or PO confirmation. Fast Shipping is
-                  available on qualifying orders.
+                  All systems include a one-year manufacturer's warranty covering parts and labor. Extended warranty options are available — ask us when requesting a quote.
                 </p>
               </div>
             </div>
           </div>
           <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a12"
-              id="{{ pst_faq_ns }}-q12"
-            >
-              <span class="pst-faq-page__question-text">Do you offer Fast Shipping?</span>
-              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
-            </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a12"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q12"
-            >
-              <div class="pst-faq-page__answer-inner">
-                <p>
-                  Yes! We offer Fast Shipping on qualifying orders to all K-12 schools and districts in the
-                  continental United States.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a13"
-              id="{{ pst_faq_ns }}-q13"
-            >
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a12" id="{{ pst_faq_ns }}-q12">
               <span class="pst-faq-page__question-text">What kind of support do you offer?</span>
               <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
             </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a13"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q13"
-            >
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a12" role="region" aria-labelledby="{{ pst_faq_ns }}-q12">
               <div class="pst-faq-page__answer-inner">
                 <p>
-                  Every system includes unlimited phone and web support from our education specialists. Call us at
-                  <a href="tel:+18885354431">(888) 535-4431</a>, Monday-Friday 8am-5pm EST.
+                  We offer unlimited phone and email support for all customers at no additional cost. Call <a href="tel:+18885354431">(888) 535-4431</a> or email
+                  <a href="mailto:orders@perfectschooltools.com">orders@perfectschooltools.com</a> during business hours.
                 </p>
               </div>
             </div>
           </div>
           <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a14"
-              id="{{ pst_faq_ns }}-q14"
-            >
-              <span class="pst-faq-page__question-text">Can you help with installation and training?</span>
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a13" id="{{ pst_faq_ns }}-q13">
+              <span class="pst-faq-page__question-text">Do you offer training for our staff?</span>
               <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
             </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a14"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q14"
-            >
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a13" role="region" aria-labelledby="{{ pst_faq_ns }}-q13">
               <div class="pst-faq-page__answer-inner">
                 <p>
-                  Yes! We provide complete setup guidance and training for all our systems. Our education
-                  specialists will walk you through everything you need to get started.
+                  Yes. Every purchase includes remote onboarding support. We walk your staff through setup, first print, and template use step by step to ensure a smooth start.
                 </p>
               </div>
             </div>
           </div>
           <div class="pst-faq-page__card">
-            <button
-              type="button"
-              class="pst-faq-page__question"
-              aria-expanded="false"
-              aria-controls="{{ pst_faq_ns }}-a15"
-              id="{{ pst_faq_ns }}-q15"
-            >
-              <span class="pst-faq-page__question-text">What if I need to return a product?</span>
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a14" id="{{ pst_faq_ns }}-q14">
+              <span class="pst-faq-page__question-text">What if my system needs repair?</span>
               <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
             </button>
-            <div
-              class="pst-faq-page__answer"
-              id="{{ pst_faq_ns }}-a15"
-              role="region"
-              aria-labelledby="{{ pst_faq_ns }}-q15"
-            >
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a14" role="region" aria-labelledby="{{ pst_faq_ns }}-q14">
               <div class="pst-faq-page__answer-inner">
                 <p>
-                  We stand behind every product we sell. Contact us at
-                  <a href="tel:+18885354431">(888) 535-4431</a> or
-                  <a href="mailto:orders@perfectschooltools.com">orders@perfectschooltools.com</a> within 30 days of receipt
-                  to discuss returns or exchanges.
+                  Contact our support team first — most issues are resolved remotely. If a hardware repair is needed, we coordinate a service solution with minimal downtime for your school.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pst-faq-page__item" data-category="funding">
+          <h2 class="visually-hidden">{{ section.settings.filter_funding_label | escape }}</h2>
+          <div class="pst-faq-page__card">
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a15" id="{{ pst_faq_ns }}-q15">
+              <span class="pst-faq-page__question-text">What funding sources can be used to purchase your systems?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a15" role="region" aria-labelledby="{{ pst_faq_ns }}-q15">
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Our systems are eligible for Title I funds, ESSER funds, media center budgets, instructional supply budgets, and school improvement grants. We can provide documentation to support your funding request.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a16" id="{{ pst_faq_ns }}-q16">
+              <span class="pst-faq-page__question-text">Can you help with grant documentation?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a16" role="region" aria-labelledby="{{ pst_faq_ns }}-q16">
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Yes. We provide product specifications, pricing letters, and supporting documentation to help with grant applications or your school's internal budget justification process.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pst-faq-page__card">
+            <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a17" id="{{ pst_faq_ns }}-q17">
+              <span class="pst-faq-page__question-text">What is the ROI of a poster maker system?</span>
+              <span class="pst-faq-page__question-icon" aria-hidden="true"><span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span></span>
+            </button>
+            <div class="pst-faq-page__answer" id="{{ pst_faq_ns }}-a17" role="region" aria-labelledby="{{ pst_faq_ns }}-q17">
+              <div class="pst-faq-page__answer-inner">
+                <p>
+                  Most schools recover the full system cost within the first year by eliminating outsourced printing costs. At $1.50–$3.00 per poster in-house versus $15–$30 at a print shop, a school printing just 10 posters per month saves $1,500–$3,000 annually.
                 </p>
               </div>
             </div>
@@ -493,11 +348,6 @@
 </div>
 
 {%- style -%}
-  #shopify-section-{{ section.id }} {
-    overflow-x: hidden;
-    max-width: 100%;
-  }
-
   #shopify-section-{{ section.id }} .pst-faq-page {
     --pst-faq-navy: #0a2540;
     --pst-faq-magenta: #e91e8c;
@@ -882,8 +732,8 @@
     {
       "type": "text",
       "id": "filter_ordering_label",
-      "label": "Filter: Ordering",
-      "default": "Ordering & Payment"
+      "label": "Filter: Purchasing & orders",
+      "default": "Purchasing & Orders"
     },
     {
       "type": "text",
@@ -893,9 +743,15 @@
     },
     {
       "type": "text",
-      "id": "filter_shipping_label",
-      "label": "Filter: Shipping",
-      "default": "Shipping & Support"
+      "id": "filter_support_label",
+      "label": "Filter: Support & warranty",
+      "default": "Support & Warranty"
+    },
+    {
+      "type": "text",
+      "id": "filter_funding_label",
+      "label": "Filter: Funding & budgeting",
+      "default": "Funding & Budgeting"
     },
     {
       "type": "text",

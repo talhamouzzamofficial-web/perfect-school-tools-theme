@@ -1,7 +1,5 @@
 {%- style -%}
   #shopify-section-{{ section.id }} {
-    overflow-x: hidden;
-    max-width: 100%;
     --pst-ps-navy: #0a2540;
     --pst-ps-navy-mid: #0f4872;
     --pst-ps-blue: #1a6ba0;
@@ -73,19 +71,6 @@
     #shopify-section-{{ section.id }} .pst-showcase__inner {
       padding: 0 1rem;
     }
-
-    #shopify-section-{{ section.id }} .pst-showcase__title {
-      font-size: clamp(2rem, 5vw, 2.8rem);
-    }
-
-    #shopify-section-{{ section.id }} .pst-showcase__card-hero {
-      min-height: 14rem;
-      padding: 2rem 1rem 1.5rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-showcase__body {
-      padding: 1.35rem 1.15rem 1.5rem;
-    }
   }
 
   #shopify-section-{{ section.id }} .pst-showcase__header {
@@ -130,7 +115,6 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    min-width: 0;
   }
 
   @media screen and (min-width: 769px) and (max-width: 1023px) {
@@ -150,7 +134,6 @@
   #shopify-section-{{ section.id }} .pst-showcase__card {
     display: flex;
     flex-direction: column;
-    min-width: 0;
     height: 100%;
     background: var(--pst-ps-white);
     border-radius: var(--pst-ps-radius);
@@ -237,19 +220,24 @@
     box-shadow: 0 4px 14px rgba(245, 183, 49, 0.45);
   }
 
-  #shopify-section-{{ section.id }} .pst-product-card__image {
-    width: 80px;
-    height: auto;
-    max-width: 100%;
-    object-fit: contain;
-    margin: 0 auto 1rem;
-    display: block;
-  }
-
-  #shopify-section-{{ section.id }} .pst-product-card__icon {
+  #shopify-section-{{ section.id }} .pst-showcase__icon {
     font-size: 80px;
     line-height: 1;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__hero-img {
+    display: block;
+    max-width: 100%;
+    max-height: 7.5rem;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__card--3 .pst-showcase__hero-img {
+    max-height: 6.5rem;
   }
 
   #shopify-section-{{ section.id }} .pst-showcase__hero-title {
@@ -360,25 +348,6 @@
   }
 {%- endstyle -%}
 
-{%- liquid
-  assign pst_ps_learn_1 = section.settings.learn_link_1
-  if pst_ps_learn_1 == blank
-    assign pst_ps_learn_1 = '/collections/poster-makers-for-schools'
-  endif
-  assign pst_ps_learn_2 = section.settings.learn_link_2
-  if pst_ps_learn_2 == blank
-    assign pst_ps_learn_2 = '/pages/awards-cut-system'
-  endif
-  assign pst_ps_learn_3 = section.settings.learn_link_3
-  if pst_ps_learn_3 == blank
-    assign pst_ps_learn_3 = '/pages/awards-maker'
-  endif
-  assign pst_ps_learn_4 = section.settings.learn_link_4
-  if pst_ps_learn_4 == blank
-    assign pst_ps_learn_4 = '/collections/cold-laminators-for-schools'
-  endif
--%}
-
 <section class="pst-showcase">
   <div class="pst-showcase__inner">
     <header class="pst-showcase__header">
@@ -394,15 +363,7 @@
       <article class="pst-showcase__card pst-showcase__card--1">
         <div class="pst-showcase__card-hero">
           <span class="pst-showcase__badge pst-showcase__badge--magenta">{{ 'Most Popular' | escape }}</span>
-          {%- if section.settings.card1_image != blank -%}
-            {{
-              section.settings.card1_image
-              | image_url: width: 120
-              | image_tag: alt: 'Poster Maker System', class: 'pst-product-card__image', loading: 'lazy'
-            }}
-          {%- else -%}
-            <div class="pst-product-card__icon" aria-hidden="true">🖨️</div>
-          {%- endif -%}
+          <span class="pst-showcase__icon" aria-hidden="true">🖨️</span>
           <h3 class="pst-showcase__hero-title">{{ 'Perfect Poster Maker System' | escape }}</h3>
         </div>
         <div class="pst-showcase__body">
@@ -419,8 +380,14 @@
                 {{- section.settings.quote_label | escape -}}
               </a>
             {%- endif -%}
-            {%- if section.settings.learn_label != blank and pst_ps_learn_1 != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ pst_ps_learn_1 }}">
+            {%- liquid
+              assign _learn_pm = section.settings.learn_link_poster_maker
+              if _learn_pm == blank
+                assign _learn_pm = '/collections/poster-makers-for-schools'
+              endif
+            -%}
+            {%- if section.settings.learn_label != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ _learn_pm }}">
                 {{- section.settings.learn_label | escape -}}
               </a>
             {%- endif -%}
@@ -431,15 +398,7 @@
       <article class="pst-showcase__card pst-showcase__card--2">
         <div class="pst-showcase__card-hero">
           <span class="pst-showcase__badge pst-showcase__badge--gold">{{ 'Best Value' | escape }}</span>
-          {%- if section.settings.card2_image != blank -%}
-            {{
-              section.settings.card2_image
-              | image_url: width: 120
-              | image_tag: alt: 'Awards & Cut System', class: 'pst-product-card__image', loading: 'lazy'
-            }}
-          {%- else -%}
-            <div class="pst-product-card__icon" aria-hidden="true">🏆</div>
-          {%- endif -%}
+          <span class="pst-showcase__icon" aria-hidden="true">🏆</span>
           <h3 class="pst-showcase__hero-title">
             {{ 'Perfect Awards & Cut System' | escape }}
           </h3>
@@ -458,8 +417,14 @@
                 {{- section.settings.quote_label | escape -}}
               </a>
             {%- endif -%}
-            {%- if section.settings.learn_label != blank and pst_ps_learn_2 != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ pst_ps_learn_2 }}">
+            {%- liquid
+              assign _learn_ac = section.settings.learn_link_awards_cut
+              if _learn_ac == blank
+                assign _learn_ac = '/pages/for-awards-cut-system'
+              endif
+            -%}
+            {%- if section.settings.learn_label != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ _learn_ac }}">
                 {{- section.settings.learn_label | escape -}}
               </a>
             {%- endif -%}
@@ -469,14 +434,15 @@
 
       <article class="pst-showcase__card pst-showcase__card--3">
         <div class="pst-showcase__card-hero">
-          {%- if section.settings.card3_image != blank -%}
+          {%- if section.settings.awards_maker_image != blank -%}
+            {%- assign awards_alt = section.settings.awards_maker_image.alt | default: 'Perfect Awards Maker' -%}
             {{
-              section.settings.card3_image
-              | image_url: width: 120
-              | image_tag: alt: 'Awards Maker', class: 'pst-product-card__image', loading: 'lazy'
+              section.settings.awards_maker_image
+              | image_url: width: 400
+              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: awards_alt
             }}
           {%- else -%}
-            <div class="pst-product-card__icon" aria-hidden="true">🎖️</div>
+            <span class="pst-showcase__icon" aria-hidden="true">🎖️</span>
           {%- endif -%}
           <h3 class="pst-showcase__hero-title">{{ 'Perfect Awards Maker' | escape }}</h3>
         </div>
@@ -494,8 +460,14 @@
                 {{- section.settings.quote_label | escape -}}
               </a>
             {%- endif -%}
-            {%- if section.settings.learn_label != blank and pst_ps_learn_3 != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ pst_ps_learn_3 }}">
+            {%- liquid
+              assign _learn_am = section.settings.learn_link_awards_maker
+              if _learn_am == blank
+                assign _learn_am = '/pages/for-awards-maker'
+              endif
+            -%}
+            {%- if section.settings.learn_label != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ _learn_am }}">
                 {{- section.settings.learn_label | escape -}}
               </a>
             {%- endif -%}
@@ -505,15 +477,7 @@
 
       <article class="pst-showcase__card pst-showcase__card--4">
         <div class="pst-showcase__card-hero">
-          {%- if section.settings.card4_image != blank -%}
-            {{
-              section.settings.card4_image
-              | image_url: width: 120
-              | image_tag: alt: 'Cold Laminator System', class: 'pst-product-card__image', loading: 'lazy'
-            }}
-          {%- else -%}
-            <div class="pst-product-card__icon" aria-hidden="true">🗂️</div>
-          {%- endif -%}
+          <span class="pst-showcase__icon" aria-hidden="true">🗂️</span>
           <h3 class="pst-showcase__hero-title">{{ 'Cold Laminator System' | escape }}</h3>
         </div>
         <div class="pst-showcase__body">
@@ -529,8 +493,14 @@
                 {{- section.settings.quote_label | escape -}}
               </a>
             {%- endif -%}
-            {%- if section.settings.learn_label != blank and pst_ps_learn_4 != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ pst_ps_learn_4 }}">
+            {%- liquid
+              assign _learn_lam = section.settings.learn_link_laminator
+              if _learn_lam == blank
+                assign _learn_lam = '/collections/cold-laminators-for-schools'
+              endif
+            -%}
+            {%- if section.settings.learn_label != blank -%}
+              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ _learn_lam }}">
                 {{- section.settings.learn_label | escape -}}
               </a>
             {%- endif -%}
@@ -560,32 +530,14 @@
       "default": "Poster makers, awards systems, and laminators built for classrooms and districts."
     },
     {
-      "type": "header",
-      "content": "Card images"
-    },
-    {
-      "type": "image_picker",
-      "id": "card1_image",
-      "label": "Poster Maker — Card Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "card2_image",
-      "label": "Awards & Cut System — Card Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "card3_image",
-      "label": "Awards Maker — Card Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "card4_image",
-      "label": "Cold Laminator — Card Image"
-    },
-    {
       "type": "paragraph",
-      "content": "Quote and Learn More buttons: Quote uses the links below for all four cards; Learn More uses per-card links."
+      "content": "Quote button uses the link below. Each product card has its own Learn more URL."
+    },
+    {
+      "type": "image_picker",
+      "id": "awards_maker_image",
+      "label": "Product Image",
+      "info": "Optional image for the Perfect Awards Maker card. If empty, the default icon is shown."
     },
     {
       "type": "text",
@@ -606,23 +558,23 @@
     },
     {
       "type": "url",
-      "id": "learn_link_1",
-      "label": "Learn more link — Poster Maker"
+      "id": "learn_link_poster_maker",
+      "label": "Learn more: Perfect Poster Maker System"
     },
     {
       "type": "url",
-      "id": "learn_link_2",
-      "label": "Learn more link — Awards & Cut"
+      "id": "learn_link_awards_cut",
+      "label": "Learn more: Perfect Awards & Cut System"
     },
     {
       "type": "url",
-      "id": "learn_link_3",
-      "label": "Learn more link — Awards Maker"
+      "id": "learn_link_awards_maker",
+      "label": "Learn more: Perfect Awards Maker"
     },
     {
       "type": "url",
-      "id": "learn_link_4",
-      "label": "Learn more link — Cold Laminator"
+      "id": "learn_link_laminator",
+      "label": "Learn more: Cold Laminator System"
     },
     {
       "type": "paragraph",

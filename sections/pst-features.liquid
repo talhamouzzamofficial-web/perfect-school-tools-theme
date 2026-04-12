@@ -1,9 +1,4 @@
 {%- style -%}
-  #shopify-section-{{ section.id }} {
-    overflow-x: hidden;
-    max-width: 100%;
-  }
-
   #shopify-section-{{ section.id }} .pst-features {
     background-color: var(--pst-color-warm-white, #fdf8f0);
     padding-top: {{ section.settings.padding_top }}px;
@@ -51,26 +46,9 @@
       padding: 0 1rem;
     }
 
-    #shopify-section-{{ section.id }} .pst-features__header {
-      margin-bottom: 2.5rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-features__title {
-      font-size: clamp(2.2rem, 5vw, 2.8rem);
-    }
-
-    #shopify-section-{{ section.id }} .pst-features__subtitle {
-      font-size: 1.45rem;
-    }
-
     #shopify-section-{{ section.id }} .pst-features__card {
       width: 100%;
       max-width: none;
-      padding: 1.75rem 1.35rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-features__card-text {
-      font-size: 1.35rem;
     }
   }
 
@@ -272,7 +250,7 @@
           "settings": {
             "icon": "🚚",
             "title": "Fast Shipping",
-            "text": "Fast Shipping on qualifying orders. Most systems ship within 2-3 business days."
+            "text": "Fast shipping on qualifying orders. Most systems ship within 2-3 business days."
           }
         },
         {
