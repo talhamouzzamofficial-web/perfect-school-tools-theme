@@ -15,6 +15,7 @@
         "hero_badge": "For Teachers",
         "hero_title": "Classroom Poster Tools for Teachers",
         "hero_intro": "Teachers are the heart of every school, and visual materials are essential to effective teaching. Perfect School Tools poster makers let you create custom anchor charts, classroom rules posters, subject-specific visual aids, hallway displays, and student recognition materials — all printed in vibrant full color, right at your school. No more spending your own money at the copy shop.",
+        "hero_image": "shopify://shop_images/Classroom_Posters_1.png",
         "phone": "(888) 535-4431",
         "challenges_title": "Challenges We Solve",
         "challenge_1_title": "Spending personal money on classroom materials",
@@ -55,5 +56,7 @@
       }
     }
   },
-  "order": ["pst-buyer-role"]
+  "order": [
+    "pst-buyer-role"
+  ]
 }
