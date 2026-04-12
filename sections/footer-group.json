@@ -14,116 +14,13 @@
     "footer": {
       "type": "footer",
       "settings": {
-        "tagline": "Visual Learning Solutions",
-        "phone": "(888) 535-4431",
-        "email": "orders@perfectschooltools.com",
-        "trust_1_icon": "\u2713",
-        "trust_1_text": "Purchase Orders Accepted",
-        "trust_2_icon": "\ud83d\ude9a",
-        "trust_2_text": "Fast Shipping",
-        "trust_3_icon": "\ud83d\udcde",
-        "trust_3_text": "Unlimited Support",
-        "trust_4_icon": "\ud83c\udfc6",
-        "trust_4_text": "30+ Years Experience Serving Schools",
         "newsletter_enable": true,
-        "newsletter_heading": "Stay Connected with Perfect School Tools",
-        "newsletter_subheading": "Get tips, resources, and updates for school educators.",
-        "newsletter_placeholder": "Enter your email",
-        "newsletter_btn": "Subscribe",
+        "newsletter_heading": "Subscribe to our emails",
         "payment_enable": true
-      },
-      "blocks": {
-        "pst_footer_products": {
-          "type": "link_column",
-          "settings": {
-            "col_title": "Products",
-            "link_1_label": "Poster Makers",
-            "link_1_url": "/pages/poster-makers-for-schools",
-            "link_2_label": "Award Systems",
-            "link_2_url": "/pages/award-makers-for-schools",
-            "link_3_label": "Cold Laminators",
-            "link_3_url": "/pages/cold-laminators-for-schools",
-            "link_4_label": "Poster Printer Supplies",
-            "link_4_url": "/pages/poster-printer-supplies",
-            "link_5_label": "Poster Printer Paper",
-            "link_5_url": "/pages/poster-printer-paper",
-            "link_6_label": "Poster Printer Ink",
-            "link_6_url": "/pages/poster-printer-ink",
-            "link_7_label": "School Bundles",
-            "link_7_url": "/pages/school-poster-maker-bundles",
-            "link_8_label": "Free Resources",
-            "link_8_url": "/pages/free-resources"
-          }
-        },
-        "pst_footer_buying": {
-          "type": "link_column",
-          "settings": {
-            "col_title": "Buying",
-            "link_1_label": "How to Buy",
-            "link_1_url": "/pages/how-to-buy",
-            "link_2_label": "Purchase Orders",
-            "link_2_url": "/pages/purchase-orders",
-            "link_3_label": "District Pricing",
-            "link_3_url": "/pages/district-pricing",
-            "link_4_label": "Reorder Supplies",
-            "link_4_url": "/pages/reorder-supplies"
-          }
-        },
-        "pst_footer_role": {
-          "type": "link_column",
-          "settings": {
-            "col_title": "For Your Role",
-            "link_1_label": "For Administrators",
-            "link_1_url": "/pages/for-administrators",
-            "link_2_label": "For Media Specialists",
-            "link_2_url": "/pages/for-media-specialists",
-            "link_3_label": "For Bookkeepers",
-            "link_3_url": "/pages/for-bookkeepers",
-            "link_4_label": "For Teachers",
-            "link_4_url": "/pages/for-teachers"
-          }
-        },
-        "pst_footer_resources": {
-          "type": "link_column",
-          "settings": {
-            "col_title": "Resources",
-            "link_1_label": "Blog",
-            "link_1_url": "/blogs/news",
-            "link_2_label": "Best Poster Makers",
-            "link_2_url": "/blogs/news/best-poster-makers-for-schools",
-            "link_3_label": "Best Cold Laminators",
-            "link_3_url": "/blogs/news/best-cold-laminators-for-schools",
-            "link_4_label": "Paper Guide",
-            "link_4_url": "/blogs/news/poster-printer-paper-guide",
-            "link_5_label": "Cold vs Hot Laminator",
-            "link_5_url": "/blogs/news/cold-vs-hot-laminator-schools",
-            "link_6_label": "Hallway Display Ideas",
-            "link_6_url": "/blogs/news/school-hallway-display-ideas",
-            "link_7_label": "FAQ",
-            "link_7_url": "/pages/faq"
-          }
-        },
-        "pst_footer_company": {
-          "type": "link_column",
-          "settings": {
-            "col_title": "Company",
-            "link_1_label": "About Us",
-            "link_1_url": "/pages/about",
-            "link_2_label": "Contact Us",
-            "link_2_url": "/pages/contact",
-            "link_3_label": "FAQ",
-            "link_3_url": "/pages/faq"
-          }
-        }
-      },
-      "block_order": [
-        "pst_footer_products",
-        "pst_footer_buying",
-        "pst_footer_role",
-        "pst_footer_resources",
-        "pst_footer_company"
-      ]
+      }
     }
   },
-  "order": ["footer"]
+  "order": [
+    "footer"
+  ]
 }
