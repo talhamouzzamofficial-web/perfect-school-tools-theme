@@ -448,6 +448,86 @@
   border-radius: 3px;
 }
 
+/* ── MOBILE ── */
+
+/* Trust bar — 2x2 grid */
+@media (max-width: 600px) {
+  #shopify-section-{{ section.id }} .pst-foot__trust-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 8px;
+    justify-items: center;
+  }
+  #shopify-section-{{ section.id }} .pst-foot__trust-item {
+    font-size: 11px;
+    text-align: center;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+/* Top bar — stack */
+@media (max-width: 600px) {
+  #shopify-section-{{ section.id }} .pst-foot__top-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  #shopify-section-{{ section.id }} .pst-foot__contact {
+    align-items: flex-start;
+  }
+}
+
+/* Main links — 2 columns */
+@media (max-width: 600px) {
+  #shopify-section-{{ section.id }} .pst-foot__main-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+  }
+  #shopify-section-{{ section.id }} .pst-foot__col-title {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  #shopify-section-{{ section.id }} .pst-foot__link {
+    font-size: 13px;
+  }
+  #shopify-section-{{ section.id }} .pst-foot__links {
+    gap: 7px;
+  }
+  #shopify-section-{{ section.id }} .pst-foot__main {
+    padding: 36px 20px 32px;
+  }
+}
+
+/* Newsletter — stack */
+@media (max-width: 600px) {
+  #shopify-section-{{ section.id }}
+    .pst-foot__newsletter-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+  #shopify-section-{{ section.id }}
+    .pst-foot__newsletter-title {
+    font-size: 18px;
+  }
+  #shopify-section-{{ section.id }} .pst-foot__newsletter {
+    padding: 36px 20px;
+  }
+}
+
+/* Bottom bar — stack */
+@media (max-width: 600px) {
+  #shopify-section-{{ section.id }} .pst-foot__bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  #shopify-section-{{ section.id }} .pst-foot__policies {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+}
+
 {%- endstyle -%}
 
 {% schema %}
