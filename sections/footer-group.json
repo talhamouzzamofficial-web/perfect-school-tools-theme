@@ -14,8 +14,23 @@
     "footer": {
       "type": "footer",
       "settings": {
+        "footer_logo": "shopify://shop_images/PST_Logo_-_New.jpg",
+        "tagline": "",
+        "phone": "(888) 535-4431",
+        "email": "orders@perfectschooltools.com",
+        "trust_1_icon": "✓",
+        "trust_1_text": "Purchase Orders Accepted",
+        "trust_2_icon": "🚚",
+        "trust_2_text": "Fast Shipping",
+        "trust_3_icon": "📞",
+        "trust_3_text": "Unlimited Support",
+        "trust_4_icon": "🏆",
+        "trust_4_text": "30+ Years Experience Serving Schools",
         "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our emails",
+        "newsletter_subheading": "Get tips, resources, and updates for school educators.",
+        "newsletter_placeholder": "Enter your email",
+        "newsletter_btn": "Subscribe",
         "payment_enable": true
       }
     }
