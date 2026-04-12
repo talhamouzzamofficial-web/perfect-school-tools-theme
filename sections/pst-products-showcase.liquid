@@ -179,22 +179,7 @@
     text-align: center;
     gap: 0.75rem;
     overflow: visible;
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__card--1 .pst-showcase__card-hero {
-    background: linear-gradient(135deg, var(--pst-ps-navy) 0%, var(--pst-ps-blue) 100%);
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__card--2 .pst-showcase__card-hero {
-    background: linear-gradient(135deg, var(--pst-ps-magenta) 0%, var(--pst-ps-magenta-deep) 100%);
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__card--3 .pst-showcase__card-hero {
-    background: linear-gradient(135deg, var(--pst-ps-gold) 0%, var(--pst-ps-orange) 100%);
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__card--4 .pst-showcase__card-hero {
-    background: linear-gradient(135deg, var(--pst-ps-blue) 0%, var(--pst-ps-navy) 100%);
+    background: transparent;
   }
 
   #shopify-section-{{ section.id }} .pst-showcase__badge {
@@ -229,12 +214,10 @@
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__hero-img,
-  #shopify-section-{{ section.id }} .pst-card-img {
+  #shopify-section-{{ section.id }} .pst-showcase__hero-img {
     width: auto;
     max-width: 100%;
     height: auto;
-    max-height: 180px;
     object-fit: contain;
     object-position: center;
     display: block;
@@ -243,20 +226,14 @@
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__hero-title {
+  #shopify-section-{{ section.id }} .pst-showcase__card-title {
     margin: 0;
     max-width: 20ch;
     font-family: var(--font-heading-family);
     font-size: 1.55rem;
     font-weight: 800;
     line-height: 1.2;
-    color: var(--pst-ps-white);
-    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__card--3 .pst-showcase__hero-title {
-    color: var(--pst-ps-navy);
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+    color: #0a2540;
   }
 
   #shopify-section-{{ section.id }} .pst-showcase__body {
@@ -356,18 +333,24 @@
     <div class="pst-showcase__grid">
       <article class="pst-showcase__card pst-showcase__card--1">
         <div class="pst-showcase__card-hero">
+          {%- liquid
+            assign poster_maker_size = section.settings.poster_maker_image_size | default: 160
+            assign poster_maker_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: poster_maker_size | append: 'px; object-fit: contain;'
+          -%}
           <span class="pst-showcase__badge pst-showcase__badge--magenta">{{ 'Most Popular' | escape }}</span>
           {%- if section.settings.poster_maker_image != blank -%}
             {%- assign pm_alt = section.settings.poster_maker_image.alt | default: 'Perfect Poster Maker System' -%}
             {{
               section.settings.poster_maker_image
               | image_url: width: 320
-              | image_tag: class: 'pst-showcase__hero-img pst-card-img', loading: 'lazy', alt: pm_alt
+              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: pm_alt, style: poster_maker_style
             }}
           {%- else -%}
-            <span class="pst-showcase__icon" aria-hidden="true">🖨️</span>
+            <span class="pst-showcase__icon" aria-hidden="true" style="font-size: {{ poster_maker_size }}px; line-height: 1;">🖨️</span>
           {%- endif -%}
-          <h3 class="pst-showcase__hero-title">{{ 'Perfect Poster Maker System' | escape }}</h3>
+          {%- if section.settings.poster_maker_show_title != false -%}
+            <h3 class="pst-showcase__card-title">{{ 'Perfect Poster Maker System' | escape }}</h3>
+          {%- endif -%}
         </div>
         <div class="pst-showcase__body">
           <ul class="pst-showcase__list">
@@ -399,20 +382,24 @@
 
       <article class="pst-showcase__card pst-showcase__card--2">
         <div class="pst-showcase__card-hero">
+          {%- liquid
+            assign awards_cut_size = section.settings.awards_cut_image_size | default: 160
+            assign awards_cut_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: awards_cut_size | append: 'px; object-fit: contain;'
+          -%}
           <span class="pst-showcase__badge pst-showcase__badge--gold">{{ 'Best Value' | escape }}</span>
           {%- if section.settings.awards_cut_image != blank -%}
             {%- assign ac_alt = section.settings.awards_cut_image.alt | default: 'Perfect Awards & Cut System' -%}
             {{
               section.settings.awards_cut_image
               | image_url: width: 320
-              | image_tag: class: 'pst-showcase__hero-img pst-card-img', loading: 'lazy', alt: ac_alt
+              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: ac_alt, style: awards_cut_style
             }}
           {%- else -%}
-            <span class="pst-showcase__icon" aria-hidden="true">🏆</span>
+            <span class="pst-showcase__icon" aria-hidden="true" style="font-size: {{ awards_cut_size }}px; line-height: 1;">🏆</span>
           {%- endif -%}
-          <h3 class="pst-showcase__hero-title">
-            {{ 'Perfect Awards & Cut System' | escape }}
-          </h3>
+          {%- if section.settings.awards_cut_show_title != false -%}
+            <h3 class="pst-showcase__card-title">{{ 'Perfect Awards & Cut System' | escape }}</h3>
+          {%- endif -%}
         </div>
         <div class="pst-showcase__body">
           <ul class="pst-showcase__list">
@@ -444,17 +431,23 @@
 
       <article class="pst-showcase__card pst-showcase__card--3">
         <div class="pst-showcase__card-hero">
+          {%- liquid
+            assign awards_maker_size = section.settings.awards_maker_image_size | default: 160
+            assign awards_maker_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: awards_maker_size | append: 'px; object-fit: contain;'
+          -%}
           {%- if section.settings.awards_maker_image != blank -%}
             {%- assign awards_alt = section.settings.awards_maker_image.alt | default: 'Perfect Awards Maker' -%}
             {{
               section.settings.awards_maker_image
               | image_url: width: 320
-              | image_tag: class: 'pst-showcase__hero-img pst-card-img', loading: 'lazy', alt: awards_alt
+              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: awards_alt, style: awards_maker_style
             }}
           {%- else -%}
-            <span class="pst-showcase__icon" aria-hidden="true">🎖️</span>
+            <span class="pst-showcase__icon" aria-hidden="true" style="font-size: {{ awards_maker_size }}px; line-height: 1;">🎖️</span>
           {%- endif -%}
-          <h3 class="pst-showcase__hero-title">{{ 'Perfect Awards Maker' | escape }}</h3>
+          {%- if section.settings.awards_maker_show_title != false -%}
+            <h3 class="pst-showcase__card-title">{{ 'Perfect Awards Maker' | escape }}</h3>
+          {%- endif -%}
         </div>
         <div class="pst-showcase__body">
           <ul class="pst-showcase__list">
@@ -486,17 +479,23 @@
 
       <article class="pst-showcase__card pst-showcase__card--4">
         <div class="pst-showcase__card-hero">
+          {%- liquid
+            assign cold_laminator_size = section.settings.cold_laminator_image_size | default: 160
+            assign cold_laminator_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: cold_laminator_size | append: 'px; object-fit: contain;'
+          -%}
           {%- if section.settings.cold_laminator_image != blank -%}
             {%- assign lam_alt = section.settings.cold_laminator_image.alt | default: 'Cold Laminator System' -%}
             {{
               section.settings.cold_laminator_image
               | image_url: width: 320
-              | image_tag: class: 'pst-showcase__hero-img pst-card-img', loading: 'lazy', alt: lam_alt
+              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: lam_alt, style: cold_laminator_style
             }}
           {%- else -%}
-            <span class="pst-showcase__icon" aria-hidden="true">🗂️</span>
+            <span class="pst-showcase__icon" aria-hidden="true" style="font-size: {{ cold_laminator_size }}px; line-height: 1;">🗂️</span>
           {%- endif -%}
-          <h3 class="pst-showcase__hero-title">{{ 'Cold Laminator System' | escape }}</h3>
+          {%- if section.settings.cold_laminator_show_title != false -%}
+            <h3 class="pst-showcase__card-title">{{ 'Cold Laminator System' | escape }}</h3>
+          {%- endif -%}
         </div>
         <div class="pst-showcase__body">
           <ul class="pst-showcase__list">
@@ -558,10 +557,42 @@
       "info": "Optional hero image. If empty, the default icon is shown."
     },
     {
+      "type": "range",
+      "id": "poster_maker_image_size",
+      "label": "Poster Maker — Image Size",
+      "min": 60,
+      "max": 280,
+      "step": 10,
+      "default": 160,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "poster_maker_show_title",
+      "label": "Poster Maker — Show title on card",
+      "default": true
+    },
+    {
       "type": "image_picker",
       "id": "awards_cut_image",
       "label": "Awards & Cut System — Product Image",
       "info": "Optional hero image. If empty, the default icon is shown."
+    },
+    {
+      "type": "range",
+      "id": "awards_cut_image_size",
+      "label": "Awards & Cut — Image Size",
+      "min": 60,
+      "max": 280,
+      "step": 10,
+      "default": 160,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "awards_cut_show_title",
+      "label": "Awards & Cut — Show title on card",
+      "default": true
     },
     {
       "type": "image_picker",
@@ -570,10 +601,42 @@
       "info": "Optional hero image. If empty, the default icon is shown."
     },
     {
+      "type": "range",
+      "id": "awards_maker_image_size",
+      "label": "Awards Maker — Image Size",
+      "min": 60,
+      "max": 280,
+      "step": 10,
+      "default": 160,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "awards_maker_show_title",
+      "label": "Awards Maker — Show title on card",
+      "default": true
+    },
+    {
       "type": "image_picker",
       "id": "cold_laminator_image",
       "label": "Cold Laminator — Product Image",
       "info": "Optional hero image. If empty, the default icon is shown."
+    },
+    {
+      "type": "range",
+      "id": "cold_laminator_image_size",
+      "label": "Cold Laminator — Image Size",
+      "min": 60,
+      "max": 280,
+      "step": 10,
+      "default": 160,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "cold_laminator_show_title",
+      "label": "Cold Laminator — Show title on card",
+      "default": true
     },
     {
       "type": "text",
