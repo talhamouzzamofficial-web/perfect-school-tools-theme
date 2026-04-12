@@ -1,219 +1,300 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&family=Outfit:wght@600;700;800&display=swap"
+  rel="stylesheet"
+>
+
 {%- style -%}
-  #shopify-section-{{ section.id }} .pst-stats-bar {
-    background-color: #fff;
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
+  #shopify-section-{{ section.id }} .pst-stats {
+    background: {{ section.settings.bg_color }};
+    padding: {{ section.settings.section_padding }}px 20px;
   }
 
-  #shopify-section-{{ section.id }} .pst-stats-bar__inner {
-    max-width: var(--page-width);
+  #shopify-section-{{ section.id }} .pst-stats__grid {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+    gap: {{ section.settings.gap }}px;
   }
 
-  #shopify-section-{{ section.id }} .pst-stats-bar__grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    #shopify-section-{{ section.id }} .pst-stats-bar__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-    }
-
-    #shopify-section-{{ section.id }} .pst-stats-bar__item {
-      padding: 1.15rem 0.85rem;
-      border: 1px solid rgba(15, 72, 114, 0.12);
-      margin: 0;
-    }
-
-    #shopify-section-{{ section.id }} .pst-stats-bar__item:not(:last-child) {
-      border-bottom: none;
-    }
-
-    #shopify-section-{{ section.id }} .pst-stats-bar__value {
-      font-size: clamp(2.2rem, 6vw, 2.8rem);
-      margin-bottom: 0.35rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-stats-bar__label {
-      font-size: 1.2rem;
-      max-width: none;
+  @media (max-width: 900px) {
+    #shopify-section-{{ section.id }} .pst-stats__grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media screen and (min-width: 769px) {
-    #shopify-section-{{ section.id }} .pst-stats-bar__grid {
-      flex-direction: row;
-      align-items: stretch;
-      justify-content: center;
-      display: flex;
+  @media (max-width: 540px) {
+    #shopify-section-{{ section.id }} .pst-stats__grid {
+      grid-template-columns: repeat({{ section.settings.columns_mobile }}, 1fr);
+      gap: {{ section.settings.gap | divided_by: 2 }}px;
     }
   }
 
-  #shopify-section-{{ section.id }} .pst-stats-bar__item {
-    flex: 1 1 0;
+  #shopify-section-{{ section.id }} .pst-stat {
     text-align: center;
-    padding: 2rem 1.5rem;
-    position: relative;
+    padding: {{ section.settings.card_padding }}px 16px;
+    background: {{ section.settings.card_bg }};
+    border-radius: {{ section.settings.card_radius }}px;
+    {%- if section.settings.card_border -%}
+      border: 1px solid rgba(10, 37, 64, 0.08);
+    {%- endif -%}
   }
 
-  @media screen and (min-width: 769px) {
-    #shopify-section-{{ section.id }} .pst-stats-bar__item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      top: 25%;
-      right: 0;
-      width: 1px;
-      height: 50%;
-      background-color: rgba(15, 72, 114, 0.2);
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    #shopify-section-{{ section.id }} .pst-stats-bar__item::after {
-      display: none !important;
-    }
-  }
-
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
-    #shopify-section-{{ section.id }} .pst-stats-bar__item {
-      padding: 1.5rem 1rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-stats-bar__value {
-      font-size: clamp(2.6rem, 4vw, 3.2rem);
-    }
-
-    #shopify-section-{{ section.id }} .pst-stats-bar__label {
-      font-size: 1.3rem;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    #shopify-section-{{ section.id }} .pst-stats-bar__inner {
-      padding: 0 1rem;
-    }
-  }
-
-  #shopify-section-{{ section.id }} .pst-stats-bar__value {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-family: var(--font-heading-family);
-    font-size: clamp(3rem, 5vw, 3.8rem);
+  #shopify-section-{{ section.id }} .pst-stat__value {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(
+      {{ section.settings.value_size_mobile }}px,
+      4vw,
+      {{ section.settings.value_size }}px
+    );
     font-weight: 800;
+    color: {{ section.settings.value_color }};
     line-height: 1.1;
-    color: var(--pst-color-gold, #f5b731);
+    margin: 0 0 6px;
   }
 
-  #shopify-section-{{ section.id }} .pst-stats-bar__label {
-    font-family: var(--font-body-family);
-    font-size: 1.45rem;
+  #shopify-section-{{ section.id }} .pst-stat__label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: clamp(
+      {{ section.settings.label_size_mobile }}px,
+      2vw,
+      {{ section.settings.label_size }}px
+    );
     font-weight: 600;
-    line-height: 1.35;
-    color: var(--pst-color-navy, #0f4872);
-    max-width: 16rem;
-    margin: 0 auto;
+    color: {{ section.settings.label_color }};
+    line-height: 1.4;
+    margin: 0;
   }
 {%- endstyle -%}
 
-<section class="pst-stats-bar">
-  <div class="pst-stats-bar__inner">
-    <div class="pst-stats-bar__grid">
-      {%- for block in section.blocks -%}
-        <div class="pst-stats-bar__item" {{ block.shopify_attributes }}>
-          <span class="pst-stats-bar__value">{{ block.settings.value | escape }}</span>
-          <span class="pst-stats-bar__label">{{ block.settings.label | escape }}</span>
+<div class="pst-stats">
+  <div class="pst-stats__grid">
+    {%- for i in (1..4) -%}
+      {%- assign val_key = 'stat_' | append: i | append: '_value' -%}
+      {%- assign label_key = 'stat_' | append: i | append: '_label' -%}
+      {%- if section.settings[val_key] != blank -%}
+        <div class="pst-stat">
+          <div class="pst-stat__value">
+            {{ section.settings[val_key] | escape }}
+          </div>
+          <p class="pst-stat__label">
+            {{ section.settings[label_key] | escape }}
+          </p>
         </div>
-      {%- endfor -%}
-    </div>
+      {%- endif -%}
+    {%- endfor -%}
   </div>
-</section>
+</div>
 
 {% schema %}
 {
   "name": "PST Stats bar",
   "tag": "section",
   "class": "pst-stats-bar-section",
-  "max_blocks": 4,
   "settings": [
     {
-      "type": "range",
-      "id": "padding_top",
-      "min": 24,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding top",
-      "default": 48
+      "type": "header",
+      "content": "Layout"
     },
     {
       "type": "range",
-      "id": "padding_bottom",
-      "min": 24,
+      "id": "columns_desktop",
+      "label": "Columns — Desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns — Mobile",
+      "options": [
+        { "value": "1", "label": "1 column" },
+        { "value": "2", "label": "2 columns" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section Padding (top & bottom)",
+      "min": 20,
       "max": 100,
       "step": 4,
-      "unit": "px",
-      "label": "Padding bottom",
-      "default": 48
-    }
-  ],
-  "blocks": [
+      "default": 60,
+      "unit": "px"
+    },
     {
-      "type": "stat",
-      "name": "Stat",
-      "settings": [
-        {
-          "type": "text",
-          "id": "value",
-          "label": "Number",
-          "default": "30+"
-        },
-        {
-          "type": "text",
-          "id": "label",
-          "label": "Label",
-          "default": "Years Experience Serving Schools"
-        }
-      ]
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between stats",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Stat Card Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "value_color",
+      "label": "Stat Value Color",
+      "default": "#F5B731"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Stat Label Color",
+      "default": "#334155"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_border",
+      "label": "Show card border",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "value_size",
+      "label": "Value Font Size — Desktop",
+      "min": 28,
+      "max": 72,
+      "step": 2,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "value_size_mobile",
+      "label": "Value Font Size — Mobile",
+      "min": 22,
+      "max": 48,
+      "step": 2,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label Font Size — Desktop",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "label_size_mobile",
+      "label": "Label Font Size — Mobile",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Card Padding",
+      "min": 12,
+      "max": 48,
+      "step": 4,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card Border Radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Stats content"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_value",
+      "label": "Stat 1 — Value",
+      "default": "30+"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 — Label",
+      "default": "Years Experience Serving Schools"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_value",
+      "label": "Stat 2 — Value",
+      "default": "K–12 Focused"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 — Label",
+      "default": "Built exclusively for schools and districts"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_value",
+      "label": "Stat 3 — Value",
+      "default": "Nationwide"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Stat 3 — Label",
+      "default": "Serving schools in all 50 states"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_value",
+      "label": "Stat 4 — Value",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_label",
+      "label": "Stat 4 — Label",
+      "default": "Satisfaction Guarantee"
     }
   ],
   "presets": [
     {
-      "name": "PST Stats bar",
-      "blocks": [
-        {
-          "type": "stat",
-          "settings": {
-            "value": "30+",
-            "label": "Years Experience Serving Schools"
-          }
-        },
-        {
-          "type": "stat",
-          "settings": {
-            "value": "K–12 Focused",
-            "label": "Built exclusively for schools and districts"
-          }
-        },
-        {
-          "type": "stat",
-          "settings": {
-            "value": "Nationwide",
-            "label": "Serving schools in all 50 states"
-          }
-        },
-        {
-          "type": "stat",
-          "settings": {
-            "value": "100%",
-            "label": "Satisfaction Guarantee"
-          }
-        }
-      ]
+      "name": "PST Stats bar"
     }
   ]
 }
