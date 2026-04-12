@@ -1,0 +1,474 @@
+{%- style -%}
+
+/* HERO */
+#shopify-section-{{ section.id }} .pst-dp__hero {
+  background: linear-gradient(135deg, #0A2540, #0F4872);
+  padding: 80px 20px 60px;
+}
+#shopify-section-{{ section.id }} .pst-dp__hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+#shopify-section-{{ section.id }} .pst-dp__badge {
+  display: inline-block;
+  background: rgba(233,30,140,0.2);
+  color: #E91E8C;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin: 0 0 16px;
+  border: 1px solid rgba(233,30,140,0.3);
+}
+#shopify-section-{{ section.id }} .pst-dp__hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 16px;
+  line-height: 1.15;
+}
+#shopify-section-{{ section.id }} .pst-dp__hero-sub {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 17px;
+  color: rgba(255,255,255,0.8);
+  margin: 0 auto 28px;
+  line-height: 1.6;
+  max-width: 680px;
+}
+#shopify-section-{{ section.id }} .pst-dp__hero-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#shopify-section-{{ section.id }} .pst-dp__btn-primary {
+  display: inline-block;
+  padding: 13px 28px;
+  background: #E91E8C;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-dp__btn-primary:hover { background: #C4186F; }
+#shopify-section-{{ section.id }} .pst-dp__btn-secondary {
+  display: inline-block;
+  padding: 12px 28px;
+  background: transparent;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.4);
+  transition: all 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-dp__btn-secondary:hover {
+  border-color: #fff;
+}
+
+/* TRUST BAR */
+#shopify-section-{{ section.id }} .pst-dp__trust {
+  background: #F5B731;
+  padding: 14px 20px;
+}
+#shopify-section-{{ section.id }} .pst-dp__trust-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+#shopify-section-{{ section.id }} .pst-dp__trust-item {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0A2540;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* BENEFITS GRID */
+#shopify-section-{{ section.id }} .pst-dp__benefits {
+  background: #FDF8F0;
+  padding: 80px 20px;
+}
+#shopify-section-{{ section.id }} .pst-dp__benefits-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#shopify-section-{{ section.id }} .pst-dp__section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  color: #0A2540;
+  text-align: center;
+  margin: 0 0 40px;
+}
+#shopify-section-{{ section.id }} .pst-dp__benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+#shopify-section-{{ section.id }} .pst-dp__benefit-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  border: 1px solid rgba(10,37,64,0.07);
+  box-shadow: 0 2px 16px rgba(10,37,64,0.06);
+}
+#shopify-section-{{ section.id }} .pst-dp__benefit-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #0A2540, #0F4872);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+#shopify-section-{{ section.id }} .pst-dp__benefit-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0A2540;
+  margin: 0 0 8px;
+}
+#shopify-section-{{ section.id }} .pst-dp__benefit-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #334155;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* HOW IT WORKS */
+#shopify-section-{{ section.id }} .pst-dp__how {
+  background: #ffffff;
+  padding: 80px 20px;
+}
+#shopify-section-{{ section.id }} .pst-dp__how-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+#shopify-section-{{ section.id }} .pst-dp__how-body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  color: #334155;
+  line-height: 1.75;
+  margin: 0 0 24px;
+}
+
+/* RELATED LINKS */
+#shopify-section-{{ section.id }} .pst-dp__related {
+  background: #FDF8F0;
+  padding: 60px 20px;
+}
+#shopify-section-{{ section.id }} .pst-dp__related-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+#shopify-section-{{ section.id }} .pst-dp__related-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+#shopify-section-{{ section.id }} .pst-dp__related-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 16px;
+  border: 1px solid rgba(10,37,64,0.08);
+  text-decoration: none;
+  transition: all 0.2s;
+  display: block;
+}
+#shopify-section-{{ section.id }}
+  .pst-dp__related-card:hover {
+  background: #0A2540;
+  border-color: #0A2540;
+}
+#shopify-section-{{ section.id }} .pst-dp__related-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0A2540;
+  margin: 0 0 6px;
+  transition: color 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-dp__related-card:hover .pst-dp__related-card-title {
+  color: #ffffff;
+}
+#shopify-section-{{ section.id }} .pst-dp__related-card-sub {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 12px;
+  color: #334155;
+  margin: 0;
+  transition: color 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-dp__related-card:hover .pst-dp__related-card-sub {
+  color: rgba(255,255,255,0.7);
+}
+
+/* CTA */
+#shopify-section-{{ section.id }} .pst-dp__cta {
+  background: linear-gradient(135deg, #E91E8C, #C4186F);
+  padding: 60px 20px;
+  text-align: center;
+}
+#shopify-section-{{ section.id }} .pst-dp__cta-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 12px;
+}
+#shopify-section-{{ section.id }} .pst-dp__cta-sub {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 28px;
+}
+#shopify-section-{{ section.id }} .pst-dp__cta-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#shopify-section-{{ section.id }} .pst-dp__cta-btn-white {
+  display: inline-block;
+  padding: 13px 28px;
+  background: #fff;
+  color: #E91E8C;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-dp__cta-btn-white:hover { background: #FDF8F0; }
+#shopify-section-{{ section.id }} .pst-dp__cta-btn-outline {
+  display: inline-block;
+  padding: 12px 28px;
+  background: transparent;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.6);
+  transition: all 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-dp__cta-btn-outline:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #shopify-section-{{ section.id }} .pst-dp__benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  #shopify-section-{{ section.id }} .pst-dp__related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #shopify-section-{{ section.id }} .pst-dp__hero-btns,
+  #shopify-section-{{ section.id }} .pst-dp__cta-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} .pst-dp__btn-primary,
+  #shopify-section-{{ section.id }} .pst-dp__btn-secondary,
+  #shopify-section-{{ section.id }} .pst-dp__cta-btn-white,
+  #shopify-section-{{ section.id }} .pst-dp__cta-btn-outline {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  #shopify-section-{{ section.id }} .pst-dp__trust-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
+  }
+}
+
+{%- endstyle -%}
+
+<!-- HERO -->
+<div class="pst-dp__hero">
+  <div class="pst-dp__hero-inner">
+    <p class="pst-dp__badge">District Purchasing</p>
+    <h1 class="pst-dp__hero-title">
+      District-Wide Pricing for Schools
+    </h1>
+    <p class="pst-dp__hero-sub">
+      Special volume pricing for school districts purchasing poster makers, laminators, and supplies for multiple schools. Save more when you buy for the whole district.
+    </p>
+    <div class="pst-dp__hero-btns">
+      <a href="/pages/contact" class="pst-dp__btn-primary">
+        Request a Quote
+      </a>
+      <a href="tel:+18885354431" class="pst-dp__btn-secondary">
+        (888) 535-4431
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="pst-dp__trust">
+  <div class="pst-dp__trust-inner">
+    <span class="pst-dp__trust-item">&#10003; Purchase Orders Accepted</span>
+    <span class="pst-dp__trust-item">&#128666; Fast Shipping</span>
+    <span class="pst-dp__trust-item">&#128222; Unlimited Support</span>
+    <span class="pst-dp__trust-item">&#127942; 30+ Years Experience</span>
+  </div>
+</div>
+
+<!-- BENEFITS GRID -->
+<div class="pst-dp__benefits">
+  <div class="pst-dp__benefits-inner">
+    <h2 class="pst-dp__section-title">District Pricing Benefits</h2>
+    <div class="pst-dp__benefits-grid">
+
+      <div class="pst-dp__benefit-card">
+        <div class="pst-dp__benefit-icon">&#128200;</div>
+        <h3 class="pst-dp__benefit-title">Volume Discounts</h3>
+        <p class="pst-dp__benefit-text">
+          Significant savings on systems and supplies when purchasing for multiple schools in your district.
+        </p>
+      </div>
+
+      <div class="pst-dp__benefit-card">
+        <div class="pst-dp__benefit-icon">&#127970;</div>
+        <h3 class="pst-dp__benefit-title">Single Vendor Simplicity</h3>
+        <p class="pst-dp__benefit-text">
+          One vendor for all your poster making, lamination, and supply needs across the entire district.
+        </p>
+      </div>
+
+      <div class="pst-dp__benefit-card">
+        <div class="pst-dp__benefit-icon">&#128203;</div>
+        <h3 class="pst-dp__benefit-title">Consolidated Invoicing</h3>
+        <p class="pst-dp__benefit-text">
+          One invoice for the entire district order, simplifying your accounting and procurement process.
+        </p>
+      </div>
+
+      <div class="pst-dp__benefit-card">
+        <div class="pst-dp__benefit-icon">&#128666;</div>
+        <h3 class="pst-dp__benefit-title">Coordinated Delivery</h3>
+        <p class="pst-dp__benefit-text">
+          Ship to individual schools or a central district warehouse — whatever works best for your district.
+        </p>
+      </div>
+
+      <div class="pst-dp__benefit-card">
+        <div class="pst-dp__benefit-icon">&#128222;</div>
+        <h3 class="pst-dp__benefit-title">Dedicated Support</h3>
+        <p class="pst-dp__benefit-text">
+          District customers receive priority support and a dedicated account contact for all orders and questions.
+        </p>
+      </div>
+
+      <div class="pst-dp__benefit-card">
+        <div class="pst-dp__benefit-icon">&#9989;</div>
+        <h3 class="pst-dp__benefit-title">Standardized Supplies</h3>
+        <p class="pst-dp__benefit-text">
+          Ensure every school in your district uses the same high-quality supplies for consistent results.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="pst-dp__how">
+  <div class="pst-dp__how-inner">
+    <h2 class="pst-dp__section-title">How District Pricing Works</h2>
+    <p class="pst-dp__how-body">
+      When your school district purchases poster maker systems, cold laminators, or supplies for multiple schools, you qualify for our district-wide volume pricing. The more schools in your order, the greater the savings. We work directly with district procurement offices, technology coordinators, and curriculum directors to build custom packages that fit your district's specific needs and budget.
+    </p>
+    <p class="pst-dp__how-body">
+      District pricing is available for any combination of our products — from equipping every school with a poster maker system to standardizing supplies across the district. We provide formal quotes, accept district purchase orders, and offer flexible delivery options including shipping to individual schools or a central location.
+    </p>
+    <p class="pst-dp__how-body">
+      To get started, contact us with the number of schools in your district and the products you're interested in. We'll prepare a custom district pricing proposal within one business day.
+    </p>
+  </div>
+</div>
+
+<!-- RELATED PAGES -->
+<div class="pst-dp__related">
+  <div class="pst-dp__related-inner">
+    <h2 class="pst-dp__section-title">Related Pages</h2>
+    <div class="pst-dp__related-grid">
+      <a href="/pages/purchase-orders" class="pst-dp__related-card">
+        <p class="pst-dp__related-card-title">Purchase Order Process</p>
+        <p class="pst-dp__related-card-sub">How to submit a PO</p>
+      </a>
+      <a href="/pages/poster-makers-for-schools" class="pst-dp__related-card">
+        <p class="pst-dp__related-card-title">Poster Maker Systems</p>
+        <p class="pst-dp__related-card-sub">View all system options</p>
+      </a>
+      <a href="/pages/school-poster-maker-bundles" class="pst-dp__related-card">
+        <p class="pst-dp__related-card-title">School Bundles</p>
+        <p class="pst-dp__related-card-sub">System + supply packages</p>
+      </a>
+      <a href="/pages/for-bookkeepers" class="pst-dp__related-card">
+        <p class="pst-dp__related-card-title">For Bookkeepers</p>
+        <p class="pst-dp__related-card-sub">Simplified ordering</p>
+      </a>
+      <a href="/pages/how-to-buy" class="pst-dp__related-card">
+        <p class="pst-dp__related-card-title">How to Buy</p>
+        <p class="pst-dp__related-card-sub">Complete purchasing guide</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="pst-dp__cta">
+  <h2 class="pst-dp__cta-title">Request District Pricing</h2>
+  <p class="pst-dp__cta-sub">
+    Contact us with your district's needs and we'll prepare a custom pricing proposal within one business day.
+  </p>
+  <div class="pst-dp__cta-btns">
+    <a href="/pages/contact" class="pst-dp__cta-btn-white">Request a Quote</a>
+    <a href="tel:+18885354431" class="pst-dp__cta-btn-outline">(888) 535-4431</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PST District Pricing",
+  "tag": "section",
+  "settings": [],
+  "presets": [{ "name": "PST District Pricing" }]
+}
+{% endschema %}
