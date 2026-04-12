@@ -236,7 +236,10 @@
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__card--3 .pst-showcase__hero-img {
+  #shopify-section-{{ section.id }} .pst-showcase__card--1 .pst-showcase__hero-img,
+  #shopify-section-{{ section.id }} .pst-showcase__card--2 .pst-showcase__hero-img,
+  #shopify-section-{{ section.id }} .pst-showcase__card--3 .pst-showcase__hero-img,
+  #shopify-section-{{ section.id }} .pst-showcase__card--4 .pst-showcase__hero-img {
     max-height: 6.5rem;
   }
 
@@ -262,15 +265,6 @@
     flex-direction: column;
     padding: 1.75rem 1.5rem 2rem;
     background: var(--pst-ps-white);
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__price {
-    margin: 0 0 1.25rem;
-    font-family: var(--font-heading-family);
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--pst-ps-navy);
-    line-height: 1.2;
   }
 
   #shopify-section-{{ section.id }} .pst-showcase__list {
@@ -363,14 +357,22 @@
       <article class="pst-showcase__card pst-showcase__card--1">
         <div class="pst-showcase__card-hero">
           <span class="pst-showcase__badge pst-showcase__badge--magenta">{{ 'Most Popular' | escape }}</span>
-          <span class="pst-showcase__icon" aria-hidden="true">🖨️</span>
+          {%- if section.settings.poster_maker_image != blank -%}
+            {%- assign pm_alt = section.settings.poster_maker_image.alt | default: 'Perfect Poster Maker System' -%}
+            {{
+              section.settings.poster_maker_image
+              | image_url: width: 240
+              | image_tag: class: 'pst-showcase__hero-img pst-card-img', loading: 'lazy', alt: pm_alt
+            }}
+          {%- else -%}
+            <span class="pst-showcase__icon" aria-hidden="true">🖨️</span>
+          {%- endif -%}
           <h3 class="pst-showcase__hero-title">{{ 'Perfect Poster Maker System' | escape }}</h3>
         </div>
         <div class="pst-showcase__body">
-          <p class="pst-showcase__price">{{ '$3,795' | escape }}</p>
           <ul class="pst-showcase__list">
             <li>24&quot; Full Color Printer</li>
-            <li>Full Set of Ink (225-275 posters)</li>
+            <li>Full Set of Ink</li>
             <li>Premium Paper Roll</li>
             <li>Free Digital Content Access</li>
           </ul>
@@ -398,13 +400,21 @@
       <article class="pst-showcase__card pst-showcase__card--2">
         <div class="pst-showcase__card-hero">
           <span class="pst-showcase__badge pst-showcase__badge--gold">{{ 'Best Value' | escape }}</span>
-          <span class="pst-showcase__icon" aria-hidden="true">🏆</span>
+          {%- if section.settings.awards_cut_image != blank -%}
+            {%- assign ac_alt = section.settings.awards_cut_image.alt | default: 'Perfect Awards & Cut System' -%}
+            {{
+              section.settings.awards_cut_image
+              | image_url: width: 240
+              | image_tag: class: 'pst-showcase__hero-img pst-card-img', loading: 'lazy', alt: ac_alt
+            }}
+          {%- else -%}
+            <span class="pst-showcase__icon" aria-hidden="true">🏆</span>
+          {%- endif -%}
           <h3 class="pst-showcase__hero-title">
             {{ 'Perfect Awards & Cut System' | escape }}
           </h3>
         </div>
         <div class="pst-showcase__body">
-          <p class="pst-showcase__price">{{ '$3,995' | escape }}</p>
           <ul class="pst-showcase__list">
             <li>Awards Printer</li>
             <li>Cutting System</li>
@@ -438,8 +448,8 @@
             {%- assign awards_alt = section.settings.awards_maker_image.alt | default: 'Perfect Awards Maker' -%}
             {{
               section.settings.awards_maker_image
-              | image_url: width: 400
-              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: awards_alt
+              | image_url: width: 240
+              | image_tag: class: 'pst-showcase__hero-img pst-card-img', loading: 'lazy', alt: awards_alt
             }}
           {%- else -%}
             <span class="pst-showcase__icon" aria-hidden="true">🎖️</span>
@@ -447,7 +457,6 @@
           <h3 class="pst-showcase__hero-title">{{ 'Perfect Awards Maker' | escape }}</h3>
         </div>
         <div class="pst-showcase__body">
-          <p class="pst-showcase__price">{{ '$2,995' | escape }}</p>
           <ul class="pst-showcase__list">
             <li>Awards Printer</li>
             <li>Template Library</li>
@@ -477,7 +486,16 @@
 
       <article class="pst-showcase__card pst-showcase__card--4">
         <div class="pst-showcase__card-hero">
-          <span class="pst-showcase__icon" aria-hidden="true">🗂️</span>
+          {%- if section.settings.cold_laminator_image != blank -%}
+            {%- assign lam_alt = section.settings.cold_laminator_image.alt | default: 'Cold Laminator System' -%}
+            {{
+              section.settings.cold_laminator_image
+              | image_url: width: 240
+              | image_tag: class: 'pst-showcase__hero-img pst-card-img', loading: 'lazy', alt: lam_alt
+            }}
+          {%- else -%}
+            <span class="pst-showcase__icon" aria-hidden="true">🗂️</span>
+          {%- endif -%}
           <h3 class="pst-showcase__hero-title">{{ 'Cold Laminator System' | escape }}</h3>
         </div>
         <div class="pst-showcase__body">
@@ -535,9 +553,27 @@
     },
     {
       "type": "image_picker",
+      "id": "poster_maker_image",
+      "label": "Poster Maker — Product Image",
+      "info": "Optional hero image. If empty, the default icon is shown."
+    },
+    {
+      "type": "image_picker",
+      "id": "awards_cut_image",
+      "label": "Awards & Cut System — Product Image",
+      "info": "Optional hero image. If empty, the default icon is shown."
+    },
+    {
+      "type": "image_picker",
       "id": "awards_maker_image",
-      "label": "Product Image",
-      "info": "Optional image for the Perfect Awards Maker card. If empty, the default icon is shown."
+      "label": "Awards Maker — Product Image",
+      "info": "Optional hero image. If empty, the default icon is shown."
+    },
+    {
+      "type": "image_picker",
+      "id": "cold_laminator_image",
+      "label": "Cold Laminator — Product Image",
+      "info": "Optional hero image. If empty, the default icon is shown."
     },
     {
       "type": "text",
