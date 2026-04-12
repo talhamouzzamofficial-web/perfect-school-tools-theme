@@ -2,8 +2,8 @@
 
 /* HERO */
 #shopify-section-{{ section.id }} .pst-rs__hero {
-  background: linear-gradient(135deg, #0A2540, #0F4872);
-  padding: 80px 20px 60px;
+  background: linear-gradient(135deg, {{ section.settings.hero_bg_start }}, {{ section.settings.hero_bg_end }});
+  padding: {{ section.settings.section_padding }}px 20px {{ section.settings.section_padding | times: 0.75 | round }}px;
   text-align: center;
 }
 #shopify-section-{{ section.id }} .pst-rs__hero-inner {
@@ -80,7 +80,7 @@
 
 /* TRUST BAR */
 #shopify-section-{{ section.id }} .pst-rs__trust {
-  background: #F5B731;
+  background: {{ section.settings.trust_bar_bg }};
   padding: 14px 20px;
 }
 #shopify-section-{{ section.id }} .pst-rs__trust-inner {
@@ -105,8 +105,8 @@
 
 /* 3 WAYS TO REORDER */
 #shopify-section-{{ section.id }} .pst-rs__ways {
-  background: #FDF8F0;
-  padding: 80px 20px;
+  background: {{ section.settings.section_bg_alt }};
+  padding: {{ section.settings.section_padding }}px 20px;
 }
 #shopify-section-{{ section.id }} .pst-rs__ways-inner {
   max-width: 1100px;
@@ -171,7 +171,7 @@
 /* SUPPLY REFERENCE */
 #shopify-section-{{ section.id }} .pst-rs__supplies {
   background: #ffffff;
-  padding: 80px 20px;
+  padding: {{ section.settings.section_padding }}px 20px;
 }
 #shopify-section-{{ section.id }} .pst-rs__supplies-inner {
   max-width: 1100px;
@@ -183,7 +183,7 @@
   gap: 20px;
 }
 #shopify-section-{{ section.id }} .pst-rs__supply-card {
-  background: #FDF8F0;
+  background: {{ section.settings.section_bg_alt }};
   border-radius: 12px;
   padding: 24px 20px;
   border: 1px solid rgba(10,37,64,0.07);
@@ -222,8 +222,8 @@
 
 /* RELATED PAGES */
 #shopify-section-{{ section.id }} .pst-rs__related {
-  background: #FDF8F0;
-  padding: 60px 20px;
+  background: {{ section.settings.section_bg_alt }};
+  padding: {{ section.settings.section_padding }}px 20px;
 }
 #shopify-section-{{ section.id }} .pst-rs__related-inner {
   max-width: 1100px;
@@ -258,8 +258,8 @@
 
 /* CTA */
 #shopify-section-{{ section.id }} .pst-rs__cta {
-  background: linear-gradient(135deg, #E91E8C, #C4186F);
-  padding: 60px 20px;
+  background: linear-gradient(135deg, {{ section.settings.cta_bg_start }}, {{ section.settings.cta_bg_end }});
+  padding: {{ section.settings.section_padding }}px 20px;
   text-align: center;
 }
 #shopify-section-{{ section.id }} .pst-rs__cta-title {
@@ -314,15 +314,18 @@
   background: rgba(255,255,255,0.1);
 }
 
-/* ── HERO ── */
+/* MOBILE */
 @media (max-width: 768px) {
+
+  /* Hero */
   #shopify-section-{{ section.id }} .pst-rs__hero {
     padding: 48px 20px 40px;
   }
   #shopify-section-{{ section.id }} .pst-rs__hero-title {
     font-size: clamp(24px, 7vw, 34px);
   }
-  #shopify-section-{{ section.id }} .pst-rs__hero-sub {
+  #shopify-section-{{ section.id }} .pst-rs__hero-sub,
+  #shopify-section-{{ section.id }} .pst-rs__hero-subtitle {
     font-size: 15px;
   }
   #shopify-section-{{ section.id }} .pst-rs__hero-btns {
@@ -336,10 +339,8 @@
     max-width: 300px;
     text-align: center;
   }
-}
 
-/* ── TRUST BAR ── */
-@media (max-width: 600px) {
+  /* Trust bar */
   #shopify-section-{{ section.id }} .pst-rs__trust-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -352,43 +353,35 @@
     text-align: center;
     gap: 4px;
   }
-}
 
-/* ── 3 WAYS TO REORDER ── */
-@media (max-width: 768px) {
-  #shopify-section-{{ section.id }} .pst-rs__ways {
-    padding: 48px 20px;
-  }
+  /* Main content grids */
   #shopify-section-{{ section.id }} .pst-rs__ways-grid {
     grid-template-columns: 1fr;
     gap: 16px;
-  }
-  #shopify-section-{{ section.id }} .pst-rs__way-card {
-    padding: 28px 20px;
-  }
-  #shopify-section-{{ section.id }} .pst-rs__way-icon {
-    font-size: 32px;
-  }
-  #shopify-section-{{ section.id }} .pst-rs__way-title {
-    font-size: 18px;
-  }
-  #shopify-section-{{ section.id }} .pst-rs__way-contact {
-    font-size: 15px;
-    word-break: break-all;
-  }
-}
-
-/* ── SUPPLY REFERENCE ── */
-@media (max-width: 768px) {
-  #shopify-section-{{ section.id }} .pst-rs__supplies {
-    padding: 48px 20px;
   }
   #shopify-section-{{ section.id }} .pst-rs__supplies-grid {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
+
+  /* Cards */
+  #shopify-section-{{ section.id }} .pst-rs__way-card {
+    padding: 24px 18px;
+  }
+  #shopify-section-{{ section.id }} .pst-rs__way-icon {
+    font-size: 32px;
+  }
+  #shopify-section-{{ section.id }} .pst-rs__way-title {
+    font-size: 16px;
+  }
+  #shopify-section-{{ section.id }} .pst-rs__way-contact {
+    font-size: 14px;
+    word-break: break-all;
+  }
+
+  /* Supply cards */
   #shopify-section-{{ section.id }} .pst-rs__supply-card {
-    padding: 18px 14px;
+    padding: 16px 12px;
   }
   #shopify-section-{{ section.id }} .pst-rs__supply-name {
     font-size: 13px;
@@ -396,19 +389,8 @@
   #shopify-section-{{ section.id }} .pst-rs__supply-desc {
     font-size: 12px;
   }
-}
 
-@media (max-width: 400px) {
-  #shopify-section-{{ section.id }} .pst-rs__supplies-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ── RELATED LINKS ── */
-@media (max-width: 768px) {
-  #shopify-section-{{ section.id }} .pst-rs__related {
-    padding: 40px 20px;
-  }
+  /* Related links pills */
   #shopify-section-{{ section.id }} .pst-rs__related-links {
     gap: 8px;
   }
@@ -416,17 +398,19 @@
     font-size: 13px;
     padding: 9px 14px;
   }
-}
 
-/* ── CTA BANNER ── */
-@media (max-width: 768px) {
-  #shopify-section-{{ section.id }} .pst-rs__cta {
-    padding: 48px 20px;
+  /* Section titles */
+  #shopify-section-{{ section.id }} .pst-rs__section-title {
+    font-size: clamp(20px, 5vw, 26px);
+    margin-bottom: 24px;
   }
+
+  /* CTA Banner */
   #shopify-section-{{ section.id }} .pst-rs__cta-title {
     font-size: clamp(20px, 6vw, 28px);
   }
-  #shopify-section-{{ section.id }} .pst-rs__cta-sub {
+  #shopify-section-{{ section.id }} .pst-rs__cta-sub,
+  #shopify-section-{{ section.id }} .pst-rs__cta-subtitle {
     font-size: 14px;
     word-break: break-word;
   }
@@ -441,13 +425,19 @@
     max-width: 300px;
     text-align: center;
   }
+
+  /* Section padding */
+  #shopify-section-{{ section.id }} .pst-rs__ways,
+  #shopify-section-{{ section.id }} .pst-rs__supplies,
+  #shopify-section-{{ section.id }} .pst-rs__related,
+  #shopify-section-{{ section.id }} .pst-rs__cta {
+    padding: 48px 20px;
+  }
 }
 
-/* ── SECTION TITLES ── */
-@media (max-width: 768px) {
-  #shopify-section-{{ section.id }} .pst-rs__section-title {
-    font-size: clamp(20px, 5vw, 26px);
-    margin-bottom: 24px;
+@media (max-width: 400px) {
+  #shopify-section-{{ section.id }} .pst-rs__supplies-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -456,19 +446,15 @@
 <!-- HERO -->
 <div class="pst-rs__hero">
   <div class="pst-rs__hero-inner">
-    <p class="pst-rs__badge">Easy Reordering</p>
-    <h1 class="pst-rs__hero-title">
-      Reorder Poster Printer Supplies
-    </h1>
-    <p class="pst-rs__hero-sub">
-      Need more paper, ink, or lamination film? Reordering is as easy as a phone call. We keep your order history on file for fast, hassle-free repeat orders.
-    </p>
+    <p class="pst-rs__badge">{{ section.settings.hero_badge }}</p>
+    <h1 class="pst-rs__hero-title">{{ section.settings.hero_title }}</h1>
+    <p class="pst-rs__hero-sub">{{ section.settings.hero_subtitle }}</p>
     <div class="pst-rs__hero-btns">
-      <a href="/pages/contact" class="pst-rs__btn-primary">
-        Request a Quote
+      <a href="{{ section.settings.hero_btn_primary_url | default: '/pages/contact' }}" class="pst-rs__btn-primary">
+        {{ section.settings.hero_btn_primary_label }}
       </a>
-      <a href="tel:+18885354431" class="pst-rs__btn-secondary">
-        (888) 535-4431
+      <a href="tel:{{ section.settings.hero_phone }}" class="pst-rs__btn-secondary">
+        {{ section.settings.hero_btn_secondary_label }}
       </a>
     </div>
   </div>
@@ -477,10 +463,10 @@
 <!-- TRUST BAR -->
 <div class="pst-rs__trust">
   <div class="pst-rs__trust-inner">
-    <span class="pst-rs__trust-item">&#10003; Purchase Orders Accepted</span>
-    <span class="pst-rs__trust-item">&#128666; Fast Shipping</span>
-    <span class="pst-rs__trust-item">&#128222; Unlimited Support</span>
-    <span class="pst-rs__trust-item">&#127942; 30+ Years Experience</span>
+    <span class="pst-rs__trust-item">&#10003; {{ section.settings.trust_1 }}</span>
+    <span class="pst-rs__trust-item">&#128666; {{ section.settings.trust_2 }}</span>
+    <span class="pst-rs__trust-item">&#128222; {{ section.settings.trust_3 }}</span>
+    <span class="pst-rs__trust-item">&#127942; {{ section.settings.trust_4 }}</span>
   </div>
 </div>
 
@@ -493,7 +479,7 @@
       <div class="pst-rs__way-card">
         <span class="pst-rs__way-icon">&#128222;</span>
         <h3 class="pst-rs__way-title">Call Us</h3>
-        <a href="tel:+18885354431" class="pst-rs__way-contact">
+        <a href="tel:{{ section.settings.hero_phone }}" class="pst-rs__way-contact">
           (888) 535-4431
         </a>
         <p class="pst-rs__way-desc">
@@ -515,7 +501,7 @@
       <div class="pst-rs__way-card">
         <span class="pst-rs__way-icon">&#128187;</span>
         <h3 class="pst-rs__way-title">Online</h3>
-        <a href="/pages/contact" class="pst-rs__way-contact">
+        <a href="{{ section.settings.hero_btn_primary_url | default: '/pages/contact' }}" class="pst-rs__way-contact">
           Request a Quote
         </a>
         <p class="pst-rs__way-desc">
@@ -576,13 +562,15 @@
 
 <!-- CTA BANNER -->
 <div class="pst-rs__cta">
-  <h2 class="pst-rs__cta-title">Need to Reorder?</h2>
-  <p class="pst-rs__cta-sub">
-    Call (888) 535-4431 or email orders@perfectschooltools.com. We process and ship the same business day.
-  </p>
+  <h2 class="pst-rs__cta-title">{{ section.settings.cta_title }}</h2>
+  <p class="pst-rs__cta-sub">{{ section.settings.cta_subtitle }}</p>
   <div class="pst-rs__cta-btns">
-    <a href="/pages/contact" class="pst-rs__cta-btn-white">Request a Quote</a>
-    <a href="tel:+18885354431" class="pst-rs__cta-btn-outline">(888) 535-4431</a>
+    <a href="{{ section.settings.cta_btn_primary_url | default: '/pages/contact' }}" class="pst-rs__cta-btn-white">
+      {{ section.settings.cta_btn_primary_label }}
+    </a>
+    <a href="tel:{{ section.settings.hero_phone }}" class="pst-rs__cta-btn-outline">
+      {{ section.settings.cta_btn_secondary_label }}
+    </a>
   </div>
 </div>
 
@@ -590,7 +578,174 @@
 {
   "name": "PST Reorder Supplies",
   "tag": "section",
-  "settings": [],
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "Hero Section"
+    },
+    {
+      "type": "text",
+      "id": "hero_badge",
+      "label": "Badge Text",
+      "default": "Easy Reordering"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Page Title",
+      "default": "Reorder Poster Printer Supplies"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtitle",
+      "label": "Hero Subtitle",
+      "default": "Need more paper, ink, or lamination film? Reordering is as easy as a phone call. We keep your order history on file for fast, hassle-free repeat orders."
+    },
+    {
+      "type": "text",
+      "id": "hero_btn_primary_label",
+      "label": "Primary Button Label",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "hero_btn_primary_url",
+      "label": "Primary Button URL"
+    },
+    {
+      "type": "text",
+      "id": "hero_btn_secondary_label",
+      "label": "Secondary Button Label",
+      "default": "(888) 535-4431"
+    },
+    {
+      "type": "text",
+      "id": "hero_phone",
+      "label": "Phone Number (for tel: link)",
+      "default": "+18885354431"
+    },
+
+    {
+      "type": "header",
+      "content": "Trust Bar"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust Item 1",
+      "default": "Purchase Orders Accepted"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust Item 2",
+      "default": "Fast Shipping"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Trust Item 3",
+      "default": "Unlimited Support"
+    },
+    {
+      "type": "text",
+      "id": "trust_4",
+      "label": "Trust Item 4",
+      "default": "30+ Years Experience"
+    },
+
+    {
+      "type": "header",
+      "content": "Section Colors"
+    },
+    {
+      "type": "color",
+      "id": "hero_bg_start",
+      "label": "Hero Gradient Start",
+      "default": "#0A2540"
+    },
+    {
+      "type": "color",
+      "id": "hero_bg_end",
+      "label": "Hero Gradient End",
+      "default": "#0F4872"
+    },
+    {
+      "type": "color",
+      "id": "trust_bar_bg",
+      "label": "Trust Bar Background",
+      "default": "#F5B731"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_alt",
+      "label": "Alternate Section Background",
+      "default": "#FDF8F0"
+    },
+    {
+      "type": "color",
+      "id": "cta_bg_start",
+      "label": "CTA Gradient Start",
+      "default": "#E91E8C"
+    },
+    {
+      "type": "color",
+      "id": "cta_bg_end",
+      "label": "CTA Gradient End",
+      "default": "#C4186F"
+    },
+
+    {
+      "type": "header",
+      "content": "CTA Banner"
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "CTA Title",
+      "default": "Need to Reorder?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_subtitle",
+      "label": "CTA Subtitle",
+      "default": "Call (888) 535-4431 or email orders@perfectschooltools.com. We process and ship the same business day."
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_primary_label",
+      "label": "CTA Primary Button Label",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "cta_btn_primary_url",
+      "label": "CTA Primary Button URL"
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_secondary_label",
+      "label": "CTA Secondary Button Label",
+      "default": "(888) 535-4431"
+    },
+
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section Padding Top/Bottom",
+      "min": 40,
+      "max": 120,
+      "step": 8,
+      "default": 80,
+      "unit": "px"
+    }
+
+  ],
   "presets": [{ "name": "PST Reorder Supplies" }]
 }
 {% endschema %}

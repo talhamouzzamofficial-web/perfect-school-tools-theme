@@ -2,8 +2,8 @@
 
 /* HERO */
 #shopify-section-{{ section.id }} .pst-dp__hero {
-  background: linear-gradient(135deg, #0A2540, #0F4872);
-  padding: 80px 20px 60px;
+  background: linear-gradient(135deg, {{ section.settings.hero_bg_start }}, {{ section.settings.hero_bg_end }});
+  padding: {{ section.settings.section_padding }}px 20px {{ section.settings.section_padding | times: 0.75 | round }}px;
 }
 #shopify-section-{{ section.id }} .pst-dp__hero-inner {
   max-width: 900px;
@@ -76,11 +76,12 @@
 #shopify-section-{{ section.id }}
   .pst-dp__btn-secondary:hover {
   border-color: #fff;
+  background: rgba(255,255,255,0.1);
 }
 
 /* TRUST BAR */
 #shopify-section-{{ section.id }} .pst-dp__trust {
-  background: #F5B731;
+  background: {{ section.settings.trust_bar_bg }};
   padding: 14px 20px;
 }
 #shopify-section-{{ section.id }} .pst-dp__trust-inner {
@@ -105,8 +106,8 @@
 
 /* BENEFITS GRID */
 #shopify-section-{{ section.id }} .pst-dp__benefits {
-  background: #FDF8F0;
-  padding: 80px 20px;
+  background: {{ section.settings.section_bg_alt }};
+  padding: {{ section.settings.section_padding }}px 20px;
 }
 #shopify-section-{{ section.id }} .pst-dp__benefits-inner {
   max-width: 1100px;
@@ -135,7 +136,7 @@
 #shopify-section-{{ section.id }} .pst-dp__benefit-icon {
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, #0A2540, #0F4872);
+  background: linear-gradient(135deg, {{ section.settings.hero_bg_start }}, {{ section.settings.hero_bg_end }});
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -161,7 +162,7 @@
 /* HOW IT WORKS */
 #shopify-section-{{ section.id }} .pst-dp__how {
   background: #ffffff;
-  padding: 80px 20px;
+  padding: {{ section.settings.section_padding }}px 20px;
 }
 #shopify-section-{{ section.id }} .pst-dp__how-inner {
   max-width: 800px;
@@ -177,8 +178,8 @@
 
 /* RELATED LINKS */
 #shopify-section-{{ section.id }} .pst-dp__related {
-  background: #FDF8F0;
-  padding: 60px 20px;
+  background: {{ section.settings.section_bg_alt }};
+  padding: {{ section.settings.section_padding }}px 20px;
 }
 #shopify-section-{{ section.id }} .pst-dp__related-inner {
   max-width: 1100px;
@@ -231,8 +232,8 @@
 
 /* CTA */
 #shopify-section-{{ section.id }} .pst-dp__cta {
-  background: linear-gradient(135deg, #E91E8C, #C4186F);
-  padding: 60px 20px;
+  background: linear-gradient(135deg, {{ section.settings.cta_bg_start }}, {{ section.settings.cta_bg_end }});
+  padding: {{ section.settings.section_padding }}px 20px;
   text-align: center;
 }
 #shopify-section-{{ section.id }} .pst-dp__cta-title {
@@ -287,32 +288,116 @@
   background: rgba(255,255,255,0.1);
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media (max-width: 768px) {
+
+  /* Hero */
+  #shopify-section-{{ section.id }} .pst-dp__hero {
+    padding: 48px 20px 40px;
+  }
+  #shopify-section-{{ section.id }} .pst-dp__hero-title {
+    font-size: clamp(24px, 7vw, 34px);
+  }
+  #shopify-section-{{ section.id }} .pst-dp__hero-sub,
+  #shopify-section-{{ section.id }} .pst-dp__hero-subtitle {
+    font-size: 15px;
+  }
+  #shopify-section-{{ section.id }} .pst-dp__hero-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  #shopify-section-{{ section.id }} .pst-dp__btn-primary,
+  #shopify-section-{{ section.id }} .pst-dp__btn-secondary {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  /* Trust bar */
+  #shopify-section-{{ section.id }} .pst-dp__trust-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 8px;
+    justify-items: center;
+  }
+  #shopify-section-{{ section.id }} .pst-dp__trust-item {
+    font-size: 10px;
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+
+  /* Main content grids */
   #shopify-section-{{ section.id }} .pst-dp__benefits-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
   #shopify-section-{{ section.id }} .pst-dp__related-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
-  #shopify-section-{{ section.id }} .pst-dp__hero-btns,
+
+  /* Cards */
+  #shopify-section-{{ section.id }} .pst-dp__benefit-card {
+    padding: 24px 18px;
+  }
+  #shopify-section-{{ section.id }} .pst-dp__benefit-title {
+    font-size: 16px;
+  }
+
+  /* Related cards */
+  #shopify-section-{{ section.id }} .pst-dp__related-card {
+    padding: 16px 12px;
+  }
+  #shopify-section-{{ section.id }} .pst-dp__related-card-title {
+    font-size: 13px;
+  }
+
+  /* Section titles */
+  #shopify-section-{{ section.id }} .pst-dp__section-title {
+    font-size: clamp(20px, 5vw, 26px);
+    margin-bottom: 24px;
+  }
+
+  /* How it works */
+  #shopify-section-{{ section.id }} .pst-dp__how-body {
+    font-size: 15px;
+  }
+
+  /* CTA Banner */
+  #shopify-section-{{ section.id }} .pst-dp__cta-title {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+  #shopify-section-{{ section.id }} .pst-dp__cta-sub,
+  #shopify-section-{{ section.id }} .pst-dp__cta-subtitle {
+    font-size: 14px;
+    word-break: break-word;
+  }
   #shopify-section-{{ section.id }} .pst-dp__cta-btns {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
-  #shopify-section-{{ section.id }} .pst-dp__btn-primary,
-  #shopify-section-{{ section.id }} .pst-dp__btn-secondary,
   #shopify-section-{{ section.id }} .pst-dp__cta-btn-white,
   #shopify-section-{{ section.id }} .pst-dp__cta-btn-outline {
     width: 100%;
     max-width: 300px;
     text-align: center;
   }
-  #shopify-section-{{ section.id }} .pst-dp__trust-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    justify-items: center;
+
+  /* Section padding */
+  #shopify-section-{{ section.id }} .pst-dp__benefits,
+  #shopify-section-{{ section.id }} .pst-dp__how,
+  #shopify-section-{{ section.id }} .pst-dp__related,
+  #shopify-section-{{ section.id }} .pst-dp__cta {
+    padding: 48px 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  #shopify-section-{{ section.id }} .pst-dp__related-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -321,19 +406,15 @@
 <!-- HERO -->
 <div class="pst-dp__hero">
   <div class="pst-dp__hero-inner">
-    <p class="pst-dp__badge">District Purchasing</p>
-    <h1 class="pst-dp__hero-title">
-      District-Wide Pricing for Schools
-    </h1>
-    <p class="pst-dp__hero-sub">
-      Special volume pricing for school districts purchasing poster makers, laminators, and supplies for multiple schools. Save more when you buy for the whole district.
-    </p>
+    <p class="pst-dp__badge">{{ section.settings.hero_badge }}</p>
+    <h1 class="pst-dp__hero-title">{{ section.settings.hero_title }}</h1>
+    <p class="pst-dp__hero-sub">{{ section.settings.hero_subtitle }}</p>
     <div class="pst-dp__hero-btns">
-      <a href="/pages/contact" class="pst-dp__btn-primary">
-        Request a Quote
+      <a href="{{ section.settings.hero_btn_primary_url | default: '/pages/contact' }}" class="pst-dp__btn-primary">
+        {{ section.settings.hero_btn_primary_label }}
       </a>
-      <a href="tel:+18885354431" class="pst-dp__btn-secondary">
-        (888) 535-4431
+      <a href="tel:{{ section.settings.hero_phone }}" class="pst-dp__btn-secondary">
+        {{ section.settings.hero_btn_secondary_label }}
       </a>
     </div>
   </div>
@@ -342,10 +423,10 @@
 <!-- TRUST BAR -->
 <div class="pst-dp__trust">
   <div class="pst-dp__trust-inner">
-    <span class="pst-dp__trust-item">&#10003; Purchase Orders Accepted</span>
-    <span class="pst-dp__trust-item">&#128666; Fast Shipping</span>
-    <span class="pst-dp__trust-item">&#128222; Unlimited Support</span>
-    <span class="pst-dp__trust-item">&#127942; 30+ Years Experience</span>
+    <span class="pst-dp__trust-item">&#10003; {{ section.settings.trust_1 }}</span>
+    <span class="pst-dp__trust-item">&#128666; {{ section.settings.trust_2 }}</span>
+    <span class="pst-dp__trust-item">&#128222; {{ section.settings.trust_3 }}</span>
+    <span class="pst-dp__trust-item">&#127942; {{ section.settings.trust_4 }}</span>
   </div>
 </div>
 
@@ -454,13 +535,15 @@
 
 <!-- CTA BANNER -->
 <div class="pst-dp__cta">
-  <h2 class="pst-dp__cta-title">Request District Pricing</h2>
-  <p class="pst-dp__cta-sub">
-    Contact us with your district's needs and we'll prepare a custom pricing proposal within one business day.
-  </p>
+  <h2 class="pst-dp__cta-title">{{ section.settings.cta_title }}</h2>
+  <p class="pst-dp__cta-sub">{{ section.settings.cta_subtitle }}</p>
   <div class="pst-dp__cta-btns">
-    <a href="/pages/contact" class="pst-dp__cta-btn-white">Request a Quote</a>
-    <a href="tel:+18885354431" class="pst-dp__cta-btn-outline">(888) 535-4431</a>
+    <a href="{{ section.settings.cta_btn_primary_url | default: '/pages/contact' }}" class="pst-dp__cta-btn-white">
+      {{ section.settings.cta_btn_primary_label }}
+    </a>
+    <a href="tel:{{ section.settings.hero_phone }}" class="pst-dp__cta-btn-outline">
+      {{ section.settings.cta_btn_secondary_label }}
+    </a>
   </div>
 </div>
 
@@ -468,7 +551,174 @@
 {
   "name": "PST District Pricing",
   "tag": "section",
-  "settings": [],
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "Hero Section"
+    },
+    {
+      "type": "text",
+      "id": "hero_badge",
+      "label": "Badge Text",
+      "default": "District Purchasing"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Page Title",
+      "default": "District-Wide Pricing for Schools"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtitle",
+      "label": "Hero Subtitle",
+      "default": "Special volume pricing for school districts purchasing poster makers, laminators, and supplies for multiple schools."
+    },
+    {
+      "type": "text",
+      "id": "hero_btn_primary_label",
+      "label": "Primary Button Label",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "hero_btn_primary_url",
+      "label": "Primary Button URL"
+    },
+    {
+      "type": "text",
+      "id": "hero_btn_secondary_label",
+      "label": "Secondary Button Label",
+      "default": "(888) 535-4431"
+    },
+    {
+      "type": "text",
+      "id": "hero_phone",
+      "label": "Phone Number (for tel: link)",
+      "default": "+18885354431"
+    },
+
+    {
+      "type": "header",
+      "content": "Trust Bar"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust Item 1",
+      "default": "Purchase Orders Accepted"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust Item 2",
+      "default": "Fast Shipping"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Trust Item 3",
+      "default": "Unlimited Support"
+    },
+    {
+      "type": "text",
+      "id": "trust_4",
+      "label": "Trust Item 4",
+      "default": "30+ Years Experience"
+    },
+
+    {
+      "type": "header",
+      "content": "Section Colors"
+    },
+    {
+      "type": "color",
+      "id": "hero_bg_start",
+      "label": "Hero Gradient Start",
+      "default": "#0A2540"
+    },
+    {
+      "type": "color",
+      "id": "hero_bg_end",
+      "label": "Hero Gradient End",
+      "default": "#0F4872"
+    },
+    {
+      "type": "color",
+      "id": "trust_bar_bg",
+      "label": "Trust Bar Background",
+      "default": "#F5B731"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_alt",
+      "label": "Alternate Section Background",
+      "default": "#FDF8F0"
+    },
+    {
+      "type": "color",
+      "id": "cta_bg_start",
+      "label": "CTA Gradient Start",
+      "default": "#E91E8C"
+    },
+    {
+      "type": "color",
+      "id": "cta_bg_end",
+      "label": "CTA Gradient End",
+      "default": "#C4186F"
+    },
+
+    {
+      "type": "header",
+      "content": "CTA Banner"
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "CTA Title",
+      "default": "Request District Pricing"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_subtitle",
+      "label": "CTA Subtitle",
+      "default": "Contact us with your district needs and we will prepare a custom pricing proposal within one business day."
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_primary_label",
+      "label": "CTA Primary Button Label",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "cta_btn_primary_url",
+      "label": "CTA Primary Button URL"
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_secondary_label",
+      "label": "CTA Secondary Button Label",
+      "default": "(888) 535-4431"
+    },
+
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section Padding Top/Bottom",
+      "min": 40,
+      "max": 120,
+      "step": 8,
+      "default": 80,
+      "unit": "px"
+    }
+
+  ],
   "presets": [{ "name": "PST District Pricing" }]
 }
 {% endschema %}
