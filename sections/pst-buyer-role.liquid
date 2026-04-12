@@ -317,20 +317,116 @@
 }
 
 /* RESPONSIVE */
+
+/* FIX 1 — Trust bar */
 @media (max-width: 768px) {
+  #shopify-section-{{ section.id }} .pst-role__trust-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+    justify-items: center;
+  }
+  #shopify-section-{{ section.id }} .pst-role__trust-item {
+    font-size: 11px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* FIX 2 — Hero */
+@media (max-width: 768px) {
+  #shopify-section-{{ section.id }} .pst-role__hero {
+    padding: 48px 20px 40px;
+  }
   #shopify-section-{{ section.id }} .pst-role__hero-inner {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
   #shopify-section-{{ section.id }} .pst-role__hero-img-wrap {
     display: none;
+  }
+  #shopify-section-{{ section.id }} .pst-role__hero-title {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+  #shopify-section-{{ section.id }} .pst-role__hero-intro {
+    font-size: 15px;
+  }
+  #shopify-section-{{ section.id }} .pst-role__hero-btns {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #shopify-section-{{ section.id }} .pst-role__btn-primary,
+  #shopify-section-{{ section.id }} .pst-role__btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* FIX 3 — Body (Challenges + Solutions) */
+@media (max-width: 768px) {
+  #shopify-section-{{ section.id }} .pst-role__body {
+    padding: 48px 20px;
   }
   #shopify-section-{{ section.id }} .pst-role__body-inner {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  #shopify-section-{{ section.id }} .pst-role__trust-inner {
-    gap: 16px;
+  #shopify-section-{{ section.id }} .pst-role__col-title {
+    font-size: 22px;
+  }
+  #shopify-section-{{ section.id }} .pst-role__item-title {
+    font-size: 15px;
+  }
+  #shopify-section-{{ section.id }} .pst-role__item-text {
+    font-size: 14px;
+  }
+}
+
+/* FIX 4 — Testimonial */
+@media (max-width: 768px) {
+  #shopify-section-{{ section.id }} .pst-role__testimonial {
+    padding: 48px 20px;
+  }
+  #shopify-section-{{ section.id }} .pst-role__quote-text {
+    font-size: 16px;
+  }
+  #shopify-section-{{ section.id }} .pst-role__quote-mark {
+    font-size: 56px;
+  }
+}
+
+/* FIX 5 — Resources */
+@media (max-width: 768px) {
+  #shopify-section-{{ section.id }} .pst-role__resources {
+    padding: 40px 20px;
+  }
+  #shopify-section-{{ section.id }} .pst-role__resource-links {
+    gap: 8px;
+  }
+  #shopify-section-{{ section.id }} .pst-role__resource-link {
+    font-size: 13px;
+    padding: 9px 16px;
+  }
+}
+
+/* FIX 6 — CTA Banner */
+@media (max-width: 768px) {
+  #shopify-section-{{ section.id }} .pst-role__cta {
+    padding: 48px 20px;
+  }
+  #shopify-section-{{ section.id }} .pst-role__cta-title {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+  #shopify-section-{{ section.id }} .pst-role__cta-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  #shopify-section-{{ section.id }} .pst-role__cta-btn-white,
+  #shopify-section-{{ section.id }} .pst-role__cta-btn-outline {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
   }
 }
 
