@@ -12,8 +12,10 @@
     "pst_hero": {
       "type": "pst-hero",
       "settings": {
-        "hero_bg_overlay": 60,
+        "hero_bg_image": "shopify://shop_images/Gym_Banner_and_posters.png",
+        "hero_bg_overlay": 90,
         "hero_overlay_color": "navy",
+        "hero_product_image": "shopify://shop_images/Table_Poster_Printer_2.png",
         "hero_float_label": "District Pricing",
         "hero_float_sublabel": "Volume discounts available",
         "hero_float_icon": "dollar",
