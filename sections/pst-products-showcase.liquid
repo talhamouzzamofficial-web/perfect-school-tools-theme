@@ -1,385 +1,308 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&family=Outfit:wght@600;700;800&display=swap"
+  rel="stylesheet"
+>
+
+{%- liquid
+  assign pst_pad_top = section.settings.section_padding_top | default: section.settings.padding_top | default: 80
+  assign pst_pad_bottom = section.settings.section_padding_bottom | default: section.settings.padding_bottom | default: 80
+  assign pst_cards_gap = section.settings.cards_gap | default: 20
+  assign pst_card_radius = section.settings.card_border_radius | default: 16
+  assign pst_card_padding = section.settings.card_padding | default: 24
+  assign pst_hero_h = section.settings.hero_height | default: 200
+  assign pst_hero_img_max = pst_hero_h | minus: 32
+  if pst_hero_img_max < 40
+    assign pst_hero_img_max = 40
+  endif
+  assign pst_icon_max = pst_hero_h | minus: 48
+  if pst_icon_max < 32
+    assign pst_icon_max = 32
+  endif
+  assign pst_title_fs = section.settings.title_font_size | default: 17
+  assign pst_feature_fs = section.settings.feature_font_size | default: 14
+-%}
+
 {%- style -%}
-  #shopify-section-{{ section.id }} {
-    --pst-ps-navy: #0a2540;
-    --pst-ps-navy-mid: #0f4872;
-    --pst-ps-blue: #1a6ba0;
-    --pst-ps-magenta: #e91e8c;
-    --pst-ps-magenta-deep: #c2185b;
-    --pst-ps-gold: #f5b731;
-    --pst-ps-orange: #e65100;
-    --pst-ps-slate: #334155;
-    --pst-ps-white: #ffffff;
-    --pst-ps-shadow: rgba(10, 37, 64, 0.14);
-    --pst-ps-shadow-deep: rgba(10, 37, 64, 0.22);
-    --pst-ps-radius: 1.2rem;
-    --pst-ps-radius-sm: 999px;
-  }
-
-  @keyframes pst-ps-fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(28px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes pst-ps-badge-pulse {
-    0%,
-    100% {
-      transform: scale(1);
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-    }
-    50% {
-      transform: scale(1.04);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    #shopify-section-{{ section.id }} .pst-showcase__card,
-    #shopify-section-{{ section.id }} .pst-showcase__badge {
-      animation: none !important;
-    }
-
-    #shopify-section-{{ section.id }} .pst-showcase__card {
-      opacity: 1;
-      transform: none;
-    }
-
-    #shopify-section-{{ section.id }} .pst-showcase__card:hover {
-      transform: none;
-    }
-  }
-
+  /* Section wrapper */
   #shopify-section-{{ section.id }} .pst-showcase {
-    background-color: var(--pst-ps-white);
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-    font-family: var(--font-body-family);
+    padding: {{ pst_pad_top }}px 20px {{ pst_pad_bottom }}px;
+    background: #fdf8f0;
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__inner {
-    max-width: var(--page-width);
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    #shopify-section-{{ section.id }} .pst-showcase__inner {
-      padding: 0 1rem;
-    }
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__header {
+  /* Section heading */
+  #shopify-section-{{ section.id }} .pst-showcase__heading {
     text-align: center;
-    max-width: 52rem;
-    margin: 0 auto 3.5rem;
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__title {
-    position: relative;
-    display: inline-block;
-    margin: 0 0 1rem;
-    padding-bottom: 0.85rem;
-    font-family: var(--font-heading-family);
-    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(24px, 3vw, 38px);
     font-weight: 800;
-    line-height: 1.15;
-    color: var(--pst-ps-navy);
+    color: #0a2540;
+    margin: 0 0 10px;
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__title::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: min(12rem, 50%);
-    height: 4px;
-    border-radius: 2px;
-    background: linear-gradient(90deg, var(--pst-ps-gold), #ffd666);
+  #shopify-section-{{ section.id }} .pst-showcase__subheading {
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    color: #334155;
+    margin: 0 0 40px;
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__subtitle {
-    margin: 0;
-    font-size: clamp(1.45rem, 2.2vw, 1.75rem);
-    line-height: 1.55;
-    font-weight: 500;
-    color: var(--pst-ps-navy-mid);
-  }
-
+  /* Grid */
   #shopify-section-{{ section.id }} .pst-showcase__grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: {{ pst_cards_gap }}px;
+    max-width: 1200px;
+    margin: 0 auto;
     align-items: stretch;
   }
 
-  @media screen and (min-width: 769px) and (max-width: 1023px) {
+  @media (max-width: 900px) {
     #shopify-section-{{ section.id }} .pst-showcase__grid {
       grid-template-columns: repeat(2, 1fr);
-      align-items: stretch;
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  @media (max-width: 540px) {
     #shopify-section-{{ section.id }} .pst-showcase__grid {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.75rem;
-      align-items: stretch;
+      grid-template-columns: 1fr;
     }
   }
 
+  /* Card */
   #shopify-section-{{ section.id }} .pst-showcase__card {
-    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: {{ pst_card_radius }}px;
+    box-shadow: 0 2px 16px rgba(10, 37, 64, 0.08);
+    border: 1px solid rgba(10, 37, 64, 0.07);
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 28px 24px 24px;
-    background: var(--pst-ps-white);
-    border-radius: var(--pst-ps-radius);
     overflow: hidden;
-    box-shadow: 0 8px 32px var(--pst-ps-shadow);
-    transition: transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1), box-shadow 0.35s ease;
-    opacity: 0;
-    animation: pst-ps-fade-in-up 0.65s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__grid .pst-showcase__card:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__grid .pst-showcase__card:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__grid .pst-showcase__card:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__grid .pst-showcase__card:nth-child(4) {
-    animation-delay: 0.4s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   #shopify-section-{{ section.id }} .pst-showcase__card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 22px 48px var(--pst-ps-shadow-deep);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(10, 37, 64, 0.13);
   }
 
+  /* Card hero image area — FIXED HEIGHT so all cards consistent */
   #shopify-section-{{ section.id }} .pst-showcase__card-hero {
-    position: relative;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    min-height: 140px;
-    height: auto;
     width: 100%;
-    padding: 0 0 0.75rem;
+    height: {{ pst_hero_h }}px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    gap: 0.75rem;
-    overflow: visible;
+    padding: 16px;
+    box-sizing: border-box;
     background: transparent;
+    overflow: hidden;
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__badge {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    z-index: 2;
-    padding: 0.4rem 1rem;
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    border-radius: var(--pst-ps-radius-sm);
-    line-height: 1.3;
-    animation: pst-ps-badge-pulse 2.8s ease-in-out infinite;
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__badge--magenta {
-    background: var(--pst-ps-magenta);
-    color: var(--pst-ps-white);
-    box-shadow: 0 4px 14px rgba(233, 30, 140, 0.45);
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__badge--gold {
-    background: var(--pst-ps-gold);
-    color: var(--pst-ps-navy);
-    box-shadow: 0 4px 14px rgba(245, 183, 49, 0.45);
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__icon {
-    font-size: 80px;
-    line-height: 1;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
-  }
-
+  /* Uploaded images — contain within fixed hero height */
   #shopify-section-{{ section.id }} .pst-showcase__hero-img {
     width: auto;
     max-width: 100%;
-    height: auto;
+    height: 100%;
+    max-height: {{ pst_hero_img_max }}px;
     object-fit: contain;
     object-position: center;
     display: block;
-    margin: 0 auto;
-    flex-shrink: 0;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__card-title {
-    margin: 0;
-    width: 100%;
-    max-width: none;
-    font-family: var(--font-heading-family);
-    font-size: 1.55rem;
-    font-weight: 800;
-    line-height: 1.2;
-    color: #0a2540;
+  /* Emoji fallback */
+  #shopify-section-{{ section.id }} .pst-showcase__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    line-height: 1;
+    font-size: clamp(40px, 18vw, {{ pst_icon_max }}px);
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__body {
-    flex: 1;
+  /* Card body */
+  #shopify-section-{{ section.id }} .pst-showcase__card-body {
+    padding: {{ pst_card_padding }}px;
+    padding-top: 0;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    padding: 0 0 0 20px;
-    margin: 0;
-    text-align: left;
-    direction: ltr;
-    background: var(--pst-ps-white);
+    flex: 1;
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__list {
-    margin: 0 0 1.75rem;
-    padding: 0;
+  /* Card title */
+  #shopify-section-{{ section.id }} .pst-showcase__card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: {{ pst_title_fs }}px;
+    font-weight: 700;
+    color: #0a2540;
+    margin: 0 0 14px;
+    line-height: 1.3;
+  }
+
+  /* Feature list */
+  #shopify-section-{{ section.id }} .pst-showcase__features {
     list-style: none;
-    list-style-position: outside;
-    flex-grow: 1;
-    direction: ltr;
+    padding: 0;
+    margin: 0 0 20px;
+    flex: 1;
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__list li {
-    position: relative;
-    padding-left: 1.65rem;
-    margin-bottom: 0.55rem;
-    font-size: 1.38rem;
-    line-height: 1.45;
-    color: var(--pst-ps-slate);
+  #shopify-section-{{ section.id }} .pst-showcase__features li {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: {{ pst_feature_fs }}px;
+    color: #334155;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.4;
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    top: 0.05em;
-    color: var(--pst-ps-gold);
-    font-weight: 800;
-    font-size: 1.15em;
+  #shopify-section-{{ section.id }} .pst-showcase__features li::before {
+    content: '\2713';
+    color: #e91e8c;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
   }
 
+  /* Buttons area */
   #shopify-section-{{ section.id }} .pst-showcase__actions {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 0.75rem;
+    gap: 10px;
     margin-top: auto;
+  }
+
+  /* Quote button */
+  #shopify-section-{{ section.id }} .pst-showcase__btn-quote {
+    display: block;
     width: 100%;
-  }
-
-  #shopify-section-{{ section.id }} .pst-showcase__btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 4.75rem;
-    padding: 0 1.35rem;
-    font-size: 1.38rem;
+    padding: 12px 16px;
+    background: #e91e8c;
+    color: #ffffff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
     font-weight: 700;
-    text-decoration: none;
     text-align: center;
-    border-radius: 0.55rem;
-    border: 2px solid transparent;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    border: none;
+    cursor: pointer;
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__btn--quote {
-    background-color: var(--pst-ps-magenta);
-    color: var(--pst-ps-white);
-    border-color: var(--pst-ps-magenta);
+  #shopify-section-{{ section.id }} .pst-showcase__btn-quote:hover {
+    background: #c4186f;
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__btn--quote:hover,
-  #shopify-section-{{ section.id }} .pst-showcase__btn--quote:focus {
-    background-color: var(--pst-ps-magenta-deep);
-    border-color: var(--pst-ps-magenta-deep);
-    color: var(--pst-ps-white);
+  /* Learn More button */
+  #shopify-section-{{ section.id }} .pst-showcase__btn-learn {
+    display: block;
+    width: 100%;
+    padding: 11px 16px;
+    background: transparent;
+    color: #0a2540;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 2px solid #0a2540;
+    transition: all 0.2s ease;
+    cursor: pointer;
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__btn--learn {
-    background-color: transparent;
-    color: var(--pst-ps-navy);
-    border-color: var(--pst-ps-navy);
+  #shopify-section-{{ section.id }} .pst-showcase__btn-learn:hover {
+    background: #0a2540;
+    color: #ffffff;
   }
 
-  #shopify-section-{{ section.id }} .pst-showcase__btn--learn:hover,
-  #shopify-section-{{ section.id }} .pst-showcase__btn--learn:focus {
-    background-color: var(--pst-ps-navy);
-    color: var(--pst-ps-white);
-    border-color: var(--pst-ps-navy);
+  /* Badge (Most Popular / Best Value) */
+  #shopify-section-{{ section.id }} .pst-showcase__badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__badge--popular {
+    background: #e91e8c;
+    color: #ffffff;
+  }
+
+  #shopify-section-{{ section.id }} .pst-showcase__badge--value {
+    background: #f5b731;
+    color: #0a2540;
+  }
+
+  /* Card wrapper for badge positioning */
+  #shopify-section-{{ section.id }} .pst-showcase__card-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 {%- endstyle -%}
 
 <section class="pst-showcase">
-  <div class="pst-showcase__inner">
-    <header class="pst-showcase__header">
-      {%- if section.settings.heading != blank -%}
-        <h2 class="pst-showcase__title">{{ section.settings.heading | escape }}</h2>
-      {%- endif -%}
-      {%- if section.settings.subtitle != blank -%}
-        <p class="pst-showcase__subtitle">{{ section.settings.subtitle | escape }}</p>
-      {%- endif -%}
-    </header>
+  {%- liquid
+    assign pst_subheading = section.settings.subheading | default: section.settings.subtitle
+    assign pst_quote_label = section.settings.quote_btn_label | default: section.settings.quote_label
+    assign pst_quote_href = section.settings.quote_btn_link | default: section.settings.quote_link | default: '/pages/contact'
+    assign pst_learn_label = section.settings.learn_btn_label | default: section.settings.learn_label
+  -%}
+  {%- if section.settings.heading != blank -%}
+    <h2 class="pst-showcase__heading">{{ section.settings.heading | escape }}</h2>
+  {%- endif -%}
+  {%- if pst_subheading != blank -%}
+    <p class="pst-showcase__subheading">{{ pst_subheading | escape }}</p>
+  {%- endif -%}
 
-    <div class="pst-showcase__grid">
-      <article class="pst-showcase__card pst-showcase__card--1">
-        {%- assign pm_align = section.settings.poster_maker_align | default: section.settings.cards_default_align | default: 'center' -%}
+  <div class="pst-showcase__grid">
+    <article class="pst-showcase__card pst-showcase__card--1">
+      {%- assign pm_align = section.settings.poster_maker_align | default: section.settings.cards_default_align | default: 'center' -%}
+      <div class="pst-showcase__card-wrap">
+        <span class="pst-showcase__badge pst-showcase__badge--popular">{{ 'Most Popular' | escape }}</span>
         <div class="pst-showcase__card-hero">
-          {%- liquid
-            assign poster_maker_size = section.settings.poster_maker_image_size | default: 160
-            assign poster_maker_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: poster_maker_size | append: 'px; object-fit: contain;'
-          -%}
-          <span class="pst-showcase__badge pst-showcase__badge--magenta">{{ 'Most Popular' | escape }}</span>
           {%- if section.settings.poster_maker_image != blank -%}
             {%- assign pm_alt = section.settings.poster_maker_image.alt | default: section.settings.poster_maker_title | default: 'Perfect Poster Maker System' -%}
             {{
               section.settings.poster_maker_image
-              | image_url: width: 320
-              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: pm_alt, style: poster_maker_style
+              | image_url: width: 800
+              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: pm_alt
             }}
           {%- else -%}
-            <span class="pst-showcase__icon" aria-hidden="true" style="font-size: {{ poster_maker_size }}px; line-height: 1;">🖨️</span>
+            <span class="pst-showcase__icon" aria-hidden="true">&#128424;&#65039;</span>
           {%- endif -%}
+        </div>
+        <div class="pst-showcase__card-body">
           {%- if section.settings.poster_maker_show_title != false -%}
             <h3 class="pst-showcase__card-title" style="text-align: {{ pm_align }};">
               {{- section.settings.poster_maker_title | escape -}}
             </h3>
           {%- endif -%}
-        </div>
-        <div class="pst-showcase__body">
-          <ul class="pst-showcase__list">
+          <ul class="pst-showcase__features">
             <li>24&quot; Full Color Printer</li>
             <li>Full Set of Ink</li>
             <li>Premium Paper Roll</li>
             <li>Free Digital Content Access</li>
           </ul>
           <div class="pst-showcase__actions">
-            {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
-                {{- section.settings.quote_label | escape -}}
+            {%- if pst_quote_label != blank and pst_quote_href != blank -%}
+              <a class="pst-showcase__btn-quote" href="{{ pst_quote_href }}">
+                {{- pst_quote_label | escape -}}
               </a>
             {%- endif -%}
             {%- liquid
@@ -388,50 +311,48 @@
                 assign _learn_pm = '/collections/poster-makers-for-schools'
               endif
             -%}
-            {%- if section.settings.learn_label != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ _learn_pm }}">
-                {{- section.settings.learn_label | escape -}}
+            {%- if pst_learn_label != blank -%}
+              <a class="pst-showcase__btn-learn" href="{{ _learn_pm }}">
+                {{- pst_learn_label | escape -}}
               </a>
             {%- endif -%}
           </div>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="pst-showcase__card pst-showcase__card--2">
-        {%- assign ac_align = section.settings.awards_cut_align | default: section.settings.cards_default_align | default: 'center' -%}
+    <article class="pst-showcase__card pst-showcase__card--2">
+      {%- assign ac_align = section.settings.awards_cut_align | default: section.settings.cards_default_align | default: 'center' -%}
+      <div class="pst-showcase__card-wrap">
+        <span class="pst-showcase__badge pst-showcase__badge--value">{{ 'Best Value' | escape }}</span>
         <div class="pst-showcase__card-hero">
-          {%- liquid
-            assign awards_cut_size = section.settings.awards_cut_image_size | default: 160
-            assign awards_cut_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: awards_cut_size | append: 'px; object-fit: contain;'
-          -%}
-          <span class="pst-showcase__badge pst-showcase__badge--gold">{{ 'Best Value' | escape }}</span>
           {%- if section.settings.awards_cut_image != blank -%}
             {%- assign ac_alt = section.settings.awards_cut_image.alt | default: section.settings.awards_cut_title | default: 'Perfect Awards & Cut System' -%}
             {{
               section.settings.awards_cut_image
-              | image_url: width: 320
-              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: ac_alt, style: awards_cut_style
+              | image_url: width: 800
+              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: ac_alt
             }}
           {%- else -%}
-            <span class="pst-showcase__icon" aria-hidden="true" style="font-size: {{ awards_cut_size }}px; line-height: 1;">🏆</span>
+            <span class="pst-showcase__icon" aria-hidden="true">&#127942;</span>
           {%- endif -%}
+        </div>
+        <div class="pst-showcase__card-body">
           {%- if section.settings.awards_cut_show_title != false -%}
             <h3 class="pst-showcase__card-title" style="text-align: {{ ac_align }};">
               {{- section.settings.awards_cut_title | escape -}}
             </h3>
           {%- endif -%}
-        </div>
-        <div class="pst-showcase__body">
-          <ul class="pst-showcase__list">
+          <ul class="pst-showcase__features">
             <li>Awards Printer</li>
             <li>Cutting System</li>
             <li>Award Templates</li>
             <li>Customized Supplies</li>
           </ul>
           <div class="pst-showcase__actions">
-            {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
-                {{- section.settings.quote_label | escape -}}
+            {%- if pst_quote_label != blank and pst_quote_href != blank -%}
+              <a class="pst-showcase__btn-quote" href="{{ pst_quote_href }}">
+                {{- pst_quote_label | escape -}}
               </a>
             {%- endif -%}
             {%- liquid
@@ -440,49 +361,47 @@
                 assign _learn_ac = '/pages/for-awards-cut-system'
               endif
             -%}
-            {%- if section.settings.learn_label != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ _learn_ac }}">
-                {{- section.settings.learn_label | escape -}}
+            {%- if pst_learn_label != blank -%}
+              <a class="pst-showcase__btn-learn" href="{{ _learn_ac }}">
+                {{- pst_learn_label | escape -}}
               </a>
             {%- endif -%}
           </div>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="pst-showcase__card pst-showcase__card--3">
-        {%- assign am_align = section.settings.awards_maker_align | default: section.settings.cards_default_align | default: 'center' -%}
+    <article class="pst-showcase__card pst-showcase__card--3">
+      {%- assign am_align = section.settings.awards_maker_align | default: section.settings.cards_default_align | default: 'center' -%}
+      <div class="pst-showcase__card-wrap">
         <div class="pst-showcase__card-hero">
-          {%- liquid
-            assign awards_maker_size = section.settings.awards_maker_image_size | default: 160
-            assign awards_maker_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: awards_maker_size | append: 'px; object-fit: contain;'
-          -%}
           {%- if section.settings.awards_maker_image != blank -%}
             {%- assign awards_alt = section.settings.awards_maker_image.alt | default: section.settings.awards_maker_title | default: 'Perfect Awards Maker' -%}
             {{
               section.settings.awards_maker_image
-              | image_url: width: 320
-              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: awards_alt, style: awards_maker_style
+              | image_url: width: 800
+              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: awards_alt
             }}
           {%- else -%}
-            <span class="pst-showcase__icon" aria-hidden="true" style="font-size: {{ awards_maker_size }}px; line-height: 1;">🎖️</span>
+            <span class="pst-showcase__icon" aria-hidden="true">&#127894;&#65039;</span>
           {%- endif -%}
+        </div>
+        <div class="pst-showcase__card-body">
           {%- if section.settings.awards_maker_show_title != false -%}
             <h3 class="pst-showcase__card-title" style="text-align: {{ am_align }};">
               {{- section.settings.awards_maker_title | escape -}}
             </h3>
           {%- endif -%}
-        </div>
-        <div class="pst-showcase__body">
-          <ul class="pst-showcase__list">
+          <ul class="pst-showcase__features">
             <li>Awards Printer</li>
             <li>Template Library</li>
             <li>Plaque Supplies</li>
             <li>Full Ink Set</li>
           </ul>
           <div class="pst-showcase__actions">
-            {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
-                {{- section.settings.quote_label | escape -}}
+            {%- if pst_quote_label != blank and pst_quote_href != blank -%}
+              <a class="pst-showcase__btn-quote" href="{{ pst_quote_href }}">
+                {{- pst_quote_label | escape -}}
               </a>
             {%- endif -%}
             {%- liquid
@@ -491,49 +410,47 @@
                 assign _learn_am = '/pages/for-awards-maker'
               endif
             -%}
-            {%- if section.settings.learn_label != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ _learn_am }}">
-                {{- section.settings.learn_label | escape -}}
+            {%- if pst_learn_label != blank -%}
+              <a class="pst-showcase__btn-learn" href="{{ _learn_am }}">
+                {{- pst_learn_label | escape -}}
               </a>
             {%- endif -%}
           </div>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="pst-showcase__card pst-showcase__card--4">
-        {%- assign lam_align = section.settings.cold_laminator_align | default: section.settings.cards_default_align | default: 'center' -%}
+    <article class="pst-showcase__card pst-showcase__card--4">
+      {%- assign lam_align = section.settings.cold_laminator_align | default: section.settings.cards_default_align | default: 'center' -%}
+      <div class="pst-showcase__card-wrap">
         <div class="pst-showcase__card-hero">
-          {%- liquid
-            assign cold_laminator_size = section.settings.cold_laminator_image_size | default: 160
-            assign cold_laminator_style = 'width: auto; max-width: 100%; height: auto; max-height: ' | append: cold_laminator_size | append: 'px; object-fit: contain;'
-          -%}
           {%- if section.settings.cold_laminator_image != blank -%}
             {%- assign lam_alt = section.settings.cold_laminator_image.alt | default: section.settings.cold_laminator_title | default: 'Cold Laminator System' -%}
             {{
               section.settings.cold_laminator_image
-              | image_url: width: 320
-              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: lam_alt, style: cold_laminator_style
+              | image_url: width: 800
+              | image_tag: class: 'pst-showcase__hero-img', loading: 'lazy', alt: lam_alt
             }}
           {%- else -%}
-            <span class="pst-showcase__icon" aria-hidden="true" style="font-size: {{ cold_laminator_size }}px; line-height: 1;">🗂️</span>
+            <span class="pst-showcase__icon" aria-hidden="true">&#128450;&#65039;</span>
           {%- endif -%}
+        </div>
+        <div class="pst-showcase__card-body">
           {%- if section.settings.cold_laminator_show_title != false -%}
             <h3 class="pst-showcase__card-title" style="text-align: {{ lam_align }};">
               {{- section.settings.cold_laminator_title | escape -}}
             </h3>
           {%- endif -%}
-        </div>
-        <div class="pst-showcase__body">
-          <ul class="pst-showcase__list">
+          <ul class="pst-showcase__features">
             <li>No Heat Required</li>
             <li>Safe for Schools</li>
             <li>Multiple Sizes</li>
             <li>No Electricity</li>
           </ul>
           <div class="pst-showcase__actions">
-            {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--quote" href="{{ section.settings.quote_link }}">
-                {{- section.settings.quote_label | escape -}}
+            {%- if pst_quote_label != blank and pst_quote_href != blank -%}
+              <a class="pst-showcase__btn-quote" href="{{ pst_quote_href }}">
+                {{- pst_quote_label | escape -}}
               </a>
             {%- endif -%}
             {%- liquid
@@ -542,15 +459,15 @@
                 assign _learn_lam = '/collections/cold-laminators-for-schools'
               endif
             -%}
-            {%- if section.settings.learn_label != blank -%}
-              <a class="pst-showcase__btn pst-showcase__btn--learn" href="{{ _learn_lam }}">
-                {{- section.settings.learn_label | escape -}}
+            {%- if pst_learn_label != blank -%}
+              <a class="pst-showcase__btn-learn" href="{{ _learn_lam }}">
+                {{- pst_learn_label | escape -}}
               </a>
             {%- endif -%}
           </div>
         </div>
-      </article>
-    </div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -561,25 +478,107 @@
   "class": "pst-products-showcase-section",
   "settings": [
     {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Professional Visual Tools for Every School"
+      "type": "header",
+      "content": "Section layout"
     },
     {
-      "type": "textarea",
-      "id": "subtitle",
-      "label": "Subtitle",
-      "default": "Poster makers, awards systems, and laminators built for classrooms and districts."
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
     },
     {
-      "type": "paragraph",
-      "content": "Quote button uses the link below. Each product card has its own Learn more URL."
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "cards_gap",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap between cards",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Card corner radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card content padding (sides & bottom)",
+      "default": 24,
+      "info": "Used for the text/button area below the image. Top padding is 0 so it meets the hero."
+    },
+    {
+      "type": "header",
+      "content": "Card images"
+    },
+    {
+      "type": "range",
+      "id": "hero_height",
+      "min": 120,
+      "max": 320,
+      "step": 4,
+      "unit": "px",
+      "label": "Hero image area height",
+      "default": 200,
+      "info": "Applies to all product cards."
+    },
+    {
+      "type": "header",
+      "content": "Card typography"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Card title size",
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "feature_font_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature list text size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Card content"
     },
     {
       "type": "select",
       "id": "cards_default_align",
-      "label": "All Cards — Default Alignment",
+      "label": "All cards — default title alignment",
       "options": [
         { "value": "left", "label": "Left" },
         { "value": "center", "label": "Center" },
@@ -590,35 +589,25 @@
     {
       "type": "image_picker",
       "id": "poster_maker_image",
-      "label": "Poster Maker — Product Image",
-      "info": "Optional hero image. If empty, the default icon is shown."
-    },
-    {
-      "type": "range",
-      "id": "poster_maker_image_size",
-      "label": "Poster Maker — Image Size",
-      "min": 60,
-      "max": 280,
-      "step": 10,
-      "default": 160,
-      "unit": "px"
+      "label": "Poster Maker — product image",
+      "info": "Optional. If empty, an emoji placeholder is shown."
     },
     {
       "type": "checkbox",
       "id": "poster_maker_show_title",
-      "label": "Poster Maker — Show title on card",
+      "label": "Poster Maker — show title",
       "default": true
     },
     {
       "type": "text",
       "id": "poster_maker_title",
-      "label": "Poster Maker — Card Title",
+      "label": "Poster Maker — title",
       "default": "Perfect Poster Maker System"
     },
     {
       "type": "select",
       "id": "poster_maker_align",
-      "label": "Poster Maker — Content Alignment",
+      "label": "Poster Maker — title alignment",
       "options": [
         { "value": "left", "label": "Left" },
         { "value": "center", "label": "Center" },
@@ -629,35 +618,24 @@
     {
       "type": "image_picker",
       "id": "awards_cut_image",
-      "label": "Awards & Cut System — Product Image",
-      "info": "Optional hero image. If empty, the default icon is shown."
-    },
-    {
-      "type": "range",
-      "id": "awards_cut_image_size",
-      "label": "Awards & Cut — Image Size",
-      "min": 60,
-      "max": 280,
-      "step": 10,
-      "default": 160,
-      "unit": "px"
+      "label": "Awards & Cut — product image"
     },
     {
       "type": "checkbox",
       "id": "awards_cut_show_title",
-      "label": "Awards & Cut — Show title on card",
+      "label": "Awards & Cut — show title",
       "default": true
     },
     {
       "type": "text",
       "id": "awards_cut_title",
-      "label": "Awards & Cut — Card Title",
+      "label": "Awards & Cut — title",
       "default": "Perfect Awards & Cut System"
     },
     {
       "type": "select",
       "id": "awards_cut_align",
-      "label": "Awards & Cut — Content Alignment",
+      "label": "Awards & Cut — title alignment",
       "options": [
         { "value": "left", "label": "Left" },
         { "value": "center", "label": "Center" },
@@ -668,35 +646,24 @@
     {
       "type": "image_picker",
       "id": "awards_maker_image",
-      "label": "Awards Maker — Product Image",
-      "info": "Optional hero image. If empty, the default icon is shown."
-    },
-    {
-      "type": "range",
-      "id": "awards_maker_image_size",
-      "label": "Awards Maker — Image Size",
-      "min": 60,
-      "max": 280,
-      "step": 10,
-      "default": 160,
-      "unit": "px"
+      "label": "Awards Maker — product image"
     },
     {
       "type": "checkbox",
       "id": "awards_maker_show_title",
-      "label": "Awards Maker — Show title on card",
+      "label": "Awards Maker — show title",
       "default": true
     },
     {
       "type": "text",
       "id": "awards_maker_title",
-      "label": "Awards Maker — Card Title",
+      "label": "Awards Maker — title",
       "default": "Perfect Awards Maker"
     },
     {
       "type": "select",
       "id": "awards_maker_align",
-      "label": "Awards Maker — Content Alignment",
+      "label": "Awards Maker — title alignment",
       "options": [
         { "value": "left", "label": "Left" },
         { "value": "center", "label": "Center" },
@@ -707,35 +674,24 @@
     {
       "type": "image_picker",
       "id": "cold_laminator_image",
-      "label": "Cold Laminator — Product Image",
-      "info": "Optional hero image. If empty, the default icon is shown."
-    },
-    {
-      "type": "range",
-      "id": "cold_laminator_image_size",
-      "label": "Cold Laminator — Image Size",
-      "min": 60,
-      "max": 280,
-      "step": 10,
-      "default": 160,
-      "unit": "px"
+      "label": "Cold Laminator — product image"
     },
     {
       "type": "checkbox",
       "id": "cold_laminator_show_title",
-      "label": "Cold Laminator — Show title on card",
+      "label": "Cold Laminator — show title",
       "default": true
     },
     {
       "type": "text",
       "id": "cold_laminator_title",
-      "label": "Cold Laminator — Card Title",
+      "label": "Cold Laminator — title",
       "default": "Cold Laminator System"
     },
     {
       "type": "select",
       "id": "cold_laminator_align",
-      "label": "Cold Laminator — Content Alignment",
+      "label": "Cold Laminator — title alignment",
       "options": [
         { "value": "left", "label": "Left" },
         { "value": "center", "label": "Center" },
@@ -744,65 +700,62 @@
       "default": "center"
     },
     {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
       "type": "text",
-      "id": "quote_label",
+      "id": "quote_btn_label",
       "label": "Quote button label",
       "default": "Request a Quote"
     },
     {
       "type": "url",
-      "id": "quote_link",
-      "label": "Quote button link"
+      "id": "quote_btn_link",
+      "label": "Quote button link",
+      "info": "Defaults to /pages/contact if empty."
     },
     {
       "type": "text",
-      "id": "learn_label",
+      "id": "learn_btn_label",
       "label": "Learn more button label",
       "default": "Learn More"
     },
     {
       "type": "url",
       "id": "learn_link_poster_maker",
-      "label": "Learn more: Perfect Poster Maker System"
+      "label": "Learn more: Poster Maker"
     },
     {
       "type": "url",
       "id": "learn_link_awards_cut",
-      "label": "Learn more: Perfect Awards & Cut System"
+      "label": "Learn more: Awards & Cut"
     },
     {
       "type": "url",
       "id": "learn_link_awards_maker",
-      "label": "Learn more: Perfect Awards Maker"
+      "label": "Learn more: Awards Maker"
     },
     {
       "type": "url",
       "id": "learn_link_laminator",
-      "label": "Learn more: Cold Laminator System"
+      "label": "Learn more: Cold Laminator"
     },
     {
-      "type": "paragraph",
-      "content": "Section spacing"
+      "type": "header",
+      "content": "Section text"
     },
     {
-      "type": "range",
-      "id": "padding_top",
-      "min": 24,
-      "max": 120,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding top",
-      "default": 72
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Professional Visual Tools for Every School"
     },
     {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 24,
-      "max": 120,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding bottom",
-      "default": 72
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Poster makers, awards systems, and laminators built for classrooms and districts."
     }
   ],
   "presets": [
