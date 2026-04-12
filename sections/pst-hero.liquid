@@ -1,19 +1,30 @@
-{%- assign overlay_opacity = section.settings.hero_bg_overlay | default: 60 | divided_by: 100.0 -%}
-{%- assign overlay_hex = '#0A2540' -%}
-{%- if section.settings.hero_overlay_color == 'black' -%}
-  {%- assign overlay_hex = '#000000' -%}
-{%- endif -%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&family=Outfit:wght@600;700;800&display=swap"
+  rel="stylesheet"
+>
+
+{%- liquid
+  assign overlay_opacity = section.settings.hero_bg_overlay | default: 60 | times: 1.0 | divided_by: 100.0
+  case section.settings.hero_overlay_color
+    when 'black'
+      assign overlay_hex = '#000000'
+    when 'none'
+      assign overlay_hex = 'transparent'
+    else
+      assign overlay_hex = '#0A2540'
+  endcase
+-%}
 
 {%- style -%}
   #shopify-section-{{ section.id }} .pst-hero {
+    background: #0a2540;
     position: relative;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
+    padding: 80px 20px;
+    min-height: 520px;
     color: #fff;
-    background: linear-gradient(135deg, #0a2540 0%, #0f4872 50%, #1a6ba0 100%);
   }
 
   {%- if section.settings.hero_bg_image != blank -%}
@@ -30,30 +41,37 @@
     inset: 0;
     z-index: 1;
     pointer-events: none;
-    display: none;
-  }
-
-  {%- if section.settings.hero_bg_image != blank and section.settings.hero_overlay_color != 'none' -%}
-    #shopify-section-{{ section.id }} .pst-hero__overlay {
+    {%- if section.settings.hero_bg_image != blank and section.settings.hero_overlay_color != 'none' -%}
       display: block;
       background-color: {{ overlay_hex }};
       opacity: {{ overlay_opacity }};
-    }
-  {%- endif -%}
+    {%- else -%}
+      display: none;
+    {%- endif -%}
+  }
 
   #shopify-section-{{ section.id }} .pst-hero__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 55fr 45fr;
+    gap: 60px;
+    align-items: center;
     position: relative;
     z-index: 2;
-    width: 100%;
-    max-width: var(--page-width);
-    margin: 0 auto;
-    padding: 4rem 2rem 3.5rem;
-    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__inner--single {
+    grid-template-columns: 1fr;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__content {
+    text-align: left;
   }
 
   #shopify-section-{{ section.id }} .pst-hero__badge {
     display: inline-block;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     padding: 0.65rem 1.5rem;
     font-family: var(--font-body-family);
     font-size: 1.4rem;
@@ -66,28 +84,28 @@
   }
 
   #shopify-section-{{ section.id }} .pst-hero__heading {
-    margin: 0 0 1.6rem;
+    margin: 0 0 1.25rem;
     font-family: var(--font-heading-family);
-    font-size: clamp(3.6rem, 6.5vw, 5.6rem);
+    font-size: clamp(2.25rem, 4.2vw, 3.5rem);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.12;
     letter-spacing: -0.02em;
     color: #fff;
   }
 
   #shopify-section-{{ section.id }} .pst-hero__text {
-    max-width: 72rem;
-    margin: 0 auto 2.8rem;
+    max-width: 36rem;
+    margin: 0 0 1.75rem;
     font-family: var(--font-body-family);
-    font-size: 1.75rem;
-    line-height: 1.55;
+    font-size: 1.125rem;
+    line-height: 1.6;
     font-weight: 400;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.88);
   }
 
   @media screen and (min-width: 750px) {
     #shopify-section-{{ section.id }} .pst-hero__text {
-      font-size: 1.9rem;
+      font-size: 1.2rem;
     }
   }
 
@@ -95,19 +113,19 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 1.2rem 1.6rem;
-    margin-bottom: 3rem;
+    justify-content: flex-start;
+    gap: 1rem 1.25rem;
+    margin-bottom: 2rem;
   }
 
   #shopify-section-{{ section.id }} .pst-hero__btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 5rem;
-    padding: 0 2.4rem;
+    min-height: 3.25rem;
+    padding: 0 1.75rem;
     font-family: var(--font-body-family);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
     border-radius: 0.5rem;
@@ -142,34 +160,22 @@
 
   #shopify-section-{{ section.id }} .pst-hero__footnote {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
     font-family: var(--font-body-family);
-    font-size: 1.45rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #fff;
   }
 
-  @media screen and (min-width: 750px) {
-    #shopify-section-{{ section.id }} .pst-hero__footnote {
-      flex-direction: row;
-      justify-content: center;
-      gap: 1.2rem 2rem;
-    }
-
-    #shopify-section-{{ section.id }} .pst-hero__footnote-sep {
-      display: block;
-      width: 1px;
-      height: 1.4rem;
-      background: rgba(255, 255, 255, 0.35);
-    }
-  }
-
-  @media screen and (max-width: 749px) {
-    #shopify-section-{{ section.id }} .pst-hero__footnote-sep {
-      display: none;
-    }
+  #shopify-section-{{ section.id }} .pst-hero__footnote-sep {
+    display: block;
+    width: 1px;
+    height: 1.1rem;
+    background: rgba(255, 255, 255, 0.35);
+    flex-shrink: 0;
   }
 
   #shopify-section-{{ section.id }} .pst-hero__phone {
@@ -182,77 +188,180 @@
     text-decoration: underline;
   }
 
+  #shopify-section-{{ section.id }} .pst-hero__media {
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__product-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    object-fit: cover;
+    max-height: 420px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__float-badge {
+    position: absolute;
+    bottom: -16px;
+    left: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__float-icon {
+    width: 36px;
+    height: 36px;
+    background: #fdf8f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__float-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0a2540;
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .pst-hero__float-sublabel {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    color: #334155;
+    margin-top: 2px;
+  }
+
   @media screen and (max-width: 768px) {
     #shopify-section-{{ section.id }} .pst-hero {
-      min-height: 70vh;
+      padding: 48px 16px 56px;
+      min-height: 0;
     }
 
     #shopify-section-{{ section.id }} .pst-hero__inner {
-      padding: 2rem 1rem 2.5rem;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
     }
 
-    #shopify-section-{{ section.id }} .pst-hero__heading {
-      font-size: clamp(28px, 6vw, 52px);
+    #shopify-section-{{ section.id }} .pst-hero__content {
+      text-align: center;
     }
 
-    #shopify-section-{{ section.id }} .pst-hero__actions {
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-items: stretch;
-      width: 100%;
-      max-width: 32rem;
+    #shopify-section-{{ section.id }} .pst-hero__text {
       margin-left: auto;
       margin-right: auto;
     }
 
-    #shopify-section-{{ section.id }} .pst-hero__btn {
-      width: 100%;
-      max-width: none;
+    #shopify-section-{{ section.id }} .pst-hero__actions {
+      justify-content: center;
+    }
+
+    #shopify-section-{{ section.id }} .pst-hero__footnote {
+      justify-content: center;
+    }
+
+    #shopify-section-{{ section.id }} .pst-hero__media {
+      display: none;
     }
   }
 {%- endstyle -%}
 
 <section class="pst-hero">
-  <div class="pst-hero__inner page-width">
-    {%- if section.settings.badge_text != blank -%}
-      <p class="pst-hero__badge">{{ section.settings.badge_text | escape }}</p>
-    {%- endif -%}
-
-    {%- if section.settings.heading != blank -%}
-      <h1 class="pst-hero__heading">{{ section.settings.heading | escape }}</h1>
-    {%- endif -%}
-
-    {%- if section.settings.subtext != blank -%}
-      <p class="pst-hero__text">{{ section.settings.subtext | escape }}</p>
-    {%- endif -%}
-
-    <div class="pst-hero__actions">
-      {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
-        <a class="pst-hero__btn pst-hero__btn--primary" href="{{ section.settings.quote_link }}">
-          {{- section.settings.quote_label | escape -}}
-        </a>
+  <div class="pst-hero__overlay" aria-hidden="true"></div>
+  <div
+    class="pst-hero__inner{% if section.settings.hero_product_image == blank %} pst-hero__inner--single{% endif %}"
+  >
+    <div class="pst-hero__content">
+      {%- if section.settings.badge_text != blank -%}
+        <p class="pst-hero__badge">{{ section.settings.badge_text | escape }}</p>
       {%- endif -%}
-      {%- if section.settings.products_label != blank and section.settings.products_link != blank -%}
-        <a class="pst-hero__btn pst-hero__btn--outline" href="{{ section.settings.products_link }}">
-          {{- section.settings.products_label | escape -}}
-        </a>
+
+      {%- if section.settings.heading != blank -%}
+        <h1 class="pst-hero__heading">{{ section.settings.heading | escape }}</h1>
       {%- endif -%}
+
+      {%- if section.settings.subtext != blank -%}
+        <p class="pst-hero__text">{{ section.settings.subtext | escape }}</p>
+      {%- endif -%}
+
+      <div class="pst-hero__actions">
+        {%- if section.settings.quote_label != blank and section.settings.quote_link != blank -%}
+          <a class="pst-hero__btn pst-hero__btn--primary" href="{{ section.settings.quote_link }}">
+            {{- section.settings.quote_label | escape -}}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.products_label != blank and section.settings.products_link != blank -%}
+          <a class="pst-hero__btn pst-hero__btn--outline" href="{{ section.settings.products_link }}">
+            {{- section.settings.products_label | escape -}}
+          </a>
+        {%- endif -%}
+      </div>
+
+      <div class="pst-hero__footnote">
+        {%- if section.settings.phone != blank -%}
+          <a
+            class="pst-hero__phone"
+            href="tel:{{ section.settings.phone | replace: ' ', '' | replace: '(', '' | replace: ')', '' | replace: '-', '' }}"
+          >
+            {{- section.settings.phone | escape -}}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.phone != blank and section.settings.shipping_note != blank -%}
+          <span class="pst-hero__footnote-sep" aria-hidden="true"></span>
+        {%- endif -%}
+        {%- if section.settings.shipping_note != blank -%}
+          <span>{{ section.settings.shipping_note | escape }}</span>
+        {%- endif -%}
+      </div>
     </div>
 
-    <div class="pst-hero__footnote">
-      {%- if section.settings.phone != blank -%}
-        <a
-          class="pst-hero__phone"
-          href="tel:{{ section.settings.phone | replace: ' ', '' | replace: '(', '' | replace: ')', '' | replace: '-', '' }}"
-        >
-          {{- section.settings.phone | escape -}}
-        </a>
-      {%- endif -%}
-      <span class="pst-hero__footnote-sep" aria-hidden="true"></span>
-      {%- if section.settings.shipping_note != blank -%}
-        <span>{{ section.settings.shipping_note | escape }}</span>
-      {%- endif -%}
-    </div>
+    {%- if section.settings.hero_product_image != blank -%}
+      {%- assign hero_img_alt = section.settings.hero_product_image.alt | default: section.settings.heading -%}
+      <div class="pst-hero__media">
+        {{
+          section.settings.hero_product_image
+          | image_url: width: 900
+          | image_tag: class: 'pst-hero__product-img', loading: 'lazy', alt: hero_img_alt
+        }}
+        <div class="pst-hero__float-badge">
+          <div class="pst-hero__float-icon" aria-hidden="true">
+            {%- case section.settings.hero_float_icon -%}
+              {%- when 'dollar' -%}
+                $
+              {%- when 'star' -%}
+                &#11088;
+              {%- when 'check' -%}
+                &#10003;
+              {%- when 'shield' -%}
+                &#128737;
+              {%- when 'truck' -%}
+                &#128666;
+            {%- endcase -%}
+          </div>
+          <div>
+            <div class="pst-hero__float-label">
+              {{ section.settings.hero_float_label | escape }}
+            </div>
+            <div class="pst-hero__float-sublabel">
+              {{ section.settings.hero_float_sublabel | escape }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
   </div>
 </section>
 
@@ -289,6 +398,37 @@
         { "value": "none", "label": "No overlay" }
       ],
       "default": "navy"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_product_image",
+      "label": "Hero — Right Side Product Image",
+      "info": "Large product or lifestyle image shown on the right side of the hero."
+    },
+    {
+      "type": "text",
+      "id": "hero_float_label",
+      "label": "Floating Badge — Label",
+      "default": "District Pricing"
+    },
+    {
+      "type": "text",
+      "id": "hero_float_sublabel",
+      "label": "Floating Badge — Sub-label",
+      "default": "Volume discounts available"
+    },
+    {
+      "type": "select",
+      "id": "hero_float_icon",
+      "label": "Floating Badge — Icon",
+      "options": [
+        { "value": "dollar", "label": "Dollar $" },
+        { "value": "star", "label": "Star" },
+        { "value": "check", "label": "Checkmark" },
+        { "value": "shield", "label": "Shield" },
+        { "value": "truck", "label": "Truck" }
+      ],
+      "default": "dollar"
     },
     {
       "type": "text",
