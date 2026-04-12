@@ -222,6 +222,16 @@
       "type": "pst-products-showcase",
       "settings": {
         "heading": "Professional Visual Tools for Every School",
+        "subtitle": "Poster makers, awards systems, and laminators built for classrooms and districts.",
+        "poster_maker_image_size": 160,
+        "poster_maker_show_title": true,
+        "awards_cut_image": "shopify://shop_images/Awards.png",
+        "awards_cut_image_size": 200,
+        "awards_cut_show_title": true,
+        "awards_maker_image_size": 160,
+        "awards_maker_show_title": true,
+        "cold_laminator_image_size": 160,
+        "cold_laminator_show_title": true,
         "quote_label": "Request a Quote",
         "quote_link": "/pages/contact",
         "learn_label": "Learn More",
@@ -268,6 +278,7 @@
       ],
       "settings": {
         "heading": "What Schools Are Saying",
+        "subtitle": "Trusted by educators across the nation",
         "padding_top": 72,
         "padding_bottom": 72
       }
