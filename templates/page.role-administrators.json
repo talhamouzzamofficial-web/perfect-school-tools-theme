@@ -15,6 +15,7 @@
         "hero_badge": "For Administrators",
         "hero_title": "School Poster Makers for Administrators",
         "hero_intro": "As a school administrator, you need visual communication tools that are reliable, cost-effective, and easy for your staff to use. Perfect School Tools provides poster maker systems that reduce outsourcing costs, support your teachers and media specialists, and help your school create a professional visual environment — all backed by dedicated support and flexible purchasing options.",
+        "hero_image": "shopify://shop_images/Classroom_Posters_1.png",
         "phone": "(888) 535-4431",
         "challenges_title": "Challenges We Solve",
         "challenge_1_title": "High outsourced printing costs",
@@ -55,5 +56,7 @@
       }
     }
   },
-  "order": ["pst-buyer-role"]
+  "order": [
+    "pst-buyer-role"
+  ]
 }
