@@ -1,0 +1,713 @@
+{%- style -%}
+
+/* HERO */
+#shopify-section-{{ section.id }} .pst-fr__hero {
+  background: linear-gradient(135deg,
+    {{ section.settings.hero_bg_start }},
+    {{ section.settings.hero_bg_end }});
+  padding: {{ section.settings.section_padding }}px 20px {{ section.settings.section_padding | times: 0.75 | round }}px;
+  text-align: center;
+}
+#shopify-section-{{ section.id }} .pst-fr__hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+#shopify-section-{{ section.id }} .pst-fr__badge {
+  display: inline-block;
+  background: rgba(245,183,49,0.2);
+  color: #F5B731;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin: 0 0 16px;
+  border: 1px solid rgba(245,183,49,0.3);
+}
+#shopify-section-{{ section.id }} .pst-fr__hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 16px;
+  line-height: 1.15;
+}
+#shopify-section-{{ section.id }} .pst-fr__hero-sub {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 17px;
+  color: rgba(255,255,255,0.8);
+  margin: 0 auto 28px;
+  line-height: 1.6;
+  max-width: 680px;
+}
+#shopify-section-{{ section.id }} .pst-fr__hero-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#shopify-section-{{ section.id }} .pst-fr__btn-primary {
+  display: inline-block;
+  padding: 13px 28px;
+  background: #E91E8C;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-fr__btn-primary:hover { background: #C4186F; }
+#shopify-section-{{ section.id }} .pst-fr__btn-secondary {
+  display: inline-block;
+  padding: 12px 28px;
+  background: transparent;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.4);
+  transition: all 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-fr__btn-secondary:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+
+/* TRUST BAR */
+#shopify-section-{{ section.id }} .pst-fr__trust {
+  background: {{ section.settings.trust_bar_bg }};
+  padding: 14px 20px;
+}
+#shopify-section-{{ section.id }} .pst-fr__trust-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+#shopify-section-{{ section.id }} .pst-fr__trust-item {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0A2540;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* INTRO TEXT */
+#shopify-section-{{ section.id }} .pst-fr__intro {
+  background: #ffffff;
+  padding: {{ section.settings.section_padding }}px 20px;
+}
+#shopify-section-{{ section.id }} .pst-fr__intro-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+#shopify-section-{{ section.id }} .pst-fr__intro-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 17px;
+  color: #334155;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* CATEGORIES GRID */
+#shopify-section-{{ section.id }} .pst-fr__categories {
+  background: {{ section.settings.section_bg_alt }};
+  padding: {{ section.settings.section_padding }}px 20px;
+}
+#shopify-section-{{ section.id }} .pst-fr__categories-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#shopify-section-{{ section.id }} .pst-fr__section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  color: #0A2540;
+  text-align: center;
+  margin: 0 0 40px;
+}
+#shopify-section-{{ section.id }} .pst-fr__cats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+#shopify-section-{{ section.id }} .pst-fr__cat-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  border: 1px solid rgba(10,37,64,0.07);
+  box-shadow: 0 2px 16px rgba(10,37,64,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-fr__cat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(10,37,64,0.12);
+}
+#shopify-section-{{ section.id }} .pst-fr__cat-icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 14px;
+}
+#shopify-section-{{ section.id }} .pst-fr__cat-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0A2540;
+  margin: 0 0 6px;
+}
+#shopify-section-{{ section.id }} .pst-fr__cat-count {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #E91E8C;
+  margin: 0 0 8px;
+}
+#shopify-section-{{ section.id }} .pst-fr__cat-desc {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* HOW TO ACCESS */
+#shopify-section-{{ section.id }} .pst-fr__how {
+  background: #0A2540;
+  padding: {{ section.settings.section_padding }}px 20px;
+}
+#shopify-section-{{ section.id }} .pst-fr__how-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+#shopify-section-{{ section.id }} .pst-fr__how-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 40px;
+}
+#shopify-section-{{ section.id }} .pst-fr__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#shopify-section-{{ section.id }} .pst-fr__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+#shopify-section-{{ section.id }} .pst-fr__step-num {
+  width: 36px;
+  height: 36px;
+  background: #E91E8C;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+#shopify-section-{{ section.id }} .pst-fr__step-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 6px;
+}
+
+/* RELATED PAGES */
+#shopify-section-{{ section.id }} .pst-fr__related {
+  background: #ffffff;
+  padding: 60px 20px;
+}
+#shopify-section-{{ section.id }} .pst-fr__related-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+#shopify-section-{{ section.id }} .pst-fr__related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+#shopify-section-{{ section.id }} .pst-fr__related-card {
+  background: #FDF8F0;
+  border-radius: 12px;
+  padding: 20px 16px;
+  border: 1px solid rgba(10,37,64,0.08);
+  text-decoration: none;
+  transition: all 0.2s;
+  display: block;
+}
+#shopify-section-{{ section.id }}
+  .pst-fr__related-card:hover {
+  background: #0A2540;
+  border-color: #0A2540;
+}
+#shopify-section-{{ section.id }} .pst-fr__related-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0A2540;
+  margin: 0 0 6px;
+  transition: color 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-fr__related-card:hover .pst-fr__related-card-title {
+  color: #ffffff;
+}
+#shopify-section-{{ section.id }} .pst-fr__related-card-sub {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 12px;
+  color: #334155;
+  margin: 0;
+  transition: color 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-fr__related-card:hover .pst-fr__related-card-sub {
+  color: rgba(255,255,255,0.7);
+}
+
+/* CTA */
+#shopify-section-{{ section.id }} .pst-fr__cta {
+  background: linear-gradient(135deg,
+    {{ section.settings.cta_bg_start }},
+    {{ section.settings.cta_bg_end }});
+  padding: 60px 20px;
+  text-align: center;
+}
+#shopify-section-{{ section.id }} .pst-fr__cta-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 12px;
+}
+#shopify-section-{{ section.id }} .pst-fr__cta-sub {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 28px;
+}
+#shopify-section-{{ section.id }} .pst-fr__cta-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#shopify-section-{{ section.id }} .pst-fr__cta-btn-white {
+  display: inline-block;
+  padding: 13px 28px;
+  background: #fff;
+  color: #E91E8C;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-fr__cta-btn-white:hover { background: #FDF8F0; }
+#shopify-section-{{ section.id }} .pst-fr__cta-btn-outline {
+  display: inline-block;
+  padding: 12px 28px;
+  background: transparent;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.6);
+  transition: all 0.2s;
+}
+#shopify-section-{{ section.id }}
+  .pst-fr__cta-btn-outline:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  #shopify-section-{{ section.id }} .pst-fr__cats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #shopify-section-{{ section.id }} .pst-fr__related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  #shopify-section-{{ section.id }} .pst-fr__hero {
+    padding: 48px 20px 40px;
+  }
+  #shopify-section-{{ section.id }} .pst-fr__hero-title {
+    font-size: clamp(24px, 7vw, 34px);
+  }
+  #shopify-section-{{ section.id }} .pst-fr__hero-sub {
+    font-size: 15px;
+  }
+  #shopify-section-{{ section.id }} .pst-fr__hero-btns,
+  #shopify-section-{{ section.id }} .pst-fr__cta-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  #shopify-section-{{ section.id }} .pst-fr__btn-primary,
+  #shopify-section-{{ section.id }} .pst-fr__btn-secondary,
+  #shopify-section-{{ section.id }} .pst-fr__cta-btn-white,
+  #shopify-section-{{ section.id }} .pst-fr__cta-btn-outline {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  #shopify-section-{{ section.id }} .pst-fr__trust-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 8px;
+    justify-items: center;
+  }
+  #shopify-section-{{ section.id }} .pst-fr__trust-item {
+    font-size: 10px;
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+  #shopify-section-{{ section.id }} .pst-fr__step {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px 16px;
+  }
+  #shopify-section-{{ section.id }} .pst-fr__intro-text {
+    font-size: 15px;
+  }
+  #shopify-section-{{ section.id }} .pst-fr__section-title {
+    font-size: clamp(20px, 5vw, 26px);
+    margin-bottom: 24px;
+  }
+  #shopify-section-{{ section.id }} .pst-fr__how-title {
+    font-size: clamp(20px, 5vw, 26px);
+    margin-bottom: 24px;
+  }
+  #shopify-section-{{ section.id }} .pst-fr__cta-title {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+  #shopify-section-{{ section.id }} .pst-fr__cta-sub {
+    font-size: 14px;
+  }
+  #shopify-section-{{ section.id }} .pst-fr__intro,
+  #shopify-section-{{ section.id }} .pst-fr__categories,
+  #shopify-section-{{ section.id }} .pst-fr__how {
+    padding: 48px 20px;
+  }
+}
+@media (max-width: 540px) {
+  #shopify-section-{{ section.id }} .pst-fr__cats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  #shopify-section-{{ section.id }} .pst-fr__related-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}
+@media (max-width: 400px) {
+  #shopify-section-{{ section.id }} .pst-fr__cats-grid,
+  #shopify-section-{{ section.id }} .pst-fr__related-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+{%- endstyle -%}
+
+<!-- HERO -->
+<div class="pst-fr__hero">
+  <div class="pst-fr__hero-inner">
+    <p class="pst-fr__badge">{{ section.settings.hero_badge }}</p>
+    <h1 class="pst-fr__hero-title">{{ section.settings.hero_title }}</h1>
+    <p class="pst-fr__hero-sub">{{ section.settings.hero_subtitle }}</p>
+    <div class="pst-fr__hero-btns">
+      <a href="{{ section.settings.hero_btn_primary_url | default: '/pages/contact' }}" class="pst-fr__btn-primary">
+        {{ section.settings.hero_btn_primary_label }}
+      </a>
+      <a href="tel:{{ section.settings.hero_phone }}" class="pst-fr__btn-secondary">
+        {{ section.settings.hero_btn_secondary_label }}
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="pst-fr__trust">
+  <div class="pst-fr__trust-inner">
+    <span class="pst-fr__trust-item">&#10003; {{ section.settings.trust_1 }}</span>
+    <span class="pst-fr__trust-item">&#128666; {{ section.settings.trust_2 }}</span>
+    <span class="pst-fr__trust-item">&#128222; {{ section.settings.trust_3 }}</span>
+    <span class="pst-fr__trust-item">&#127942; {{ section.settings.trust_4 }}</span>
+  </div>
+</div>
+
+<!-- INTRO TEXT -->
+<div class="pst-fr__intro">
+  <div class="pst-fr__intro-inner">
+    <p class="pst-fr__intro-text">{{ section.settings.intro_text }}</p>
+  </div>
+</div>
+
+<!-- TEMPLATE CATEGORIES -->
+<div class="pst-fr__categories">
+  <div class="pst-fr__categories-inner">
+    <h2 class="pst-fr__section-title">{{ section.settings.cats_title }}</h2>
+    <div class="pst-fr__cats-grid">
+
+      <div class="pst-fr__cat-card">
+        <span class="pst-fr__cat-icon">&#128218;</span>
+        <h3 class="pst-fr__cat-title">Reading &amp; Literacy</h3>
+        <p class="pst-fr__cat-count">500+ templates</p>
+        <p class="pst-fr__cat-desc">Book displays, reading challenges, genre signage, and literacy decorations.</p>
+      </div>
+
+      <div class="pst-fr__cat-card">
+        <span class="pst-fr__cat-icon">&#10133;</span>
+        <h3 class="pst-fr__cat-title">Math</h3>
+        <p class="pst-fr__cat-count">300+ templates</p>
+        <p class="pst-fr__cat-desc">Math facts, formulas, problem-solving strategies, and vocabulary walls.</p>
+      </div>
+
+      <div class="pst-fr__cat-card">
+        <span class="pst-fr__cat-icon">&#128300;</span>
+        <h3 class="pst-fr__cat-title">Science</h3>
+        <p class="pst-fr__cat-count">350+ templates</p>
+        <p class="pst-fr__cat-desc">Solar system, periodic tables, scientific method, and lab safety signage.</p>
+      </div>
+
+      <div class="pst-fr__cat-card">
+        <span class="pst-fr__cat-icon">&#127758;</span>
+        <h3 class="pst-fr__cat-title">Social Studies</h3>
+        <p class="pst-fr__cat-count">250+ templates</p>
+        <p class="pst-fr__cat-desc">Maps, timelines, government charts, and cultural celebration posters.</p>
+      </div>
+
+      <div class="pst-fr__cat-card">
+        <span class="pst-fr__cat-icon">&#127942;</span>
+        <h3 class="pst-fr__cat-title">Awards &amp; Recognition</h3>
+        <p class="pst-fr__cat-count">400+ templates</p>
+        <p class="pst-fr__cat-desc">Student of the month, honor roll, attendance awards, and custom plaques.</p>
+      </div>
+
+      <div class="pst-fr__cat-card">
+        <span class="pst-fr__cat-icon">&#127822;</span>
+        <h3 class="pst-fr__cat-title">Seasonal &amp; Decorative</h3>
+        <p class="pst-fr__cat-count">300+ templates</p>
+        <p class="pst-fr__cat-desc">Back-to-school, holidays, spirit week, graduation, and seasonal themes.</p>
+      </div>
+
+      <div class="pst-fr__cat-card">
+        <span class="pst-fr__cat-icon">&#127925;</span>
+        <h3 class="pst-fr__cat-title">Specials &amp; Electives</h3>
+        <p class="pst-fr__cat-count">200+ templates</p>
+        <p class="pst-fr__cat-desc">Music, art, PE, technology, and foreign language classroom posters.</p>
+      </div>
+
+      <div class="pst-fr__cat-card">
+        <span class="pst-fr__cat-icon">&#127968;</span>
+        <h3 class="pst-fr__cat-title">School Operations</h3>
+        <p class="pst-fr__cat-count">150+ templates</p>
+        <p class="pst-fr__cat-desc">Directional signage, safety posters, cafeteria menus, and admin displays.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- HOW TO ACCESS -->
+<div class="pst-fr__how">
+  <div class="pst-fr__how-inner">
+    <h2 class="pst-fr__how-title">How to Access Free Resources</h2>
+    <div class="pst-fr__steps">
+      <div class="pst-fr__step">
+        <div class="pst-fr__step-num">1</div>
+        <p class="pst-fr__step-text">Purchase any Perfect School Tools poster maker system</p>
+      </div>
+      <div class="pst-fr__step">
+        <div class="pst-fr__step-num">2</div>
+        <p class="pst-fr__step-text">Receive your login credentials for the digital content library</p>
+      </div>
+      <div class="pst-fr__step">
+        <div class="pst-fr__step-num">3</div>
+        <p class="pst-fr__step-text">Browse thousands of templates by subject, grade level, or theme</p>
+      </div>
+      <div class="pst-fr__step">
+        <div class="pst-fr__step-num">4</div>
+        <p class="pst-fr__step-text">Customize templates with your school name, student names, and custom text</p>
+      </div>
+      <div class="pst-fr__step">
+        <div class="pst-fr__step-num">5</div>
+        <p class="pst-fr__step-text">Print directly from the library to your poster maker system</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RELATED PAGES -->
+<div class="pst-fr__related">
+  <div class="pst-fr__related-inner">
+    <h2 class="pst-fr__section-title">Related Pages</h2>
+    <div class="pst-fr__related-grid">
+      <a href="/pages/poster-makers-for-schools" class="pst-fr__related-card">
+        <p class="pst-fr__related-card-title">Poster Maker Systems</p>
+        <p class="pst-fr__related-card-sub">Systems that include free resources</p>
+      </a>
+      <a href="/pages/for-teachers" class="pst-fr__related-card">
+        <p class="pst-fr__related-card-title">For Teachers</p>
+        <p class="pst-fr__related-card-sub">How teachers use our templates</p>
+      </a>
+      <a href="/pages/for-media-specialists" class="pst-fr__related-card">
+        <p class="pst-fr__related-card-title">For Media Specialists</p>
+        <p class="pst-fr__related-card-sub">Library and media center templates</p>
+      </a>
+      <a href="/blogs/news/school-hallway-display-ideas" class="pst-fr__related-card">
+        <p class="pst-fr__related-card-title">Hallway Display Ideas</p>
+        <p class="pst-fr__related-card-sub">Creative ideas for your school</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="pst-fr__cta">
+  <h2 class="pst-fr__cta-title">{{ section.settings.cta_title }}</h2>
+  <p class="pst-fr__cta-sub">{{ section.settings.cta_subtitle }}</p>
+  <div class="pst-fr__cta-btns">
+    <a href="{{ section.settings.cta_btn_primary_url | default: '/pages/contact' }}" class="pst-fr__cta-btn-white">
+      {{ section.settings.cta_btn_primary_label }}
+    </a>
+    <a href="tel:{{ section.settings.hero_phone }}" class="pst-fr__cta-btn-outline">
+      {{ section.settings.cta_btn_secondary_label }}
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PST Free Resources",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Hero Section" },
+    { "type": "text", "id": "hero_badge",
+      "label": "Badge Text",
+      "default": "Free with Every System" },
+    { "type": "text", "id": "hero_title",
+      "label": "Page Title",
+      "default": "Free Digital Resources for Schools" },
+    { "type": "textarea", "id": "hero_subtitle",
+      "label": "Hero Subtitle",
+      "default": "Access thousands of ready-to-print educational poster templates, award designs, and visual learning resources — all included free with every Perfect School Tools poster maker system." },
+    { "type": "text", "id": "hero_btn_primary_label",
+      "label": "Primary Button Label",
+      "default": "Request a Quote" },
+    { "type": "url", "id": "hero_btn_primary_url",
+      "label": "Primary Button URL" },
+    { "type": "text", "id": "hero_btn_secondary_label",
+      "label": "Secondary Button Label",
+      "default": "(888) 535-4431" },
+    { "type": "text", "id": "hero_phone",
+      "label": "Phone Number",
+      "default": "+18885354431" },
+
+    { "type": "header", "content": "Trust Bar" },
+    { "type": "text", "id": "trust_1",
+      "label": "Trust Item 1",
+      "default": "Purchase Orders Accepted" },
+    { "type": "text", "id": "trust_2",
+      "label": "Trust Item 2",
+      "default": "Fast Shipping" },
+    { "type": "text", "id": "trust_3",
+      "label": "Trust Item 3",
+      "default": "Unlimited Support" },
+    { "type": "text", "id": "trust_4",
+      "label": "Trust Item 4",
+      "default": "30+ Years Experience" },
+
+    { "type": "header", "content": "Intro Text" },
+    { "type": "textarea", "id": "intro_text",
+      "label": "Introduction Paragraph",
+      "default": "Every Perfect School Tools poster maker system includes free access to our comprehensive digital content library — over 2,500 ready-to-print educational templates covering every subject, grade level, and school need. Templates are designed by educators specifically for K-12 schools and are fully customizable. New templates are added regularly, so your content library keeps growing." },
+
+    { "type": "header", "content": "Categories Section" },
+    { "type": "text", "id": "cats_title",
+      "label": "Section Title",
+      "default": "Template Categories" },
+
+    { "type": "header", "content": "Section Colors" },
+    { "type": "color", "id": "hero_bg_start",
+      "label": "Hero Gradient Start",
+      "default": "#0A2540" },
+    { "type": "color", "id": "hero_bg_end",
+      "label": "Hero Gradient End",
+      "default": "#0F4872" },
+    { "type": "color", "id": "trust_bar_bg",
+      "label": "Trust Bar Background",
+      "default": "#F5B731" },
+    { "type": "color", "id": "section_bg_alt",
+      "label": "Alternate Section Background",
+      "default": "#FDF8F0" },
+    { "type": "color", "id": "cta_bg_start",
+      "label": "CTA Gradient Start",
+      "default": "#E91E8C" },
+    { "type": "color", "id": "cta_bg_end",
+      "label": "CTA Gradient End",
+      "default": "#C4186F" },
+
+    { "type": "header", "content": "CTA Banner" },
+    { "type": "text", "id": "cta_title",
+      "label": "CTA Title",
+      "default": "Get Access to 2,500+ Free Templates" },
+    { "type": "textarea", "id": "cta_subtitle",
+      "label": "CTA Subtitle",
+      "default": "Every poster maker system includes free access to our complete digital content library. Request a quote to get started." },
+    { "type": "text", "id": "cta_btn_primary_label",
+      "label": "CTA Primary Button",
+      "default": "Request a Quote" },
+    { "type": "url", "id": "cta_btn_primary_url",
+      "label": "CTA Primary Button URL" },
+    { "type": "text", "id": "cta_btn_secondary_label",
+      "label": "CTA Secondary Button",
+      "default": "(888) 535-4431" },
+
+    { "type": "header", "content": "Section Padding" },
+    { "type": "range", "id": "section_padding",
+      "label": "Section Padding",
+      "min": 40, "max": 120, "step": 8,
+      "default": 80, "unit": "px" }
+  ],
+  "presets": [{ "name": "PST Free Resources" }]
+}
+{% endschema %}
