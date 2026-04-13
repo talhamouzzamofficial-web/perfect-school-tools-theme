@@ -495,6 +495,10 @@
     gap: 0.4rem;
   }
 
+  #shopify-section-{{ section.id }} .pst-header__icons .header__search {
+    display: inline-flex;
+  }
+
   .pst-header__icons .header__icon {
     color: var(--pst-header-nav, var(--pst-color-slate, #334155));
   }
@@ -623,11 +627,9 @@
       }
     {% endif %}
 
-    #shopify-section-{{ section.id }} .header__icons .header__icon--cart,
-    #shopify-section-{{ section.id }} .header__icons .header__icon--account,
-    #shopify-section-{{ section.id }} .header__icons .header__icon--search,
-    #shopify-section-{{ section.id }} .pst-header__cta,
-    #shopify-section-{{ section.id }} .header__icons .header__icon:not(.header__icon--menu) {
+    #shopify-section-{{ section.id }} .pst-header__icons .header__icon--cart,
+    #shopify-section-{{ section.id }} .pst-header__icons .header__icon--account,
+    #shopify-section-{{ section.id }} .pst-header__cta {
       display: none !important;
     }
   }
@@ -868,6 +870,9 @@
         </div>
 
         <div class="pst-header__icons">
+          {%- assign pst_header_search_input_id = 'HeaderSearch-' | append: section.id -%}
+          {% render 'header-search', input_id: pst_header_search_input_id %}
+
           {%- if shop.customer_accounts_enabled -%}
             <a
               href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
