@@ -25,7 +25,7 @@
         "quote_label": "Request a Quote",
         "quote_link": "/pages/contact",
         "products_label": "View Products",
-        "products_link": "https://perfectposter.com/pages/postermaker",
+        "products_link": "shopify://collections/all-products",
         "phone": "(888) 535-4431",
         "shipping_note": "Fast Shipping Available"
       }
