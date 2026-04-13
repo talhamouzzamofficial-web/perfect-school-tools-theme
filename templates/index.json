@@ -145,7 +145,7 @@
             "title": "For Media Specialists",
             "body": "Stock your media center with poster makers, awards systems, and supplies designed for daily school use and simple reordering.",
             "button_label": "Learn More",
-            "button_link": "/pages/contact"
+            "button_link": "shopify://pages/for-media-specialists"
           }
         },
         "roles_bk": {
@@ -155,7 +155,7 @@
             "title": "For Bookkeepers",
             "body": "We speak POs, quotes, and district billing — clear paperwork and responsive support for your business office.",
             "button_label": "Learn More",
-            "button_link": "/pages/contact"
+            "button_link": "shopify://pages/for-bookkeepers"
           }
         },
         "roles_teacher": {
