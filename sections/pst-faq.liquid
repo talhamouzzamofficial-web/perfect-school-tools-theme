@@ -4,7 +4,7 @@
 
 <div id="pst-faq-root-{{ section.id }}" class="pst-faq-page">
   {%- comment -%} Section 1 — Hero {%- endcomment -%}
-  <div class="pst-faq-page__hero">
+  <div class="pst-faq-page__hero" style="padding-top: {{ section.settings.hero_padding_top }}px; padding-bottom: {{ section.settings.hero_padding_bottom }}px;">
     <div class="pst-faq-page__hero-inner page-width">
       <h1 class="pst-faq-page__title">{{ section.settings.hero_heading | escape }}</h1>
       {% if section.settings.hero_subtext != blank %}
@@ -28,7 +28,7 @@
           aria-selected="true"
           data-faq-filter="all"
         >
-          {{ section.settings.filter_all_label | escape }}
+          {{ section.settings.tab_label_1 | escape }}
         </button>
         <button
           type="button"
@@ -37,7 +37,7 @@
           aria-selected="false"
           data-faq-filter="ordering"
         >
-          {{ section.settings.filter_ordering_label | escape }}
+          {{ section.settings.tab_label_2 | escape }}
         </button>
         <button
           type="button"
@@ -46,7 +46,7 @@
           aria-selected="false"
           data-faq-filter="products"
         >
-          {{ section.settings.filter_products_label | escape }}
+          {{ section.settings.tab_label_3 | escape }}
         </button>
         <button
           type="button"
@@ -55,7 +55,7 @@
           aria-selected="false"
           data-faq-filter="support"
         >
-          {{ section.settings.filter_support_label | escape }}
+          {{ section.settings.tab_label_4 | escape }}
         </button>
         <button
           type="button"
@@ -64,7 +64,7 @@
           aria-selected="false"
           data-faq-filter="funding"
         >
-          {{ section.settings.filter_funding_label | escape }}
+          {{ section.settings.tab_label_5 | escape }}
         </button>
       </div>
     </div>
@@ -75,7 +75,7 @@
     <div class="page-width">
       <div class="pst-faq-page__accordion" data-faq-accordion>
         <article class="pst-faq-page__item" data-category="ordering">
-          <h2 class="visually-hidden">{{ section.settings.filter_ordering_label | escape }}</h2>
+          <h2 class="visually-hidden">{{ section.settings.tab_label_2 | escape }}</h2>
           <div class="pst-faq-page__card">
             <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a1" id="{{ pst_faq_ns }}-q1">
               <span class="pst-faq-page__question-text">Do you accept school purchase orders?</span>
@@ -147,7 +147,7 @@
         </article>
 
         <article class="pst-faq-page__item" data-category="products">
-          <h2 class="visually-hidden">{{ section.settings.filter_products_label | escape }}</h2>
+          <h2 class="visually-hidden">{{ section.settings.tab_label_3 | escape }}</h2>
           <div class="pst-faq-page__card">
             <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a6" id="{{ pst_faq_ns }}-q6">
               <span class="pst-faq-page__question-text">What is the difference between the Poster Maker and Awards Maker?</span>
@@ -216,7 +216,7 @@
         </article>
 
         <article class="pst-faq-page__item" data-category="support">
-          <h2 class="visually-hidden">{{ section.settings.filter_support_label | escape }}</h2>
+          <h2 class="visually-hidden">{{ section.settings.tab_label_4 | escape }}</h2>
           <div class="pst-faq-page__card">
             <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a11" id="{{ pst_faq_ns }}-q11">
               <span class="pst-faq-page__question-text">What warranty comes with the systems?</span>
@@ -273,7 +273,7 @@
         </article>
 
         <article class="pst-faq-page__item" data-category="funding">
-          <h2 class="visually-hidden">{{ section.settings.filter_funding_label | escape }}</h2>
+          <h2 class="visually-hidden">{{ section.settings.tab_label_5 | escape }}</h2>
           <div class="pst-faq-page__card">
             <button type="button" class="pst-faq-page__question" aria-expanded="false" aria-controls="{{ pst_faq_ns }}-a15" id="{{ pst_faq_ns }}-q15">
               <span class="pst-faq-page__question-text">What funding sources can be used to purchase your systems?</span>
@@ -358,7 +358,8 @@
 
   #shopify-section-{{ section.id }} .pst-faq-page__hero {
     background: var(--pst-faq-navy);
-    padding: clamp(3.2rem, 8vw, 5.6rem) 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     text-align: center;
     border-bottom: 3px solid var(--pst-faq-gold);
   }
@@ -394,11 +395,25 @@
 
   #shopify-section-{{ section.id }} .pst-faq-page__filters {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    white-space: nowrap;
     max-width: 56rem;
     margin: 0 auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  #shopify-section-{{ section.id }} .pst-faq-page__filters::-webkit-scrollbar {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .pst-faq-page__filters {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      justify-content: flex-start;
+    }
   }
 
   #shopify-section-{{ section.id }} .pst-faq-page__filter {
@@ -500,7 +515,7 @@
   #shopify-section-{{ section.id }} .pst-faq-page__question-text {
     flex: 1;
     line-height: 1.35;
-    font-size: clamp(1.0625rem, 1.6vw, 1.1875rem);
+    font-size: {{ section.settings.question_font_size }}px;
   }
 
   #shopify-section-{{ section.id }} .pst-faq-page__question-icon {
@@ -535,7 +550,7 @@
   #shopify-section-{{ section.id }} .pst-faq-page__answer-inner {
     padding: 0 1.25rem 1.25rem;
     font-family: var(--font-body-family);
-    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    font-size: {{ section.settings.answer_font_size }}px;
     line-height: 1.6;
     color: var(--pst-faq-slate);
   }
@@ -712,6 +727,10 @@
   "class": "pst-faq-page-section",
   "settings": [
     {
+      "type": "header",
+      "content": "Hero / Header"
+    },
+    {
       "type": "text",
       "id": "hero_heading",
       "label": "Hero heading",
@@ -724,33 +743,81 @@
       "default": "Everything you need to know about our products, ordering, and support."
     },
     {
+      "type": "range",
+      "id": "hero_padding_top",
+      "label": "Hero Top Padding",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "hero_padding_bottom",
+      "label": "Hero Bottom Padding",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "question_font_size",
+      "label": "Question Font Size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "answer_font_size",
+      "label": "Answer Font Size",
+      "min": 13,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Tab Labels"
+    },
+    {
       "type": "text",
-      "id": "filter_all_label",
-      "label": "Filter: All",
+      "id": "tab_label_1",
+      "label": "Tab 1 Label",
       "default": "All Questions"
     },
     {
       "type": "text",
-      "id": "filter_ordering_label",
-      "label": "Filter: Purchasing & orders",
+      "id": "tab_label_2",
+      "label": "Tab 2 Label",
       "default": "Purchasing & Orders"
     },
     {
       "type": "text",
-      "id": "filter_products_label",
-      "label": "Filter: Products",
+      "id": "tab_label_3",
+      "label": "Tab 3 Label",
       "default": "Products & Systems"
     },
     {
       "type": "text",
-      "id": "filter_support_label",
-      "label": "Filter: Support & warranty",
+      "id": "tab_label_4",
+      "label": "Tab 4 Label",
       "default": "Support & Warranty"
     },
     {
       "type": "text",
-      "id": "filter_funding_label",
-      "label": "Filter: Funding & budgeting",
+      "id": "tab_label_5",
+      "label": "Tab 5 Label",
       "default": "Funding & Budgeting"
     },
     {
