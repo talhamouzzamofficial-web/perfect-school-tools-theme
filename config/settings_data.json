@@ -156,6 +156,24 @@
           "mobile_line1": "",
           "mobile_line2": "Fast Shipping On All Supply Orders!"
         }
+      },
+      "pst-faq": {
+        "type": "pst-faq",
+        "settings": {
+          "hero_heading": "Frequently Asked Questions",
+          "hero_subtext": "Everything you need to know about our products, ordering, and support.",
+          "hero_padding_top": 32,
+          "hero_padding_bottom": 32,
+          "question_font_size": 18,
+          "answer_font_size": 16,
+          "show_category_numbers": false,
+          "cta_heading": "Still Have Questions?",
+          "cta_text": "Our education specialists are here to help.",
+          "cta_quote_label": "Request a Quote",
+          "cta_quote_url": "",
+          "cta_phone_label": "Call (888) 535-4431",
+          "cta_phone_url": ""
+        }
       }
     },
     "content_for_index": [],
