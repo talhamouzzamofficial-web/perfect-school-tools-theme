@@ -111,7 +111,7 @@
             "link_2_label": "Contact Us",
             "link_2_url": "/pages/contact",
             "link_3_label": "FAQ",
-            "link_3_url": "/pages/faq",
+            "link_3_url": "shopify://pages/faqs",
             "link_4_label": "",
             "link_4_url": "",
             "link_5_label": "",
