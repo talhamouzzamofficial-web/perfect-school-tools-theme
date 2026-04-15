@@ -377,7 +377,7 @@
           "rewards_li_4": "Exclusive member perks",
           "rewards_note": "Click the Rewards icon in the lower right corner to track your points",
           "register_btn_label": "Become a Member — It's Free!",
-          "register_url": "",
+          "register_url": "shopify://pages/rewards-loyalty-program",
           "login_btn_label": "Already a Member? Sign In",
           "login_url": "",
           "badge_percent": "3%",
