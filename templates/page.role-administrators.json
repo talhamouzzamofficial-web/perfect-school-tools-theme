@@ -40,7 +40,7 @@
         "quote_role": "Principal, Florida",
         "resources_title": "Resources for Administrators",
         "resource_1_label": "Poster Maker Systems",
-        "resource_1_url": "/pages/poster-makers-for-schools",
+        "resource_1_url": "shopify://pages/postermaker",
         "resource_2_label": "District Pricing",
         "resource_2_url": "/pages/district-pricing",
         "resource_3_label": "Purchase Orders",
