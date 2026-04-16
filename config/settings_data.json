@@ -182,9 +182,9 @@
           "hero_title": "The Perfect Poster Maker System for Schools",
           "hero_subtitle": "Our Poster Maker System provides schools with the perfect tool to improve student outcomes, increase engagement, simplify classroom & hallway messaging, and promote school pride!",
           "hero_btn_quote": "Request a Quote",
-          "hero_btn_discover": "Discover Now",
-          "contact_url": "",
-          "discover_url": "",
+          "hero_btn_discover": "About PST",
+          "contact_url": "shopify://pages/contact",
+          "discover_url": "shopify://pages/about",
           "trust_aria": "Why schools choose us",
           "trust_1": "Purchase Orders Accepted",
           "trust_2": "Fast Shipping",
@@ -392,6 +392,21 @@
           "contact_url": "",
           "bottom_title": "Ready to Bring Visual Learning to Your School?",
           "bottom_quote_label": "Request a Quote"
+        }
+      },
+      "pst-contact-page": {
+        "type": "pst-contact-page",
+        "settings": {
+          "hero_heading": "Request a Quote",
+          "hero_subtext": "Fill out the form below and we'll respond within 1 business day. We accept purchase orders.",
+          "form_heading": "Get Your Personalized Quote",
+          "submit_label": "Submit Quote Request",
+          "success_message": "Thank you! We received your quote request and will respond within one business day.",
+          "phone": "(888) 535-4431",
+          "po_email": "orders@perfectschooltools.com",
+          "bottom_cta_text": "Questions? Call us at (888) 535-4431",
+          "bottom_cta_btn_label": "View Our Products",
+          "bottom_cta_btn_url": ""
         }
       }
     },
