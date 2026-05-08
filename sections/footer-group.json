@@ -84,7 +84,7 @@
           "type": "link_column",
           "settings": {
             "col_title": "Resources",
-            "link_1_label": "Blog",
+            "link_1_label": "All Blog Posts",
             "link_1_url": "/blogs/news",
             "link_2_label": "Best Poster Makers",
             "link_2_url": "shopify://blogs/poster-printer-awards-maker-information/finding-the-right-poster-maker-system-for-your-school",
