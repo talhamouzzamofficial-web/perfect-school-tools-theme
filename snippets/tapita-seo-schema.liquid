@@ -88,8 +88,8 @@
         {%-  assign page_description = new_page_description | strip_html | url_decode -%}
         {%-  assign page_description = new_page_description | replace: '"', "'" -%}
         <script>
-        var tapita_meta_page_title =  `{{  page_title | replace: '&quot;', '"' }}`;
-        var tapita_meta_page_description = `{{  page_description }}`;
+        var tapita_meta_page_title =  `{{  page_title | replace: '&quot;', '"' | replace: '&nbsp;', ' ' | replace: '&amp;', '&'  }}`;
+        var tapita_meta_page_description = `{{  page_description | replace: '&quot;', '"' | replace: '&nbsp;', ' ' | replace: '&amp;', '&'  }}`;
         </script>
         {%- break -%}
       {%- endfor -%}
@@ -150,8 +150,8 @@
         {%- endif %}
         <script>
           //custom Meta Title
-          var tapita_meta_page_title =  `{{  page_title }}`;
-          var tapita_meta_page_description = `{{ page_description }}`;
+          var tapita_meta_page_title =  `{{  page_title | replace: '&quot;', '"' | replace: '&nbsp;', ' ' | replace: '&amp;', '&'  }}`;
+          var tapita_meta_page_description = `{{ page_description | replace: '&quot;', '"' | replace: '&nbsp;', ' ' | replace: '&amp;', '&'  }}`;
         </script>
         {%- break -%}
       {%- endif -%}
