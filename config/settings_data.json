@@ -397,7 +397,7 @@
       "pst-contact-page": {
         "type": "pst-contact-page",
         "settings": {
-          "hero_heading": "Request a Quote",
+          "hero_heading": "Contact Us or Request a Quote",
           "hero_subtext": "Fill out the form below and we'll respond within 1 business day. We accept purchase orders.",
           "form_heading": "Contact Us or Get Your Personalized Quote",
           "submit_label": "Submit Quote Request",
