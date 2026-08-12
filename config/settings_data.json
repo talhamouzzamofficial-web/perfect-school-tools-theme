@@ -179,8 +179,8 @@
         "type": "pst-poster-makers-page",
         "settings": {
           "hero_badge": "Poster Maker Systems",
-          "hero_title": "The Perfect Poster Maker System for Schools",
-          "hero_subtitle": "Our Poster Maker System provides schools with the perfect tool to improve student outcomes, increase engagement, simplify classroom & hallway messaging, and promote school pride!  \nPoster Maker Packages starting under $3k",
+          "hero_title": "Poster Maker Systems for Schools",
+          "hero_subtitle": "Our Perfect Poster Maker System provides schools with the tools to improve student outcomes, increase engagement, simplify classroom & hallway messaging, and promote parental engagement & school pride!  \nPoster Maker Packages starting under $3k",
           "hero_btn_quote": "Request a Quote",
           "hero_btn_discover": "About PST",
           "contact_url": "shopify://pages/contact",
@@ -513,8 +513,6 @@
         "settings": {
           "greeting_message": "",
           "button_color": "#000000",
-          "secondary_color": "#FFFFFF",
-          "ternary_color": "#6A6A6A",
           "button_icon": "chat_bubble",
           "button_text": "chat_with_us",
           "button_horizontal_position": "bottom_right",
