@@ -182,34 +182,6 @@
         "padding_bottom": 72
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "featured",
-        "products_to_show": 12,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
-    },
     "pst_products_showcase": {
       "type": "pst-products-showcase",
       "settings": {
@@ -247,6 +219,34 @@
         "learn_link_laminator": "https://www.perfectschooltools.com/collections/lamination",
         "heading": "Professional Visual Tools for Every School",
         "subheading": "Poster makers, awards systems, and laminators built for full school use."
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "featured",
+        "products_to_show": 12,
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
       }
     },
     "pst-image-gallery": {
@@ -342,9 +342,9 @@
     "pst_hero",
     "pst_stats_bar",
     "pst_features",
+    "pst_products_showcase",
     "pst_roles",
     "featured_collection",
-    "pst_products_showcase",
     "pst-image-gallery",
     "pst_testimonials",
     "pst_cta_banner"
