@@ -44,8 +44,8 @@
         "quote_btn_link": "shopify://pages/contact",
         "learn_btn_label": "Learn More",
         "learn_link_poster_maker": "",
-        "learn_link_awards_cut": "",
-        "learn_link_awards_maker": "",
+        "learn_link_awards_cut": "shopify://pages/perfect-awards-systems",
+        "learn_link_awards_maker": "shopify://pages/perfect-awards-systems",
         "learn_link_laminator": "https://www.perfectschooltools.com/collections/lamination",
         "heading": "Professional Visual Tools for Every School",
         "subheading": "Poster makers, awards systems, and laminators built for classrooms and districts."
