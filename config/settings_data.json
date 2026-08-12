@@ -385,11 +385,11 @@
           "badge_line_2": "Purchase",
           "badge_aria_label": "3 percent back on every purchase",
           "webinar_heading": "Live Webinar Events",
-          "webinar_lead": "Join upcoming webinars on Perfect Award Systems — learn tips, see demos, and ask our team questions live.",
-          "notice_title": "New Schedule Coming Soon",
-          "notice_text": "Our next webinar schedule is being finalized. Check back shortly.",
-          "webinar_btn_label": "Contact Us",
-          "contact_url": "",
+          "webinar_lead": "Schedule a live webinar for you and your team to learn more about our Poster Maker Systems and more!",
+          "notice_title": "",
+          "notice_text": "",
+          "webinar_btn_label": "Schedule a Live Webinar",
+          "contact_url": "https://calendly.com/gary-perfectschooltools-",
           "bottom_title": "Ready to Bring Visual Learning to Your School?",
           "bottom_quote_label": "Request a Quote"
         }
