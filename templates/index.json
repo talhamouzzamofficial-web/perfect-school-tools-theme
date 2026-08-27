@@ -289,8 +289,8 @@
         "badge": "See What You Can Create",
         "heading": "Real Results in Real Schools",
         "subheading": "From hallway displays to student awards, see how schools across the country use our systems every day.",
-        "padding_top": 80,
-        "padding_bottom": 80,
+        "padding_top": 40,
+        "padding_bottom": 40,
         "columns_desktop": 3,
         "columns_mobile": "1",
         "gap": 20,
@@ -355,8 +355,8 @@
       "settings": {
         "heading": "What Schools Are Saying",
         "subtitle": "Trusted by educators across the nation",
-        "padding_top": 72,
-        "padding_bottom": 72
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "pst_cta_banner": {
@@ -367,8 +367,8 @@
         "button_label": "Request a Quote",
         "button_link": "/pages/contact",
         "phone": "(888) 535-4431",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 60,
+        "padding_bottom": 40
       }
     },
     "pst_image_gallery_PNpYhK": {
@@ -378,8 +378,8 @@
         "badge": "See What You Can Create",
         "heading": "Real Results in Real Schools",
         "subheading": "From hallway displays to student awards, see how schools across the country use our systems every day.",
-        "padding_top": 80,
-        "padding_bottom": 80,
+        "padding_top": 40,
+        "padding_bottom": 40,
         "columns_desktop": 3,
         "columns_mobile": "1",
         "gap": 20,
