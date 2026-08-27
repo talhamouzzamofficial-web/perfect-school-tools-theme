@@ -47,44 +47,9 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
-    },
-    "pst_image_gallery_jxV3AJ": {
-      "type": "pst-image-gallery",
-      "name": "PST Image Gallery",
-      "settings": {
-        "badge": "Create The School YOU Want",
-        "heading": "Poster Maker Packages For Your Unique Needs",
-        "subheading": "From hallway displays to student awards, see how schools across the country use our systems every day.",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "columns_desktop": 3,
-        "columns_mobile": "1",
-        "gap": 32,
-        "img_ratio": "1/1",
-        "card_radius": 12,
-        "bg_color": "#fdf8f0",
-        "image_1": "shopify://shop_images/Essentials.png",
-        "title_1": "Perfect Poster Maker - Essentials",
-        "caption_1": "An affordable, high-quality tabletop Poster Maker designed for schools with lower printing volumes.",
-        "image_2": "shopify://shop_images/Pro.png",
-        "title_2": "Perfect Poster Maker - Pro",
-        "caption_2": "A high-production Poster Maker with larger ink capacity and included stand, designed for schools with higher printing volumes.",
-        "image_3": "shopify://shop_images/Workstation.png",
-        "title_3": "All-in-One Plug & Play Workstation",
-        "caption_3": "A ready-to-use All-In-One Workstation that makes your Poster Maker truly plug & play—no software installation or IT hassle required.",
-        "title_4": "Library Displays",
-        "caption_4": "Reading posters, author spotlights, genre displays",
-        "title_5": "Laminated Materials",
-        "caption_5": "Flashcards, name tags, hall passes, rules posters",
-        "title_6": "School Hallway Displays",
-        "caption_6": "Transform hallways with professional visual materials",
-        "cta_label": "Choosing The Right Poster Maker",
-        "cta_link": "shopify://blogs/perfect-school-tools-articles-news/finding-the-right-poster-maker-system-for-your-school"
-      }
     }
   },
   "order": [
-    "header",
-    "pst_image_gallery_jxV3AJ"
+    "header"
   ]
 }
