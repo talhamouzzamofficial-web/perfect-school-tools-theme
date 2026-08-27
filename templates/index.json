@@ -164,63 +164,6 @@
         "subheading": "Poster makers, awards systems, and laminators built for full school use."
       }
     },
-    "pst_roles": {
-      "type": "pst-roles",
-      "blocks": {
-        "roles_admin": {
-          "type": "role",
-          "settings": {
-            "icon": "administrator",
-            "title": "For School Administrators",
-            "body": "Administrators managing school-wide visual learning programs trust Perfect School Tools for reliable equipment, district pricing, and dedicated support.",
-            "button_label": "Learn More",
-            "button_link": "/pages/for-administrators"
-          }
-        },
-        "roles_media": {
-          "type": "role",
-          "settings": {
-            "icon": "media",
-            "title": "For Media Specialists",
-            "body": "Stock your media center with poster makers, awards systems, and supplies designed for daily school use and simple reordering.",
-            "button_label": "Learn More",
-            "button_link": "shopify://pages/for-media-specialists"
-          }
-        },
-        "roles_bk": {
-          "type": "role",
-          "settings": {
-            "icon": "bookkeeper",
-            "title": "For Bookkeepers",
-            "body": "We speak POs, quotes, and district billing — clear paperwork and responsive support for your business office.",
-            "button_label": "Learn More",
-            "button_link": "shopify://pages/for-bookkeepers"
-          }
-        },
-        "roles_teacher": {
-          "type": "role",
-          "settings": {
-            "icon": "teacher",
-            "title": "For Teachers",
-            "body": "Create classroom visuals and recognition materials in-house without waiting on outside vendors.",
-            "button_label": "Learn More",
-            "button_link": "/pages/contact"
-          }
-        }
-      },
-      "block_order": [
-        "roles_admin",
-        "roles_media",
-        "roles_bk",
-        "roles_teacher"
-      ],
-      "settings": {
-        "heading": "For Your Role",
-        "subtitle": "Resources tailored to how your school works.",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -281,6 +224,63 @@
         "caption_6": "Transform hallways with professional visual materials",
         "cta_label": "Finding The Right Poster Maker",
         "cta_link": "shopify://blogs/perfect-school-tools-articles-news/finding-the-right-poster-maker-system-for-your-school"
+      }
+    },
+    "pst_roles": {
+      "type": "pst-roles",
+      "blocks": {
+        "roles_admin": {
+          "type": "role",
+          "settings": {
+            "icon": "administrator",
+            "title": "For School Administrators",
+            "body": "Administrators managing school-wide visual learning programs trust Perfect School Tools for reliable equipment, district pricing, and dedicated support.",
+            "button_label": "Learn More",
+            "button_link": "/pages/for-administrators"
+          }
+        },
+        "roles_media": {
+          "type": "role",
+          "settings": {
+            "icon": "media",
+            "title": "For Media Specialists",
+            "body": "Stock your media center with poster makers, awards systems, and supplies designed for daily school use and simple reordering.",
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/for-media-specialists"
+          }
+        },
+        "roles_bk": {
+          "type": "role",
+          "settings": {
+            "icon": "bookkeeper",
+            "title": "For Bookkeepers",
+            "body": "We speak POs, quotes, and district billing — clear paperwork and responsive support for your business office.",
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/for-bookkeepers"
+          }
+        },
+        "roles_teacher": {
+          "type": "role",
+          "settings": {
+            "icon": "teacher",
+            "title": "For Teachers",
+            "body": "Create classroom visuals and recognition materials in-house without waiting on outside vendors.",
+            "button_label": "Learn More",
+            "button_link": "/pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "roles_admin",
+        "roles_media",
+        "roles_bk",
+        "roles_teacher"
+      ],
+      "settings": {
+        "heading": "For Your Role",
+        "subtitle": "Resources tailored to how your school works.",
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
     "pst-image-gallery": {
@@ -408,9 +408,9 @@
     "pst_stats_bar",
     "pst_features",
     "pst_products_showcase",
-    "pst_roles",
     "featured_collection",
     "pst_image_gallery_pXEnrT",
+    "pst_roles",
     "pst-image-gallery",
     "pst_testimonials",
     "pst_cta_banner",
