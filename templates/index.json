@@ -121,8 +121,8 @@
       "settings": {
         "heading": "Built for the Way Schools Buy",
         "subtitle": "We understand the unique purchasing process of schools and districts.",
-        "padding_top": 72,
-        "padding_bottom": 72
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "pst_products_showcase": {
@@ -285,6 +285,40 @@
         "cta_link": "shopify://collections/all-products"
       }
     },
+    "pst_image_gallery_pXEnrT": {
+      "type": "pst-image-gallery",
+      "name": "PST PM Image Gallery",
+      "settings": {
+        "badge": "Create the school you want",
+        "heading": "Poster Maker Options For All Schools",
+        "subheading": "We know every school has unique needs. That is why we offer different Poster Maker Packages Based on your specific goals.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "columns_desktop": 3,
+        "columns_mobile": "1",
+        "gap": 20,
+        "img_ratio": "4/3",
+        "card_radius": 12,
+        "bg_color": "#fdf8f0",
+        "image_1": "shopify://shop_images/Essentials.png",
+        "title_1": "Essentials Poster Maker Package",
+        "caption_1": "An affordable, high-quality tabletop Poster Maker designed for schools with lower printing volumes.",
+        "image_2": "shopify://shop_images/Pro.png",
+        "title_2": "Pro Poster Maker Package",
+        "caption_2": "A high-production Poster Maker with larger ink capacity and included stand, designed for schools with higher printing volumes.",
+        "image_3": "shopify://shop_images/Workstation.png",
+        "title_3": "All-in-One Plug & Play Worksation",
+        "caption_3": "A ready-to-use All-In-One Workstation that makes your Poster Maker truly plug & play—no software installation or IT hassle required.",
+        "title_4": "Library Displays",
+        "caption_4": "Reading posters, author spotlights, genre displays",
+        "title_5": "Laminated Materials",
+        "caption_5": "Flashcards, name tags, hall passes, rules posters",
+        "title_6": "School Hallway Displays",
+        "caption_6": "Transform hallways with professional visual materials",
+        "cta_label": "See All Products",
+        "cta_link": ""
+      }
+    },
     "pst_testimonials": {
       "type": "pst-testimonials",
       "blocks": {
@@ -337,40 +371,6 @@
         "padding_bottom": 64
       }
     },
-    "pst_image_gallery_pXEnrT": {
-      "type": "pst-image-gallery",
-      "name": "PST PM Image Gallery",
-      "settings": {
-        "badge": "Create the school you want",
-        "heading": "Poster Maker Options For All Schools",
-        "subheading": "From hallway displays to student awards, see how schools across the country use our systems every day.",
-        "padding_top": 80,
-        "padding_bottom": 80,
-        "columns_desktop": 3,
-        "columns_mobile": "1",
-        "gap": 20,
-        "img_ratio": "4/3",
-        "card_radius": 12,
-        "bg_color": "#fdf8f0",
-        "image_1": "shopify://shop_images/Essentials.png",
-        "title_1": "Classroom Posters",
-        "caption_1": "Educational posters, science diagrams, reading nook signs",
-        "image_2": "shopify://shop_images/Pro.png",
-        "title_2": "Awards & Certificates",
-        "caption_2": "Student awards, honor roll, recognition plaques",
-        "image_3": "shopify://shop_images/Workstation.png",
-        "title_3": "Event Banners & Signs",
-        "caption_3": "Welcome banners, event signage, spirit displays",
-        "title_4": "Library Displays",
-        "caption_4": "Reading posters, author spotlights, genre displays",
-        "title_5": "Laminated Materials",
-        "caption_5": "Flashcards, name tags, hall passes, rules posters",
-        "title_6": "School Hallway Displays",
-        "caption_6": "Transform hallways with professional visual materials",
-        "cta_label": "See All Products",
-        "cta_link": ""
-      }
-    },
     "pst_image_gallery_PNpYhK": {
       "type": "pst-image-gallery",
       "name": "PST Image Gallery",
@@ -411,9 +411,9 @@
     "pst_roles",
     "featured_collection",
     "pst-image-gallery",
+    "pst_image_gallery_pXEnrT",
     "pst_testimonials",
     "pst_cta_banner",
-    "pst_image_gallery_pXEnrT",
     "pst_image_gallery_PNpYhK"
   ]
 }
