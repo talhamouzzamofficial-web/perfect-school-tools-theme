@@ -1,0 +1,82 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "pst_products_showcase_VtmVdm": {
+      "type": "pst-products-showcase",
+      "name": "PST Options For All Schools",
+      "settings": {
+        "section_padding_top": 40,
+        "section_padding_bottom": 40,
+        "cards_gap": 20,
+        "card_border_radius": 16,
+        "card_padding": 24,
+        "hero_height": 320,
+        "title_font_size": 19,
+        "feature_font_size": 13,
+        "cards_default_align": "center",
+        "poster_maker_image": "shopify://shop_images/Poster_Maker_Essentials_with_Poster_Coming_Out_35d27fd7-499a-43f3-b44b-b39acae0cd4b.png",
+        "poster_maker_show_title": true,
+        "poster_maker_title": "Poster Maker Essentials",
+        "poster_maker_align": "center",
+        "awards_cut_image": "shopify://shop_images/Poster_Maker_In_Library_SMALLER.png",
+        "awards_cut_show_title": true,
+        "awards_cut_title": "Poster Maker Pro",
+        "awards_cut_align": "center",
+        "awards_maker_image": "shopify://shop_images/Awards_Maker_Landing_Page.png",
+        "awards_maker_show_title": true,
+        "awards_maker_title": "Perfect Awards Maker",
+        "awards_maker_align": "center",
+        "cold_laminator_image": "shopify://shop_images/Cold_Laminator_Landing_Page.png",
+        "cold_laminator_show_title": true,
+        "cold_laminator_title": "Cool Touch Laminator",
+        "cold_laminator_align": "center",
+        "quote_btn_label": "Request a Quote",
+        "quote_btn_link": "",
+        "learn_btn_label": "Learn More",
+        "learn_link_poster_maker": "shopify://pages/perfect-poster-maker-essentials",
+        "learn_link_awards_cut": "shopify://pages/perfect-poster-maker-pro",
+        "learn_link_awards_maker": "shopify://products/perfect-awards-maker",
+        "learn_link_laminator": "shopify://products/cold-laminator",
+        "heading": "Options For Every School's Needs",
+        "subheading": "We provide the right Poster Maker & Award Systems for your individual School Needs"
+      }
+    },
+    "pst_contact_page_MGENnH": {
+      "type": "pst-contact-page",
+      "name": "PST Contact page",
+      "settings": {
+        "hero_heading": "Request a Quote",
+        "hero_subtext": "Fill out the form below and we'll respond within 1 business day. We accept purchase orders.",
+        "form_heading": "Get Your Personalized Quote",
+        "submit_label": "Submit Quote Request",
+        "success_message": "Thank you! We received your quote request and will respond within one business day.",
+        "phone": "(888) 535-4431",
+        "po_email": "orders@perfectschooltools.com",
+        "bottom_cta_text": "Questions? Call us at (888) 535-4431",
+        "bottom_cta_btn_label": "View Our Products",
+        "bottom_cta_btn_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "pst_products_showcase_VtmVdm",
+    "pst_contact_page_MGENnH"
+  ]
+}
