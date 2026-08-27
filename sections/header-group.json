@@ -60,7 +60,7 @@
         "columns_desktop": 3,
         "columns_mobile": "1",
         "gap": 32,
-        "img_ratio": "4/3",
+        "img_ratio": "1/1",
         "card_radius": 12,
         "bg_color": "#fdf8f0",
         "image_1": "shopify://shop_images/Essentials.png",
@@ -78,8 +78,8 @@
         "caption_5": "Flashcards, name tags, hall passes, rules posters",
         "title_6": "School Hallway Displays",
         "caption_6": "Transform hallways with professional visual materials",
-        "cta_label": "See All Products",
-        "cta_link": ""
+        "cta_label": "Choosing The Right Poster Maker",
+        "cta_link": "shopify://blogs/perfect-school-tools-articles-news/finding-the-right-poster-maker-system-for-your-school"
       }
     }
   },
