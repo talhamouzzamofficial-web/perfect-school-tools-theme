@@ -21,8 +21,8 @@
       "type": "pst-products-showcase",
       "name": "PST Options For All Schools",
       "settings": {
-        "section_padding_top": 80,
-        "section_padding_bottom": 80,
+        "section_padding_top": 40,
+        "section_padding_bottom": 40,
         "cards_gap": 20,
         "card_border_radius": 16,
         "card_padding": 24,
@@ -53,7 +53,7 @@
         "learn_link_awards_cut": "shopify://pages/perfect-poster-maker-pro",
         "learn_link_awards_maker": "shopify://products/perfect-awards-maker",
         "learn_link_laminator": "shopify://products/cold-laminator",
-        "heading": "Options For Every School",
+        "heading": "Options For Every School's Needs",
         "subheading": "We provide the right Poster Maker & Award Systems for your individual School Needs"
       }
     },
