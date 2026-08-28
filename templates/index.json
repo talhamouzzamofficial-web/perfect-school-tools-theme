@@ -199,8 +199,8 @@
         "badge": "Create the school you want",
         "heading": "Poster Maker Options For All Schools",
         "subheading": "We know every school has unique needs. That is why we offer different Poster Maker Packages Based on your specific goals.",
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "padding_top": 28,
+        "padding_bottom": 28,
         "columns_desktop": 3,
         "columns_mobile": "1",
         "gap": 20,
@@ -279,8 +279,8 @@
       "settings": {
         "heading": "For Your Role",
         "subtitle": "Resources tailored to how your school works.",
-        "padding_top": 72,
-        "padding_bottom": 72
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "pst-image-gallery": {
@@ -367,7 +367,7 @@
         "button_label": "Request a Quote",
         "button_link": "/pages/contact",
         "phone": "(888) 535-4431",
-        "padding_top": 60,
+        "padding_top": 40,
         "padding_bottom": 40
       }
     },
