@@ -11,8 +11,34 @@
   "sections": {
     "pst-reorder-supplies": {
       "type": "pst-reorder-supplies",
-      "settings": {}
+      "settings": {
+        "hero_badge": "Easy Reordering",
+        "hero_title": "Reorder Poster Printer Supplies",
+        "hero_subtitle": "Need more paper, ink, or lamination film? Reordering is as easy as a phone call. We keep your order history on file for fast, hassle-free repeat orders.",
+        "hero_btn_primary_label": "Request a Quote",
+        "hero_btn_primary_url": "",
+        "hero_btn_secondary_label": "(888) 535-4431",
+        "hero_phone": "+18885354431",
+        "trust_1": "Purchase Orders Accepted",
+        "trust_2": "Fast Shipping",
+        "trust_3": "Unlimited Support",
+        "trust_4": "30+ Years Experience",
+        "hero_bg_start": "#0a2540",
+        "hero_bg_end": "#0f4872",
+        "trust_bar_bg": "#f5b731",
+        "section_bg_alt": "#fdf8f0",
+        "cta_bg_start": "#e91e8c",
+        "cta_bg_end": "#c4186f",
+        "cta_title": "Need to Reorder?",
+        "cta_subtitle": "Call (888) 535-4431 or email orders@perfectschooltools.com. We process and ship the same business day.",
+        "cta_btn_primary_label": "Request a Quote",
+        "cta_btn_primary_url": "",
+        "cta_btn_secondary_label": "(888) 535-4431",
+        "section_padding": 80
+      }
     }
   },
-  "order": ["pst-reorder-supplies"]
+  "order": [
+    "pst-reorder-supplies"
+  ]
 }
