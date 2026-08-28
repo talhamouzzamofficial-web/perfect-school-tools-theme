@@ -17,6 +17,40 @@
         "padding_bottom": 8
       }
     },
+    "pst_image_gallery_GWwETk": {
+      "type": "pst-image-gallery",
+      "name": "PST Image Gallery",
+      "settings": {
+        "badge": "Create The School You Want",
+        "heading": "Poster Maker Options For All Schools",
+        "subheading": "We know schools have unique need. That is why we offer different packages based on your specific goals",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "columns_desktop": 3,
+        "columns_mobile": "1",
+        "gap": 20,
+        "img_ratio": "1/1",
+        "card_radius": 12,
+        "bg_color": "#fdf8f0",
+        "image_1": "shopify://shop_images/Essentials.png",
+        "title_1": "Essentials Poster Maker Package",
+        "caption_1": "An affordable, high-quality tabletop Poster Maker designed for schools with lower printing volumes.",
+        "image_2": "shopify://shop_images/Pro.png",
+        "title_2": "Pro Poster Maker Package",
+        "caption_2": "A high-production Poster Maker with larger ink capacity and included stand, designed for schools with higher printing volumes.",
+        "image_3": "shopify://shop_images/Workstation.png",
+        "title_3": "All-in-One Plug & Play Workstation",
+        "caption_3": "Welcome banners, event signage, spirit A ready-to-use All-In-One Workstation that makes your Poster Maker truly plug & play—no software installation or IT hassle required.",
+        "title_4": "Library Displays",
+        "caption_4": "Reading posters, author spotlights, genre displays",
+        "title_5": "Laminated Materials",
+        "caption_5": "Flashcards, name tags, hall passes, rules posters",
+        "title_6": "School Hallway Displays",
+        "caption_6": "Transform hallways with professional visual materials",
+        "cta_label": "Request More Information",
+        "cta_link": "shopify://pages/contact"
+      }
+    },
     "pst_poster_makers_page_YqUCac": {
       "type": "pst-poster-makers-page",
       "name": "PST Poster makers page",
@@ -101,6 +135,7 @@
   },
   "order": [
     "main",
+    "pst_image_gallery_GWwETk",
     "pst_poster_makers_page_YqUCac"
   ]
 }
