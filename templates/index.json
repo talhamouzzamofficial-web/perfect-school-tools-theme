@@ -24,7 +24,7 @@
         "subtext": "Empower your school with professional poster printing, awards systems, and visual learning tools. Trusted with over 30+ years experience serving schools and districts nationwide.",
         "quote_label": "Request a Quote",
         "quote_link": "/pages/contact",
-        "products_label": "View Systems",
+        "products_label": "View PST Systems",
         "products_link": "shopify://pages/perfect-school-tools-system-options",
         "phone": "(888) 535-4431",
         "shipping_note": "Serving Schools Nationwide"
@@ -122,14 +122,14 @@
         "heading": "Built for the Way Schools Buy",
         "subtitle": "We understand the unique purchasing process of schools and districts.",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 24
       }
     },
     "pst_products_showcase": {
       "type": "pst-products-showcase",
       "settings": {
-        "section_padding_top": 80,
-        "section_padding_bottom": 80,
+        "section_padding_top": 40,
+        "section_padding_bottom": 40,
         "cards_gap": 20,
         "card_border_radius": 16,
         "card_padding": 24,
@@ -408,8 +408,8 @@
     "pst_stats_bar",
     "pst_features",
     "pst_products_showcase",
-    "featured_collection",
     "pst_image_gallery_pXEnrT",
+    "featured_collection",
     "pst_roles",
     "pst-image-gallery",
     "pst_testimonials",
